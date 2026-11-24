@@ -557,6 +557,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
   flex:none;width:44px;height:44px;border-radius:var(--pc-radius-md);
   border-color:var(--pc-border);background:var(--pc-surface-2);color:var(--pc-text);
   font-size:20px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","Twemoji Mozilla","EmojiOne Color",sans-serif;
   transition:border-color .18s ease,background .18s ease,box-shadow .18s ease;
 }
 .emoji-btn:hover{border-color:var(--pc-border-strong);background:rgba(232,196,106,.08)}
@@ -602,6 +603,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
 .emoji-grid button{
   border:1px solid transparent;background:rgba(255,255,255,.03);border-radius:9px;
   font-size:20px;line-height:1;aspect-ratio:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","Twemoji Mozilla","EmojiOne Color",sans-serif;
   transition:background .15s ease,border-color .15s ease,transform .1s ease;
 }
 .emoji-grid button:hover{background:rgba(232,196,106,.14);border-color:var(--pc-border-strong);transform:translateY(-1px)}
@@ -9999,6 +10001,12 @@ function applyI18n(){
   Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-html]'),function(el){el.innerHTML=t(el.dataset.i18nHtml);});
   Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-ph]'),function(el){el.setAttribute('placeholder',t(el.dataset.i18nPh));});
   Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-title]'),function(el){el.setAttribute('title',t(el.dataset.i18nTitle));});
+  // 当前视图的大标题/副标题没有 data-i18n 标记（由 setView 动态设置），切语言时需手动刷新
+  if(typeof TITLES!=='undefined'&&TITLES[currentView]){
+    var vt=document.getElementById('view-title'),vs=document.getElementById('view-sub');
+    if(vt)vt.textContent=t(TITLES[currentView][0]);
+    if(vs)vs.textContent=t(TITLES[currentView][1]);
+  }
   render();
 }
 
@@ -10977,12 +10985,15 @@ function syncRegionSelects(){
   var pv=document.getElementById('region-prov'),ct=document.getElementById('region-city'),dt=document.getElementById('region-dist');
   if(!pv||!ct||!dt)return;
   var curCity=ct.value;
+  var curDist=dt.value;
   var cities=pv.value&&REGION_DATA[pv.value]?Object.keys(REGION_DATA[pv.value]):[];
-  ct.innerHTML='<option value="">'+esc(t('region_city_ph'))+'</option>'+cities.map(function(x){return '<option value="'+esc(x)+'">'+esc(x)+'</option>';}).join('');
-  // 记录重建前的城市值，避免 innerHTML 重置后取不到
+  // 重建城市下拉并回填当前选中项（避免 innerHTML 重置后显示占位符）
   var cityVal=(cities.indexOf(curCity)>=0)?curCity:'';
+  ct.innerHTML='<option value="">'+esc(t('region_city_ph'))+'</option>'+cities.map(function(x){return '<option value="'+esc(x)+'"'+(x===cityVal?' selected':'')+'>'+esc(x)+'</option>';}).join('');
   var dists=pv.value&&cityVal&&REGION_DATA[pv.value]&&REGION_DATA[pv.value][cityVal]?REGION_DATA[pv.value][cityVal]:[];
-  dt.innerHTML='<option value="">'+esc(t('region_dist_ph'))+'</option>'+dists.map(function(x){return '<option value="'+esc(x)+'">'+esc(x)+'</option>';}).join('');
+  // 重建区县下拉并回填当前选中项
+  var distVal=(dists.indexOf(curDist)>=0)?curDist:'';
+  dt.innerHTML='<option value="">'+esc(t('region_dist_ph'))+'</option>'+dists.map(function(x){return '<option value="'+esc(x)+'"'+(x===distVal?' selected':'')+'>'+esc(x)+'</option>';}).join('');
 }
 function currentRegionValue(){
   var pv=document.getElementById('region-prov'),ct=document.getElementById('region-city'),dt=document.getElementById('region-dist');

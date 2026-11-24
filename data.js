@@ -47,7 +47,7 @@
  *   tier 100=权威, 50=推荐, 20=实用
  */
 window.TOKEN_WORKBENCH_DATA = {
-  "lastUpdated": "2026-11-25T00:07:53+08:00",
+  "lastUpdated": "2026-11-25T03:12:20+08:00",
   "nextCheck": "每日 09:00 自动搜索更新",
   "offers": [
     {
@@ -1281,6 +1281,36 @@ window.TOKEN_WORKBENCH_DATA = {
         "国内"
       ],
       "notes": "2026-11-25 官网复核：platform.sensenova.cn 提供 Token Plan 入口，公测免费按限速调用。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "workbuddy-invite-points",
+      "provider": "WorkBuddy 邀请送积分",
+      "title": "邀请好友双方得积分：新用户注册即得 2,000，邀请方最高 650/人",
+      "quota": "活动一·邀请好友：每邀 1 位好友最高得 650 积分——好友首次注册并完成一次对话或任务得 50 积分，好友活跃满 3 天（注册后 7 天内）再得 100 积分，好友 30 天内首次付费升级再得 500 积分；受邀新用户注册即得 2,000 积分，首次付费升级好友再得 500 积分。活动二·分享产物：分享 WorkBuddy 生成的产物，同一链接有 3 位用户查看即得 30 积分，每个账号限领一次。",
+      "quotaTier": 10,
+      "cadence": "一次性",
+      "claimMethod": "通过邀请链接注册 WorkBuddy 账号（受邀方即得 2,000 积分）；或在自己的 WorkBuddy PC 客户端获取邀请链接/分享产物页参与活动",
+      "url": "https://www.workbuddy.cn/events/invite?inviteCode=myy5gfl52zbt8o9",
+      "deadline": null,
+      "deadlineText": "长期活动，暂无公布结束日",
+      "requirements": [
+        "注册 WorkBuddy 账号（PC 客户端 / 移动端 / 小程序均可）",
+        "受邀方需完成一次对话或任务才算「开始使用」",
+        "分享产物需同一链接被 3 位用户查看才计入"
+      ],
+      "region": "国内",
+      "source": "原文",
+      "sourceUrl": "https://www.workbuddy.cn/events/invite?inviteCode=myy5gfl52zbt8o9",
+      "tags": [
+        "积分奖励",
+        "邀请有礼",
+        "新用户福利",
+        "国内",
+        "长期活动"
+      ],
+      "notes": "积分即 WorkBuddy 内生成额度（图生图约 5-10 积分/张），可直接抵扣图片/视频/3D 生成消耗。邀请活跃与付费奖励可累计。",
       "discoveredAt": "2026-11-25",
       "statusTag": "active"
     }
@@ -8606,6 +8636,11 @@ window.TOKEN_WORKBENCH_DATA = {
     }
   ],
   "updateLog": [
+    {
+      "date": "2026-11-25",
+      "summary": "新增 WorkBuddy 邀请送积分（offers +1）：邀请好友双方得积分，新用户注册即得 2,000，分享产物限领 30",
+      "source": "https://www.workbuddy.cn/events/invite?inviteCode=myy5gfl52zbt8o9"
+    },
     {
       "date": "2026-11-25",
       "summary": "免费Token新增 3 条（Scaleway Generative APIs 新客 100 万 Token、Maritaca AI S5-free 限时不计费、商汤 SenseNova Token Plan 公测免费）；免费资源新增 2 条（Glitch 免费托管、PythonAnywhere 免费 Python 托管）；GitHub 热门新增 6 条（agent-desktop、Scrapling、nanochat、colibri、heretic、orca）；Skills 新增 1 条（Anthropic 官方 Agent Skills 仓库）；教程新增 3 条（HF MCP Course、LangGraph Essentials、LangChain Essentials）；变现新增 4 条（漫剧代工与剪映模板、工具接单、垂类短视频出海、数字资产被动收益）。两篇公众号文章（每天免费约1亿Tokens、Agnes免费生图）提取的平台均已收录，offers 无重复新增。",
