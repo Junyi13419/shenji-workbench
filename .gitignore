@@ -1,0 +1,21 @@
+# 本地备份与临时文件（不入库）
+backup_*.json
+*.bak
+_dedupe_keys.json
+_*.js
+_*.html
+_*.png
+
+# 内部修复记录（含内部链接，不入库）
+修复记录-*.md
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# WorkBuddy 内部文件
+.wbapp_*.genie
+.workbuddy/
