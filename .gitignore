@@ -19,3 +19,4 @@ Thumbs.db
 # WorkBuddy 内部文件
 .wbapp_*.genie
 .workbuddy/
+*.bak*
