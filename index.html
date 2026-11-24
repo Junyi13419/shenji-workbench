@@ -282,6 +282,19 @@ tbody tr:hover{background:rgba(212,175,55,.045)}
 .contact-modal .c-item b{font-size:13px;color:var(--muted);min-width:30px}
 .contact-modal .c-item span{font-size:17px;font-weight:700;letter-spacing:.5px;color:var(--text)}
 .contact-modal .c-tip{font-size:11.5px;color:var(--dim);line-height:1.6;margin-top:2px}
+/* 微信二维码弹窗 */
+.qr-modal{display:flex;flex-direction:column;gap:14px}
+.qr-cards{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.qr-card{flex:1 1 200px;max-width:240px;display:flex;flex-direction:column;align-items:center;gap:9px;background:var(--panel2);border:1px solid var(--border);border-radius:13px;padding:15px 12px}
+.qr-card img{width:100%;height:auto;border-radius:9px;display:block;background:#fff}
+.qr-card b{font-size:13px;color:var(--text)}
+.qr-card span{font-size:11px;color:var(--dim);text-align:center;line-height:1.5}
+.qr-side-link{display:flex;align-items:center;gap:7px;margin-top:9px;padding:7px 9px;border:1px dashed var(--border);border-radius:9px;cursor:pointer;transition:border-color .15s,background .15s}
+.qr-side-link:hover{border-color:var(--accent);background:var(--accent-soft)}
+.qr-side-link img{width:34px;height:34px;border-radius:6px;display:block;background:#fff}
+.qr-side-link .t{flex:1;font-size:11.5px;color:var(--muted);line-height:1.45}
+.qr-side-link .t b{display:block;font-size:12px;color:var(--text)}
+.qr-side-link .go{font-size:10.5px;color:var(--accent);white-space:nowrap}
 #toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:#242b39;border:1px solid var(--border);color:var(--text);padding:10px 18px;border-radius:10px;font-size:12.5px;opacity:0;pointer-events:none;transition:.25s;z-index:99;box-shadow:var(--shadow)}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
@@ -684,6 +697,11 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
         <div class="ti" data-i18n="side_contact">联系方式 · 点击复制</div>
         <div class="contact-row" data-act="copy-wechat" title="点击复制微信号"><span class="cico wx"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8.7 3C4.9 3 2 5.6 2 8.9c0 1.9 1 3.5 2.6 4.6L4 16l2.7-1.3c.6.2 1.3.3 2 .3h.6c-.1-.6-.2-1.3-.2-2 0-3.2 3.1-5.8 7-5.8h.5C16.1 4.7 12.8 3 8.7 3zM6.2 7.6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/><path d="M22 13.5c0-2.7-2.6-4.9-5.8-4.9s-5.8 2.2-5.8 4.9 2.6 4.9 5.8 4.9c.7 0 1.4-.1 2-.3L21 19l-.6-2.3c1-.9 1.6-2 1.6-3.2zM13.8 12.4a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm3.8 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg></span><span class="rl" data-i18n="side_wechat">微信</span><b>SVIP13419</b><span class="copy" data-i18n="side_copy">复制</span></div>
         <div class="contact-row" data-act="copy-qq" title="点击复制 QQ 号"><span class="cico qq"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2c-3 0-5.2 2.3-5.2 5.4 0 1.4.4 2.6 1.1 3.6-.9.7-1.6 1.8-1.9 3-.2.8-.6 1.3-1.1 1.9-.4.5-.2 1.2.5 1.3 1.2.2 2.3-.3 3.2-1 .9 1.3 2.2 2 3.4 2s2.5-.7 3.4-2c.9.7 2 1.2 3.2 1 .7-.1.9-.8.5-1.3-.5-.6-.9-1.1-1.1-1.9-.3-1.2-1-2.3-1.9-3 .7-1 1.1-2.2 1.1-3.6C17.2 4.3 15 2 12 2z"/></svg></span><span class="rl" data-i18n="side_qq">QQ</span><b>744556604</b><span class="copy" data-i18n="side_copy">复制</span></div>
+        <div class="qr-side-link" data-act="show-qr" data-i18n-title="qr_link_tip" title="点击查看二维码，扫码即可添加">
+          <img src="assets/qr-wechat.png" alt="微信二维码">
+          <div class="t"><b data-i18n="qr_link_title">微信二维码</b><span data-i18n="qr_link_sub">扫码添加 · 点开可放大</span></div>
+          <span class="go" data-i18n="qr_link_go">查看 ›</span>
+        </div>
       </div>
       <div><span class="dot"></span><span data-i18n="side_update">每日 09:00 自动更新</span></div>
       <div style="margin-top:7px" id="side-updated">—</div>
@@ -9248,7 +9266,7 @@ table_baseurl:'Base URL',table_quota:'领取额度',table_doc:'资料链接 / �
 no_records:'还没有注册记录。点击活动卡片的「打开官网」即可自动创建一条。',
 st_pending:'待注册',st_progress:'进行中',st_registered:'已注册',st_failed:'失败',edit:'编辑',doc_link:'资料链接 ↗',custom_activity:'自定义活动',
 log_title:'数据更新日志',log_sub:'每日自动搜索全网免费 Token 活动、免费服务器/域名资源、GitHub 热门项目、Agent Skill、全球 AI 教程与 AI 变现赛道资源，并按各自分类合并更新；过期项自动标注补替，低质 Skill 会被清理。历史记录保留在下方，个人注册资料不受更新影响。',log_source:'来源：',uncategorized:'未分类',free_tool:'免费工具',custom_repo:'自定义',
-modal_edit:'编辑',modal_cancel:'取消',modal_contact:'联系我',contact_wechat:'微信',contact_qq:'QQ',contact_close:'关闭',
+modal_edit:'编辑',modal_cancel:'取消',modal_contact:'联系我',contact_wechat:'微信',contact_qq:'QQ',contact_close:'关闭',qr_link_title:'微信二维码',qr_link_sub:'扫码添加 · 点开可放大',qr_link_go:'查看 ›',qr_link_tip:'点击查看二维码，扫码即可添加',qr_modal_title:'微信二维码',qr_wx_title:'微信扫码',qr_wx_sub:'微信扫一扫，添加好友',qr_pr_title:'个人名片码',qr_pr_sub:'扫码认识我',qr_tip:'手机截图或长按保存二维码，微信扫一扫即可添加。',
 record_title:'注册记录',rec_status:'状态',rec_account:'注册账号',rec_account_ph:'邮箱 / 手机号',rec_apikey:'API Key',rec_apikey_ph:'创建后粘贴',
 rec_baseurl:'Base URL',rec_baseurl_ph:'https://api.xxx.com/v1',rec_quota:'领取额度',rec_quota_ph:'如 1亿 Token/天',
 rec_date:'注册日期',rec_doc:'资料链接 / 本地路径',rec_doc_ph:'截图、文档或凭证的链接/路径',rec_notes:'备注',rec_notes_ph:'遇到的问题、验证码、邀请码等',save_record:'保存记录',
@@ -9359,7 +9377,7 @@ table_baseurl:'Base URL',table_quota:'Quota Claimed',table_doc:'Doc Link / Notes
 no_records:'No registration records yet. Click「Open Site」on an offer card to create one automatically.',
 st_pending:'Pending',st_progress:'In Progress',st_registered:'Registered',st_failed:'Failed',edit:'Edit',doc_link:'Doc Link ↗',custom_activity:'Custom Offer',
 log_title:'Data Update Log',log_sub:'Daily auto-search across the web for free Token offers, free server/domain resources, GitHub trending projects, Agent Skills, global AI tutorials and AI monetization track resources, merged and updated by category; expired items are auto-marked and replaced, low-quality Skills are cleaned up. History is kept below; personal registration profiles are unaffected by updates.',log_source:'Source: ',uncategorized:'Uncategorized',free_tool:'Free tool',custom_repo:'Custom',
-modal_edit:'Edit',modal_cancel:'Cancel',modal_contact:'Contact',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'Close',
+modal_edit:'Edit',modal_cancel:'Cancel',modal_contact:'Contact',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'Close',qr_link_title:'WeChat QR Code',qr_link_sub:'Scan to add · tap to enlarge',qr_link_go:'View ›',qr_link_tip:'Tap to view the QR code and scan to add',qr_modal_title:'WeChat QR Code',qr_wx_title:'Scan with WeChat',qr_wx_sub:'Scan to add as friend',qr_pr_title:'Personal card QR',qr_pr_sub:'Scan to connect with me',qr_tip:'Screenshot or long-press to save the QR code, then scan it in WeChat to add.',
 record_title:'Registration Record',rec_status:'Status',rec_account:'Account',rec_account_ph:'Email / Phone',rec_apikey:'API Key',rec_apikey_ph:'Paste after creating',
 rec_baseurl:'Base URL',rec_baseurl_ph:'https://api.xxx.com/v1',rec_quota:'Quota Claimed',rec_quota_ph:'e.g. 100M tokens/day',
 rec_date:'Registered Date',rec_doc:'Doc Link / Local Path',rec_doc_ph:'Link or path to screenshots, docs or credentials',rec_notes:'Notes',rec_notes_ph:'Issues, codes, invite codes etc.',save_record:'Save Record',
@@ -9470,7 +9488,7 @@ table_baseurl:'Base URL',table_quota:'โควตาที่รับ',table_d
 no_records:'ยังไม่มีบันทึกการลงทะเบียน คลิก「เปิดเว็บไซต์」บนการ์ดกิจกรรมเพื่อสร้างหนึ่งรายการอัตโนมัติ',
 st_pending:'รอลงทะเบียน',st_progress:'กำลังดำเนินการ',st_registered:'ลงทะเบียนแล้ว',st_failed:'ล้มเหลว',edit:'แก้ไข',doc_link:'ลิงก์เอกสาร ↗',custom_activity:'กิจกรรมกำหนดเอง',
 log_title:'ประวัติการอัปเดตข้อมูล',log_sub:'ค้นหาอัตโนมัติทุกวันบนเว็บสำหรับกิจกรรม Token ฟรี ทรัพยากรเซิร์ฟเวอร์/โดเมนฟรี โปรเจกต์ GitHub ยอดนิยม Agent Skill สอน AI ทั่วโลกและทรัพยากรเส้นทางสร้างรายได้ AI รวมและอัปเดตตามหมวดหมู่ รายการหมดอายุทำเครื่องหมายและแทนที่อัตโนมัติ Skill คุณภาพต่ำจะถูกลบ ประวัติเก็บไว้ด้านล่าง โปรไฟล์การลงทะเบียนส่วนบุคคลไม่ได้รับผลกระทบจากการอัปเดต',log_source:'แหล่งที่มา: ',uncategorized:'ไม่มีหมวดหมู่',free_tool:'เครื่องมือฟรี',custom_repo:'กำหนดเอง',
-modal_edit:'แก้ไข',modal_cancel:'ยกเลิก',modal_contact:'ติดต่อ',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'ปิด',
+modal_edit:'แก้ไข',modal_cancel:'ยกเลิก',modal_contact:'ติดต่อ',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'ปิด',qr_link_title:'คิวอาร์โค้ด WeChat',qr_link_sub:'สแกนเพื่อเพิ่ม · แตะเพื่อขยาย',qr_link_go:'ดู ›',qr_link_tip:'แตะเพื่อดูคิวอาร์โค้ด สแกนเพื่อเพิ่มเพื่อน',qr_modal_title:'คิวอาร์โค้ด WeChat',qr_wx_title:'สแกนด้วย WeChat',qr_wx_sub:'สแกนเพื่อเพิ่มเพื่อน',qr_pr_title:'คิวอาร์โค้ดการ์ดส่วนตัว',qr_pr_sub:'สแกนเพื่อติดต่อฉัน',qr_tip:'บันทึกภาพคิวอาร์โค้ดแล้วสแกนด้วย WeChat เพื่อเพิ่มเพื่อน',
 record_title:'บันทึกการลงทะเบียน',rec_status:'สถานะ',rec_account:'บัญชี',rec_account_ph:'อีเมล / โทรศัพท์',rec_apikey:'API Key',rec_apikey_ph:'วางหลังสร้าง',
 rec_baseurl:'Base URL',rec_baseurl_ph:'https://api.xxx.com/v1',rec_quota:'โควตาที่รับ',rec_quota_ph:'เช่น 100 ล้าน token/วัน',
 rec_date:'วันที่ลงทะเบียน',rec_doc:'ลิงก์เอกสาร / พาทในเครื่อง',rec_doc_ph:'ลิงก์หรือพาทของภาพ เอกสารหรือหลักฐาน',rec_notes:'หมายเหตุ',rec_notes_ph:'ปัญหา รหัส OTP โค้ดเชิญ ฯลฯ',save_record:'บันทึกบันทึก',
@@ -9581,7 +9599,7 @@ table_baseurl:'Base URL',table_quota:'取得枠',table_doc:'資料リンク / �
 no_records:'まだ登録記録がありません。案件カードの「公式サイトを開く」をクリックすると自動作成されます。',
 st_pending:'登録待ち',st_progress:'進行中',st_registered:'登録済み',st_failed:'失敗',edit:'編集',doc_link:'資料リンク ↗',custom_activity:'カスタム案件',
 log_title:'データ更新履歴',log_sub:'毎日自動検索し、無料 Token 案件、無料サーバー/ドメインリソース、GitHub 人気プロジェクト、Agent Skill、世界の AI チュートリアル、AI 収益化コースリソースを各分類で統合更新。期限切れ項目は自動表示と代替、低質 Skill は整理。履歴は下に保持、個人の登録プロフィールは更新の影響を受けません。',log_source:'出典： ',uncategorized:'未分類',free_tool:'無料ツール',custom_repo:'カスタム',
-modal_edit:'編集',modal_cancel:'キャンセル',modal_contact:'連絡',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'閉じる',
+modal_edit:'編集',modal_cancel:'キャンセル',modal_contact:'連絡',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'閉じる',qr_link_title:'WeChat QRコード',qr_link_sub:'スキャンして追加 · タップで拡大',qr_link_go:'表示 ›',qr_link_tip:'タップしてQRコードを表示、スキャンして追加',qr_modal_title:'WeChat QRコード',qr_wx_title:'WeChatでスキャン',qr_wx_sub:'スキャンして友達追加',qr_pr_title:'個人カードQR',qr_pr_sub:'スキャンしてつながる',qr_tip:'QRコードを保存してWeChatでスキャンすると友達追加できます。',
 record_title:'登録記録',rec_status:'状態',rec_account:'アカウント',rec_account_ph:'メール / 電話番号',rec_apikey:'API Key',rec_apikey_ph:'作成後に貼り付け',
 rec_baseurl:'Base URL',rec_baseurl_ph:'https://api.xxx.com/v1',rec_quota:'取得枠',rec_quota_ph:'例 1億 Token/日',
 rec_date:'登録日',rec_doc:'資料リンク / ローカル経路',rec_doc_ph:'スクリーンショット、文書、証憑のリンク/経路',rec_notes:'備考',rec_notes_ph:'問題、コード、招待コードなど',save_record:'記録保存',
@@ -9692,7 +9710,7 @@ table_baseurl:'Base URL',table_quota:'수령 쿼터',table_doc:'자료 링크 / 
 no_records:'등록 기록이 아직 없습니다. 항목 카드의「사이트 열기」를 클릭하면 자동 생성됩니다.',
 st_pending:'등록 대기',st_progress:'진행 중',st_registered:'등록됨',st_failed:'실패',edit:'편집',doc_link:'자료 링크 ↗',custom_activity:'사용자 항목',
 log_title:'데이터 업데이트 내역',log_sub:'매일 자동 검색해 무료 Token 항목, 무료 서버/도메인 리소스, GitHub 인기 프로젝트, Agent Skill, 세계 AI 튜토리얼, AI 수익화赛道 리소스를 분류별로 통합 업데이트합니다. 만료 항목은 자동 표기와 대체, 저질 Skill 은 정리됩니다. 내역은 아래에 보관되며 개인 등록 프로필은 업데이트에 영향을 받지 않습니다.',log_source:'출처: ',uncategorized:'미분류',free_tool:'무료 도구',custom_repo:'사용자 지정',
-modal_edit:'편집',modal_cancel:'취소',modal_contact:'연락',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'닫기',
+modal_edit:'편집',modal_cancel:'취소',modal_contact:'연락',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'닫기',qr_link_title:'WeChat QR코드',qr_link_sub:'스캔하여 추가 · 탭하여 확대',qr_link_go:'보기 ›',qr_link_tip:'탭하여 QR코드를 보고 스캔하여 추가',qr_modal_title:'WeChat QR코드',qr_wx_title:'WeChat으로 스캔',qr_wx_sub:'스캔하여 친구 추가',qr_pr_title:'개인 카드 QR',qr_pr_sub:'스캔하여 연결',qr_tip:'QR코드를 저장한 후 WeChat으로 스캔하면 친구 추가할 수 있습니다.',
 record_title:'등록 기록',rec_status:'상태',rec_account:'계정',rec_account_ph:'이메일 / 전화번호',rec_apikey:'API Key',rec_apikey_ph:'생성 후 붙여넣기',
 rec_baseurl:'Base URL',rec_baseurl_ph:'https://api.xxx.com/v1',rec_quota:'수령 쿼터',rec_quota_ph:'예 1억 Token/일',
 rec_date:'등록일',rec_doc:'자료 링크 / 로컬 경로',rec_doc_ph:'스크린샷, 문서, 증빙의 링크/경로',rec_notes:'비고',rec_notes_ph:'문제, 인증 코드, 초대 코드 등',save_record:'기록 저장',
@@ -9803,7 +9821,7 @@ table_baseurl:'Base URL',table_quota:'Erhaltene Quota',table_doc:'Doc-Link / Not
 no_records:'Noch keine Registrierungseinträge. Klicken Sie auf「Webseite öffnen」auf einer Angebots-Karte, um einen zu erzeugen.',
 st_pending:'Ausstehend',st_progress:'Im Gange',st_registered:'Registriert',st_failed:'Fehlgeschlagen',edit:'Bearbeiten',doc_link:'Doc-Link ↗',custom_activity:'Eigenes Angebot',
 log_title:'Daten-Update-Log',log_sub:'Täglich automatische Websuche nach Gratis-Token-Angeboten, gratis Server/Domain-Ressourcen, GitHub-Trend-Projekten, Agent Skills, globalen AI-Tutorials und AI-Monetarisierungs-Track-Ressourcen, gebündelt und kategorisiert aktualisiert; abgelaufene Einträge werden auto-markiert und ersetzt, niedrigqualitative Skills gesäubert. Verlauf bleibt unten; das persönliche Registrierungsprofil bleibt von Updates unberührt.',log_source:'Quelle: ',uncategorized:'Ohne Kategorie',free_tool:'Kostenloses Tool',custom_repo:'Eigenbau',
-modal_edit:'Bearbeiten',modal_cancel:'Abbrechen',modal_contact:'Kontakt',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'Schließen',
+modal_edit:'Bearbeiten',modal_cancel:'Abbrechen',modal_contact:'Kontakt',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'Schließen',qr_link_title:'WeChat-QR-Code',qr_link_sub:'Scannen zum Hinzufügen · Tippen zum Vergrößern',qr_link_go:'Ansehen ›',qr_link_tip:'Tippen, um den QR-Code anzuzeigen und zu scannen',qr_modal_title:'WeChat-QR-Code',qr_wx_title:'Mit WeChat scannen',qr_wx_sub:'Scannen, um Freund hinzuzufügen',qr_pr_title:'Persönliche Karten-QR',qr_pr_sub:'Scannen, um mich zu kontaktieren',qr_tip:'QR-Code speichern und mit WeChat scannen, um hinzuzufügen.',
 record_title:'Registrierungseintrag',rec_status:'Status',rec_account:'Account',rec_account_ph:'E-Mail / Telefon',rec_apikey:'API-Key',rec_apikey_ph:'Nach Erstellung einfügen',
 rec_baseurl:'Base URL',rec_baseurl_ph:'https://api.xxx.com/v1',rec_quota:'Erhaltene Quota',rec_quota_ph:'z.B. 100 Mio. Token/Tag',
 rec_date:'Registrierungsdatum',rec_doc:'Doc-Link / Lokaler Pfad',rec_doc_ph:'Link oder Pfad zu Screenshots, Dokumenten oder Belegen',rec_notes:'Notizen',rec_notes_ph:'Probleme, Codes, Einladungscodes etc.',save_record:'Eintrag speichern',
@@ -9914,7 +9932,7 @@ table_baseurl:'Base URL',table_quota:'Quota ritirata',table_doc:'Link documenti 
 no_records:'Nessun registro di registrazione ancora. Clicca「Apri sito」su una scheda offerta per crearne uno automaticamente.',
 st_pending:'In attesa',st_progress:'In corso',st_registered:'Registrato',st_failed:'Falliito',edit:'Modifica',doc_link:'Link documenti ↗',custom_activity:'Offerta personalizzata',
 log_title:'Cronologia aggiornamenti dei dati',log_sub:'Ricerca automatica quotidiana su tutto il web per offerte Token gratuiti, risorse server/domini gratuiti, progetti GitHub di tendenza, Agent Skill, tutorial AI globali e risorse percorsi di monetizzazione AI, aggregate e aggiornate per categoria; gli elementi scaduti sono segnati e sostituiti automaticamente, le Skill di bassa qualità sono pulite. La cronologia è conservata in basso; il profilo di registrazione personale non è influenzato dagli aggiornamenti.',log_source:'Fonte: ',uncategorized:'Senza categoria',free_tool:'Strumento gratuito',custom_repo:'Personalizzato',
-modal_edit:'Modifica',modal_cancel:'Annulla',modal_contact:'Contatti',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'Chiudi',
+modal_edit:'Modifica',modal_cancel:'Annulla',modal_contact:'Contatti',contact_wechat:'WeChat',contact_qq:'QQ',contact_close:'Chiudi',qr_link_title:'Codice QR WeChat',qr_link_sub:'Scansiona per aggiungere · tocca per ingrandire',qr_link_go:'Vedi ›',qr_link_tip:'Tocca per vedere il codice QR e scansionarlo',qr_modal_title:'Codice QR WeChat',qr_wx_title:'Scansiona con WeChat',qr_wx_sub:'Scansiona per aggiungere amici',qr_pr_title:'QR carta personale',qr_pr_sub:'Scansiona per conoscermi',qr_tip:'Salva il codice QR e scansionalo con WeChat per aggiungere.',
 record_title:'Registro di registrazione',rec_status:'Stato',rec_account:'Account',rec_account_ph:'Email / Telefono',rec_apikey:'API Key',rec_apikey_ph:'Incolla dopo la creazione',
 rec_baseurl:'Base URL',rec_baseurl_ph:'https://api.xxx.com/v1',rec_quota:'Quota ritirata',rec_quota_ph:'es. 100M token/giorno',
 rec_date:'Data registrazione',rec_doc:'Link documenti / Percorso locale',rec_doc_ph:'Link o percorso di screenshot, documenti o prove',rec_notes:'Note',rec_notes_ph:'Problemi, codici, coupon d\'invito ecc.',save_record:'Salva registro',
@@ -11256,10 +11274,10 @@ document.addEventListener('click',function(e){
     toast(t('toast_deleted'));render();
   }
   else if(act==='tu-open'||act==='tu-ai'){
-    var t=allTutorials().filter(function(x){return String(x.id)===id;})[0];
-    if(!t)return;
-    if(act==='tu-open'){window.open(t.url,'_blank','noopener');return;}
-    var p='请打开教程「'+t.title+'」（'+t.url+'），阅读或观看后，用中文为我做一份学习指南：这个教程讲什么、适合什么基础的人、分几步学完、每一步做什么练习、有哪些坑和前置条件。我的基础是入门到进阶，希望边学边做。教程领域：'+t.category+'，机构：'+t.org+'。';
+    var tu=allTutorials().filter(function(x){return String(x.id)===id;})[0];
+    if(!tu)return;
+    if(act==='tu-open'){window.open(tu.url,'_blank','noopener');return;}
+    var p='请打开教程「'+tu.title+'」（'+tu.url+'），阅读或观看后，用中文为我做一份学习指南：这个教程讲什么、适合什么基础的人、分几步学完、每一步做什么练习、有哪些坑和前置条件。我的基础是入门到进阶，希望边学边做。教程领域：'+tu.category+'，机构：'+tu.org+'。';
     copyText(p);toast(t('toast_tu_ai'));
   }
   else if(act==='tu-del-custom'){
@@ -11326,12 +11344,22 @@ document.addEventListener('click',function(e){
   else if(act==='copy-bookmarklet')copyText(document.getElementById('bookmarklet-code').textContent);
   else if(act==='copy-wechat')copyText('SVIP13419');
   else if(act==='copy-qq')copyText('744556604');
+  else if(act==='show-qr'){
+    var qbody='<div class="qr-modal">'+
+      '<div class="qr-cards">'+
+        '<div class="qr-card"><img src="assets/qr-wechat.png" alt="WeChat QR"><b>'+esc(t('qr_wx_title'))+'</b><span>'+esc(t('qr_wx_sub'))+'</span></div>'+
+        '<div class="qr-card"><img src="assets/qr-personal.png" alt="QR"><b>'+esc(t('qr_pr_title'))+'</b><span>'+esc(t('qr_pr_sub'))+'</span></div>'+
+      '</div>'+
+      '<p class="c-tip">'+esc(t('qr_tip'))+'</p></div>';
+    openModal(t('qr_modal_title'),qbody,'<button class="btn" data-act="close-modal">'+esc(t('contact_close'))+'</button>');
+  }
   else if(act==='contact'){
     var wxIco='<span class="cico wx"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8.7 3C4.9 3 2 5.6 2 8.9c0 1.9 1 3.5 2.6 4.6L4 16l2.7-1.3c.6.2 1.3.3 2 .3h.6c-.1-.6-.2-1.3-.2-2 0-3.2 3.1-5.8 7-5.8h.5C16.1 4.7 12.8 3 8.7 3zM6.2 7.6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/><path d="M22 13.5c0-2.7-2.6-4.9-5.8-4.9s-5.8 2.2-5.8 4.9 2.6 4.9 5.8 4.9c.7 0 1.4-.1 2-.3L21 19l-.6-2.3c1-.9 1.6-2 1.6-3.2zM13.8 12.4a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm3.8 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg></span>';
     var qqIco='<span class="cico qq"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2c-3 0-5.2 2.3-5.2 5.4 0 1.4.4 2.6 1.1 3.6-.9.7-1.6 1.8-1.9 3-.2.8-.6 1.3-1.1 1.9-.4.5-.2 1.2.5 1.3 1.2.2 2.3-.3 3.2-1 .9 1.3 2.2 2 3.4 2s2.5-.7 3.4-2c.9.7 2 1.2 3.2 1 .7-.1.9-.8.5-1.3-.5-.6-.9-1.1-1.1-1.9-.3-1.2-1-2.3-1.9-3 .7-1 1.1-2.2 1.1-3.6C17.2 4.3 15 2 12 2z"/></svg></span>';
     var cbody='<div class="contact-modal">'+
       '<div class="c-item">'+wxIco+'<div><b>'+esc(t('contact_wechat'))+'</b><span>SVIP13419</span></div><button class="btn sm primary" data-act="copy-wechat">'+esc(t('side_copy'))+'</button></div>'+
       '<div class="c-item">'+qqIco+'<div><b>'+esc(t('contact_qq'))+'</b><span>744556604</span></div><button class="btn sm primary" data-act="copy-qq">'+esc(t('side_copy'))+'</button></div>'+
+      '<div class="c-item" data-act="show-qr" style="cursor:pointer"><div><b>'+esc(t('qr_link_title'))+'</b><span style="font-size:12px;color:var(--dim)">'+esc(t('qr_link_sub'))+'</span></div><button class="btn sm primary">'+esc(t('qr_link_go'))+'</button></div>'+
       '<p class="c-tip">'+esc(t('toast_contact'))+'</p></div>';
     openModal(t('modal_contact'),cbody,'<button class="btn" data-act="close-modal">'+esc(t('contact_close'))+'</button>');
   }
