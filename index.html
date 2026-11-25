@@ -14515,6 +14515,11 @@ function fallbackCopy(s){var ta=document.createElement('textarea');ta.value=s;ta
 /* ---------- 小豆码池 ---------- */
 var XD_DATA_URL='https://good1uck.github.io/xiaodou-codes/codes.json';
 var XD_SNAPSHOT_URL='xiaodou-codes.json';
+function xdSnapshotUrl(){
+  /* 线上部署要求资源请求携带 sharecode，否则 403；本地 file:// 下无此参数则直接读相对路径 */
+  var m=location.search.match(/[?&]sharecode=([^&]+)/);
+  return XD_SNAPSHOT_URL+(m?('?sharecode='+encodeURIComponent(m[1])+'&t='):'?t=')+Date.now();
+}
 var XD_REFRESH_SEC=20;
 var XD_SOURCE='https://xiaodou-code-pool-e54blnpc9ma.qoder.website/';
 var xdState={items:[],lastUpdated:'',countdown:XD_REFRESH_SEC,loading:false,tried:load('tw_xd_tried',[]),timer:null,inited:false,snapshotLoaded:false,snapshotTried:false};
@@ -14549,7 +14554,7 @@ function xdApplyData(d,manual){
 }
 function xdLoadSnapshot(cb){
   /* 本地快照：首次快速渲染，file:// 下 fetch 受限时静默跳过 */
-  fetch(XD_SNAPSHOT_URL+'?t='+Date.now(),{cache:'no-store'})
+  fetch(xdSnapshotUrl(),{cache:'no-store'})
     .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
     .then(function(d){
       if(!xdState.snapshotLoaded&&xdApplyData(d,false))xdState.snapshotLoaded=true;
