@@ -228,6 +228,30 @@ select.sel:focus{border-color:var(--accent)}
 .panel{background:var(--panel);border:1px solid var(--border-soft);border-radius:var(--radius);padding:22px;margin-bottom:16px}
 .panel h2{font-size:16px;margin-bottom:5px}
 .panel .sub{font-size:12px;color:var(--muted);margin-bottom:18px}
+/* ---------- 巡检中心 ---------- */
+.patrol-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.patrol-badge{font-size:11px;padding:4px 11px;border-radius:20px;white-space:nowrap;background:var(--panel2);color:var(--muted);border:1px solid var(--border)}
+.patrol-badge.ok{color:var(--mint);background:var(--mint-soft);border-color:rgba(212,175,55,.25)}
+.patrol-badge.warn{color:var(--warn);background:var(--warn-soft);border-color:rgba(251,191,36,.3)}
+.patrol-badge.bad{color:var(--danger);background:var(--danger-soft);border-color:rgba(248,113,113,.32)}
+.patrol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:11px;margin-bottom:18px}
+.patrol-kv{background:var(--panel2);border:1px solid var(--border-soft);border-radius:10px;padding:11px 13px;min-width:0}
+.patrol-kv span{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}
+.patrol-kv b{display:block;font-size:12.5px;color:var(--txt,#e8ecf5);word-break:break-all;font-weight:600}
+.patrol-progress{font-size:12px;color:var(--muted);align-self:center}
+.patrol-link-list{margin-top:14px;max-height:340px;overflow:auto}
+.patrol-empty{font-size:12px;color:var(--dim);padding:18px;text-align:center;border:1px dashed var(--border);border-radius:10px}
+.patrol-link-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-bottom:1px solid var(--border-soft);font-size:12px}
+.patrol-link-row:last-child{border-bottom:none}
+.patrol-link-row .pl-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--txt,#e8ecf5)}
+.patrol-link-row .pl-host{color:var(--dim);font-size:11px;max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.patrol-link-row .pl-state{font-size:11px;padding:2px 9px;border-radius:20px;white-space:nowrap}
+.pl-state.ok{color:var(--mint);background:var(--mint-soft)}
+.pl-state.bad{color:var(--danger);background:var(--danger-soft)}
+.pl-state.wait{color:var(--muted);background:var(--panel2)}
+.patrol-log{margin:0 0 18px}
+.patrol-log-row{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--border-soft);display:flex;gap:12px}
+.patrol-log-row time{color:var(--dim);font-family:Consolas,monospace;flex:none}
 .form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .field label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:6px}
 .field input,.field textarea,.field select{
@@ -692,6 +716,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
       <button data-view="projects"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1.2"/><rect x="14" y="4" width="7" height="7" rx="1.2"/><rect x="3" y="15" width="7" height="5" rx="1.2"/><rect x="14" y="15" width="7" height="5" rx="1.2"/></svg></span><span data-i18n="nav_projects">项目展示</span><span class="cnt" id="nav-projects">0</span></button>
       <button data-view="profile"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg></span><span data-i18n="nav_center">个人中心</span></button>
       <button data-view="records"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span data-i18n="nav_records">注册记录</span><span class="cnt" id="nav-records">0</span></button>
+      <button data-view="patrol"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><span data-i18n="nav_patrol">巡检中心</span><span class="cnt" id="nav-patrol"></span></button>
       <button data-view="log"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span><span data-i18n="nav_log">更新日志</span></button>
     </nav>
     <div class="side-foot">
@@ -910,6 +935,66 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
         <thead><tr><th data-i18n="table_platform">平台</th><th data-i18n="table_status">状态</th><th data-i18n="table_account">注册账号</th><th data-i18n="table_apikey">API Key</th><th data-i18n="table_baseurl">Base URL</th><th data-i18n="table_quota">领取额度</th><th data-i18n="table_doc">资料链接 / 备注</th><th data-i18n="table_action">操作</th></tr></thead>
         <tbody id="records-body"></tbody>
       </table></div>
+    </div>
+
+    <div id="view-patrol" style="display:none">
+      <div class="notice"><span class="notice-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5" stroke-linecap="round"/></svg></span><div data-i18n-html="patrol_notice"><b>巡检中心说明：</b>本工作台是纯本地静态页面，git 推送与全网搜索由 WorkBuddy 定时任务在后台执行，浏览器无法直接触发。下方「状态」来自数据文件与本机记录；「生成指令」可一键复制，粘贴给 WorkBuddy 即可立即执行一次巡检。链接可达性检测在浏览器内真实运行，结果仅存本机。</div></div>
+
+      <div class="stats" id="patrol-stats"></div>
+
+      <!-- 模块一：定时自动同步巡检 -->
+      <div class="panel">
+        <div class="patrol-head">
+          <div><h2 data-i18n="patrol_sync_title">① 定时自动同步巡检</h2><div class="sub" data-i18n="patrol_sync_sub">检查本地改动并自动提交、推送到 GitHub；由后台每小时第 0/15/30/45 分执行。</div></div>
+          <span class="patrol-badge" id="patrol-sync-badge">—</span>
+        </div>
+        <div class="patrol-grid">
+          <div class="patrol-kv"><span data-i18n="patrol_sync_repo">仓库</span><b>Junyi13419/shenji-workbench</b></div>
+          <div class="patrol-kv"><span data-i18n="patrol_sync_branch">分支</span><b>main</b></div>
+          <div class="patrol-kv"><span data-i18n="patrol_sync_freq">频率</span><b data-i18n="patrol_sync_freq_val">每小时 :00/:15/:30/:45</b></div>
+          <div class="patrol-kv"><span data-i18n="patrol_sync_last">最近同步</span><b id="patrol-sync-last">—</b></div>
+        </div>
+        <div class="toolbar" style="margin-bottom:0">
+          <button class="btn primary" data-act="patrol-copy" data-kind="sync" data-i18n="patrol_btn_sync">生成同步巡检指令</button>
+          <button class="btn" data-act="patrol-sync-log" data-i18n="patrol_btn_history">本机执行记录</button>
+        </div>
+      </div>
+
+      <!-- 模块二：链接可用性巡检 -->
+      <div class="panel">
+        <div class="patrol-head">
+          <div><h2 data-i18n="patrol_link_title">② 链接可用性巡检</h2><div class="sub" data-i18n="patrol_link_sub">在浏览器内真实探测各平台官网是否可达（受目标站点跨域策略影响，仅作参考），结果仅存本机。</div></div>
+          <span class="patrol-badge" id="patrol-link-badge">—</span>
+        </div>
+        <div class="toolbar">
+          <button class="btn primary" data-act="patrol-link-run" data-i18n="patrol_btn_link_run">开始检测链接</button>
+          <button class="btn" data-act="patrol-link-stop" data-i18n="patrol_btn_stop">停止</button>
+          <select class="sel" id="patrol-link-scope">
+            <option value="offers" data-i18n="patrol_scope_offers">免费额度</option>
+            <option value="resources" data-i18n="patrol_scope_resources">服务器 / 域名</option>
+            <option value="all" data-i18n="patrol_scope_all">全部</option>
+          </select>
+          <span id="patrol-link-progress" class="patrol-progress"></span>
+        </div>
+        <div class="patrol-link-list" id="patrol-link-list"><div class="patrol-empty" data-i18n="patrol_link_empty">尚未检测。点击「开始检测链接」运行巡检，结果会保存在本机。</div></div>
+      </div>
+
+      <!-- 模块三：每日数据更新巡检 -->
+      <div class="panel">
+        <div class="patrol-head">
+          <div><h2 data-i18n="patrol_update_title">③ 每日数据更新巡检</h2><div class="sub" data-i18n="patrol_update_sub">全网搜索新增的免费 Token、资源、榜单与资讯，合并去重并清理过期项；由后台每日 09:00 执行。</div></div>
+          <span class="patrol-badge" id="patrol-update-badge">—</span>
+        </div>
+        <div class="patrol-grid">
+          <div class="patrol-kv"><span data-i18n="patrol_update_next">计划</span><b id="patrol-update-next">—</b></div>
+          <div class="patrol-kv"><span data-i18n="patrol_update_last">最近更新</span><b id="patrol-update-last">—</b></div>
+        </div>
+        <div class="patrol-log" id="patrol-update-log"></div>
+        <div class="toolbar" style="margin-bottom:0">
+          <button class="btn primary" data-act="patrol-copy" data-kind="update" data-i18n="patrol_btn_update">生成更新巡检指令</button>
+          <button class="btn" data-act="patrol-goto-log" data-i18n="patrol_btn_goto_log">查看完整日志</button>
+        </div>
+      </div>
     </div>
 
     <div id="view-log" style="display:none">
@@ -12624,7 +12709,7 @@ doc_title:'神机 · SHENJI — 以神之眼，观万物之机',
 brand_name:'神机 · SHENJI',brand_en:'SHENJI · GOD AI',brand_slo:'以神之眼，观万物之机',
 slogan:'以神之眼，观万物之机',
 nav_offers:'免费额度',nav_resources:'服务器 / 域名',nav_github:'GitHub 排行榜',nav_skills:'Skill 大集合',
-nav_tutorials:'AI 教程大全',nav_monetization:'AI 变现全景图',nav_profile:'注册资料',nav_records:'注册记录',nav_log:'更新日志',
+nav_tutorials:'AI 教程大全',nav_monetization:'AI 变现全景图',nav_profile:'注册资料',nav_records:'注册记录',nav_patrol:'巡检中心',nav_log:'更新日志',
 side_update:'每日 09:00 自动更新',side_saved:'数据本地保存 · 不上传云端',side_lastupdate:'最近更新',
 side_contact:'联系方式 · 点击复制',side_wechat:'微信',side_qq:'QQ',side_copy:'复制',
 btn_login:'☁ 登录同步',admin_on:'管理模式已开启',admin_off:'管理模式已关闭',emoji_title:'表情',emoji_hint:'点击表情插入到昵称末尾，可继续输入文字',pf_nickname_hint:'支持添加表情，最多 32 个字符',pf_nickname_max:'昵称最多 32 个字符（含表情）',emoji_close:'关闭',emoji_cat_common:'常用',emoji_cat_symbols:'符号',btn_logout:'退出登录',btn_contact:'✆ 联系我',btn_export:'⬇ 导出备份',
@@ -12714,6 +12799,21 @@ c_quota_res:'免费配置 / 额度',c_quota_act:'免费额度',c_quota_ph:'额�
 c_url:'注册 / 活动链接 *',c_url_ph:'https://',c_deadline:'截止日期',c_method:'领取方式',c_method_ph:'如 邮箱注册即可',c_notes:'备注',add_resource:'添加资源',add_activity:'添加活动',
 login_title:'登录 · 云端同步',login_app:'神机资源工作台',login_sub:'登录后，个人资料、注册记录、自定义内容将自动同步云端，多端互通不丢失。',reg_title:"注册 / 登录 · 云端同步",tab_email:"邮箱注册",tab_wechat:"微信登录",tab_phone:"手机号",login_email_ph:"邮箱地址（支持 QQ 邮箱）",email_login:"注册 / 登录",login_email_tip:"无需密码、无需手机。首次用邮箱验证码即自动注册，之后用同一邮箱收码即可登录。系统对发送频率与失败次数有限制，防止批量注册。",login_wechat_tip:"在微信中打开可一键授权；电脑上打开会显示二维码，用微信扫码即可。授权后自动完成注册与登录。",login_phone_tip:"手机号登录为可选项，推荐优先使用邮箱或微信，更方便且无需手机验证。",login_err_email:"请输入正确的邮箱地址",login_locked:"尝试次数过多，请 {n} 分钟后再试",login_throttle:"发送过于频繁，请 {n} 秒后重试",login_no_cloud:"云服务暂未就绪，请稍后再试",nav_center:"个人中心",center_form_title:"个人资料填写",center_form_sub:"填写昵称、头像与个人简介，完善你的个人中心。登录后会随账号同步云端；同时供自动填充书签和 AI 协助注册复用。密码不会被保存。",pf_nickname:"昵称",pf_nickname_ph:"你的昵称",pf_group_identity:"基本身份",pf_group_contact:"联系方式",pf_group_accounts:"平台账号",pf_group_region:"所在地区",pf_avatar:"头像图片地址",pf_avatar_ph:"https://example.com/avatar.png（可选）",pf_bio:"个人简介",pf_bio_ph:"简单介绍一下自己（可选）",acct_guest_title:"尚未登录",acct_guest_sub:"登录后在这里查看账号信息、登录方式、云端同步状态，并完善个人资料。也可以先不登录，直接填写下方的个人资料。",acct_btn_login:"登录 / 注册",acct_unnamed:"未设置昵称",acct_signed_in:"已登录",acct_provider:"登录方式",acct_uid:"账号 ID",acct_cloud_on:"云端同步已开启",acct_cloud_off:"云端同步未开启",acct_edit:"编辑个人资料",avatar_edit:"点击上传",avatar_err_type:"请选择图片文件",avatar_err_size:"图片不能超过 {n}MB",avatar_ok:"头像已更新",id_allocating:"分配中…",fancy_pool_title:"靓号池",fancy_pool_desc:"以下号码不自动分配，保留给后期靓号系统：短号（1-5 位）与规律号（豹子、连号、ABAB 等）。",fancy_pool_intro:"靓号池收录不自动分配的号码。你的账号会按顺序获得 100000 起的普通号，规律号会被自动跳过。",fancy_pool_note:"后期可上线靓号系统，用这些号码做自选、兑换或会员权益。当前号码仅作展示，暂不支持选购。",region_prov_ph:"选择省份",region_city_ph:"选择城市",region_dist_ph:"选择区县",
 login_phone:'手机号',send_code:'获取验证码',login_code:'短信验证码',phone_login:'登录',login_err_phone:'请输入正确的 11 位手机号',login_err_code:'请输入验证码',login_err_otp:'请先获取验证码',toast_auth_cb:'授权回调缺少有效的登录方式',
+title_patrol:'巡检中心',sub_patrol:'同步 · 链接 · 数据，三大巡检一目了然',
+patrol_notice:'<b>巡检中心说明：</b>本工作台是纯本地静态页面，git 推送与全网搜索由 WorkBuddy 定时任务在后台执行，浏览器无法直接触发。下方「状态」来自数据文件与本机记录；「生成指令」可一键复制，粘贴给 WorkBuddy 即可立即执行一次巡检。链接可达性检测在浏览器内真实运行，结果仅存本机。',
+patrol_stat_total:'收录条目',patrol_stat_offers:'免费额度',patrol_stat_resources:'服务器 / 域名',patrol_stat_bad:'链接异常',
+patrol_sync_title:'① 定时自动同步巡检',patrol_sync_sub:'检查本地改动并自动提交、推送到 GitHub；由后台每小时第 0/15/30/45 分执行。',
+patrol_sync_repo:'仓库',patrol_sync_branch:'分支',patrol_sync_freq:'频率',patrol_sync_freq_val:'每小时 :00/:15/:30/:45',patrol_sync_last:'最近同步',
+patrol_btn_sync:'生成同步巡检指令',patrol_btn_history:'本机执行记录',
+patrol_link_title:'② 链接可用性巡检',patrol_link_sub:'在浏览器内真实探测各平台官网是否可达（受目标站点跨域策略影响，仅作参考），结果仅存本机。',
+patrol_btn_link_run:'开始检测链接',patrol_btn_stop:'停止',patrol_scope_offers:'免费额度',patrol_scope_resources:'服务器 / 域名',patrol_scope_all:'全部',
+patrol_link_empty:'尚未检测。点击「开始检测链接」运行巡检，结果会保存在本机。',patrol_link_checked:'检测时间',
+patrol_state_ok:'可达',patrol_state_bad:'不可达',patrol_state_wait:'检测中',
+patrol_badge_auto:'后台自动',patrol_badge_ok:'全部正常',patrol_badge_issue:'{n} 项异常',patrol_badge_none:'未检测',
+patrol_no_targets:'该分类下没有可检测的链接',patrol_stopped:'已停止',patrol_link_done:'检测完成：共 {n} 项，异常 {b} 项',patrol_no_records:'暂无本机执行记录',
+patrol_update_title:'③ 每日数据更新巡检',patrol_update_sub:'全网搜索新增的免费 Token、资源、榜单与资讯，合并去重并清理过期项；由后台每日 09:00 执行。',
+patrol_update_next:'计划',patrol_update_last:'最近更新',patrol_update_daily:'每日 09:00',patrol_update_none:'暂无更新日志',
+patrol_btn_update:'生成更新巡检指令',patrol_btn_goto_log:'查看完整日志',
 login_or:'或使用其他方式',wechat_login:'微信一键登录',login_tip:'未登录也能正常使用工作台，数据保存在本机浏览器；登录后数据将同步至云端，换设备登录即可继续。',login_user:'已登录用户',
 deadline_expired:'✕ 已截止',deadline_today:'今天截止',deadline_tomorrow:'明天截止',deadline_left:'（剩 ',deadline_days:' 天）',deadline_long:'长期有效',
 toast_record_created:'已创建进行中记录，注册完记得回来填结果',toast_gh_ai:'项目解读指令已复制，粘贴到 WorkBuddy 对话即可',
@@ -12735,7 +12835,7 @@ doc_title:'SHENJI · GOD AI — The Eye of God, Seeing All Mechanisms',
 brand_name:'SHENJI · GOD AI',brand_en:'SHENJI · GOD AI',brand_slo:'The Eye of God, Seeing All Mechanisms',
 slogan:'The Eye of God, Seeing All Mechanisms',
 nav_offers:'Free Quota',nav_resources:'Servers / Domains',nav_github:'GitHub Trending',nav_skills:'Skill Collection',
-nav_tutorials:'AI Tutorials',nav_monetization:'AI Monetization',nav_profile:'Profile',nav_records:'Records',nav_log:'Update Log',
+nav_tutorials:'AI Tutorials',nav_monetization:'AI Monetization',nav_profile:'Profile',nav_records:'Records',nav_patrol:'Patrol Center',nav_log:'Update Log',
 side_update:'Auto-updated daily at 09:00',side_saved:'Data saved locally · Not uploaded',side_lastupdate:'Last updated',
 side_contact:'Contact · Click to copy',side_wechat:'WeChat',side_qq:'QQ',side_copy:'Copy',
 btn_login:'☁ Login Sync',admin_on:'Admin mode on',admin_off:'Admin mode off',emoji_title:'Emoji',emoji_hint:'Click an emoji to append it to the nickname; you can keep typing text after',pf_nickname_hint:'Emoji supported, up to 32 characters',pf_nickname_max:'Nickname allows up to 32 characters (including emoji)',emoji_close:'Close',emoji_cat_common:'Common',emoji_cat_symbols:'Symbols',btn_logout:'Sign Out',btn_contact:'✆ Contact',btn_export:'⬇ Export Backup',
@@ -12825,6 +12925,21 @@ c_quota_res:'Free Config / Quota',c_quota_act:'Free Quota',c_quota_ph:'Quota des
 c_url:'Registration / Offer URL *',c_url_ph:'https://',c_deadline:'Deadline',c_method:'Claim Method',c_method_ph:'e.g. email registration',c_notes:'Notes',add_resource:'Add Resource',add_activity:'Add Offer',
 login_title:'Login · Cloud Sync',login_app:'SHENJI Resource Workbench',login_sub:'After login, your profile, records and custom content sync to the cloud automatically — consistent across devices.',reg_title:"Sign up / Sign in · Cloud Sync",tab_email:"Email",tab_wechat:"WeChat",tab_phone:"Phone",login_email_ph:"Email address (QQ Mail supported)",email_login:"Sign up / Sign in",login_email_tip:"No password, no phone. First-time email verification creates your account automatically; use the same email to sign in later. Rate limits and failure locks prevent bulk registration.",login_wechat_tip:"Open in WeChat for one-tap authorization; on desktop a QR code appears for scanning. Authorization completes sign-up and sign-in automatically.",login_phone_tip:"Phone login is optional. Email or WeChat is recommended - faster and no phone verification needed.",login_err_email:"Please enter a valid email address",login_locked:"Too many attempts, try again in {n} minutes",login_throttle:"Too frequent, retry in {n} seconds",login_no_cloud:"Cloud service not ready, please try later",nav_center:"My Center",center_form_title:"Profile Details",center_form_sub:"Fill in your nickname, avatar and bio to complete your center. Signed-in data syncs to the cloud and is reused by autofill bookmarks and AI-assisted registration. Passwords are never stored.",pf_nickname:"Nickname",pf_nickname_ph:"Your nickname",pf_group_identity:"Identity",pf_group_contact:"Contact",pf_group_accounts:"Platform accounts",pf_group_region:"Region",pf_avatar:"Avatar Image URL",pf_avatar_ph:"https://example.com/avatar.png (optional)",pf_bio:"Bio",pf_bio_ph:"A short introduction (optional)",acct_guest_title:"Not signed in",acct_guest_sub:"Sign in to see your account info, sign-in method and cloud sync status here, and complete your profile. You can also fill in the profile below without signing in.",acct_btn_login:"Sign up / Sign in",acct_unnamed:"No nickname set",acct_signed_in:"Signed in",acct_provider:"Method",acct_uid:"Account ID",acct_cloud_on:"Cloud sync on",acct_cloud_off:"Cloud sync off",acct_edit:"Edit profile",avatar_edit:"Tap to upload",avatar_err_type:"Please choose an image file",avatar_err_size:"Image must not exceed {n}MB",avatar_ok:"Avatar updated",id_allocating:"Allocating...",fancy_pool_title:"Premium ID Pool",fancy_pool_desc:"These numbers are not auto-assigned and reserved for a future premium-ID system: short numbers (1-5 digits) and pattern numbers (repeating, sequential, ABAB, etc.).",fancy_pool_intro:"The premium-ID pool holds numbers excluded from auto-assignment. Your account gets a regular number from 100000 in order; pattern numbers are skipped automatically.",fancy_pool_note:"A future premium-ID system may offer these for selection, redemption or membership perks. Currently display-only; purchase is not available yet.",region_prov_ph:"Select province",region_city_ph:"Select city",region_dist_ph:"Select district",
 login_phone:'Phone Number',send_code:'Get Code',login_code:'SMS Code',phone_login:'Login',login_err_phone:'Please enter a valid 11-digit phone number',login_err_code:'Please enter the code',login_err_otp:'Please get the code first',toast_auth_cb:'The authorization callback is missing a valid login method',
+title_patrol:'Patrol Center',sub_patrol:'Sync, links and data — three patrols at a glance',
+patrol_notice:'<b>About Patrol Center:</b> This workbench is a local static page. Git pushes and web-wide searches run in the background via WorkBuddy scheduled tasks and cannot be triggered directly by the browser. The statuses below come from the data file and local records; "Generate instruction" copies a ready command — paste it into WorkBuddy to run a patrol immediately. Link availability checks really run in your browser, with results stored locally only.',
+patrol_stat_total:'Total entries',patrol_stat_offers:'Free tokens',patrol_stat_resources:'Servers / Domains',patrol_stat_bad:'Link issues',
+patrol_sync_title:'① Scheduled Sync Patrol',patrol_sync_sub:'Checks local changes and auto-commits/pushes to GitHub; runs in the background at :00/:15/:30/:45 every hour.',
+patrol_sync_repo:'Repository',patrol_sync_branch:'Branch',patrol_sync_freq:'Frequency',patrol_sync_freq_val:'Hourly :00/:15/:30/:45',patrol_sync_last:'Last sync',
+patrol_btn_sync:'Generate sync instruction',patrol_btn_history:'Local run history',
+patrol_link_title:'② Link Availability Patrol',patrol_link_sub:'Really probes each platform website from your browser (subject to each site\'s CORS policy — for reference only); results stored locally only.',
+patrol_btn_link_run:'Start link check',patrol_btn_stop:'Stop',patrol_scope_offers:'Free tokens',patrol_scope_resources:'Servers / Domains',patrol_scope_all:'All',
+patrol_link_empty:'Not checked yet. Click "Start link check" to run a patrol; results are saved locally.',patrol_link_checked:'Checked at',
+patrol_state_ok:'Reachable',patrol_state_bad:'Unreachable',patrol_state_wait:'Checking',
+patrol_badge_auto:'Auto (background)',patrol_badge_ok:'All good',patrol_badge_issue:'{n} issues',patrol_badge_none:'Not checked',
+patrol_no_targets:'No links in this category',patrol_stopped:'Stopped',patrol_link_done:'Check finished: {n} total, {b} unreachable',patrol_no_records:'No local run history yet',
+patrol_update_title:'③ Daily Data Update Patrol',patrol_update_sub:'Searches the web for new free tokens, resources, trending repos and news, deduplicates and clears expired items; runs daily at 09:00 in the background.',
+patrol_update_next:'Schedule',patrol_update_last:'Last updated',patrol_update_daily:'Daily 09:00',patrol_update_none:'No update logs yet',
+patrol_btn_update:'Generate update instruction',patrol_btn_goto_log:'View full log',
 login_or:'or use another method',wechat_login:'WeChat One-tap Login',login_tip:'You can use the workbench without login — data stays in your local browser. After login, data syncs to the cloud and follows you to any device.',login_user:'Signed-in user',
 deadline_expired:'✕ Deadline passed',deadline_today:'Due today',deadline_tomorrow:'Due tomorrow',deadline_left:'( ',deadline_days:' days left)',deadline_long:'Valid long-term',
 toast_record_created:'In-progress record created — come back to fill the result after registering',toast_gh_ai:'Project summary command copied, paste it into a WorkBuddy conversation',
@@ -12846,7 +12961,7 @@ doc_title:'SHENJI · GOD AI — ดวงตาแห่งทวยเทพ �
 brand_name:'SHENJI · GOD AI',brand_en:'SHENJI · GOD AI',brand_slo:'ดวงตาแห่งทวยเทพ หยั่งรู้ทุกสรรพสิ่ง',
 slogan:'ดวงตาแห่งทวยเทพ หยั่งรู้ทุกสรรพสิ่ง',
 nav_offers:'โควตาฟรี',nav_resources:'เซิร์ฟเวอร์ / โดเมน',nav_github:'GitHub Trending',nav_skills:'ชุด Skill',
-nav_tutorials:'สอน AI',nav_monetization:'สร้างรายได้ AI',nav_profile:'โปรไฟล์',nav_records:'บันทึก',nav_log:'ประวัติอัปเดต',
+nav_tutorials:'สอน AI',nav_monetization:'สร้างรายได้ AI',nav_profile:'โปรไฟล์',nav_records:'บันทึก',nav_patrol:'ศูนย์ตรวจสอบ',nav_log:'ประวัติอัปเดต',
 side_update:'อัปเดตอัตโนมัติทุกวัน 09:00',side_saved:'ข้อมูลบันทึกในเครื่อง · ไม่อัปโหลด',side_lastupdate:'อัปเดตล่าสุด',
 side_contact:'ติดต่อ · คลิกเพื่อคัดลอก',side_wechat:'WeChat',side_qq:'QQ',side_copy:'คัดลอก',
 btn_login:'☁ เข้าสู่ระบบ',admin_on:'เปิดโหมดผู้ดูแล',admin_off:'ปิดโหมดผู้ดูแล',emoji_title:'อีโมจิ',emoji_hint:'คลิกอีโมจิเพื่อแทรกต่อท้ายชื่อผู้ใช้ สามารถพิมพ์ข้อความต่อได้',pf_nickname_hint:'รองรับอีโมจิ สูงสุด 32 ตัวอักษร',pf_nickname_max:'ชื่อผู้ใช้สูงสุด 32 ตัวอักษร (รวมอีโมจิ)',emoji_close:'ปิด',emoji_cat_common:'ใช้บ่อย',emoji_cat_symbols:'สัญลักษณ์',btn_logout:'ออกจากระบบ',btn_contact:'✆ ติดต่อ',btn_export:'⬇ ส่งออกสำรอง',
@@ -12936,6 +13051,21 @@ c_quota_res:'配置 / โควตาฟรี',c_quota_act:'โควตาฟ�
 c_url:'ลิงก์ลงทะเบียน / กิจกรรม *',c_url_ph:'https://',c_deadline:'วันหมด',c_method:'วิธีรับ',c_method_ph:'เช่น ลงทะเบียนด้วยอีเมล',c_notes:'หมายเหตุ',add_resource:'เพิ่มทรัพยากร',add_activity:'เพิ่มกิจกรรม',
 login_title:'เข้าสู่ระบบ · ซิงค์คลาวด์',login_app:'SHENJI Resource Workbench',login_sub:'หลังเข้าสู่ระบบ โปรไฟล์ บันทึกและเนื้อหากำหนดเองจะซิงค์ไปยังคลาวด์อัตโนมัติ — สอดคล้องกันทุกอุปกรณ์',reg_title:"สมัคร / เข้าสู่ระบบ · ซิงค์คลาวด์",tab_email:"อีเมล",tab_wechat:"WeChat",tab_phone:"เบอร์โทร",login_email_ph:"ที่อยู่อีเมล (รองรับ QQ Mail)",email_login:"สมัคร / เข้าสู่ระบบ",login_email_tip:"ไม่ต้องใช้รหัสผ่านหรือมือถือ Verification อีเมลครั้งแรกจะสมัครอัตโนมัติ ระบบจำกัดความถี่และการพยายามเพื่อป้องกันการสมัครจำนวนมาก",login_wechat_tip:"เปิดใน WeChat เพื่ออนุญาตแบบแตะครั้งเดียว บนคอมพิวเตอร์จะแสตง QR code ให้สแกน",login_phone_tip:"การเข้าสู่ระบบด้วยเบอร์โทรเป็นตัวเลือก แนะนำใช้อีเมลหรือ WeChat จะสะดวกกว่า",login_err_email:"กรุณากรอกที่อยู่อีเมลที่ถูกต้อง",login_locked:"พยายามมากเกินไป กรุณารอ {n} นาที",login_throttle:"ถี่เกินไป กรุณารอ {n} วินาที",login_no_cloud:"บริการคลาวด์ยังไม่พร้อม กรุณาลองใหม่",nav_center:"ศูนย์ส่วนตัว",center_form_title:"กรอกข้อมูลส่วนตัว",center_form_sub:"กรอกชื่อเล่น รูปโปรไฟล์ และประวัติย่อเพื่อเติมเต็มศูนย์ส่วนตัวของคุณ ข้อมูลจะซิงค์คลาวด์เมื่อเข้าสู่ระบบ และใช้กับ bookmark กรอกอัตโนมัติ ไม่เก็บรหัสผ่าน",pf_nickname:"ชื่อเล่น",pf_nickname_ph:"ชื่อเล่นของคุณ",pf_group_identity:"ข้อมูลพื้นฐาน",pf_group_contact:"ช่องทางติดต่อ",pf_group_accounts:"บัญชีแพลตฟอร์ม",pf_group_region:"พื้นที่",pf_avatar:"URL รูปโปรไฟล์",pf_avatar_ph:"https://example.com/avatar.png (ไม่บังคับ)",pf_bio:"ประวัติย่อ",pf_bio_ph:"แนะนำตัวสั้นๆ (ไม่บังคับ)",acct_guest_title:"ยังไม่ได้เข้าสู่ระบบ",acct_guest_sub:"เข้าสู่ระบบเพื่อดูข้อมูลบัญชี วิธีเข้าสู่ระบบ และสถานะซิงค์คลาวด์ที่นี่ หรือกรอกข้อมูลส่วนตัวด้านล่างโดยไม่ต้องเข้าสู่ระบบก็ได้",acct_btn_login:"สมัคร / เข้าสู่ระบบ",acct_unnamed:"ยังไม่ตั้งชื่อเล่น",acct_signed_in:"เข้าสู่ระบบแล้ว",acct_provider:"วิธีเข้าสู่ระบบ",acct_uid:"รหัสบัญชี",acct_cloud_on:"ซิงค์คลาวด์เปิดอยู่",acct_cloud_off:"ซิงค์คลาวด์ปิดอยู่",acct_edit:"แก้ไขโปรไฟล์",avatar_edit:"แตะเพื่ออัปโหลด",avatar_err_type:"กรุณาเลือกไฟล์รูปภาพ",avatar_err_size:"รูปภาพต้องไม่เกิน {n}MB",avatar_ok:"อัปเดตรูปโปรไฟล์แล้ว",id_allocating:"กำลังจัดสรร…",fancy_pool_title:"พูลรหัสพิเศษ",fancy_pool_desc:"หมายเลขเหล่านี้ไม่จัดสรรอัตโนมัติ สงวนไว้สำหรับระบบรหัสพิเศษในอนาคต: หมายเลขสั้น (1-5 หลัก) และหมายเลขที่มีรูปแบบ (เลขซ้ำๆ ลำดับ ABAB ฯลฯ)",fancy_pool_intro:"พูลรหัสพิเศษรวมหมายเลขที่ไม่จัดสรรอัตโนมัติ บัญชีของคุณจะได้หมายเลขธรรมดาเริ่มจาก 100000 ตามลำดับ และข้ามหมายเลขที่มีรูปแบบโดยอัตโนมัติ",fancy_pool_note:"ในอนาคตอาจเปิดระบบรหัสพิเศษเพื่อเลือก แลกรับ หรือสิทธิสมาชิก ปัจจุบันแสดงผลเท่านั้น ยังซื้อไม่ได้",region_prov_ph:"เลือกจังหวัด",region_city_ph:"เลือกเมือง",region_dist_ph:"เลือกเขต/อำเภอ",
 login_phone:'เบอร์โทรศัพท์',send_code:'รับรหัส',login_code:'รหัส SMS',phone_login:'เข้าสู่ระบบ',login_err_phone:'กรุณากรอกเบอร์โทรศัพท์ 11 หลักที่ถูกต้อง',login_err_code:'กรุณากรอกรหัส',login_err_otp:'กรุณารับรหัสก่อน',toast_auth_cb:'คำขออนุญาตขาดวิธีการลงชื่อเข้าใช้ที่ถูกต้อง',
+title_patrol:'ศูนย์ตรวจสอบ',sub_patrol:'ซิงก์ · ลิงก์ · ข้อมูล สามการตรวจสอบในที่เดียว',
+patrol_notice:'<b>เกี่ยวกับศูนย์ตรวจสอบ:</b>工作台นี้เป็นหน้าเว็บแบบคงที่ในเครื่อง การ push git และการค้นหาทั้งเว็บทำงานโดยงานตั้งเวลาของ WorkBuddy ในเบื้องหลัง เบราว์เซอร์ไม่สามารถเรียกใช้โดยตรงได้ สถานะด้านล่างมาจากไฟล์ข้อมูลและบันทึกในเครื่อง ปุ่ม「สร้างคำสั่ง」จะก็อปปี้คำสั่งที่พร้อมใช้ วางลงใน WorkBuddy เพื่อรันการตรวจสอบทันที การตรวจสอบลิงก์ทำงานจริงในเบราว์เซอร์ และผลลัพธ์เก็บในเครื่องเท่านั้น',
+patrol_stat_total:'รายการทั้งหมด',patrol_stat_offers:'โควต้าฟรี',patrol_stat_resources:'เซิร์ฟเวอร์ / โดเมน',patrol_stat_bad:'ลิงก์ผิดปกติ',
+patrol_sync_title:'① การตรวจสอบการซิงก์ตามเวลา',patrol_sync_sub:'ตรวจสอบการเปลี่ยนแปลงในเครื่องและ commit/push ไป GitHub อัตโนมัติ ทำงานเบื้องหลังทุกชั่วโมงที่ :00/:15/:30/:45',
+patrol_sync_repo:'ที่เก็บ',patrol_sync_branch:'สาขา',patrol_sync_freq:'ความถี่',patrol_sync_freq_val:'ทุกชั่วโมง :00/:15/:30/:45',patrol_sync_last:'ซิงก์ล่าสุด',
+patrol_btn_sync:'สร้างคำสั่งตรวจสอบการซิงก์',patrol_btn_history:'ประวัติการรันในเครื่อง',
+patrol_link_title:'② การตรวจสอบความพร้อมลิงก์',patrol_link_sub:'ทดสอบเว็บไซต์แต่ละแพลตฟอร์มจริงจากเบราว์เซอร์ (ขึ้นกับนโยบาย CORS ของเว็บไซต์ปลายทาง ใช้เพื่ออ้างอิงเท่านั้น) ผลลัพธ์เก็บในเครื่องเท่านั้น',
+patrol_btn_link_run:'เริ่มตรวจสอบลิงก์',patrol_btn_stop:'หยุด',patrol_scope_offers:'โควต้าฟรี',patrol_scope_resources:'เซิร์ฟเวอร์ / โดเมน',patrol_scope_all:'ทั้งหมด',
+patrol_link_empty:'ยังไม่ได้ตรวจสอบ คลิก「เริ่มตรวจสอบลิงก์」เพื่อรัน ผลลัพธ์จะบันทึกในเครื่อง',patrol_link_checked:'ตรวจสอบเมื่อ',
+patrol_state_ok:'เข้าถึงได้',patrol_state_bad:'เข้าถึงไม่ได้',patrol_state_wait:'กำลังตรวจสอบ',
+patrol_badge_auto:'อัตโนมัติ (เบื้องหลัง)',patrol_badge_ok:'ปกติทั้งหมด',patrol_badge_issue:'ผิดปกติ {n} รายการ',patrol_badge_none:'ยังไม่ได้ตรวจสอบ',
+patrol_no_targets:'ไม่มีลิงก์ในหมวดนี้',patrol_stopped:'หยุดแล้ว',patrol_link_done:'ตรวจสอบเสร็จ: ทั้งหมด {n} รายการ ผิดปกติ {b} รายการ',patrol_no_records:'ยังไม่มีประวัติการรันในเครื่อง',
+patrol_update_title:'③ การตรวจสอบอัปเดตข้อมูลรายวัน',patrol_update_sub:'ค้นหาโควต้าฟรี ทรัพยากร และข่าวใหม่ทั้งเว็บ รวมข้อมูลและลบรายการหมดอายุ ทำงานเบื้องหลังทุกวันเวลา 09:00',
+patrol_update_next:'กำหนดการ',patrol_update_last:'อัปเดตล่าสุด',patrol_update_daily:'ทุกวัน 09:00',patrol_update_none:'ยังไม่มีบันทึกการอัปเดต',
+patrol_btn_update:'สร้างคำสั่งตรวจสอบการอัปเดต',patrol_btn_goto_log:'ดูบันทึกทั้งหมด',
 login_or:'หรือใช้วิธีอื่น',wechat_login:'เข้าสู่ระบบด้วย WeChat ครั้งเดียว',login_tip:'สามารถใช้เวิร์กเบนช์โดยไม่ต้องเข้าสู่ระบบ — ข้อมูลอยู่ในเบราว์เซอร์ของเครื่อง หลังเข้าสู่ระบบ ข้อมูลจะซิงค์ไปยังคลาวด์และตามคุณไปทุกอุปกรณ์',login_user:'ผู้ใช้ที่เข้าสู่ระบบแล้ว',
 deadline_expired:'✕ หมดกำหนด',deadline_today:'หมดวันนี้',deadline_tomorrow:'หมดพรุ่งนี้',deadline_left:'( เหลือ ',deadline_days:' วัน)',deadline_long:'ใช้ได้ระยะยาว',
 toast_record_created:'สร้างบันทึกกำลังดำเนินการแล้ว — กลับมากรอกผลหลังลงทะเบียน',toast_gh_ai:'คำสั่งสรุปโปรเจกต์คัดลอกแล้ว วางลงการสนทนา WorkBuddy',
@@ -12957,7 +13087,7 @@ doc_title:'SHENJI · GOD AI — 神の眼にて、万物の機を観る',
 brand_name:'SHENJI · GOD AI',brand_en:'SHENJI · GOD AI',brand_slo:'神の眼にて、万物の機を観る',
 slogan:'神の眼にて、万物の機を観る',
 nav_offers:'無料枠',nav_resources:'サーバー / ドメイン',nav_github:'GitHub ランキング',nav_skills:'Skill 集大成',
-nav_tutorials:'AI チュートリアル',nav_monetization:'AI 収益化',nav_profile:'プロフィール',nav_records:'記録',nav_log:'更新履歴',
+nav_tutorials:'AI チュートリアル',nav_monetization:'AI 収益化',nav_profile:'プロフィール',nav_records:'記録',nav_patrol:'パトロールセンター',nav_log:'更新履歴',
 side_update:'毎日 09:00 自動更新',side_saved:'データはローカル保存 · アップロードしない',side_lastupdate:'最終更新',
 side_contact:'連絡先 · クリックでコピー',side_wechat:'WeChat',side_qq:'QQ',side_copy:'コピー',
 btn_login:'☁ ログイン同期',admin_on:'管理モードをオン',admin_off:'管理モードをオフ',emoji_title:'絵文字',emoji_hint:'絵文字をクリックするとニックネームの末尾に挿入します。その後も文字入力できます',pf_nickname_hint:'絵文字対応・最大32文字まで',pf_nickname_max:'ニックネームは最大32文字まで（絵文字を含む）',emoji_close:'閉じる',emoji_cat_common:'よく使う',emoji_cat_symbols:'記号',btn_logout:'ログアウト',btn_contact:'✆ 連絡',btn_export:'⬇ バックアップ出力',
@@ -13047,6 +13177,21 @@ c_quota_res:'無料構成 / 枠',c_quota_act:'無料枠',c_quota_ph:'枠の説�
 c_url:'登録 / 案件 URL *',c_url_ph:'https://',c_deadline:'期限',c_method:'受け取り方法',c_method_ph:'例 メール登録のみ',c_notes:'備考',add_resource:'リソース追加',add_activity:'案件追加',
 login_title:'ログイン · クラウド同期',login_app:'SHENJI リソースワークベンチ',login_sub:'ログイン後、プロフィール、記録、カスタム内容が自動でクラウド同期 — 全端末で一貫。',reg_title:"登録 / ログイン · クラウド同期",tab_email:"メール",tab_wechat:"WeChat",tab_phone:"電話番号",login_email_ph:"メールアドレス（QQ メール対応）",email_login:"登録 / ログイン",login_email_tip:"パスワードも携帯も不要。初回はメール認証で自動登録、以降は同じメールでコードを受け取りログイン。送信制限で大量登録を防止します。",login_wechat_tip:"WeChat 内で開くとワンタップ認証、PC では QR コードが表示されます。認証後自動で登録・ログイン。",login_phone_tip:"電話番号ログインは任意です。メールまたは WeChat の方が簡単で携帯認証も不要です。",login_err_email:"正しいメールアドレスを入力してください",login_locked:"試行回数が多すぎます。{n} 分後にお試しください",login_throttle:"送信が頻繁です。{n} 秒後に再試行してください",login_no_cloud:"クラウドサービスがまだ準備できていません",nav_center:"マイセンター",center_form_title:"プロフィール入力",center_form_sub:"ニックネーム、アバター、自己紹介を入力してマイセンターを充実させましょう。ログイン後はクラウドに同期され、自動入力ブックマークと AI 登録補助でも再利用されます。パスワードは保存されません。",pf_nickname:"ニックネーム",pf_nickname_ph:"あなたのニックネーム",pf_group_identity:"基本情報",pf_group_contact:"連絡先",pf_group_accounts:"プラットフォームアカウント",pf_group_region:"地域",pf_avatar:"アバター画像 URL",pf_avatar_ph:"https://example.com/avatar.png（任意）",pf_bio:"自己紹介",pf_bio_ph:"簡単な自己紹介（任意）",acct_guest_title:"未ログイン",acct_guest_sub:"ログインするとここでアカウ情報、ログイン方法、クラウド同期状態を確認し、プロフィールを充実できます。ログインせずに下のプロフィールを入力しても構いません。",acct_btn_login:"登録 / ログイン",acct_unnamed:"ニックネーム未設定",acct_signed_in:"ログイン中",acct_provider:"ログイン方法",acct_uid:"アカウント ID",acct_cloud_on:"クラウド同期 ON",acct_cloud_off:"クラウド同期 OFF",acct_edit:"プロフィール編集",avatar_edit:"タップしてアップロード",avatar_err_type:"画像ファイルを選択してください",avatar_err_size:"画像は {n}MB 以下にしてください",avatar_ok:"アバターを更新しました",id_allocating:"割り当て中…",fancy_pool_title:"プレミアム ID プール",fancy_pool_desc:"これらの番号は自動割り当てされず、将来のプレミアム ID システム用に予約されています：短い番号（1〜5 桁）とパターン番号（ぞろ目、連番、ABAB など）。",fancy_pool_intro:"プレミアム ID プールには自動割り当てから除外された番号が集まります。アカウントには 100000 から順に通常番号が割り当てられ、パターン番号は自動的にスキップされます。",fancy_pool_note:"将来的にプレミアム ID システムで選択・交換・会員特典に利用する可能性があります。現在は表示のみで購入はできません。",region_prov_ph:"省を選択",region_city_ph:"都市を選択",region_dist_ph:"区・県を選択",
 login_phone:'電話番号',send_code:'コード取得',login_code:'SMS コード',phone_login:'ログイン',login_err_phone:'正しい 11 桁の電話番号を入力してください',login_err_code:'コードを入力してください',login_err_otp:'先にコードを取得してください',toast_auth_cb:'認証コールバックに有効なログイン方法がありません',
+title_patrol:'パトロールセンター',sub_patrol:'同期・リンク・データ、3 つのパトロールを一覧で',
+patrol_notice:'<b>パトロールセンターについて:</b> このワークベンチはローカル静的ページです。git プッシュや全体検索は WorkBuddy の定時タスクがバックグラウンドで実行し、ブラウザから直接は起動できません。下の「ステータス」はデータファイルとローカル記録から取得します。「コマンドを生成」をコピーして WorkBuddy に貼り付ければ、パトロールをすぐ実行できます。リンク到達性チェックはブラウザ内で実際に動作し、結果はローカルにのみ保存されます。',
+patrol_stat_total:'収録件数',patrol_stat_offers:'無料枠',patrol_stat_resources:'サーバー / ドメイン',patrol_stat_bad:'リンク異常',
+patrol_sync_title:'① 定時同期パトロール',patrol_sync_sub:'ローカルの変更を確認し、自動コミットして GitHub にプッシュ。毎時 :00/:15/:30/:45 にバックグラウンド実行。',
+patrol_sync_repo:'リポジトリ',patrol_sync_branch:'ブランチ',patrol_sync_freq:'頻度',patrol_sync_freq_val:'毎時 :00/:15/:30/:45',patrol_sync_last:'最終同期',
+patrol_btn_sync:'同期パトロールのコマンドを生成',patrol_btn_history:'ローカル実行履歴',
+patrol_link_title:'② リンク到達性パトロール',patrol_link_sub:'ブラウザから各プラットフォームのサイトへ実際にアクセスして確認（対象サイトの CORS ポリシーに左右されるため参考値）。結果はローカルにのみ保存。',
+patrol_btn_link_run:'リンク診断を開始',patrol_btn_stop:'停止',patrol_scope_offers:'無料枠',patrol_scope_resources:'サーバー / ドメイン',patrol_scope_all:'すべて',
+patrol_link_empty:'未診断です。「リンク診断を開始」をクリックすると実行し、結果をローカルに保存します。',patrol_link_checked:'診断時刻',
+patrol_state_ok:'到達可能',patrol_state_bad:'到達不可',patrol_state_wait:'診断中',
+patrol_badge_auto:'自動（バックグラウンド）',patrol_badge_ok:'すべて正常',patrol_badge_issue:'{n} 件異常',patrol_badge_none:'未診断',
+patrol_no_targets:'このカテゴリに診断対象のリンクがありません',patrol_stopped:'停止しました',patrol_link_done:'診断完了：全 {n} 件、異常 {b} 件',patrol_no_records:'ローカル実行履歴はまだありません',
+patrol_update_title:'③ 毎日データ更新パトロール',patrol_update_sub:'新しい無料トークン、リソース、ランキング、ニュースを全体検索し、重複排除と期限切れ項目の削除を実行。毎日 09:00 にバックグラウンド実行。',
+patrol_update_next:'スケジュール',patrol_update_last:'最終更新',patrol_update_daily:'毎日 09:00',patrol_update_none:'更新ログはまだありません',
+patrol_btn_update:'更新パトロールのコマンドを生成',patrol_btn_goto_log:'完全なログを見る',
 login_or:'または別の方法',wechat_login:'WeChat ワンタップログイン',login_tip:'ログインなしでもワークベンチは使用可能 — データはローカルブラウザに保存。ログイン後はクラウドに同期し、どの端末でも引き継げます。',login_user:'ログイン済みユーザー',
 deadline_expired:'✕ 期限切れ',deadline_today:'今日まで',deadline_tomorrow:'明日まで',deadline_left:'（残 ',deadline_days:' 日）',deadline_long:'長期有効',
 toast_record_created:'進行中の記録を作成しました — 登録後に結果を入力してください',toast_gh_ai:'プロジェクト要約コマンドをコピーしました、WorkBuddy 会話に貼り付け',
@@ -13068,7 +13213,7 @@ doc_title:'SHENJI · GOD AI — 신의 눈으로 만물의 이치를 관하다',
 brand_name:'SHENJI · GOD AI',brand_en:'SHENJI · GOD AI',brand_slo:'신의 눈으로 만물의 이치를 관하다',
 slogan:'신의 눈으로 만물의 이치를 관하다',
 nav_offers:'무료 쿼터',nav_resources:'서버 / 도메인',nav_github:'GitHub 랭킹',nav_skills:'Skill 모음',
-nav_tutorials:'AI 튜토리얼',nav_monetization:'AI 수익화',nav_profile:'프로필',nav_records:'기록',nav_log:'업데이트 내역',
+nav_tutorials:'AI 튜토리얼',nav_monetization:'AI 수익화',nav_profile:'프로필',nav_records:'기록',nav_patrol:'순찰 센터',nav_log:'업데이트 내역',
 side_update:'매일 09:00 자동 업데이트',side_saved:'데이터 로컬 저장 · 업로드 안 함',side_lastupdate:'최근 업데이트',
 side_contact:'연락처 · 클릭하여 복사',side_wechat:'WeChat',side_qq:'QQ',side_copy:'복사',
 btn_login:'☁ 로그인 동기화',admin_on:'관리자 모드 켜짐',admin_off:'관리자 모드 꺼짐',emoji_title:'이모지',emoji_hint:'이모지를 클릭하면 닉네임 끝에 추가되며, 뒤에 계속 텍스트를 입력할 수 있습니다',pf_nickname_hint:'이모지 지원, 최대 32자',pf_nickname_max:'닉네임은 이모지 포함 최대 32자까지',emoji_close:'닫기',emoji_cat_common:'자주 쓰는',emoji_cat_symbols:'기호',btn_logout:'로그아웃',btn_contact:'✆ 연락',btn_export:'⬇ 백업 내보내기',
@@ -13158,6 +13303,21 @@ c_quota_res:'무료 구성 / 쿼터',c_quota_act:'무료 쿼터',c_quota_ph:'쿼
 c_url:'등록 / 항목 URL *',c_url_ph:'https://',c_deadline:'마감일',c_method:'수령 방법',c_method_ph:'예 이메일 등록만',c_notes:'비고',add_resource:'리소스 추가',add_activity:'항목 추가',
 login_title:'로그인 · 클라우드 동기화',login_app:'SHENJI 리소스 워크벤치',login_sub:'로그인 후 프로필, 기록, 사용자 지정 내용이 자동으로 클라우드 동기화 — 모든 기기에서 일관됩니다.',reg_title:"가입 / 로그인 · 클라우드 동기화",tab_email:"이메일",tab_wechat:"WeChat",tab_phone:"휴대폰",login_email_ph:"이메일 주소 (QQ 메일 지원)",email_login:"가입 / 로그인",login_email_tip:"비밀번호나 휴대폰이 필요 없습니다. 첫 이메일 인증으로 자동 가입되며, 이후 같은 이메일로 코드를 받아 로그인합니다. 발송 빈도와 실패 횟수 제한으로 대량 가입을 막습니다.",login_wechat_tip:"WeChat에서 열면 원터치 인증, PC에서는 QR 코드가 표시됩니다. 인증 후 자동 가입 및 로그인됩니다.",login_phone_tip:"휴대폰 로그인은 선택 사항입니다. 이메일이나 WeChat이 더 편리하고 휴대폰 인증도 필요 없습니다.",login_err_email:"올바른 이메일 주소를 입력하세요",login_locked:"시도 횟수가 너무 많습니다. {n}분 후 다시 시도하세요",login_throttle:"너무 자주 요청했습니다. {n}초 후 다시 시도하세요",login_no_cloud:"클라우드 서비스가 아직 준비되지 않았습니다",nav_center:"마이 센터",center_form_title:"프로필 입력",center_form_sub:"닉네임, 아바타, 자기소개를 입력해 마이 센터를 완성하세요. 로그인 후 클라우드에 동기화되며 자동 입력 북마크와 AI 가입 보조에서도 재사용됩니다. 비밀번호는 저장되지 않습니다.",pf_nickname:"닉네임",pf_nickname_ph:"닉네임을 입력하세요",pf_group_identity:"기본 정보",pf_group_contact:"연락처",pf_group_accounts:"플랫폼 계정",pf_group_region:"지역",pf_avatar:"아바타 이미지 URL",pf_avatar_ph:"https://example.com/avatar.png (선택)",pf_bio:"자기소개",pf_bio_ph:"간단한 자기소개 (선택)",acct_guest_title:"로그인하지 않음",acct_guest_sub:"로그인하면 여기에서 계정 정보, 로그인 방식, 클라우드 동기화 상태를 확인하고 프로필을 완성할 수 있습니다. 로그인 없이 아래 프로필을 작성해도 됩니다.",acct_btn_login:"가입 / 로그인",acct_unnamed:"닉네임 미설정",acct_signed_in:"로그인됨",acct_provider:"로그인 방식",acct_uid:"계정 ID",acct_cloud_on:"클라우드 동기화 켜짐",acct_cloud_off:"클라우드 동기화 꺼짐",acct_edit:"프로필 수정",avatar_edit:"탭하여 업로드",avatar_err_type:"이미지 파일을 선택하세요",avatar_err_size:"이미지는 {n}MB를 넘을 수 없습니다",avatar_ok:"아바타가 업데이트되었습니다",id_allocating:"할당 중…",fancy_pool_title:"프리미엄 ID 풀",fancy_pool_desc:"이 번호들은 자동 할당되지 않으며 향후 프리미엄 ID 시스템을 위해 보류됩니다: 짧은 번호(1~5자리)와 패턴 번호(반복, 연속, ABAB 등).",fancy_pool_intro:"프리미엄 ID 풀에는 자동 할당에서 제외된 번호가 모입니다. 계정에는 100000부터 순서대로 일반 번호가 할당되며 패턴 번호는 자동으로 건너뜁니다.",fancy_pool_note:"향후 프리미엄 ID 시스템에서 선택, 교환, 멤버십 혜택으로 활용할 수 있습니다. 현재는 표시만 되며 구매는 불가합니다.",region_prov_ph:"성 선택",region_city_ph:"시 선택",region_dist_ph:"구/현 선택",
 login_phone:'전화번호',send_code:'코드 받기',login_code:'SMS 코드',phone_login:'로그인',login_err_phone:'올바른 11자리 전화번호를 입력하세요',login_err_code:'코드를 입력하세요',login_err_otp:'먼저 코드를 받으세요',toast_auth_cb:'인증 콜백에 유효한 로그인 방법이 없습니다',
+title_patrol:'순찰 센터',sub_patrol:'동기화 · 링크 · 데이터, 세 가지 순찰을 한눈에',
+patrol_notice:'<b>순찰 센터 안내:</b> 이 워크벤치는 로컬 정적 페이지입니다. git 푸시와 전체 웹 검색은 WorkBuddy 예약 작업이 백그라운드에서 실행하며 브라우저에서 직접 트리거할 수 없습니다. 아래 상태는 데이터 파일과 로컬 기록에서 가져옵니다. "명령 생성"을 복사해 WorkBuddy에 붙여넣으면 순찰을 즉시 실행합니다. 링크 연결 확인은 브라우저에서 실제로 실행되며 결과는 로컬에만 저장됩니다.',
+patrol_stat_total:'수록 항목',patrol_stat_offers:'무료 할당량',patrol_stat_resources:'서버 / 도메인',patrol_stat_bad:'링크 이상',
+patrol_sync_title:'① 정기 동기화 순찰',patrol_sync_sub:'로컬 변경을 확인하고 자동 커밋해 GitHub로 푸시합니다. 매시간 :00/:15/:30/:45에 백그라운드 실행.',
+patrol_sync_repo:'저장소',patrol_sync_branch:'브랜치',patrol_sync_freq:'주기',patrol_sync_freq_val:'매시간 :00/:15/:30/:45',patrol_sync_last:'최근 동기화',
+patrol_btn_sync:'동기화 순찰 명령 생성',patrol_btn_history:'로컬 실행 기록',
+patrol_link_title:'② 링크 연결 순찰',patrol_link_sub:'브라우저에서 각 플랫폼 공식 사이트에 실제로 접속해 확인합니다(대상 사이트 CORS 정책에 따라 참고용). 결과는 로컬에만 저장됩니다.',
+patrol_btn_link_run:'링크 검사 시작',patrol_btn_stop:'중지',patrol_scope_offers:'무료 할당량',patrol_scope_resources:'서버 / 도메인',patrol_scope_all:'전체',
+patrol_link_empty:'아직 검사하지 않았습니다. "링크 검사 시작"을 클릭하면 실행되고 결과가 로컬에 저장됩니다.',patrol_link_checked:'검사 시각',
+patrol_state_ok:'접속 가능',patrol_state_bad:'접속 불가',patrol_state_wait:'검사 중',
+patrol_badge_auto:'자동 (백그라운드)',patrol_badge_ok:'전부 정상',patrol_badge_issue:'{n}건 이상',patrol_badge_none:'미검사',
+patrol_no_targets:'이 분류에 검사할 링크가 없습니다',patrol_stopped:'중지됨',patrol_link_done:'검사 완료: 총 {n}건, 이상 {b}건',patrol_no_records:'로컬 실행 기록이 없습니다',
+patrol_update_title:'③ 매일 데이터 업데이트 순찰',patrol_update_sub:'새로운 무료 토큰, 리소스, 랭킹, 뉴스를 전체 검색해 중복 제거하고 만료 항목을 정리합니다. 매일 09:00에 백그라운드 실행.',
+patrol_update_next:'예약',patrol_update_last:'최근 업데이트',patrol_update_daily:'매일 09:00',patrol_update_none:'업데이트 기록이 없습니다',
+patrol_btn_update:'업데이트 순찰 명령 생성',patrol_btn_goto_log:'전체 기록 보기',
 login_or:'또는 다른 방법',wechat_login:'WeChat 원 tap 로그인',login_tip:'로그인 없이도 워크벤치를 사용할 수 있습니다 — 데이터는 로컬 브라우저에 저장됩니다. 로그인 후에는 클라우드에 동기화되어 어느 기기에서도 이어질 수 있습니다.',login_user:'로그인한 사용자',
 deadline_expired:'✕ 만료',deadline_today:'오늘 마감',deadline_tomorrow:'내일 마감',deadline_left:'( 남은 ',deadline_days:' 일)',deadline_long:'장기 유효',
 toast_record_created:'진행 중 기록을 생성했습니다 — 등록 후 결과를 작성하세요',toast_gh_ai:'프로젝트 요약 명령을 복사했습니다, WorkBuddy 대화에 붙여넣기',
@@ -13179,7 +13339,7 @@ doc_title:'SHENJI · GOD AI — Mit dem Auge des Gottes die Mechanismen aller Di
 brand_name:'SHENJI · GOD AI',brand_en:'SHENJI · GOD AI',brand_slo:'Mit dem Auge des Gottes die Mechanismen aller Dinge betrachten',
 slogan:'Mit dem Auge des Gottes die Mechanismen aller Dinge betrachten',
 nav_offers:'Gratis-Quota',nav_resources:'Server / Domain',nav_github:'GitHub-Ranking',nav_skills:'Skill-Sammlung',
-nav_tutorials:'AI-Tutorials',nav_monetization:'AI-Monetarisierung',nav_profile:'Profil',nav_records:'Einträge',nav_log:'Update-Log',
+nav_tutorials:'AI-Tutorials',nav_monetization:'AI-Monetarisierung',nav_profile:'Profil',nav_records:'Einträge',nav_patrol:'Überwachungscenter',nav_log:'Update-Log',
 side_update:'Täglich 09:00 automatisch aktualisiert',side_saved:'Daten lokal gespeichert · Nicht hochgeladen',side_lastupdate:'Zuletzt aktualisiert',
 side_contact:'Kontakt · Zum Kopieren klicken',side_wechat:'WeChat',side_qq:'QQ',side_copy:'Kopieren',
 btn_login:'☁ Login-Synchronisierung',admin_on:'Admin-Modus aktiviert',admin_off:'Admin-Modus deaktiviert',emoji_title:'Emoji',emoji_hint:'Klicken Sie auf ein Emoji, um es am Ende des Namens einzufügen; danach können Sie weiter Text eingeben',pf_nickname_hint:'Emoji unterstützt, bis zu 32 Zeichen',pf_nickname_max:'Name erlaubt bis zu 32 Zeichen (inkl. Emoji)',emoji_close:'Schließen',emoji_cat_common:'Häufig',emoji_cat_symbols:'Symbole',btn_logout:'Abmelden',btn_contact:'✆ Kontakt',btn_export:'⬇ Backup exportieren',
@@ -13269,6 +13429,21 @@ c_quota_res:'Freies Konfig / Quota',c_quota_act:'Freie Quota',c_quota_ph:'Quota-
 c_url:'Registrierung / Angebot-URL *',c_url_ph:'https://',c_deadline:'Frist',c_method:'Erhaltsart',c_method_ph:'z.B. nur E-Mail-Registrierung',c_notes:'Notizen',add_resource:'Ressource hinzufügen',add_activity:'Angebot hinzufügen',
 login_title:'Login · Cloud-Synchronisierung',login_app:'SHENJI Ressourcen-Workbench',login_sub:'Nach dem Login werden Profil, Einträge und eigene Inhalte automatisch in die Cloud synchronisiert — geräteübergreifend konsistent.',reg_title:"Registrieren / Anmelden · Cloud-Sync",tab_email:"E-Mail",tab_wechat:"WeChat",tab_phone:"Telefon",login_email_ph:"E-Mail-Adresse (QQ Mail unterstützt)",email_login:"Registrieren / Anmelden",login_email_tip:"Kein Passwort, kein Handy. Die erste E-Mail-Bestätigung erstellt das Konto automatisch; danach melden Sie sich mit demselben Code an. Sende- und Fehlerraten begrenzen Massenregistrierungen.",login_wechat_tip:"In WeChat mit einem Tipp autorisieren; auf dem PC erscheint ein QR-Code. Nach der Autorisierung erfolgt Registrierung und Anmeldung automatisch.",login_phone_tip:"Telefon-Anmeldung ist optional. E-Mail oder WeChat ist einfacher und benötigt keine Handy-Bestätigung.",login_err_email:"Bitte eine gültige E-Mail-Adresse eingeben",login_locked:"Zu viele Versuche, bitte in {n} Minuten erneut versuchen",login_throttle:"Zu häufig, bitte in {n} Sekunden erneut versuchen",login_no_cloud:"Cloud-Dienst noch nicht bereit, bitte später versuchen",nav_center:"Mein Bereich",center_form_title:"Profildaten",center_form_sub:"Tragen Sie Spitzname, Avatar und Kurzbiografie ein, um Ihren Bereich zu vervollständigen. Nach der Anmeldung werden die Daten in die Cloud synchronisiert und von Autofill-Lesezeichen und der KI-Registrierungshilfe genutzt. Passwörter werden nie gespeichert.",pf_nickname:"Spitzname",pf_nickname_ph:"Ihr Spitzname",pf_group_identity:"Identität",pf_group_contact:"Kontakt",pf_group_accounts:"Plattformkonten",pf_group_region:"Region",pf_avatar:"Avatar-Bild-URL",pf_avatar_ph:"https://example.com/avatar.png (optional)",pf_bio:"Kurzbiografie",pf_bio_ph:"Kurze Vorstellung (optional)",acct_guest_title:"Nicht angemeldet",acct_guest_sub:"Melden Sie sich an, um hier Kontoinformationen, Anmeldemethode und Cloud-Sync-Status zu sehen und Ihr Profil zu vervollständigen. Sie können das Profil unten auch ohne Anmeldung ausfüllen.",acct_btn_login:"Registrieren / Anmelden",acct_unnamed:"Kein Spitzname gesetzt",acct_signed_in:"Angemeldet",acct_provider:"Anmeldemethode",acct_uid:"Konto-ID",acct_cloud_on:"Cloud-Sync aktiv",acct_cloud_off:"Cloud-Sync inaktiv",acct_edit:"Profil bearbeiten",avatar_edit:"Tippen zum Hochladen",avatar_err_type:"Bitte eine Bilddatei wählen",avatar_err_size:"Das Bild darf {n}MB nicht überschreiten",avatar_ok:"Avatar aktualisiert",id_allocating:"Zuweisung...",fancy_pool_title:"Premium-ID-Pool",fancy_pool_desc:"Diese Nummern werden nicht automatisch vergeben und für ein künftiges Premium-ID-System reserviert: kurze Nummern (1-5 Stellen) und MusterNummern (gleiche Ziffern, fortlaufend, ABAB usw.).",fancy_pool_intro:"Der Premium-ID-Pool enthält Nummern, die von der automatischen Vergabe ausgeschlossen sind. Ihr Konto erhält der Reihe nach eine normale Nummer ab 100000; MusterNummern werden automatisch übersprungen.",fancy_pool_note:"Ein künftiges Premium-ID-System könnte diese zur Auswahl, Einlösung oder als Mitgliedervorteil anbieten. Derzeit nur zur Ansicht, kein Kauf möglich.",region_prov_ph:"Provinz wählen",region_city_ph:"Stadt wählen",region_dist_ph:"Bezirk wählen",
 login_phone:'Telefonnummer',send_code:'Code abrufen',login_code:'SMS-Code',phone_login:'Login',login_err_phone:'Bitte gültige 11-stellige Telefonnummer eingeben',login_err_code:'Bitte den Code eingeben',login_err_otp:'Bitte zuerst den Code abrufen',toast_auth_cb:'Der Autorisierungs-Callback enthält keine gültige Login-Methode',
+title_patrol:'Überwachungscenter',sub_patrol:'Sync, Links und Daten – drei Überwachungen auf einen Blick',
+patrol_notice:'<b>Über das Überwachungscenter:</b> Diese Workbench ist eine lokale statische Seite. Git-Pushes und Web-Recherchen laufen im Hintergrund über WorkBuddy-Zeitsteuerungen und können nicht direkt vom Browser ausgelöst werden. Die Statuswerte unten stammen aus der Datendatei und lokalen Protokollen. „Befehl erzeugen" kopiert einen fertigen Befehl – in WorkBuddy eingefügt läuft die Überwachung sofort. Die Link-Erreichbarkeit wird tatsächlich im Browser geprüft; Ergebnisse werden nur lokal gespeichert.',
+patrol_stat_total:'Einträge gesamt',patrol_stat_offers:'Gratis-Kontingente',patrol_stat_resources:'Server / Domains',patrol_stat_bad:'Link-Probleme',
+patrol_sync_title:'① Geplante Sync-Überwachung',patrol_sync_sub:'Prüft lokale Änderungen und committet/pusht automatisch zu GitHub; läuft stündlich zu :00/:15/:30/:45 im Hintergrund.',
+patrol_sync_repo:'Repository',patrol_sync_branch:'Branch',patrol_sync_freq:'Intervall',patrol_sync_freq_val:'Stündlich :00/:15/:30/:45',patrol_sync_last:'Letzter Sync',
+patrol_btn_sync:'Sync-Befehl erzeugen',patrol_btn_history:'Lokale Laufprotokolle',
+patrol_link_title:'② Link-Erreichbarkeit',patrol_link_sub:'Prüft die Websites der Plattformen tatsächlich aus dem Browser (abhängig von der CORS-Richtlinie der Zielseite – nur als Hinweis); Ergebnisse nur lokal gespeichert.',
+patrol_btn_link_run:'Link-Prüfung starten',patrol_btn_stop:'Stopp',patrol_scope_offers:'Gratis-Kontingente',patrol_scope_resources:'Server / Domains',patrol_scope_all:'Alle',
+patrol_link_empty:'Noch nicht geprüft. Klicken Sie auf „Link-Prüfung starten"; die Ergebnisse werden lokal gespeichert.',patrol_link_checked:'Geprüft um',
+patrol_state_ok:'Erreichbar',patrol_state_bad:'Nicht erreichbar',patrol_state_wait:'Prüfung läuft',
+patrol_badge_auto:'Automatisch (Hintergrund)',patrol_badge_ok:'Alles okay',patrol_badge_issue:'{n} Probleme',patrol_badge_none:'Nicht geprüft',
+patrol_no_targets:'Keine Links in dieser Kategorie',patrol_stopped:'Gestoppt',patrol_link_done:'Prüfung fertig: {n} insgesamt, {b} nicht erreichbar',patrol_no_records:'Noch keine lokalen Protokolle',
+patrol_update_title:'③ Tägliche Daten-Updates',patrol_update_sub:'Durchsucht das Web nach neuen Gratis-Tokens, Ressourcen, Rankings und News, entfernt Duplikate und bereinigt abgelaufene Einträge; läuft täglich um 09:00 im Hintergrund.',
+patrol_update_next:'Zeitplan',patrol_update_last:'Letztes Update',patrol_update_daily:'Täglich 09:00',patrol_update_none:'Noch keine Update-Protokolle',
+patrol_btn_update:'Update-Befehl erzeugen',patrol_btn_goto_log:'Vollständiges Protokoll ansehen',
 login_or:'oder eine andere Methode',wechat_login:'WeChat Ein-Tap-Login',login_tip:'Die Workbench ist auch ohne Login nutzbar — Daten bleiben im lokalen Browser. Nach dem Login synchronisieren Daten in die Cloud und folgen Ihnen auf jedes Gerät.',login_user:'Angemeldeter Nutzer',
 deadline_expired:'✕ Frist abgelaufen',deadline_today:'Heute fällig',deadline_tomorrow:'Morgen fällig',deadline_left:'( noch ',deadline_days:' Tage)',deadline_long:'Langzeit gültig',
 toast_record_created:'Laufender Eintrag erstellt — füllen Sie nach der Registrierung das Ergebnis aus',toast_gh_ai:'Projekt-Zusammenfassungsbefehl kopiert, in ein WorkBuddy-Gespräch einfügen',
@@ -13290,7 +13465,7 @@ doc_title:'SHENJI · GOD AI — Con lo sguardo del dio, contemplare le meccanich
 brand_name:'SHENJI · GOD AI',brand_en:'SHENJI · GOD AI',brand_slo:'Con lo sguardo del dio, contemplare le meccaniche di tutto',
 slogan:'Con lo sguardo del dio, contemplare le meccaniche di tutto',
 nav_offers:'Quota gratuiti',nav_resources:'Server / Domini',nav_github:'Classifica GitHub',nav_skills:'Collezione Skill',
-nav_tutorials:'Tutorial AI',nav_monetization:'Monetizzazione AI',nav_profile:'Profilo',nav_records:'Registri',nav_log:'Cronologia aggiornamenti',
+nav_tutorials:'Tutorial AI',nav_monetization:'Monetizzazione AI',nav_profile:'Profilo',nav_records:'Registri',nav_patrol:'Centro di monitoraggio',nav_log:'Cronologia aggiornamenti',
 side_update:'Aggiornamento automatico ogni giorno alle 09:00',side_saved:'Dati salvati localmente · Non caricati',side_lastupdate:'Ultimo aggiornamento',
 side_contact:'Contatti · Clicca per copiare',side_wechat:'WeChat',side_qq:'QQ',side_copy:'Copia',
 btn_login:'☁ Login Sincrono',admin_on:'Modalità admin attivata',admin_off:'Modalità admin disattivata',emoji_title:'Emoji',emoji_hint:'Clicca un emoji per inserirlo alla fine del nome; puoi continuare a digitare',pf_nickname_hint:'Emoji supportati, fino a 32 caratteri',pf_nickname_max:'Il nome consente fino a 32 caratteri (emoticon inclusi)',emoji_close:'Chiudi',emoji_cat_common:'Comune',emoji_cat_symbols:'Simboli',btn_logout:'Esci',btn_contact:'✆ Contatti',btn_export:'⬇ Esporta backup',
@@ -13380,6 +13555,21 @@ c_quota_res:'Config / Quota gratuita',c_quota_act:'Quota gratuita',c_quota_ph:'D
 c_url:'URL registrazione / offerta *',c_url_ph:'https://',c_deadline:'Scadenza',c_method:'Modalità di ritiro',c_method_ph:'es. registrazione via email',c_notes:'Note',add_resource:'Aggiungi risorsa',add_activity:'Aggiungi offerta',
 login_title:'Login · Sincronizzazione cloud',login_app:'SHENJI Resource Workbench',login_sub:'Dopo il login, profilo, registri e contenuti personalizzati si sincronizzano automaticamente in cloud — coerenti su tutti i dispositivi.',reg_title:"Registrati / Accedi · Sincronizzazione cloud",tab_email:"Email",tab_wechat:"WeChat",tab_phone:"Telefono",login_email_ph:"Indirizzo email (QQ Mail supportata)",email_login:"Registrati / Accedi",login_email_tip:"Nessuna password, nessun telefono. La prima verifica email crea automaticamente l’account; poi accedi con lo stesso indirizzo. Limiti di frequenza e tentativi impediscono registrazioni di massa.",login_wechat_tip:"Apri in WeChat per l’autorizzazione con un tocco; su PC appare un codice QR. Dopo l’autorizzazione registrazione e accesso sono automatici.",login_phone_tip:"L’accesso con telefono è facoltativo. Email o WeChat sono più comodi e non richiedono verifiche via telefono.",login_err_email:"Inserisci un indirizzo email valido",login_locked:"Troppi tentativi, riprova tra {n} minuti",login_throttle:"Richieste troppo frequenti, riprova tra {n} secondi",login_no_cloud:"Servizio cloud non pronto, riprova più tardi",nav_center:"Area personale",center_form_title:"Dati del profilo",center_form_sub:"Inserisci nickname, avatar e biografia per completare la tua area personale. Dopo l'accesso i dati si sincronizzano sul cloud e vengono riutilizzati dai preferiti di compilazione automatica e dall'assistente AI alla registrazione. Le password non vengono mai salvate.",pf_nickname:"Nickname",pf_nickname_ph:"Il tuo nickname",pf_group_identity:"Identità",pf_group_contact:"Contatti",pf_group_accounts:"Account piattaforma",pf_group_region:"Regione",pf_avatar:"URL immagine avatar",pf_avatar_ph:"https://example.com/avatar.png (facoltativo)",pf_bio:"Biografia",pf_bio_ph:"Breve presentazione (facoltativo)",acct_guest_title:"Non autenticato",acct_guest_sub:"Accedi per vedere qui le informazioni dell'account, il metodo di accesso e lo stato della sincronizzazione cloud, e completare il profilo. Puoi anche compilare il profilo qui sotto senza accedere.",acct_btn_login:"Registrati / Accedi",acct_unnamed:"Nessun nickname impostato",acct_signed_in:"Autenticato",acct_provider:"Metodo di accesso",acct_uid:"ID account",acct_cloud_on:"Sincronizzazione cloud attiva",acct_cloud_off:"Sincronizzazione cloud inattiva",acct_edit:"Modifica profilo",avatar_edit:"Tocca per caricare",avatar_err_type:"Scegli un file immagine",avatar_err_size:"L'immagine non deve superare {n}MB",avatar_ok:"Avatar aggiornato",id_allocating:"Assegnazione...",fancy_pool_title:"Pool ID premium",fancy_pool_desc:"Questi numeri non vengono assegnati automaticamente e sono riservati a un futuro sistema ID premium: numeri corti (1-5 cifre) e numeri con schema (ripetuti, consecutivi, ABAB, ecc.).",fancy_pool_intro:"Il pool ID premium raccoglie i numeri esclusi dall'assegnazione automatica. Il tuo account riceve un numero normale da 100000 in poi, in ordine; i numeri con schema vengono saltati automaticamente.",fancy_pool_note:"In futuro un sistema ID premium potrebbe offrirli per selezione, riscatto o vantaggi membership. Attualmente solo visualizzazione, acquisto non disponibile.",region_prov_ph:"Seleziona provincia",region_city_ph:"Seleziona città",region_dist_ph:"Seleziona distretto",
 login_phone:'Numero di telefono',send_code:'Ottieni codice',login_code:'Codice SMS',phone_login:'Login',login_err_phone:'Inserisci un numero di telefono valido di 11 cifre',login_err_code:'Inserisci il codice',login_err_otp:'Ottieni prima il codice',toast_auth_cb:'Il callback di autorizzazione non ha un metodo di login valido',
+title_patrol:'Centro di monitoraggio',sub_patrol:'Sincronizzazione · link · dati, tre controlli a colpo d\'occhio',
+patrol_notice:'<b>Informazioni sul centro di monitoraggio:</b> Questa workbench è una pagina statica locale. I push git e le ricerche sul web girano in background tramite le attività pianificate di WorkBuddy e non possono essere avviati direttamente dal browser. Gli stati qui sotto provengono dal file dati e dai record locali. "Genera comando" copia un comando pronto: incollalo in WorkBuddy per eseguire subito un controllo. La verifica della raggiungibilità dei link gira davvero nel browser e i risultati sono salvati solo in locale.',
+patrol_stat_total:'Voci totali',patrol_stat_offers:'Quote gratuite',patrol_stat_resources:'Server / Domini',patrol_stat_bad:'Link problematici',
+patrol_sync_title:'① Monitoraggio sync pianificato',patrol_sync_sub:'Controlla le modifiche locali e fa commit/push automatico su GitHub; gira in background ogni ora ai minuti :00/:15/:30/:45.',
+patrol_sync_repo:'Repository',patrol_sync_branch:'Branch',patrol_sync_freq:'Frequenza',patrol_sync_freq_val:'Ogni ora :00/:15/:30/:45',patrol_sync_last:'Ultima sincronizzazione',
+patrol_btn_sync:'Genera comando di sync',patrol_btn_history:'Cronologia esecuzioni locali',
+patrol_link_title:'② Monitoraggio disponibilità link',patrol_link_sub:'Sonda davvero i siti delle piattaforme dal browser (dipende dalle policy CORS dei siti di destinazione — solo indicativo); risultati salvati solo in locale.',
+patrol_btn_link_run:'Avvia controllo link',patrol_btn_stop:'Ferma',patrol_scope_offers:'Quote gratuite',patrol_scope_resources:'Server / Domini',patrol_scope_all:'Tutti',
+patrol_link_empty:'Non ancora controllato. Clicca "Avvia controllo link" per eseguire; i risultati vengono salvati in locale.',patrol_link_checked:'Controllato alle',
+patrol_state_ok:'Raggiungibile',patrol_state_bad:'Non raggiungibile',patrol_state_wait:'Controllo in corso',
+patrol_badge_auto:'Auto (background)',patrol_badge_ok:'Tutto okay',patrol_badge_issue:'{n} problemi',patrol_badge_none:'Non controllato',
+patrol_no_targets:'Nessun link in questa categoria',patrol_stopped:'Fermato',patrol_link_done:'Controllo completato: {n} totali, {b} non raggiungibili',patrol_no_records:'Nessuna cronologia locale',
+patrol_update_title:'③ Aggiornamento dati giornaliero',patrol_update_sub:'Cerca nel web nuove quote gratuite, risorse, classifiche e notizie, rimuove i duplicati e pulisce le voci scadute; gira ogni giorno alle 09:00 in background.',
+patrol_update_next:'Pianificazione',patrol_update_last:'Ultimo aggiornamento',patrol_update_daily:'Ogni giorno 09:00',patrol_update_none:'Nessun log di aggiornamento',
+patrol_btn_update:'Genera comando di aggiornamento',patrol_btn_goto_log:'Vedi log completo',
 login_or:'oppure un altro metodo',wechat_login:'Login WeChat con un solo clic',login_tip:'La workbench è usabile anche senza login — i dati restano nel browser locale. Dopo il login i dati si sincronizzano in cloud e ti seguono su ogni dispositivo.',login_user:'Utente registrato',
 deadline_expired:'✕ Scaduta',deadline_today:'Scade oggi',deadline_tomorrow:'Scade domani',deadline_left:'( ',deadline_days:' giorni rimasti)',deadline_long:'Valido a lungo termine',
 toast_record_created:'Registro in corso creato — torna a inserire l\'esito dopo la registrazione',toast_gh_ai:'Comando di sintesi del progetto copiato, incolla in una conversazione WorkBuddy',
@@ -13991,10 +14181,10 @@ function fallbackCopy(s){var ta=document.createElement('textarea');ta.value=s;ta
 
 /* ---------- 视图 ---------- */
 var currentView='offers';
-var TITLES={offers:['title_offers','sub_offers'],resources:['title_resources','sub_resources'],github:['title_github','sub_github'],skills:['title_skills','sub_skills'],tutorials:['title_tutorials','sub_tutorials'],monetization:['title_monetization','sub_monetization'],news:['title_news','sub_news'],projects:['title_projects','sub_projects'],profile:['title_profile','sub_profile'],records:['title_records','sub_records'],log:['title_log','sub_log']};
+var TITLES={offers:['title_offers','sub_offers'],resources:['title_resources','sub_resources'],github:['title_github','sub_github'],skills:['title_skills','sub_skills'],tutorials:['title_tutorials','sub_tutorials'],monetization:['title_monetization','sub_monetization'],news:['title_news','sub_news'],projects:['title_projects','sub_projects'],profile:['title_profile','sub_profile'],records:['title_records','sub_records'],patrol:['title_patrol','sub_patrol'],log:['title_log','sub_log']};
 function setView(v){
   currentView=v;
-  ['offers','resources','github','skills','tutorials','monetization','news','projects','profile','records','log'].forEach(function(x){document.getElementById('view-'+x).style.display=x===v?'':'none';});
+  ['offers','resources','github','skills','tutorials','monetization','news','projects','profile','records','patrol','log'].forEach(function(x){document.getElementById('view-'+x).style.display=x===v?'':'none';});
   applyAdminVisibility();
   Array.prototype.forEach.call(document.querySelectorAll('#nav button'),function(b){b.classList.toggle('active',b.dataset.view===v);});
   document.getElementById('view-title').textContent=t(TITLES[v][0]);
@@ -14529,7 +14719,162 @@ function render(){
   if(currentView==='projects')renderProjects();
   if(currentView==='profile')renderProfile();
   if(currentView==='records')renderRecords();
+  if(currentView==='patrol')renderPatrol();
   if(currentView==='log')renderLog();
+}
+
+/* ---------- 巡检中心 ---------- */
+var PATROL_LINK_KEY='tw_patrol_links';       // 链接检测结果
+var PATROL_SYNC_KEY='tw_patrol_sync_log';    // 本机记录的同步巡检
+var PATROL_UPDATE_KEY='tw_patrol_update_log';// 本机记录的更新巡检
+var patrolRunning=false;
+function patrolStamp(){
+  var d=new Date(),p=function(n){return String(n).padStart(2,'0');};
+  return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());
+}
+function patrolAppendLog(key,text){
+  var arr=load(key,[]);
+  arr.unshift({time:patrolStamp(),text:text});
+  save(key,arr.slice(0,50));
+}
+function renderPatrol(){
+  var stats=document.getElementById('patrol-stats');
+  var offers=(DATA.offers||[]).length+(getCustom().length);
+  var resources=(DATA.resources||[]).length+(getCustomRes().length);
+  var linkRes=load(PATROL_LINK_KEY,{items:{},time:null});
+  var linkItems=Object.keys(linkRes.items||{});
+  var badLinks=linkItems.filter(function(k){return linkRes.items[k].ok===false;}).length;
+  stats.innerHTML=
+    '<div class="stat"><b>'+(offers+resources)+'</b><span>'+esc(t('patrol_stat_total'))+'</span></div>'+
+    '<div class="stat g"><b>'+offers+'</b><span>'+esc(t('patrol_stat_offers'))+'</span></div>'+
+    '<div class="stat"><b>'+resources+'</b><span>'+esc(t('patrol_stat_resources'))+'</span></div>'+
+    '<div class="stat w"><b>'+badLinks+'</b><span>'+esc(t('patrol_stat_bad'))+'</span></div>';
+
+  // 模块一：同步巡检
+  var syncLog=load(PATROL_SYNC_KEY,[]);
+  setText('patrol-sync-last',syncLog.length?syncLog[0].time:(DATA.lastUpdated||'—'));
+  setBadge('patrol-sync-badge','ok',t('patrol_badge_auto'));
+
+  // 模块二：链接检测
+  var lb=document.getElementById('patrol-link-badge');
+  if(linkItems.length){setBadge('patrol-link-badge',badLinks?'warn':'ok',badLinks?t('patrol_badge_issue').replace('{n}',badLinks):t('patrol_badge_ok'));}
+  else{setBadge('patrol-link-badge','',t('patrol_badge_none'));}
+  renderPatrolLinks();
+
+  // 模块三：更新巡检
+  setText('patrol-update-next',DATA.nextCheck||t('patrol_update_daily'));
+  setText('patrol-update-last',DATA.lastUpdated||'—');
+  setBadge('patrol-update-badge','ok',t('patrol_badge_auto'));
+  var logs=(DATA.updateLog||[]).slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));}).slice(0,4);
+  var ulog=document.getElementById('patrol-update-log');
+  if(logs.length){
+    ulog.innerHTML=logs.map(function(l){return '<div class="patrol-log-row"><time>'+esc(l.date)+'</time><span>'+esc(String(l.summary||'').slice(0,120))+(String(l.summary||'').length>120?'…':'')+'</span></div>';}).join('');
+  }else{ulog.innerHTML='<div class="patrol-log-row"><span>'+esc(t('patrol_update_none'))+'</span></div>';}
+}
+function setText(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+function setBadge(id,cls,v){var e=document.getElementById(id);if(e){e.className='patrol-badge'+(cls?' '+cls:'');e.textContent=v;}}
+function patrolUrlHost(u){try{return new URL(u).hostname;}catch(e){return String(u||'').slice(0,40);}}
+function renderPatrolLinks(){
+  var box=document.getElementById('patrol-link-list');
+  var res=load(PATROL_LINK_KEY,{items:{},time:null});
+  var items=res.items||{},keys=Object.keys(items);
+  if(!keys.length){box.innerHTML='<div class="patrol-empty">'+esc(t('patrol_link_empty'))+'</div>';return;}
+  box.innerHTML='<div style="font-size:11px;color:var(--dim);margin-bottom:8px">'+esc(t('patrol_link_checked'))+': '+esc(res.time||'—')+' · '+keys.length+'</div>'+
+    keys.map(function(k){
+      var it=items[k];
+      var cls=it.ok===true?'ok':(it.ok===false?'bad':'wait');
+      var label=it.ok===true?t('patrol_state_ok'):(it.ok===false?t('patrol_state_bad'):t('patrol_state_wait'));
+      return '<div class="patrol-link-row"><span class="pl-state '+cls+'">'+esc(label)+'</span>'+
+        '<span class="pl-name" title="'+esc(it.name||k)+'">'+esc(it.name||k)+'</span>'+
+        '<span class="pl-host">'+esc(patrolUrlHost(it.url||k))+'</span></div>';
+    }).join('');
+}
+function patrolCollect(){
+  var scope=(document.getElementById('patrol-link-scope')||{}).value||'offers';
+  var list=[];
+  if(scope==='offers'||scope==='all')list=list.concat(allOffers());
+  if(scope==='resources'||scope==='all')list=list.concat((DATA.resources||[]).concat(getCustomRes()));
+  var seen={},out=[];
+  list.forEach(function(o){
+    if(!o||!o.url||seen[o.url])return;
+    seen[o.url]=1;
+    out.push({key:o.id||o.url,name:o.provider||o.title||o.name||o.url,url:o.url});
+  });
+  return out;
+}
+function patrolRunLinks(){
+  if(patrolRunning)return;
+  var targets=patrolCollect();
+  if(!targets.length){toast(t('patrol_no_targets'));return;}
+  patrolRunning=true;
+  var res=load(PATROL_LINK_KEY,{items:{},time:null});
+  var items={};
+  var prog=document.getElementById('patrol-link-progress');
+  var done=0,bad=0;
+  targets.forEach(function(x){items[x.key]={name:x.name,url:x.url,ok:null};});
+  save(PATROL_LINK_KEY,{items:items,time:null});
+  renderPatrolLinks();
+  function finishOne(x,ok){
+    items[x.key]={name:x.name,url:x.url,ok:ok};
+    done++;if(!ok)bad++;
+    if(prog)prog.textContent=done+' / '+targets.length;
+    if(done%5===0||done===targets.length){
+      save(PATROL_LINK_KEY,{items:items,time:patrolStamp()});
+      renderPatrolLinks();
+      var lb=document.getElementById('patrol-link-badge');
+      if(lb){lb.className='patrol-badge '+(bad?'warn':'ok');lb.textContent=bad?t('patrol_badge_issue').replace('{n}',bad):t('patrol_badge_ok');}
+    }
+  }
+  var i=0,CONC=6,LIMIT=9000;
+  function next(){
+    if(!patrolRunning)return;
+    if(i>=targets.length){
+      patrolRunning=false;
+      save(PATROL_LINK_KEY,{items:items,time:patrolStamp()});
+      renderPatrolLinks();
+      patrolAppendLog(PATROL_UPDATE_KEY,t('patrol_link_done').replace('{n}',targets.length).replace('{b}',bad));
+      toast(t('patrol_link_done').replace('{n}',targets.length).replace('{b}',bad));
+      return;
+    }
+    var batch=[];
+    while(i<targets.length&&batch.length<CONC)batch.push(targets[i++]);
+    batch.forEach(function(x){
+      var ctl=typeof AbortController!=='undefined'?new AbortController():null;
+      var timer=setTimeout(function(){if(ctl)ctl.abort();},LIMIT);
+      var u=x.url;
+      // no-cors：只判断网络层可达（DNS/连接），无法读取 HTTP 状态码
+      fetch(u,{mode:'no-cors',signal:ctl?ctl.signal:undefined,cache:'no-store'})
+        .then(function(){clearTimeout(timer);finishOne(x,true);})
+        .catch(function(){clearTimeout(timer);finishOne(x,false);});
+    });
+    setTimeout(next,150);
+  }
+  next();
+}
+function patrolStopLinks(){
+  patrolRunning=false;
+  var prog=document.getElementById('patrol-link-progress');
+  if(prog)prog.textContent=t('patrol_stopped');
+  toast(t('patrol_stopped'));
+}
+function patrolInstruction(kind){
+  if(kind==='sync'){
+    return '请对神机工作台项目「C:/Users/Administrator/WorkBuddy/2026-11-23-13-27-31/token-workbench」执行一次同步巡检：\n'+
+      '1. 若 git push 失败，先运行 C:/Users/Administrator/WorkBuddy/2026-11-23-13-27-31/switch-git-proxy.py 自动探测可用代理并更新 git 配置。\n'+
+      '2. 检查 git status，若有未提交改动，执行 git add -A + 中文消息的 git commit，再 git push origin main。\n'+
+      '3. 推送成功后，用 sites deploy 重新发布线上版本（directory 指向 token-workbench，复用现有链接），并抓取线上页面验证。\n'+
+      '4. 汇报本地改动数、提交号与线上验证结果。';
+  }
+  return '请对神机工作台执行一次每日数据更新巡检：\n'+
+    '1. 全网搜索当天新增的免费 Token 活动、免费服务器/域名资源、GitHub 热门项目、Agent Skill、AI 教程与变现赛道资源。\n'+
+    '2. 与 token-workbench/index.html 中 window.TOKEN_WORKBENCH_DATA 的现有条目对比去重，把新增项按对应分类补入，把已过期项标记 expired 并补充替代项。\n'+
+    '3. 更新 lastUpdated 字段，并在 updateLog 追加一条本次巡检摘要。\n'+
+    '4. 验证 JSON 有效后，git commit + push origin main，并用 sites deploy 重新发布线上，抓取验证。';
+}
+function patrolShowSyncLog(){
+  var arr=load(PATROL_SYNC_KEY,[]);
+  var body=arr.length?arr.map(function(l){return '<div class="patrol-log-row"><time>'+esc(l.time)+'</time><span>'+esc(l.text)+'</span></div>';}).join(''):'<div class="patrol-empty">'+esc(t('patrol_no_records'))+'</div>';
+  openModal(t('patrol_btn_history'),body,'<button class="btn" data-act="close-modal">'+esc(t('modal_cancel')||'关闭')+'</button>');
 }
 
 /* ---------- 弹窗 ---------- */
@@ -14684,6 +15029,12 @@ document.addEventListener('click',function(e){
   var b=e.target.closest('[data-act]'); if(!b)return;
   var act=b.dataset.act, id=b.dataset.id;
   if(e.target.id==='login-user'&&loggedIn){setView('profile');return;}
+  /* 巡检中心 */
+  if(act==='patrol-copy'){copyText(patrolInstruction(b.dataset.kind));return;}
+  if(act==='patrol-sync-log'){patrolShowSyncLog();return;}
+  if(act==='patrol-link-run'){patrolRunLinks();return;}
+  if(act==='patrol-link-stop'){patrolStopLinks();return;}
+  if(act==='patrol-goto-log'){setView('log');return;}
   if(act==='open'){
     var o=findOffer(id); if(!o)return;
     var recs=getRecords(), r=recs[id]||{status:'pending'};
