@@ -1039,7 +1039,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
  *   tier 100=权威, 50=推荐, 20=实用
  */
 window.TOKEN_WORKBENCH_DATA = {
-  "lastUpdated": "2026-11-25T19:30:00+08:00",
+  "lastUpdated": "2026-11-25T19:58:00+08:00",
   "nextCheck": "每日 09:00 自动搜索更新",
   "offers": [
     {
@@ -2531,6 +2531,250 @@ window.TOKEN_WORKBENCH_DATA = {
         "可商用"
       ],
       "notes": "2026-11-25 官网复核：Free.ai（Muddy Holdings LLC）聚合 481+ AI 工具、573+ 模型，自托管 55+ 开源模型（Qwen 3.6 35B、FLUX、CogVideoX、Kokoro、Whisper 等）并接入 GPT/Claude/Gemini 等；生成内容可商用，官方声明数据不永久存储、不用于训练；提供 OpenAI 兼容 REST API；付费版 $5/月起。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "inception-mercury-100m",
+      "provider": "Inception Labs",
+      "title": "每个新 API Key 送 1 亿免费 Token（Mercury 扩散模型）",
+      "quota": "每个新建 API Key 附赠 1 亿免费 Token（此前为 1000 万，官方提升 10 倍），免费层限速同步提升 10 倍；用于 Mercury 系列扩散式 LLM（Mercury 3 号称 1068 token/秒、1M 上下文）",
+      "quotaTier": 100,
+      "cadence": "一次性",
+      "claimMethod": "注册 platform.inceptionlabs.ai 后在控制台新建 API Key，1 亿 Token 随 Key 自动发放，无需绑卡；OpenAI 兼容 Base URL https://api.inceptionlabs.ai/v1，模型名 mercury-3",
+      "url": "https://platform.inceptionlabs.ai/",
+      "deadline": null,
+      "deadlineText": "官方未公布截止日（第三方按保守口径预计 2026 年内），领到尽早用",
+      "requirements": [
+        "注册 Inception 账号",
+        "无需绑卡",
+        "Mercury 3 当前仅支持文本输入"
+      ],
+      "region": "海外",
+      "source": "官方博客",
+      "sourceUrl": "https://www.inceptionlabs.ai/blog/mercury-2-10x-free-tokens",
+      "tags": [
+        "超大额度",
+        "免绑卡",
+        "扩散模型",
+        "OpenAI兼容"
+      ],
+      "notes": "2026-11-25 多源复核：官方博客原文「100M free tokens, up from 10M」，Perq 11-24 验证仍在生效；额度按 Key 发放，用完后需在 Billing 添加付款信息转付费（发布期输入 $0.10/输出 $0.35 每百万 Token）。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "agentrouter-daily-checkin",
+      "provider": "AgentRouter",
+      "title": "注册领 $100，每日签到再得 $25（Claude/GPT 系公益网关）",
+      "quota": "注册即送 $100（GitHub 账号满 1 年或 LinuxDO 账号登录），每日签到再得 $25，邀请得 $50-100；支持 Anthropic 与 OpenAI 双兼容协议，可直连 Claude Code / Codex / Cline / Cursor",
+      "quotaTier": 80,
+      "cadence": "每日",
+      "claimMethod": "用注册满 1 年的 GitHub 或 LinuxDO 账号登录 agentrouter.org 领取注册额度，之后每天登录签到领取 $25",
+      "url": "https://agentrouter.org/",
+      "deadline": null,
+      "deadlineText": "长期活动（运营方可随时调整额度规则）",
+      "requirements": [
+        "GitHub 账号满 1 年或 LinuxDO 账号",
+        "每日手动签到"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://aifree.dev/free-api-credits",
+      "tags": [
+        "每日签到",
+        "公益站",
+        "Claude Code",
+        "高门槛注册"
+      ],
+      "notes": "2026-11-25 多源复核：aifree.dev 11-20 验证签到福利仍在生效；可用模型轮换较快（11 月下旬默认组为 GPT-6.1/5.6 Sol），公益站高峰期可能限流，额度规则以站内公示为准。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "anthropic-trial-5",
+      "provider": "Anthropic",
+      "title": "官方 API 试用赠 $5 额度",
+      "quota": "新账号 $5 试用额度，用于 Claude 系列 API 调用",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "注册 console.anthropic.com 并完成短信手机号验证即可获得 $5 试用额度（无需信用卡）",
+      "url": "https://console.anthropic.com/",
+      "deadline": null,
+      "deadlineText": "长期有效（官方常规试用政策，以控制台显示为准）",
+      "requirements": [
+        "短信手机号验证",
+        "无需信用卡"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://pricepertoken.com/free-ai-api",
+      "tags": [
+        "官方试用",
+        "大厂",
+        "免绑卡"
+      ],
+      "notes": "2026-11-25 复核：pricepertoken 11 月验证 $5 试用仍免卡可领，仅强制短信验证；额度用完需绑卡转付费。适合低成本体验 Claude 官方 API。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "llm7-free-tier",
+      "provider": "LLM7.io",
+      "title": "永久免费层，OpenAI 兼容 API 无需注册",
+      "quota": "免费层每日额度（不同来源口径不一：aifree.dev 表格标 10 万 Token/天，其概览称 1M/天），通过 OpenAI 兼容 API 调用",
+      "quotaTier": 50,
+      "cadence": "每日",
+      "claimMethod": "访问 llm7.io 获取 API Key 即可调用，无需注册、无需信用卡",
+      "url": "https://llm7.io/",
+      "deadline": null,
+      "deadlineText": "永久免费层（无截止日）",
+      "requirements": [
+        "无需注册",
+        "无需信用卡"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://aifree.dev/free-api-credits",
+      "tags": [
+        "永久免费",
+        "免注册",
+        "OpenAI兼容",
+        "每日额度"
+      ],
+      "notes": "2026-11-25 复核：aifree.dev 11-22 验证免费层仍有效；每日额度两个来源口径不一致，以官网实际为准。适合做轻量原型与兜底通道。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "nscale-5-credit",
+      "provider": "Nscale",
+      "title": "注册送 $5 Serverless 推理赠金",
+      "quota": "新建 Nscale Console 账号获得 $5 免费赠金，用于 Serverless 推理",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "注册 Nscale Console 账号即得 $5 赠金",
+      "url": "https://console.nscale.com/",
+      "deadline": null,
+      "deadlineText": "以官方当前政策为准",
+      "requirements": [
+        "注册 Nscale 账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://perq.sh/blog/free-llm-api-tiers-november-update",
+      "tags": [
+        "注册赠金",
+        "Serverless推理"
+      ],
+      "notes": "2026-11-25 复核：Perq 11-23 验证该活动公开有效；赠金信息主要来自 Nscale 官方博客，注册时以控制台显示为准。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "hyperbolic-1-credit",
+      "provider": "Hyperbolic",
+      "title": "注册送 $1 永久免费额度",
+      "quota": "新注册用户 $1 永久免费 API 额度（不过期），覆盖开源大模型推理与 GPU 租赁",
+      "quotaTier": 20,
+      "cadence": "一次性",
+      "claimMethod": "注册 hyperbolic.xyz 账号即得 $1 赠金，无需信用卡",
+      "url": "https://hyperbolic.xyz/",
+      "deadline": null,
+      "deadlineText": "永久有效（赠金不过期）",
+      "requirements": [
+        "注册账号",
+        "无需信用卡"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://aitujian.cn/free-ai-api.html",
+      "tags": [
+        "永久有效",
+        "免绑卡",
+        "GPU租赁"
+      ],
+      "notes": "2026-11-25 复核：aitujian 11-25 收录页仍列为「永久有效（赠金）」；额度小但不过期，适合低成本体验 Llama、Qwen 等开源模型。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "ai21-10-credit",
+      "provider": "AI21 Labs",
+      "title": "注册送 $10 试用额度（3 个月有效）",
+      "quota": "$10 试用额度，有效期 3 个月，可调用 Jamba 1.5 / 1.6 等模型",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "注册 AI21 账号即得试用额度",
+      "url": "https://studio.ai21.com/",
+      "deadline": null,
+      "deadlineText": "赠金 3 个月有效",
+      "requirements": [
+        "注册账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://aitujian.cn/free-ai-api.html",
+      "tags": [
+        "注册赠金",
+        "Jamba",
+        "长上下文"
+      ],
+      "notes": "2026-11-25 复核：aitujian 11-25 收录页仍列为有效；Jamba 系列以长上下文与高效推理为卖点。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "voyage-embedding-200m",
+      "provider": "Voyage AI",
+      "title": "每个模型送 2 亿 Embedding Token",
+      "quota": "每个 Embedding 模型 2 亿免费 Token（按模型分别计），用于文本向量化/检索（RAG）",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "注册 Voyage AI 控制台创建 API Key，免费额度按模型发放",
+      "url": "https://www.voyageai.com/",
+      "deadline": null,
+      "deadlineText": "以官方当前政策为准",
+      "requirements": [
+        "注册账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://aifree.dev/free-api-credits",
+      "tags": [
+        "超大额度",
+        "Embedding",
+        "RAG检索"
+      ],
+      "notes": "2026-11-25 复核：aifree.dev 将 Voyage AI 列入「Big token grants」（每模型 200M embedding tokens）；专攻向量化场景，与对话类额度互补。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": "active"
+    },
+    {
+      "id": "gmi-cloud-free",
+      "provider": "GMI Cloud",
+      "title": "$5 注册赠金 + 免绑卡免费模型端点",
+      "quota": "两条路：① 注册领 $5 赠金（需绑卡领取）；② 无需绑卡即可免费调用指定端点（DeepSeek R1 Distill Llama 70B、Llama 3.3 70B Instruct Turbo），与付费模型同 H100/H200 基础设施",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "注册 gmicloud.ai 后：免费端点直接生成 Key 调用（免卡）；$5 赠金需在控制台添加支付方式后领取",
+      "url": "https://gmicloud.ai/",
+      "deadline": null,
+      "deadlineText": "免费端点长期（以官方为准），$5 赠金以控制台显示为准",
+      "requirements": [
+        "注册账号（免费端点免卡）",
+        "领 $5 赠金需绑卡"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://pricepertoken.com/free-ai-api",
+      "tags": [
+        "免绑卡端点",
+        "注册赠金",
+        "DeepSeek",
+        "Llama"
+      ],
+      "notes": "2026-11-25 复核：pricepertoken 11 月验证免费端点无需绑卡即可用（报道口径，以官网实际为准）；适合免卡体验 70B 级开源模型。",
       "discoveredAt": "2026-11-25",
       "statusTag": "active"
     }
