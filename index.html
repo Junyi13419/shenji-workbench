@@ -14514,9 +14514,10 @@ function fallbackCopy(s){var ta=document.createElement('textarea');ta.value=s;ta
 
 /* ---------- 小豆码池 ---------- */
 var XD_DATA_URL='https://good1uck.github.io/xiaodou-codes/codes.json';
+var XD_SNAPSHOT_URL='xiaodou-codes.json';
 var XD_REFRESH_SEC=20;
 var XD_SOURCE='https://xiaodou-code-pool-e54blnpc9ma.qoder.website/';
-var xdState={items:[],lastUpdated:'',countdown:XD_REFRESH_SEC,loading:false,tried:load('tw_xd_tried',[]),timer:null,inited:false};
+var xdState={items:[],lastUpdated:'',countdown:XD_REFRESH_SEC,loading:false,tried:load('tw_xd_tried',[]),timer:null,inited:false,snapshotLoaded:false,snapshotTried:false};
 function xdIsTried(code){return xdState.tried.indexOf(String(code))>=0;}
 function xdToggleTried(code){
   code=String(code);var i=xdState.tried.indexOf(code);
@@ -14537,26 +14538,55 @@ function xdAgo(utc){
   var h=Math.floor(m/60);if(h<24)return h+t('xd_hour_ago');
   return Math.floor(h/24)+t('xd_day_ago');
 }
+function xdApplyData(d,manual){
+  if(!Array.isArray(d.codes)||!d.codes.length)return false;
+  xdState.items=d.codes;
+  xdState.lastUpdated=d.lastUpdated||'';
+  xdState.countdown=XD_REFRESH_SEC;
+  renderXiaodou();
+  if(manual)toast(t('xd_refreshed'));
+  return true;
+}
+function xdLoadSnapshot(cb){
+  /* 本地快照：首次快速渲染，file:// 下 fetch 受限时静默跳过 */
+  fetch(XD_SNAPSHOT_URL+'?t='+Date.now(),{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+    .then(function(d){
+      if(!xdState.snapshotLoaded&&xdApplyData(d,false))xdState.snapshotLoaded=true;
+    })
+    .catch(function(){})
+    .then(function(){if(cb)cb();});
+}
 function xdFetch(manual){
   if(xdState.loading)return;
   xdState.loading=true;
   var cd=document.getElementById('xd-countdown');
   if(cd)cd.textContent='…';
+  if(!xdState.snapshotTried){
+    xdState.snapshotTried=true;
+    xdLoadSnapshot(function(){xdFetchRemote(manual);});
+  }else{
+    xdFetchRemote(manual);
+  }
+}
+function xdFetchRemote(manual){
   fetch(XD_DATA_URL+'?t='+Date.now(),{cache:'no-store'})
     .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
     .then(function(d){
-      xdState.items=Array.isArray(d.codes)?d.codes:[];
-      xdState.lastUpdated=d.lastUpdated||'';
-      xdState.countdown=XD_REFRESH_SEC;
       xdState.loading=false;
-      renderXiaodou();
-      if(manual)toast(t('xd_refreshed'));
+      if(!xdApplyData(d,manual)){
+        /* 远端返回空数据：保留已有快照，不计为失败 */
+        xdState.countdown=XD_REFRESH_SEC;
+      }
     })
     .catch(function(e){
       xdState.loading=false;
       xdState.countdown=XD_REFRESH_SEC;
-      var up=document.getElementById('xd-update');
-      if(up)up.textContent=t('xd_fetch_fail')+' ('+(e&&e.message||'')+')';
+      /* 远端失败时保留快照数据，仅在没有数据时才显示失败提示 */
+      if(!xdState.items.length){
+        var up=document.getElementById('xd-update');
+        if(up)up.textContent=t('xd_fetch_fail')+' ('+(e&&e.message||'')+')';
+      }
       var cd=document.getElementById('xd-countdown');
       if(cd)cd.textContent=XD_SEC_LABEL();
     });
