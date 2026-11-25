@@ -1124,7 +1124,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
  *   tier 100=权威, 50=推荐, 20=实用
  */
 window.TOKEN_WORKBENCH_DATA = {
-  "lastUpdated": "2026-11-26T00:14:08+08:00",
+  "lastUpdated": "2026-11-26T05:15:00+08:00",
   "nextCheck": "每日 09:00 自动搜索更新",
   "offers": [
     {
@@ -2878,6 +2878,35 @@ window.TOKEN_WORKBENCH_DATA = {
         "AIGC"
       ],
       "notes": "2026-11-26 官网实测：免费在线 3D 模型生成，支持高精细雕刻级与引擎可用智能网格，导出 GLB/FBX/OBJ/USD。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "venice-free-tier",
+      "provider": "Venice.ai",
+      "title": "浏览器内免费无审查 AI：每天 10 条文本 + 15 张图片",
+      "type": "在线对话 / 无审查",
+      "quota": "免费版每天 10 条文本提示 + 15 张图片提示，浏览器直接使用，无需本地 GPU",
+      "quotaTier": 40,
+      "cadence": "每日",
+      "claimMethod": "访问 venice.ai 注册账号即可使用免费额度；无审查模型基于 Mistral / Dolphin 系",
+      "url": "https://venice.ai",
+      "deadline": null,
+      "deadlineText": "长期有效（免费额度以官网为准）",
+      "requirements": [
+        "需注册账号",
+        "免费额度有限"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://freeuncensoredaimodel.vercel.app/",
+      "tags": [
+        "无审查",
+        "每日额度",
+        "免本地GPU",
+        "浏览器对话"
+      ],
+      "notes": "2026-11-23 由 freeuncensoredaimodel.vercel.app 人工核验收录：Venice 免费层每天 10 条文本 + 15 张图片提示，可在浏览器体验无审查模型，无需 GPU。需账号；隐私声明为 Venice 自述、未经第三方审计。免费额度可能调整，以官网 pricing 页为准。",
       "discoveredAt": "2026-11-26",
       "statusTag": "active"
     }
@@ -5757,6 +5786,186 @@ window.TOKEN_WORKBENCH_DATA = {
         "团队协作"
       ],
       "notes": "The open-source app to manage agents at work"
+    },
+    {
+      "id": "fu-heretic",
+      "rank": null,
+      "period": "week",
+      "fullName": "p-e-w/heretic",
+      "language": "Python",
+      "stars": 42700,
+      "forks": null,
+      "gain": null,
+      "description": "一键把任意开源模型变成无审查版本：自动找出「拒绝」方向并消融，本地离线运行、免账号。AGPL-3.0 许可；无 GPU 时较慢。",
+      "url": "https://github.com/p-e-w/heretic",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "本地离线",
+        "模型工具"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录（42.7K stars）。清单站标注：Runs offline · No account。"
+    },
+    {
+      "id": "fu-obliteratus",
+      "rank": null,
+      "period": "week",
+      "fullName": "elder-plinius/OBLITERATUS",
+      "language": "Python",
+      "stars": 9700,
+      "forks": null,
+      "gain": null,
+      "description": "在浏览器里用 Google Colab 免费 GPU 给模型去审查，无需本地显卡。Colab 路线需 Google 账号；托管 Space 默认开启匿名基准遥测，本地可关闭。",
+      "url": "https://github.com/elder-plinius/OBLITERATUS",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "免本地GPU",
+        "Colab"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录（9.7K stars）。Colab 笔记本：https://colab.research.google.com/github/elder-plinius/OBLITERATUS/blob/main/notebooks/abliterate.ipynb"
+    },
+    {
+      "id": "fu-locally-uncensored",
+      "rank": null,
+      "period": "week",
+      "fullName": "PurpleDoubleD/locally-uncensored",
+      "language": "TypeScript",
+      "stars": 4600,
+      "forks": null,
+      "gain": null,
+      "description": "桌面 PC 无终端路线：图形界面一键部署本地无审查模型，离线运行、免账号。Windows 可能因安装包未签名弹出 SmartScreen 警告；可选云端开关为付费，建议关闭。",
+      "url": "https://github.com/PurpleDoubleD/locally-uncensored",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "桌面App",
+        "本地离线"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录（4.6K stars）。安装包：https://github.com/PurpleDoubleD/locally-uncensored/releases/latest"
+    },
+    {
+      "id": "fu-uncensored-local-ai",
+      "rank": null,
+      "period": "week",
+      "fullName": "techjarves/Uncensored-Local-AI-Multiplatform",
+      "language": "Dart",
+      "stars": 1700,
+      "forks": null,
+      "gain": null,
+      "description": "手机端离线无审查聊天 App，无需联网。需侧载 APK（Android 会提示风险），iPhone 仅支持侧载；README 称 MIT 但仓库无许可证文件。",
+      "url": "https://github.com/techjarves/Uncensored-Local-AI-Multiplatform",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "手机App",
+        "本地离线"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录（1.7K stars）。安装包：https://github.com/techjarves/Uncensored-Local-AI-Multiplatform/releases"
+    },
+    {
+      "id": "fu-qwen36-35b-a3b",
+      "rank": null,
+      "period": "week",
+      "fullName": "HauhauCS/Qwen3.6-35B-A3B-Uncensored",
+      "language": "GGUF",
+      "stars": null,
+      "forks": null,
+      "gain": null,
+      "description": "清单站「最强全能」：Qwen3.6 35B-A3B MoE 无审查模型，Q4_K_M 约 21.17GB，适合 24GB 显卡。拒答分 0/465 为上传者自测、非独立评测。",
+      "url": "https://huggingface.co/HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "Qwen",
+        "本地模型"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录。Runs offline · No account。Q4_K_M 文件 21.17GB。"
+    },
+    {
+      "id": "fu-qwen35-9b",
+      "rank": null,
+      "period": "week",
+      "fullName": "HauhauCS/Qwen3.5-9B-Uncensored",
+      "language": "GGUF",
+      "stars": null,
+      "forks": null,
+      "gain": null,
+      "description": "8GB 显卡 / 16GB Mac 首选：Qwen3.5 9B 无审查模型，Q4_K_M 约 5.63GB，离线免账号。拒答分 0/465 为上传者自测。",
+      "url": "https://huggingface.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "Qwen",
+        "小显存"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录。Runs offline · No account。Q4_K_M 文件 5.63GB。"
+    },
+    {
+      "id": "fu-huihui-qwen38-27b",
+      "rank": null,
+      "period": "week",
+      "fullName": "huihui-ai/Huihui-Qwen3.8-27B-abliterated",
+      "language": "GGUF",
+      "stars": null,
+      "forks": null,
+      "gain": null,
+      "description": "清单站下载量最高：Qwen3.8 27B 稠密模型消融版，Q4_K 约 16.81GB，适合 24GB 显卡。仓库含实验性三值文件需 llama.cpp 分支，建议用 Q4_K 或 Q8_0。",
+      "url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "Qwen",
+        "下载量最高"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录。Runs offline · No account。未公布拒答分。"
+    },
+    {
+      "id": "fu-gemma4-e4b",
+      "rank": null,
+      "period": "week",
+      "fullName": "HauhauCS/Gemma-4-E4B-Uncensored",
+      "language": "GGUF",
+      "stars": null,
+      "forks": null,
+      "gain": null,
+      "description": "清单站最小下载：Gemma 4 E4B 无审查模型，Q4_K_M 约 5.34GB，适合普通笔记本。Gemma 许可非 Apache，商用前请阅读条款；拒答分 0/465 为自测。",
+      "url": "https://huggingface.co/HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "Gemma",
+        "最小下载"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录。Runs offline · No account。Q4_K_M 文件 5.34GB。"
+    },
+    {
+      "id": "fu-dolphin-mistral-24b",
+      "rank": null,
+      "period": "week",
+      "fullName": "dphn/Dolphin-Mistral-24B-Venice-Edition",
+      "language": "GGUF",
+      "stars": null,
+      "forks": null,
+      "gain": null,
+      "description": "经典无审查模型：Dolphin Mistral 24B Venice Edition，Q4_K_M 约 14.33GB，适合 16GB 显卡。GGUF 为社区用户 bartowski 转换、非 Dolphin 官方；模型比 Qwen 系更老。",
+      "url": "https://huggingface.co/dphn/Dolphin-Mistral-24B-Venice-Edition",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "无审查",
+        "精选",
+        "Mistral",
+        "本地模型"
+      ],
+      "notes": "freeuncensoredaimodel.vercel.app 2026-11-23 人工核验收录。GGUF 转换版：https://huggingface.co/bartowski/cognitivecomputations_Dolphin-Mistral-24B-Venice-Edition-GGUF"
     }
   ],
   "skills": [
