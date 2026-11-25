@@ -1039,7 +1039,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
  *   tier 100=权威, 50=推荐, 20=实用
  */
 window.TOKEN_WORKBENCH_DATA = {
-  "lastUpdated": "2026-11-25T19:58:00+08:00",
+  "lastUpdated": "2026-11-26T00:14:08+08:00",
   "nextCheck": "每日 09:00 自动搜索更新",
   "offers": [
     {
@@ -1157,7 +1157,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "claimMethod": "邮箱验证或 Google 登录即解锁，免绑卡",
       "url": "https://iteracompute.com/free/",
       "deadline": "2026-11-24",
-      "deadlineText": "2026-11-24 截止（今日最后一天）",
+      "deadlineText": "2026-11-24 已结束",
       "requirements": [
         "邮箱验证 或 Google 账号"
       ],
@@ -1165,13 +1165,13 @@ window.TOKEN_WORKBENCH_DATA = {
       "source": "原文",
       "sourceUrl": "https://mp.weixin.qq.com/s/6YO6uWC0mW0q-AOEzBCObA",
       "tags": [
-        "即将过期",
+        "已结束",
         "免绑卡",
-        "邮箱即可"
+        "历史活动"
       ],
-      "notes": "免费推广至 2026-11-24（今日最后一天），推广期结束后是否延续仍未见官方说明；下次更新若仍未延续则标记 expired。",
+      "notes": "官网公告「The Free promotion has ended」：3000 万/月 Auto 额度于 2026-11-24 终止，Qwen3.8-27B 下线；仅推广前充值且退款后仍为正的账户保留原档位。",
       "discoveredAt": "2026-11-23",
-      "statusTag": "ending"
+      "statusTag": "expired"
     },
     {
       "id": "baidu-qianfan",
@@ -1351,7 +1351,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "多模态",
         "1M 上下文"
       ],
-      "notes": "免费层的请求可能被用于改进模型，敏感数据请勿使用；Gemini 2.5 Flash/Pro 将于 2026-12-01 重定向至 3.x，请提前切换。",
+      "notes": "免费层请求可能被用于改进模型，敏感数据请勿使用；Gemini 2.5 Flash/Pro 于 2026-12-01 重定向至 3.x。另：Google Cloud $300 试用金自 2026-11-16 起不再覆盖 Gemini 平台。",
       "discoveredAt": "2026-11-23",
       "statusTag": "active"
     },
@@ -1402,7 +1402,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "永久免费",
         "边缘推理"
       ],
-      "notes": "免费目录持续更新，已加入 SEA-LION v4 27B 等模型；按 Neurons/请求计量，超额返回 429。",
+      "notes": "2026-11-25 复核：每天 10000 Neurons 免费额度不变；GLM、Kimi、DeepSeek 等较大模型需绑定付费账户，免费额度主要覆盖 GPT-OSS、Qwen、Llama、Gemma 等开放模型。",
       "discoveredAt": "2026-11-23",
       "statusTag": "active"
     },
@@ -1427,7 +1427,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "模型聚合",
         "免费模型"
       ],
-      "notes": "免费模型集合随时调整，OpenAI 格式兼容。",
+      "notes": "2026-11-25 复核：:free 模型 20 RPM / 50 RPD，账户累计充值满 $10 后升至 1000 RPD；免费模型集合每周变动，请从 API 动态读取而非硬编码。",
       "discoveredAt": "2026-11-23",
       "statusTag": "active"
     },
@@ -1452,7 +1452,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "开源模型",
         "免绑卡"
       ],
-      "notes": "2026-11-07 起免费池含 DeepSeek V4.1-Flash 与 GLM-5.3-Flash；GLM-5.3 非 Flash 版已于 10-28 下线，Kimi K3.1 Pro 暂不支持 API。Key 默认 12 个月有效，可在控制台改为永不过期；只显示一次需立即保存。",
+      "notes": "2026-11-25 复核：免费原型额度以控制台为准，模型池持续轮换（含 GLM、Kimi、Mistral、Step 系列）；条款限内部评测，不建议直接用于生产。",
       "discoveredAt": "2026-11-23",
       "statusTag": "active"
     },
@@ -1466,20 +1466,21 @@ window.TOKEN_WORKBENCH_DATA = {
       "claimMethod": "注册 console.mistral.ai 创建 API Key",
       "url": "https://console.mistral.ai/",
       "deadline": null,
-      "deadlineText": "长期有效",
+      "deadlineText": "免费 API 已取消",
       "requirements": [
         "邮箱注册"
       ],
       "region": "海外",
       "source": "网络补充",
-      "sourceUrl": "https://onlinepixelz.xyz/blogs/free-ai-api-credits",
+      "sourceUrl": "https://docs.mistral.ai/deployment/laplateforme/usage/",
       "tags": [
+        "已停免",
         "欧洲厂商",
-        "OpenAI 兼容"
+        "转付费"
       ],
-      "notes": "免费额度不固定，以控制台显示为准。",
+      "notes": "2026-11-25 复核：官方用量与限额文档明确 Free 模式仅含 Vibe/Studio 用量，不含 API 访问；创建 API Key 需激活计费与预付费。开放权重模型可改用 NVIDIA NIM、OVHcloud AI Endpoints 或 Cloudflare Workers AI。",
       "discoveredAt": "2026-11-23",
-      "statusTag": "active"
+      "statusTag": "expired"
     },
     {
       "id": "github-models",
@@ -1491,20 +1492,20 @@ window.TOKEN_WORKBENCH_DATA = {
       "claimMethod": "GitHub 账号登录 Marketplace → Models，生成免费 Token",
       "url": "https://github.com/marketplace/models",
       "deadline": null,
-      "deadlineText": "长期有效",
+      "deadlineText": "2026-07-30 已停服",
       "requirements": [
         "GitHub 账号"
       ],
       "region": "海外",
       "source": "网络补充",
-      "sourceUrl": "https://toolstrategyhub.com/guides/best-free-llm-apis",
+      "sourceUrl": "https://docs.github.com/en/github-models",
       "tags": [
-        "无需绑卡",
-        "模型丰富"
+        "已停服",
+        "历史活动"
       ],
-      "notes": "适合功能验证，速率较低。",
+      "notes": "GitHub 官方文档：2026-07-30 起 GitHub Models 全面退役，Playground、模型目录、推理 API 与 BYOK 均不可用；与 GitHub Copilot 无关。替代路线见 zai-glm-flash-free / google-ai-studio。",
       "discoveredAt": "2026-11-23",
-      "statusTag": "active"
+      "statusTag": "expired"
     },
     {
       "id": "modelscope",
@@ -1982,7 +1983,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "试用额度",
         "需绑卡"
       ],
-      "notes": "2026-11-24 复核：Cerebras 免费层已改为试用制，需绑定已验证支付方式，$5 额度 30 天后过期。",
+      "notes": "2026-11-25 复核：已无常设免费层，仅新账户 $5 / 30 天试用且需已验证支付方式，按试用额度而非长期免费统计。",
       "discoveredAt": "2026-11-24",
       "statusTag": "active"
     },
@@ -2041,7 +2042,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "id": "novita",
       "provider": "Novita",
       "title": "注册与推荐赠送额度，海量开源模型",
-      "quota": "注册赠送 + 推荐奖励额度，覆盖大量开源模型权重",
+      "quota": "$100 Sandbox 赠金（问卷后领取，仅抵扣 Agent Sandbox，不抵扣模型 API）",
       "quotaTier": 20,
       "cadence": "一次性",
       "claimMethod": "注册 Novita 账号获取 API Key，邀请好友可获额外额度",
@@ -2059,7 +2060,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "开源模型",
         "推荐奖励"
       ],
-      "notes": "2026-11-24 收录：Novita 提供注册与推荐赠送额度，无需绑卡，适合评估开源模型。",
+      "notes": "2026-11-25 复核：Sandbox 赠金与模型 API 计费分离；Apodex 1.1 Mini 已下架，ToS 禁止未经许可商用。",
       "discoveredAt": "2026-11-24",
       "statusTag": "active"
     },
@@ -2219,7 +2220,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "OpenAI兼容",
         "欧洲托管"
       ],
-      "notes": "2026-11-25 官网复核：Free tier 为每位新客户 1,000,000 tokens；推理节点位于法国巴黎，数据不留存用于训练。",
+      "notes": "2026-11-25 复核：新客户 100 万 Token 仍有效；glm-5.2 于 11-16 退役转 glm-5.3，DeepSeek V4.1 Flash 模型 ID 调整为 deepseek-v4.1-flash-1017。",
       "discoveredAt": "2026-11-25",
       "statusTag": "active"
     },
@@ -2505,277 +2506,294 @@ window.TOKEN_WORKBENCH_DATA = {
       "statusTag": "active"
     },
     {
-      "id": "freeai-daily-tokens",
-      "provider": "Free.ai",
-      "title": "一站式免费 AI 工具聚合平台，每天领 30,000 Token",
-      "type": "聚合平台 / API",
-      "quota": "匿名免注册每天 6,000 Token；邮箱验证注册后每天 30,000 Token，可自由分配：约 300 条聊天、约 30 张图像、1 个视频（每 2 天 1 个）、全天音乐等；Token 每 24 小时重置",
-      "quotaTier": 50,
-      "cadence": "每日",
-      "claimMethod": "访问官网输入邮箱并完成邮件验证（无需密码、无需信用卡），即可解锁每天 30,000 Token",
-      "url": "https://free.ai/?ref=0vgtXiNubRs",
-      "deadline": null,
-      "deadlineText": "长期有效（官方宣传 free forever）",
-      "requirements": [
-        "邮箱验证",
-        "无需信用卡"
-      ],
-      "region": "海外",
-      "source": "网络补充",
-      "sourceUrl": "https://www.free.ai/",
-      "tags": [
-        "每日额度",
-        "聚合平台",
-        "免信用卡",
-        "OpenAI兼容API",
-        "可商用"
-      ],
-      "notes": "2026-11-25 官网复核：Free.ai（Muddy Holdings LLC）聚合 481+ AI 工具、573+ 模型，自托管 55+ 开源模型（Qwen 3.6 35B、FLUX、CogVideoX、Kokoro、Whisper 等）并接入 GPT/Claude/Gemini 等；生成内容可商用，官方声明数据不永久存储、不用于训练；提供 OpenAI 兼容 REST API；付费版 $5/月起。",
-      "discoveredAt": "2026-11-25",
-      "statusTag": "active"
-    },
-    {
-      "id": "inception-mercury-100m",
-      "provider": "Inception Labs",
-      "title": "每个新 API Key 送 1 亿免费 Token（Mercury 扩散模型）",
-      "quota": "每个新建 API Key 附赠 1 亿免费 Token（此前为 1000 万，官方提升 10 倍），免费层限速同步提升 10 倍；用于 Mercury 系列扩散式 LLM（Mercury 3 号称 1068 token/秒、1M 上下文）",
-      "quotaTier": 100,
+      "id": "assemblyai",
+      "provider": "AssemblyAI",
+      "title": "注册送 $50 语音 API 赠金",
+      "quota": "$50 一次性赠金，覆盖预录制/实时 STT 与语音理解；LLM Gateway 不在赠金范围",
+      "quotaTier": 10,
       "cadence": "一次性",
-      "claimMethod": "注册 platform.inceptionlabs.ai 后在控制台新建 API Key，1 亿 Token 随 Key 自动发放，无需绑卡；OpenAI 兼容 Base URL https://api.inceptionlabs.ai/v1，模型名 mercury-3",
-      "url": "https://platform.inceptionlabs.ai/",
+      "claimMethod": "官网注册即送，免绑卡",
+      "url": "https://www.assemblyai.com/pricing",
       "deadline": null,
-      "deadlineText": "官方未公布截止日（第三方按保守口径预计 2026 年内），领到尽早用",
-      "requirements": [
-        "注册 Inception 账号",
-        "无需绑卡",
-        "Mercury 3 当前仅支持文本输入"
-      ],
-      "region": "海外",
-      "source": "官方博客",
-      "sourceUrl": "https://www.inceptionlabs.ai/blog/mercury-2-10x-free-tokens",
-      "tags": [
-        "超大额度",
-        "免绑卡",
-        "扩散模型",
-        "OpenAI兼容"
-      ],
-      "notes": "2026-11-25 多源复核：官方博客原文「100M free tokens, up from 10M」，Perq 11-24 验证仍在生效；额度按 Key 发放，用完后需在 Billing 添加付款信息转付费（发布期输入 $0.10/输出 $0.35 每百万 Token）。",
-      "discoveredAt": "2026-11-25",
-      "statusTag": "active"
-    },
-    {
-      "id": "agentrouter-daily-checkin",
-      "provider": "AgentRouter",
-      "title": "注册领 $100，每日签到再得 $25（Claude/GPT 系公益网关）",
-      "quota": "注册即送 $100（GitHub 账号满 1 年或 LinuxDO 账号登录），每日签到再得 $25，邀请得 $50-100；支持 Anthropic 与 OpenAI 双兼容协议，可直连 Claude Code / Codex / Cline / Cursor",
-      "quotaTier": 80,
-      "cadence": "每日",
-      "claimMethod": "用注册满 1 年的 GitHub 或 LinuxDO 账号登录 agentrouter.org 领取注册额度，之后每天登录签到领取 $25",
-      "url": "https://agentrouter.org/",
-      "deadline": null,
-      "deadlineText": "长期活动（运营方可随时调整额度规则）",
-      "requirements": [
-        "GitHub 账号满 1 年或 LinuxDO 账号",
-        "每日手动签到"
-      ],
-      "region": "海外",
-      "source": "网络补充",
-      "sourceUrl": "https://aifree.dev/free-api-credits",
-      "tags": [
-        "每日签到",
-        "公益站",
-        "Claude Code",
-        "高门槛注册"
-      ],
-      "notes": "2026-11-25 多源复核：aifree.dev 11-20 验证签到福利仍在生效；可用模型轮换较快（11 月下旬默认组为 GPT-6.1/5.6 Sol），公益站高峰期可能限流，额度规则以站内公示为准。",
-      "discoveredAt": "2026-11-25",
-      "statusTag": "active"
-    },
-    {
-      "id": "anthropic-trial-5",
-      "provider": "Anthropic",
-      "title": "官方 API 试用赠 $5 额度",
-      "quota": "新账号 $5 试用额度，用于 Claude 系列 API 调用",
-      "quotaTier": 50,
-      "cadence": "一次性",
-      "claimMethod": "注册 console.anthropic.com 并完成短信手机号验证即可获得 $5 试用额度（无需信用卡）",
-      "url": "https://console.anthropic.com/",
-      "deadline": null,
-      "deadlineText": "长期有效（官方常规试用政策，以控制台显示为准）",
-      "requirements": [
-        "短信手机号验证",
-        "无需信用卡"
-      ],
-      "region": "海外",
-      "source": "网络补充",
-      "sourceUrl": "https://pricepertoken.com/free-ai-api",
-      "tags": [
-        "官方试用",
-        "大厂",
-        "免绑卡"
-      ],
-      "notes": "2026-11-25 复核：pricepertoken 11 月验证 $5 试用仍免卡可领，仅强制短信验证；额度用完需绑卡转付费。适合低成本体验 Claude 官方 API。",
-      "discoveredAt": "2026-11-25",
-      "statusTag": "active"
-    },
-    {
-      "id": "llm7-free-tier",
-      "provider": "LLM7.io",
-      "title": "永久免费层，OpenAI 兼容 API 无需注册",
-      "quota": "免费层每日额度（不同来源口径不一：aifree.dev 表格标 10 万 Token/天，其概览称 1M/天），通过 OpenAI 兼容 API 调用",
-      "quotaTier": 50,
-      "cadence": "每日",
-      "claimMethod": "访问 llm7.io 获取 API Key 即可调用，无需注册、无需信用卡",
-      "url": "https://llm7.io/",
-      "deadline": null,
-      "deadlineText": "永久免费层（无截止日）",
-      "requirements": [
-        "无需注册",
-        "无需信用卡"
-      ],
-      "region": "海外",
-      "source": "网络补充",
-      "sourceUrl": "https://aifree.dev/free-api-credits",
-      "tags": [
-        "永久免费",
-        "免注册",
-        "OpenAI兼容",
-        "每日额度"
-      ],
-      "notes": "2026-11-25 复核：aifree.dev 11-22 验证免费层仍有效；每日额度两个来源口径不一致，以官网实际为准。适合做轻量原型与兜底通道。",
-      "discoveredAt": "2026-11-25",
-      "statusTag": "active"
-    },
-    {
-      "id": "nscale-5-credit",
-      "provider": "Nscale",
-      "title": "注册送 $5 Serverless 推理赠金",
-      "quota": "新建 Nscale Console 账号获得 $5 免费赠金，用于 Serverless 推理",
-      "quotaTier": 50,
-      "cadence": "一次性",
-      "claimMethod": "注册 Nscale Console 账号即得 $5 赠金",
-      "url": "https://console.nscale.com/",
-      "deadline": null,
-      "deadlineText": "以官方当前政策为准",
-      "requirements": [
-        "注册 Nscale 账号"
-      ],
-      "region": "海外",
-      "source": "网络补充",
-      "sourceUrl": "https://perq.sh/blog/free-llm-api-tiers-november-update",
-      "tags": [
-        "注册赠金",
-        "Serverless推理"
-      ],
-      "notes": "2026-11-25 复核：Perq 11-23 验证该活动公开有效；赠金信息主要来自 Nscale 官方博客，注册时以控制台显示为准。",
-      "discoveredAt": "2026-11-25",
-      "statusTag": "active"
-    },
-    {
-      "id": "hyperbolic-1-credit",
-      "provider": "Hyperbolic",
-      "title": "注册送 $1 永久免费额度",
-      "quota": "新注册用户 $1 永久免费 API 额度（不过期），覆盖开源大模型推理与 GPU 租赁",
-      "quotaTier": 20,
-      "cadence": "一次性",
-      "claimMethod": "注册 hyperbolic.xyz 账号即得 $1 赠金，无需信用卡",
-      "url": "https://hyperbolic.xyz/",
-      "deadline": null,
-      "deadlineText": "永久有效（赠金不过期）",
+      "deadlineText": "赠金不过期",
       "requirements": [
         "注册账号",
-        "无需信用卡"
+        "仅限语音类 API"
       ],
       "region": "海外",
       "source": "网络补充",
-      "sourceUrl": "https://aitujian.cn/free-ai-api.html",
+      "sourceUrl": "https://freellmapihub.com/collections/free-signup-credit",
       "tags": [
-        "永久有效",
-        "免绑卡",
-        "GPU租赁"
+        "语音API",
+        "$50赠金",
+        "免绑卡"
       ],
-      "notes": "2026-11-25 复核：aitujian 11-25 收录页仍列为「永久有效（赠金）」；额度小但不过期，适合低成本体验 Llama、Qwen 等开源模型。",
+      "notes": "官方定价页 2026-11-25 复核；免费用户可能被用于模型改进，敏感音频请先确认数据条款。",
       "discoveredAt": "2026-11-25",
-      "statusTag": "active"
+      "statusTag": null
     },
     {
-      "id": "ai21-10-credit",
-      "provider": "AI21 Labs",
-      "title": "注册送 $10 试用额度（3 个月有效）",
-      "quota": "$10 试用额度，有效期 3 个月，可调用 Jamba 1.5 / 1.6 等模型",
-      "quotaTier": 50,
+      "id": "mixedbread",
+      "provider": "Mixedbread",
+      "title": "Starter $5 一次性额度",
+      "quota": "$5 一次性：mxbai-embed-large-v1 嵌入、rerank 与多模态检索",
+      "quotaTier": 10,
       "cadence": "一次性",
-      "claimMethod": "注册 AI21 账号即得试用额度",
-      "url": "https://studio.ai21.com/",
+      "claimMethod": "官网注册，免绑卡",
+      "url": "https://www.mixedbread.com/pricing",
       "deadline": null,
-      "deadlineText": "赠金 3 个月有效",
+      "deadlineText": "用尽即止",
       "requirements": [
         "注册账号"
       ],
       "region": "海外",
       "source": "网络补充",
-      "sourceUrl": "https://aitujian.cn/free-ai-api.html",
+      "sourceUrl": "https://www.mixedbread.com/pricing",
       "tags": [
-        "注册赠金",
-        "Jamba",
-        "长上下文"
-      ],
-      "notes": "2026-11-25 复核：aitujian 11-25 收录页仍列为有效；Jamba 系列以长上下文与高效推理为卖点。",
-      "discoveredAt": "2026-11-25",
-      "statusTag": "active"
-    },
-    {
-      "id": "voyage-embedding-200m",
-      "provider": "Voyage AI",
-      "title": "每个模型送 2 亿 Embedding Token",
-      "quota": "每个 Embedding 模型 2 亿免费 Token（按模型分别计），用于文本向量化/检索（RAG）",
-      "quotaTier": 50,
-      "cadence": "一次性",
-      "claimMethod": "注册 Voyage AI 控制台创建 API Key，免费额度按模型发放",
-      "url": "https://www.voyageai.com/",
-      "deadline": null,
-      "deadlineText": "以官方当前政策为准",
-      "requirements": [
-        "注册账号"
-      ],
-      "region": "海外",
-      "source": "网络补充",
-      "sourceUrl": "https://aifree.dev/free-api-credits",
-      "tags": [
-        "超大额度",
         "Embedding",
-        "RAG检索"
+        "Rerank",
+        "免绑卡"
       ],
-      "notes": "2026-11-25 复核：aifree.dev 将 Voyage AI 列入「Big token grants」（每模型 200M embedding tokens）；专攻向量化场景，与对话类额度互补。",
+      "notes": "2026-11-25 官网定价页实测可访问；原生 REST 接口，非 OpenAI 兼容。",
       "discoveredAt": "2026-11-25",
-      "statusTag": "active"
+      "statusTag": null
     },
     {
-      "id": "gmi-cloud-free",
-      "provider": "GMI Cloud",
-      "title": "$5 注册赠金 + 免绑卡免费模型端点",
-      "quota": "两条路：① 注册领 $5 赠金（需绑卡领取）；② 无需绑卡即可免费调用指定端点（DeepSeek R1 Distill Llama 70B、Llama 3.3 70B Instruct Turbo），与付费模型同 H100/H200 基础设施",
-      "quotaTier": 50,
-      "cadence": "一次性",
-      "claimMethod": "注册 gmicloud.ai 后：免费端点直接生成 Key 调用（免卡）；$5 赠金需在控制台添加支付方式后领取",
-      "url": "https://gmicloud.ai/",
+      "id": "braintrust",
+      "provider": "Braintrust",
+      "title": "$0 Starter 每月模型与评测额度",
+      "quota": "每月 10 Braintrust credits（内置模型）+ 1GB 数据 + 1 万次评分",
+      "quotaTier": 10,
+      "cadence": "每月",
+      "claimMethod": "官网注册，免绑卡",
+      "url": "https://www.braintrust.dev/pricing",
       "deadline": null,
-      "deadlineText": "免费端点长期（以官方为准），$5 赠金以控制台显示为准",
+      "deadlineText": "长期有效，额度不结转",
       "requirements": [
-        "注册账号（免费端点免卡）",
-        "领 $5 赠金需绑卡"
+        "注册账号",
+        "额度不累积"
       ],
       "region": "海外",
       "source": "网络补充",
-      "sourceUrl": "https://pricepertoken.com/free-ai-api",
+      "sourceUrl": "https://www.braintrust.dev/pricing",
       "tags": [
-        "免绑卡端点",
-        "注册赠金",
-        "DeepSeek",
-        "Llama"
+        "评测平台",
+        "每月额度",
+        "免绑卡"
       ],
-      "notes": "2026-11-25 复核：pricepertoken 11 月验证免费端点无需绑卡即可用（报道口径，以官网实际为准）；适合免卡体验 70B 级开源模型。",
+      "notes": "2026-11-25 官方定价页实测；适合 LLM 评测与实验跟踪。",
       "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "vectoree",
+      "provider": "Vectoree",
+      "title": "新用户 $5 欢迎额度",
+      "quota": "$5 一次性，覆盖 36+ 模型网关（vectoree/auto 等）",
+      "quotaTier": 10,
+      "cadence": "一次性",
+      "claimMethod": "CLI 登录并关联项目，免绑卡",
+      "url": "https://vectoree.ai/pricing",
+      "deadline": null,
+      "deadlineText": "用尽即止",
+      "requirements": [
+        "CLI 登录",
+        "关联项目"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://dev.to/shiva_prasad_cc614c6ee026/new-free-llm-api-credits-added-in-mid-november-2026-4fbh",
+      "tags": [
+        "Agent网关",
+        "$5赠金",
+        "一次性"
+      ],
+      "notes": "2026-11-25 官网实测可访问；中转网关有隐私风险，勿传敏感数据。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "gonkarouter",
+      "provider": "GonkaRouter",
+      "title": "新用户 100 万 Token",
+      "quota": "一次性 100 万 Token：GLM-5.3-Flash / DeepSeek-V4-Flash 等",
+      "quotaTier": 20,
+      "cadence": "一次性",
+      "claimMethod": "邮箱或 Google 登录即领，免绑卡",
+      "url": "https://gonkarouter.io/pricing",
+      "deadline": null,
+      "deadlineText": "一次性 grant",
+      "requirements": [
+        "邮箱或 Google 账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://dev.to/shiva_prasad_cc614c6ee026/new-free-llm-api-credits-added-in-mid-november-2026-4fbh",
+      "tags": [
+        "百万Token",
+        "网关",
+        "免绑卡"
+      ],
+      "notes": "仅采信定价页可证实的 100 万 Token；博客提到的 $20 活动未获官方证实。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "synap-free-tokens",
+      "provider": "Synap by Linkrra",
+      "title": "每天 10 万 Token 永久免费层",
+      "quota": "qwen3-coder-30b：每天 100,000 Token / 50 次请求，10 次/分钟",
+      "quotaTier": 20,
+      "cadence": "每日",
+      "claimMethod": "Google 或邮箱登录官网账户页，免绑卡",
+      "url": "https://synap402.com/ai/account.html",
+      "deadline": null,
+      "deadlineText": "每日 00:00 UTC 重置",
+      "requirements": [
+        "Google 或邮箱账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://freeinference.dev/",
+      "tags": [
+        "免绑卡",
+        "每日额度",
+        "OpenAI兼容"
+      ],
+      "notes": "FreeInference 目录 2026-11-24 夜间实测：不存储提示词、不用于训练；按账户与网络地址限流。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "ibm-watsonx-free",
+      "provider": "IBM watsonx.ai",
+      "title": "Free Toolbox 每月免费 Token",
+      "quota": "Foundation Models 每月最多 30 万 Token，另含 20 CUH/月、100 文档/月",
+      "quotaTier": 10,
+      "cadence": "每月",
+      "claimMethod": "官网注册 IBM ID 后进入 Free Toolbox",
+      "url": "https://www.ibm.com/products/watsonx-ai/pricing",
+      "deadline": null,
+      "deadlineText": "官方免费层长期提供",
+      "requirements": [
+        "注册 IBM ID"
+      ],
+      "region": "海外",
+      "source": "网络更新",
+      "sourceUrl": "https://www.ibm.com/products/watsonx-ai/pricing",
+      "tags": [
+        "月度Token",
+        "官方免费层",
+        "免绑卡"
+      ],
+      "notes": "替代 IteraCompute（3000 万/月推广 2026-11-24 结束）；同为月度免费 Token 但额度较小，高需求可叠加已有智谱 2000 万 Token 活动。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "zai-glm-flash-free",
+      "provider": "Z.ai（智谱 GLM 免费模型）",
+      "title": "GLM Flash 系列免费 API",
+      "quota": "GLM-4.7-Flash / GLM-4.6V-Flash 等免费模型，速率以控制台为准",
+      "quotaTier": 20,
+      "cadence": "按量",
+      "claimMethod": "注册 Z.ai / 智谱开放平台，创建 API Key",
+      "url": "https://docs.z.ai/guides/overview/pricing",
+      "deadline": null,
+      "deadlineText": "免费模型目录，长期有效（模型会调整）",
+      "requirements": [
+        "注册账号"
+      ],
+      "region": "国内",
+      "source": "网络更新",
+      "sourceUrl": "https://github.com/CYBIRD-D/FREE-LLM-API-Provider/blob/main/README.zh-CN.md",
+      "tags": [
+        "GLM",
+        "免费模型",
+        "中文友好"
+      ],
+      "notes": "替代 GitHub Models（2026-07-30 全面停服）；官方价格页 2026-11-25 实测可访问，GLM-4.5-Flash 已下线并路由至 4.7-Flash。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "of-linkup",
+      "provider": "Linkup",
+      "title": "Web 搜索 API：注册即享 4,000 次免费查询",
+      "quota": "新用户 4,000 次免费查询（按量计费，超出后按请求计费，支持 Fetch/Search/Research 三类接口）",
+      "quotaTier": 10,
+      "cadence": "一次性",
+      "claimMethod": "官网注册账号后在定价页领取，经 API Key 调用",
+      "url": "https://linkup.so/",
+      "deadline": null,
+      "deadlineText": "无公布结束日",
+      "requirements": [
+        "注册账号",
+        "申请 API Key"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://linkup.so/pricing",
+      "tags": [
+        "搜索API",
+        "免费查询",
+        "Agent数据源"
+      ],
+      "notes": "2026-11-26 官网定价页实测「Run 4,000 queries for free」；面向 AI 应用的 Web 搜索 API，兼容 OpenAI SDK/LangChain。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "of-routeway",
+      "provider": "Routeway",
+      "title": "280+ 模型统一 API，免费档每天 200 次请求",
+      "quota": "免费档（Starter）每天 200 次请求，可访问实验性模型（共享低优先级队列、单并发）",
+      "quotaTier": 10,
+      "cadence": "每日",
+      "claimMethod": "官网注册账号即用免费档，OpenAI 兼容 API",
+      "url": "https://routeway.ai/",
+      "deadline": null,
+      "deadlineText": "无公布结束日",
+      "requirements": [
+        "注册账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://routeway.ai/",
+      "tags": [
+        "统一API",
+        "每日重置",
+        "免绑卡"
+      ],
+      "notes": "2026-11-26 官网实测：一个 API 接入 DeepSeek/Claude/Gemini 等 280+ 模型，Starter 免费档 200 次/天。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "of-tripo-ai",
+      "provider": "Tripo AI",
+      "title": "免费在线 AI 3D 模型生成，文本/图片秒转 3D",
+      "quota": "免费在线 3D 生成（免费档含每月约 200 credits，约 13 款模型，非商用）；游戏开发者可申领 API 开发额度",
+      "quotaTier": 20,
+      "cadence": "按量",
+      "claimMethod": "官网注册，网页版（studio.tripo3d.com）直接免费开始使用",
+      "url": "https://www.tripo3d.com/",
+      "deadline": null,
+      "deadlineText": "无公布结束日",
+      "requirements": [
+        "注册账号",
+        "网页使用"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://www.tripo3d.com/",
+      "tags": [
+        "3D生成",
+        "免费档",
+        "AIGC"
+      ],
+      "notes": "2026-11-26 官网实测：免费在线 3D 模型生成，支持高精细雕刻级与引擎可用智能网格，导出 GLB/FBX/OBJ/USD。",
+      "discoveredAt": "2026-11-26",
       "statusTag": "active"
     }
   ],
@@ -2835,7 +2853,7 @@ window.TOKEN_WORKBENCH_DATA = {
         "需绑卡",
         "美国区域"
       ],
-      "notes": "超出免费额度会计费，务必先设预算告警。适合静态站与轻量 API。",
+      "notes": "2026-11-25 复核：e2-micro 永久免费层与 30GB·月磁盘、1GB/月出流量不变；新账户 $300 试用金自 2026-11-16 起不能用于 Gemini 平台/Vertex AI，务必区分二者。",
       "discoveredAt": "2026-11-23",
       "statusTag": "active"
     },
@@ -3960,6 +3978,280 @@ window.TOKEN_WORKBENCH_DATA = {
       "notes": "2026-11-25 官网复核：Spacefast 由 Automattic（WordPress.com/Jetpack 母公司）于 2026-11-09 推出，Personal $0/月、20 Spaces、20 自定义域名、免卡，含数据库与自动 HTTPS。",
       "discoveredAt": "2026-11-25",
       "statusTag": "active"
+    },
+    {
+      "id": "netlify",
+      "provider": "Netlify",
+      "title": "Netlify $0 永久静态托管（积分制）",
+      "type": "托管平台",
+      "quota": "每月 300 积分（2025-09 起），带宽 20 积分/GB；超额暂停而非扣费",
+      "quotaTier": 20,
+      "cadence": "每月",
+      "claimMethod": "官网注册，无需绑卡",
+      "url": "https://www.netlify.com/pricing",
+      "deadline": null,
+      "deadlineText": "$0 长期有效，超额暂停",
+      "requirements": [
+        "接受积分制",
+        "单项目超限可能暂停全账户"
+      ],
+      "region": "海外",
+      "source": "网络更新",
+      "sourceUrl": "https://www.netlify.com/pricing",
+      "tags": [
+        "静态托管",
+        "免绑卡",
+        "积分制"
+      ],
+      "notes": "2026-11-25 官网实测：不再公布固定带宽/构建分钟数，改为积分硬上限，不会产生意外账单。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "firebase-spark",
+      "provider": "Firebase Spark",
+      "title": "Firebase 免费层（Spark）",
+      "type": "托管平台",
+      "quota": "Firestore 1GiB / 每天 5 万次读；Hosting 360MB/天；函数与部分存储需 Blaze",
+      "quotaTier": 20,
+      "cadence": "每月",
+      "claimMethod": "创建 Firebase 项目，Spark 方案无需支付方式",
+      "url": "https://firebase.google.com/pricing",
+      "deadline": null,
+      "deadlineText": "长期免费层",
+      "requirements": [
+        "Google 账号",
+        "函数需 Blaze"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://dev.to/lightcloud/free-hosting-without-a-credit-card-5h43",
+      "tags": [
+        "静态托管",
+        "Firestore",
+        "免绑卡"
+      ],
+      "notes": "2026-11 第三方逐项核对官方定价页； Hosting/Firestore 免费额度可用，2026-02-03 起部分 App Hosting 与 Storage 功能需 Blaze。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "register-us-kg",
+      "provider": "US.KG",
+      "title": "永久免费 .us.kg 二级域名",
+      "type": "域名",
+      "quota": "免费 yourname.us.kg，终身免费，默认 1 个/账户，可托管 Cloudflare",
+      "quotaTier": 50,
+      "cadence": "永久",
+      "claimMethod": "官网注册、邮箱激活后添加域名",
+      "url": "https://register.us.kg",
+      "deadline": null,
+      "deadlineText": "终身免费，需按期续期",
+      "requirements": [
+        "邮箱激活",
+        "外部 DNS 托管",
+        "部分流程需身份信息"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://www.vivozhijia.com/wz/943091.html",
+      "tags": [
+        "免费域名",
+        "Cloudflare",
+        "非Freenom"
+      ],
+      "notes": "2026-11-25 官网实测可访问；非 Freenom .tk。部分教程要求虚拟身份完成 KYC，隐私敏感者慎用。",
+      "discoveredAt": "2026-11-25",
+      "statusTag": null
+    },
+    {
+      "id": "res-civo",
+      "provider": "Civo",
+      "title": "云主机与 Kubernetes 新用户试用赠金",
+      "type": "服务器",
+      "quota": "新用户试用赠金约 $250（云主机与 Kubernetes 集群，约 1 个月有效，多来源整理）",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "官网注册账号并绑卡验证后领取",
+      "url": "https://civo.com/",
+      "deadline": null,
+      "deadlineText": "约 1 个月有效",
+      "requirements": [
+        "注册账号",
+        "绑卡验证"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://civo.com/",
+      "tags": [
+        "试用赠金",
+        "Kubernetes",
+        "云主机"
+      ],
+      "notes": "2026-11-26 官网实测可访问（Sovereign Cloud 与 AI 平台）；$250 额度与有效期来自多篇 2026 免费云资源盘点，以官网活动页为准。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "res-serv00",
+      "provider": "Serv00",
+      "title": "永久免费托管：3GB SSD + 无限流量 + SSH",
+      "type": "托管",
+      "quota": "3GB SSD 存储、无限月流量、最多 100 个网站、16 个数据库、SSH 访问与免费子域，无广告无隐藏费用",
+      "quotaTier": 20,
+      "cadence": "永久",
+      "claimMethod": "官网邮箱直接注册，无需信用卡",
+      "url": "https://serv00.com/",
+      "deadline": null,
+      "deadlineText": "终身免费，需按期保活续期",
+      "requirements": [
+        "邮箱注册"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://serv00.com/",
+      "tags": [
+        "永久免费",
+        "免费托管",
+        "SSH"
+      ],
+      "notes": "2026-11-26 官网实测「Revolutionary hosting for FREE!」；支持 PHP/Python/Node.js 等 49 项技术栈、每日备份、Let's Encrypt 证书。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "res-sanfengyun",
+      "provider": "三丰云",
+      "title": "国内永久免费云服务器（1核1G）",
+      "type": "服务器",
+      "quota": "永久免费云服务器（1核 CPU / 1G 内存 / 5M 带宽 / 10G 数据盘）+ 永久免费虚拟主机，送免备案系统",
+      "quotaTier": 20,
+      "cadence": "永久",
+      "claimMethod": "官网手机号实名注册后实时开通",
+      "url": "https://www.sanfengyun.com/",
+      "deadline": null,
+      "deadlineText": "终身永久免费",
+      "requirements": [
+        "手机号实名"
+      ],
+      "region": "国内",
+      "source": "网络补充",
+      "sourceUrl": "https://www.sanfengyun.com/",
+      "tags": [
+        "国内",
+        "永久免费",
+        "免备案"
+      ],
+      "notes": "2026-11-26 官网实测「承诺终身永久免费」；免费机资源上限低、需保活，适合简单后端与测试。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "res-tidb-cloud",
+      "provider": "TiDB Cloud",
+      "title": "免费 Serverless MySQL 兼容数据库",
+      "type": "数据库",
+      "quota": "免费 Serverless MySQL 兼容沙盒实例（含免费存储额度，覆盖 30+ 区域，兼容 MySQL 语法）",
+      "quotaTier": 20,
+      "cadence": "永久",
+      "claimMethod": "官网注册账号，一键创建 Serverless 集群",
+      "url": "https://tidbcloud.com/",
+      "deadline": null,
+      "deadlineText": "免费层长期可用",
+      "requirements": [
+        "注册账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://tidbcloud.com/",
+      "tags": [
+        "数据库",
+        "Serverless",
+        "MySQL兼容"
+      ],
+      "notes": "2026-11-26 官网实测可访问；分布式 MySQL 兼容云数据库，免费版资源有限，不适合高并发。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "res-ionos-cloud",
+      "provider": "IONOS Cloud",
+      "title": "企业级云基础设施新用户赠金",
+      "type": "服务器",
+      "quota": "新用户 $200 企业级云基础设施赠金（约 30 天有效，多来源整理）",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "官网注册账号并绑卡验证后领取",
+      "url": "https://cloud.ionos.com/",
+      "deadline": null,
+      "deadlineText": "约 30 天有效",
+      "requirements": [
+        "注册账号",
+        "绑卡验证"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://cloud.ionos.com/",
+      "tags": [
+        "试用赠金",
+        "云基础设施"
+      ],
+      "notes": "2026-11-26 多篇 2026 免费云资源盘点一致收录；额度与有效期以官网活动页为准。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "res-kamatera",
+      "provider": "Kamatera",
+      "title": "云服务器 30 天免费试用",
+      "type": "服务器",
+      "quota": "最高折合 $100 配置的云服务器 + 1TB 流量，30 天免费试用，全球机房与系统任选",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "官网注册并按活动页规则开通试用",
+      "url": "https://www.kamatera.com/",
+      "deadline": null,
+      "deadlineText": "30 天免费试用",
+      "requirements": [
+        "注册账号"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://www.kamatera.com/",
+      "tags": [
+        "试用",
+        "云服务器"
+      ],
+      "notes": "2026-11-26 多篇 2026 免费云资源盘点一致收录；适合临时拉起多节点做对照实验。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
+    },
+    {
+      "id": "res-akamai-cloud",
+      "provider": "Akamai Cloud",
+      "title": "老牌 Linux 云主机促销赠金",
+      "type": "服务器",
+      "quota": "通过指定合作推广入口注册赠 $100 赠金（约 60 天有效，多来源整理）",
+      "quotaTier": 50,
+      "cadence": "一次性",
+      "claimMethod": "经官方促销落地页注册领取",
+      "url": "https://www.akamai.com/",
+      "deadline": null,
+      "deadlineText": "约 60 天有效",
+      "requirements": [
+        "注册账号",
+        "推广入口"
+      ],
+      "region": "海外",
+      "source": "网络补充",
+      "sourceUrl": "https://www.akamai.com/",
+      "tags": [
+        "试用赠金",
+        "云主机"
+      ],
+      "notes": "2026-11-26 多篇 2026 免费云资源盘点收录（原 Linode 系）；需经指定推广入口，额度以活动页为准。",
+      "discoveredAt": "2026-11-26",
+      "statusTag": "active"
     }
   ],
   "githubTrending": [
@@ -3969,10 +4261,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "elementalsouls/Claude-BugHunter",
       "language": "Python",
-      "stars": 18298,
-      "forks": 2012,
-      "gain": 1716,
-      "description": "Claude Code 漏洞挖掘技能包：82 个技能、15 个斜杠命令、覆盖 24 类漏洞的 681 份公开报告模式，含企业身份与基础设施攻击矩阵。",
+      "stars": 21512,
+      "forks": 2236,
+      "gain": 1826,
+      "description": "Claude Code 漏洞挖掘技能包：84 个技能、15 个斜杠命令、覆盖 24 类漏洞的 681 份公开报告模式，并含企业身份与基础设施攻击矩阵。",
       "url": "https://github.com/elementalsouls/Claude-BugHunter",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -3987,10 +4279,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "obra/superpowers",
       "language": "Shell",
-      "stars": 324371,
-      "forks": 28784,
-      "gain": 788,
-      "description": "可落地的智能体技能框架与软件开发方法论。",
+      "stars": 325843,
+      "forks": 28910,
+      "gain": 1003,
+      "description": "智能体技能框架与软件开发方法论，提供可组合技能与规范化工作流，帮助编码代理按流程完成工程任务。",
       "url": "https://github.com/obra/superpowers",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4005,10 +4297,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "HKUDS/CLI-Anything",
       "language": "Python",
-      "stars": 62963,
-      "forks": 5727,
-      "gain": 699,
-      "description": "让所有软件变成 Agent 原生：CLI-Anything 与 CLI-Hub 命令行工具生态。",
+      "stars": 64828,
+      "forks": 5908,
+      "gain": 1074,
+      "description": "让所有软件原生支持智能体的命令行框架，通过 CLI-Hub 将桌面与专业软件封装为可调用工具。",
       "url": "https://github.com/HKUDS/CLI-Anything",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4023,10 +4315,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "jingyaogong/minimind",
       "language": "Python",
-      "stars": 68943,
-      "forks": 9011,
-      "gain": 473,
-      "description": "两小时从零训练你自己的 64M 大模型，中文教程完整。",
+      "stars": 70236,
+      "forks": 9140,
+      "gain": 727,
+      "description": "两小时从零训练 64M 参数小模型的完整教程与代码，覆盖数据、预训练、监督微调与评估。",
       "url": "https://github.com/jingyaogong/minimind",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4041,10 +4333,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "cursor/plugins",
       "language": "TypeScript",
-      "stars": 18551,
-      "forks": 2021,
-      "gain": 294,
-      "description": "Cursor 插件规范与官方插件集合。",
+      "stars": 19231,
+      "forks": 2079,
+      "gain": 360,
+      "description": "Cursor 插件规范与官方插件集合，展示如何为编辑器扩展智能体能力。",
       "url": "https://github.com/cursor/plugins",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4059,10 +4351,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "firecrawl/firecrawl",
       "language": "TypeScript",
-      "stars": 207245,
-      "forks": 10836,
-      "gain": 915,
-      "description": "让 Agent 更聪明的数据基础设施：通过一个 API 搜索、抓取并接入 550+ 数据源。",
+      "stars": 208963,
+      "forks": 10917,
+      "gain": 991,
+      "description": "为智能体提供搜索、抓取与结构化抽取的知识基础设施，把网页转成 LLM 可用的数据。",
       "url": "https://github.com/firecrawl/firecrawl",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4077,10 +4369,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "nginx/nginx",
       "language": "C",
-      "stars": 32930,
-      "forks": 8391,
-      "gain": 163,
-      "description": "NGINX 开源官方仓库。",
+      "stars": 33225,
+      "forks": 8394,
+      "gain": 158,
+      "description": "NGINX 开源官方仓库，高性能 Web 服务器与反向代理。",
       "url": "https://github.com/nginx/nginx",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4094,10 +4386,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "openvinotoolkit/openvino",
       "language": "C++",
-      "stars": 12143,
-      "forks": 3669,
-      "gain": 158,
-      "description": "用于优化和部署 AI 推理的开源工具套件，支持 Intel 全系列硬件。",
+      "stars": 12471,
+      "forks": 3693,
+      "gain": 185,
+      "description": "英特尔开源 AI 推理优化与部署工具套件，支持跨硬件加速。",
       "url": "https://github.com/openvinotoolkit/openvino",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4112,10 +4404,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "cathrynlavery/diagram-design",
       "language": "HTML",
-      "stars": 70470,
-      "forks": 4729,
-      "gain": 518,
-      "description": "面向 Claude Code、Codex、Copilot、Cursor 等的编辑级图表设计：45 种图表类型，自包含 HTML + SVG。",
+      "stars": 72072,
+      "forks": 4808,
+      "gain": 802,
+      "description": "面向 Claude Code、Codex 等编码助手的编辑级图表设计技能，生成更专业的架构与流程示意图。",
       "url": "https://github.com/cathrynlavery/diagram-design",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4130,10 +4422,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "mvanhorn/last30days-skill",
       "language": "Python",
-      "stars": 72937,
-      "forks": 6452,
-      "gain": 668,
-      "description": "跨 Reddit、X、YouTube、HN、Polymarket 与全网调研任意话题，并生成有据可依的总结。",
+      "stars": 74236,
+      "forks": 6545,
+      "gain": 703,
+      "description": "智能体技能：聚合 Reddit、X、YouTube、HN 等近 30 天内容，自动调研任意主题并生成报告。",
       "url": "https://github.com/mvanhorn/last30days-skill",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4148,10 +4440,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "google-labs-code/stitch-skills",
       "language": "TypeScript",
-      "stars": 12014,
-      "forks": 1489,
-      "gain": 494,
-      "description": "配合 Stitch MCP Server 的 Agent Skills 库，遵循开放标准，兼容 Antigravity、Gemini CLI、Claude Code、Cursor。",
+      "stars": 12663,
+      "forks": 1525,
+      "gain": 403,
+      "description": "配合 Stitch MCP 服务器使用的 Agent Skills 库，用于生成和编辑界面设计稿。",
       "url": "https://github.com/google-labs-code/stitch-skills",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4166,10 +4458,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "mjmirza/app-store-compliance",
       "language": "Shell",
-      "stars": 4189,
-      "forks": 266,
-      "gain": 621,
-      "description": "避免 App Store 与 Google Play 审核被拒：124 种被拒模式与修复方案、隐私清单检查、112 项法规期限跟踪。",
+      "stars": 5876,
+      "forks": 379,
+      "gain": 928,
+      "description": "开源审核手册与技能，帮助应用规避 App Store 与 Google Play 常见拒绝理由。",
       "url": "https://github.com/mjmirza/app-store-compliance",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4184,10 +4476,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "Tracer-Cloud/opensre",
       "language": "Python",
-      "stars": 14522,
-      "forks": 1977,
-      "gain": 399,
-      "description": "面向 CI/CD 可靠性的开源 SRE Agent。",
+      "stars": 15198,
+      "forks": 2012,
+      "gain": 398,
+      "description": "面向 CI/CD 可靠性的开源智能体，自动诊断与修复流水线故障。",
       "url": "https://github.com/Tracer-Cloud/opensre",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4202,10 +4494,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "toeverything/AFFiNE",
       "language": "TypeScript",
-      "stars": 76962,
-      "forks": 5643,
-      "gain": 542,
-      "description": "超越 Notion 与 Miro 的下一代知识库，融合规划、整理与创作，隐私优先、开源可定制。",
+      "stars": 78008,
+      "forks": 5698,
+      "gain": 584,
+      "description": "集文档、白板与数据库于一体的开源知识协作工具，可替代 Notion 与 Miro。",
       "url": "https://github.com/toeverything/AFFiNE",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4220,10 +4512,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "XiaoYouChR/Ghost-Downloader-3",
       "language": "Python",
-      "stars": 15517,
-      "forks": 945,
-      "gain": 701,
-      "description": "下载器的集大成者，The only downloader you need。",
+      "stars": 17382,
+      "forks": 1051,
+      "gain": 1092,
+      "description": "开源下载器集大成者，支持多站点、多协议与批量任务管理。",
       "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4237,10 +4529,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "backnotprop/plannotator",
       "language": "TypeScript",
-      "stars": 14670,
-      "forks": 1425,
-      "gain": 2395,
-      "description": "与 Agent 协作的工作台：规划、标注、评审代码、分享团队，一键把反馈发回 Agent。",
+      "stars": 14897,
+      "forks": 1437,
+      "gain": 1956,
+      "description": "智能体工作区：在同一界面规划、评审与跟踪多个编码代理任务，保持对进度的掌控。",
       "url": "https://github.com/backnotprop/plannotator",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4255,10 +4547,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "google-labs-code/stitch-skills",
       "language": "TypeScript",
-      "stars": 12299,
-      "forks": 1513,
-      "gain": 2572,
-      "description": "配合 Stitch MCP Server 的 Agent Skills 库，兼容多种主流编码 Agent。",
+      "stars": 12663,
+      "forks": 1525,
+      "gain": 2626,
+      "description": "配合 Stitch MCP 服务器使用的 Agent Skills 库，用于生成和编辑界面设计稿。",
       "url": "https://github.com/google-labs-code/stitch-skills",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4273,10 +4565,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "GoogleChrome/modern-web-guidance-src",
       "language": "TypeScript",
-      "stars": 10517,
-      "forks": 810,
-      "gain": 2694,
-      "description": "让编码 Agent 始终掌握最新的 Web 开发最佳实践。",
+      "stars": 10825,
+      "forks": 822,
+      "gain": 2494,
+      "description": "Chrome 团队维护的现代 Web 开发指南源，让编码代理持续遵循最新浏览器最佳实践。",
       "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4291,10 +4583,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "alibaba/open-code-review",
       "language": "Go",
-      "stars": 55694,
-      "forks": 4609,
-      "gain": 3015,
-      "description": "阿里大规模实践的代码评审工具：确定性流水线 + LLM Agent，精确到行的评论，内置多语言规则集。",
+      "stars": 56056,
+      "forks": 4632,
+      "gain": 2638,
+      "description": "阿里巴巴开源的混合架构代码审查智能体，强调安全、快速与大规模实战。",
       "url": "https://github.com/alibaba/open-code-review",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4309,10 +4601,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "mvanhorn/last30days-skill",
       "language": "Python",
-      "stars": 73446,
-      "forks": 6479,
-      "gain": 5448,
-      "description": "跨多平台调研任意话题并生成有据可依的总结的 AI Agent 技能。",
+      "stars": 74236,
+      "forks": 6545,
+      "gain": 5369,
+      "description": "智能体技能：聚合 Reddit、X、YouTube、HN 等近 30 天内容，自动调研任意主题并生成报告。",
       "url": "https://github.com/mvanhorn/last30days-skill",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4327,10 +4619,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "ChromeDevTools/chrome-devtools-mcp",
       "language": "TypeScript",
-      "stars": 59030,
-      "forks": 4909,
-      "gain": 1581,
-      "description": "为编码 Agent 提供 Chrome DevTools 能力的 MCP 服务器。",
+      "stars": 59218,
+      "forks": 4880,
+      "gain": 1258,
+      "description": "把 Chrome DevTools 暴露为 MCP 工具，供编码代理调试页面、检查网络与性能。",
       "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4345,10 +4637,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "tradermonty/claude-trading-skills",
       "language": "Python",
-      "stars": 8043,
-      "forks": 1507,
-      "gain": 1903,
-      "description": "面向股票投资者与交易者的 Claude Code 技能：市场分析、技术图表、经济日历、选股与策略开发。",
+      "stars": 8308,
+      "forks": 1540,
+      "gain": 1504,
+      "description": "面向股票投资者与交易者的 Claude Code 技能集，涵盖市场分析、选股与风险管理。",
       "url": "https://github.com/tradermonty/claude-trading-skills",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4363,10 +4655,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "ag-ui-protocol/ag-ui",
       "language": "TypeScript",
-      "stars": 21379,
-      "forks": 2161,
-      "gain": 2966,
-      "description": "AG-UI：Agent 与用户交互协议，把 Agent 接入前端应用。",
+      "stars": 21572,
+      "forks": 2173,
+      "gain": 1753,
+      "description": "AG-UI 智能体与前端交互协议，标准化事件流与状态同步。",
       "url": "https://github.com/ag-ui-protocol/ag-ui",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4381,10 +4673,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "meta/astryx",
       "language": "TypeScript",
-      "stars": 32574,
-      "forks": 2558,
-      "gain": 3165,
-      "description": "Meta 开源的可完全定制、Agent 就绪的设计系统。",
+      "stars": 32884,
+      "forks": 2576,
+      "gain": 2890,
+      "description": "Meta 开源的可完全定制、面向智能体的设计系统。",
       "url": "https://github.com/meta/astryx",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4399,10 +4691,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "pookjw/HermesEnabler",
       "language": "Objective-C",
-      "stars": 2449,
-      "forks": 204,
-      "gain": 390,
-      "description": "让任意 Apple Watch 设备启用 Hermès 表盘。",
+      "stars": 2489,
+      "forks": 206,
+      "gain": 328,
+      "description": "让任意 Apple Watch 设备启用 Hermès 表盘的开源工具。",
       "url": "https://github.com/pookjw/HermesEnabler",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4416,10 +4708,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "we-promise/sure",
       "language": "Ruby",
-      "stars": 17572,
-      "forks": 1535,
-      "gain": 1612,
-      "description": "人人可用的个人金融记账应用。",
+      "stars": 17780,
+      "forks": 1543,
+      "gain": 1567,
+      "description": "面向所有人的开源个人理财应用，支持协作与多平台。",
       "url": "https://github.com/we-promise/sure",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4433,10 +4725,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "dream-num/univer",
       "language": "TypeScript",
-      "stars": 31465,
-      "forks": 2839,
-      "gain": 4324,
-      "description": "用 Univer Office SDK 构建你自己的 AI 办公套件，支持编辑、计算、协作与文件处理。",
+      "stars": 31695,
+      "forks": 2858,
+      "gain": 3278,
+      "description": "Univer Office SDK：用开源套件构建自己的 AI 办公应用，支持编辑、表格与协作。",
       "url": "https://github.com/dream-num/univer",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4451,10 +4743,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "kajisho5/ffmpeg-skill",
       "language": "Python",
-      "stars": 10232,
-      "forks": 895,
-      "gain": 3891,
-      "description": "给编码 Agent 用的本地视频编辑器：42 个 FFmpeg 工具 + MCP 服务器，无需云端和 API Key。",
+      "stars": 10693,
+      "forks": 920,
+      "gain": 2993,
+      "description": "本地视频编辑技能，为编码代理提供 42 个 FFmpeg 工具与机器可读接口。",
       "url": "https://github.com/kajisho5/ffmpeg-skill",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -4469,10 +4761,10 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "zhouxiaoka/autoclip",
       "language": "Python",
-      "stars": 13740,
-      "forks": 2165,
-      "gain": 641,
-      "description": "开源 AI 视频剪辑桌面工具：一个链接一键把播客、访谈、课程等长视频剪成短视频，自动生成字幕、封面与发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。",
+      "stars": 15378,
+      "forks": 2268,
+      "gain": 980,
+      "description": "AutoClip：一个链接一键出片的开源 AI 视频剪辑桌面工具，自动切片长视频并生成字幕、封面与发布文案。",
       "url": "https://github.com/zhouxiaoka/autoclip",
       "discoveredAt": "2026-11-23",
       "tags": [
@@ -5182,6 +5474,204 @@ window.TOKEN_WORKBENCH_DATA = {
         "大模型"
       ],
       "notes": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
+    },
+    {
+      "id": "gt-artex",
+      "rank": null,
+      "period": "daily",
+      "fullName": "BaaRai/ARTEX",
+      "language": "Go",
+      "stars": 20256,
+      "forks": null,
+      "gain": null,
+      "description": "自托管的 LLM 驱动渗透测试平台：规划器拆解攻击目标、调度真实安全工具，形成双图谱审计。",
+      "url": "https://github.com/BaaRai/ARTEX",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "安全Agent",
+        "渗透测试"
+      ],
+      "notes": "AI autonomous penetration testing"
+    },
+    {
+      "id": "gt-rust-anything",
+      "rank": null,
+      "period": "daily",
+      "fullName": "erkamyaman/rust-anything",
+      "language": "Rust",
+      "stars": 9498,
+      "forks": null,
+      "gain": null,
+      "description": "将 TypeScript/Python/C/Go/Java 等语言的 CLI、服务器或库逐块迁移为 Rust，重写后自动对比确保功能一致。",
+      "url": "https://github.com/erkamyaman/rust-anything",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "Rust",
+        "迁移工具"
+      ],
+      "notes": "Rewrite your whole app in Rust, one piece at a time"
+    },
+    {
+      "id": "gt-ecc",
+      "rank": null,
+      "period": "week",
+      "fullName": "affaan-m/ECC",
+      "language": "JavaScript",
+      "stars": 310549,
+      "forks": null,
+      "gain": null,
+      "description": "Agent harness 性能优化系统：把技能、记忆、安全与研究优先的工作流整合为一套开发体系。",
+      "url": "https://github.com/affaan-m/ECC",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "Agent",
+        "性能优化"
+      ],
+      "notes": "The agent harness performance optimization system"
+    },
+    {
+      "id": "gt-ponytail",
+      "rank": null,
+      "period": "week",
+      "fullName": "DietrichGebert/ponytail",
+      "language": "JavaScript",
+      "stars": 198551,
+      "forks": null,
+      "gain": null,
+      "description": "让编码 Agent 像最懒的资深开发者一样思考——最好的代码是你没写的代码。",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "编码Agent",
+        "效率"
+      ],
+      "notes": "Makes your AI agent think like the laziest senior dev"
+    },
+    {
+      "id": "gt-openmausbot",
+      "rank": null,
+      "period": "week",
+      "fullName": "milind-soni/OpenMausBot",
+      "language": "TypeScript",
+      "stars": 27773,
+      "forks": null,
+      "gain": null,
+      "description": "开源 Grok Bot 替代品，为 Bot 提供可用虚拟机环境。",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "Bot",
+        "虚拟机"
+      ],
+      "notes": "Open-source Grok Bot alternative with a virtual machine"
+    },
+    {
+      "id": "gt-craft-anything",
+      "rank": null,
+      "period": "week",
+      "fullName": "storytold/craft-anything",
+      "language": "Rust",
+      "stars": 43318,
+      "forks": null,
+      "gain": null,
+      "description": "理解任意软件的工作原理并对其进行改造（2026-10-31 创建，数周内爆发的新星）。",
+      "url": "https://github.com/storytold/craft-anything",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "Agent",
+        "新星"
+      ],
+      "notes": "Craft Anything: understand how any software works"
+    },
+    {
+      "id": "gt-deeptutor",
+      "rank": null,
+      "period": "week",
+      "fullName": "HKUDS/DeepTutor",
+      "language": "Python",
+      "stars": 62698,
+      "forks": null,
+      "gain": null,
+      "description": "终身个性化辅导 Agent（港大数据实验室），支持多学科个性化教学。",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "教育Agent",
+        "个性化"
+      ],
+      "notes": "DeepTutor: Lifelong Personalized Tutoring"
+    },
+    {
+      "id": "gt-hermes-agent",
+      "rank": null,
+      "period": "week",
+      "fullName": "NousResearch/hermes-agent",
+      "language": "Python",
+      "stars": 266040,
+      "forks": null,
+      "gain": null,
+      "description": "Nous Research 出品的随用户成长的个人 Agent，具备记忆与工具调用能力。",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "个人Agent",
+        "记忆"
+      ],
+      "notes": "The agent that grows with you"
+    },
+    {
+      "id": "gt-crawl4ai",
+      "rank": null,
+      "period": "week",
+      "fullName": "unclecode/crawl4ai",
+      "language": "Python",
+      "stars": 87856,
+      "forks": null,
+      "gain": null,
+      "description": "面向 Agent 的网页抓取与数据抽取库，支持异步抓取、结构化输出，另有托管云服务。",
+      "url": "https://github.com/unclecode/crawl4ai",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "爬虫",
+        "Agent数据源"
+      ],
+      "notes": "Web scraping and extraction built for agents"
+    },
+    {
+      "id": "gt-deer-flow",
+      "rank": null,
+      "period": "week",
+      "fullName": "bytedance/deer-flow",
+      "language": "Python",
+      "stars": 85794,
+      "forks": null,
+      "gain": null,
+      "description": "字节跳动开源的长期任务 SuperAgent：自主研究、编码与内容创作。",
+      "url": "https://github.com/bytedance/deer-flow",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "Agent",
+        "长程任务"
+      ],
+      "notes": "Long-horizon SuperAgent harness that researches, codes and creates"
+    },
+    {
+      "id": "gt-paperclip",
+      "rank": null,
+      "period": "week",
+      "fullName": "paperclipai/paperclip",
+      "language": "TypeScript",
+      "stars": 116961,
+      "forks": null,
+      "gain": null,
+      "description": "管理工作中的 Agent 的开源应用：统一编排、监控团队里的多个 Agent。",
+      "url": "https://github.com/paperclipai/paperclip",
+      "discoveredAt": "2026-11-26",
+      "tags": [
+        "Agent管理",
+        "团队协作"
+      ],
+      "notes": "The open-source app to manage agents at work"
     }
   ],
   "skills": [
@@ -5315,7 +5805,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "见 https://open.feishu.cn 开放平台说明",
       "url": "https://www.skills.sh/site/open.feishu.cn/lark-doc",
       "sourceUrl": "https://skills.sh/",
-      "installs": "932.9K",
+      "installs": "938.9K（skills.sh，2026-11-25）",
       "tier": 50,
       "tags": [
         "飞书",
@@ -5455,7 +5945,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "npx skills add mattpocock/skills",
       "url": "https://www.skills.sh/mattpocock/skills/diagnosing-bugs",
       "sourceUrl": "https://skills.sh/",
-      "installs": "962.6K",
+      "installs": "971.1K（skills.sh，2026-11-25）",
       "tier": 50,
       "tags": [
         "Debug",
@@ -5474,7 +5964,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "npx skills add mattpocock/skills",
       "url": "https://www.skills.sh/mattpocock/skills/code-review",
       "sourceUrl": "https://skills.sh/",
-      "installs": "924.4K",
+      "installs": "933.4K（skills.sh，2026-11-25）",
       "tier": 50,
       "tags": [
         "CodeReview",
@@ -5493,7 +5983,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "npx skills add mattpocock/skills",
       "url": "https://www.skills.sh/mattpocock/skills/codebase-design",
       "sourceUrl": "https://skills.sh/",
-      "installs": "986.2K",
+      "installs": "995.3K（skills.sh，2026-11-25）",
       "tier": 50,
       "tags": [
         "架构",
@@ -5668,7 +6158,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "npx skills add vercel-labs/agent-skills",
       "url": "https://www.skills.sh/vercel-labs/agent-skills/vercel-react-best-practices",
       "sourceUrl": "https://skills.sh/",
-      "installs": "924.4K",
+      "installs": "930.7K（skills.sh，2026-11-25）",
       "tier": 100,
       "tags": [
         "React",
@@ -5707,7 +6197,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "见 https://uizze.sh 说明",
       "url": "https://www.skills.sh/site/uizze.sh/ui-taste",
       "sourceUrl": "https://skills.sh/",
-      "installs": "1.0M",
+      "installs": "1.1M（skills.sh，2026-11-25）",
       "tier": 20,
       "tags": [
         "审美",
@@ -5920,7 +6410,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "npx skills add heygen-com/hyperframes",
       "url": "https://github.com/heygen-com/hyperframes",
       "sourceUrl": "https://skills.sh/",
-      "installs": "1.6M",
+      "installs": "1.7M（skills.sh，2026-11-25）",
       "tier": 100,
       "tags": [
         "视频",
@@ -5959,7 +6449,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "npx skills add heygen-com/hyperframes",
       "url": "https://www.skills.sh/heygen-com/hyperframes/media-use",
       "sourceUrl": "https://skills.sh/",
-      "installs": "1.5M",
+      "installs": "1.6M（skills.sh，2026-11-25）",
       "tier": 50,
       "tags": [
         "素材",
@@ -6095,7 +6585,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "见 https://open.feishu.cn 开放平台说明",
       "url": "https://www.skills.sh/site/open.feishu.cn/lark-vc",
       "sourceUrl": "https://skills.sh/",
-      "installs": "923.7K",
+      "installs": "929.3K（skills.sh，2026-11-25）",
       "tier": 20,
       "tags": [
         "飞书",
@@ -6114,7 +6604,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "install": "npx skills add mattpocock/skills",
       "url": "https://www.skills.sh/mattpocock/skills/teach",
       "sourceUrl": "https://skills.sh/",
-      "installs": "979.9K",
+      "installs": "987.8K（skills.sh，2026-11-25）",
       "tier": 20,
       "tags": [
         "教学",
@@ -6360,55 +6850,15 @@ window.TOKEN_WORKBENCH_DATA = {
       "status": "active"
     },
     {
-      "id": "sk-tailwind-design-system",
-      "name": "Tailwind Design System",
-      "repo": "collectivebrain/tailwind-design-system",
-      "category": "前端设计",
-      "desc": "让 Claude 基于 Tailwind CSS v4 构建设计系统：直接在 CSS 中定义 design tokens、带变体的组件、深色模式与响应式、可访问的基础块。",
-      "install": "从 collectivebrain.de 下载 SKILL.md 放入 ~/.claude/skills/",
-      "url": "https://collectivebrain.de/en/skills",
-      "sourceUrl": "https://collectivebrain.de/en/skills",
-      "installs": "2026-11-20 新增",
-      "tier": 100,
-      "tags": [
-        "设计系统",
-        "Tailwind",
-        "前端"
-      ],
-      "notes": "2026-11-24 收录：collectivebrain 于 2026-11-20 新增的 Tailwind Design System 技能。",
-      "discoveredAt": "2026-11-24",
-      "status": "active"
-    },
-    {
-      "id": "sk-azure-validate",
-      "name": "Azure Validate",
-      "repo": "collectivebrain/azure-validate",
-      "category": "开发工程",
-      "desc": "让 Claude 在 Azure 部署前检查配置、基础设施代码、角色分配与策略是否就绪，并报告所有失败项。",
-      "install": "从 collectivebrain.de 下载 SKILL.md 放入 ~/.claude/skills/",
-      "url": "https://collectivebrain.de/en/skills",
-      "sourceUrl": "https://collectivebrain.de/en/skills",
-      "installs": "2026-11-20 新增",
-      "tier": 100,
-      "tags": [
-        "Azure",
-        "运维",
-        "云服务"
-      ],
-      "notes": "2026-11-24 收录：collectivebrain 于 2026-11-20 新增的 Azure Validate 技能。",
-      "discoveredAt": "2026-11-24",
-      "status": "active"
-    },
-    {
       "id": "sk-gws-drive",
       "name": "Gws Drive",
-      "repo": "collectivebrain/gws-drive",
+      "repo": "googleworkspace/cli",
       "category": "效率记忆",
       "desc": "让 Claude 通过 gws CLI 操作 Google Drive：搜索、上传、复制、导出文件及管理共享网盘。",
-      "install": "从 collectivebrain.de 下载 SKILL.md 放入 ~/.claude/skills/",
-      "url": "https://collectivebrain.de/en/skills",
-      "sourceUrl": "https://collectivebrain.de/en/skills",
-      "installs": "2026-11-19 新增",
+      "install": "npx skills add googleworkspace/cli --skill gws-drive",
+      "url": "https://github.com/googleworkspace/cli/tree/main/skills/gws-drive",
+      "sourceUrl": "https://github.com/googleworkspace/cli",
+      "installs": "77,944（skills.sh，2026-11-19；Snyk Warn）",
       "tier": 100,
       "tags": [
         "Google Drive",
@@ -6416,46 +6866,6 @@ window.TOKEN_WORKBENCH_DATA = {
         "效率"
       ],
       "notes": "2026-11-24 收录：collectivebrain 于 2026-11-19 新增的 Gws Drive 技能。",
-      "discoveredAt": "2026-11-24",
-      "status": "active"
-    },
-    {
-      "id": "sk-google-agents-cli",
-      "name": "Google Agents Cli Workflow",
-      "repo": "collectivebrain/google-agents-cli",
-      "category": "开发工程",
-      "desc": "让 Claude Code 引导你逐步构建 ADK Agent：从设计约定、脚手架、代码、评估到部署与监控。",
-      "install": "从 collectivebrain.de 下载 SKILL.md 放入 ~/.claude/skills/",
-      "url": "https://collectivebrain.de/en/skills",
-      "sourceUrl": "https://collectivebrain.de/en/skills",
-      "installs": "2026-11-18 新增",
-      "tier": 100,
-      "tags": [
-        "Google ADK",
-        "Agent",
-        "工作流"
-      ],
-      "notes": "2026-11-24 收录：collectivebrain 于 2026-11-18 新增的 Google Agents Cli Workflow 技能。",
-      "discoveredAt": "2026-11-24",
-      "status": "active"
-    },
-    {
-      "id": "sk-handoff",
-      "name": "Handoff",
-      "repo": "collectivebrain/handoff",
-      "category": "效率记忆",
-      "desc": "让 Claude 将进行中的对话总结为交接文档，供新 Agent 接手工作，文档保存在系统临时目录。",
-      "install": "从 collectivebrain.de 下载 SKILL.md 放入 ~/.claude/skills/",
-      "url": "https://collectivebrain.de/en/skills",
-      "sourceUrl": "https://collectivebrain.de/en/skills",
-      "installs": "2026-11-17 新增",
-      "tier": 100,
-      "tags": [
-        "协作",
-        "交接",
-        "效率"
-      ],
-      "notes": "2026-11-24 收录：collectivebrain 于 2026-11-17 新增的 Handoff 技能。",
       "discoveredAt": "2026-11-24",
       "status": "active"
     },
@@ -6712,13 +7122,13 @@ window.TOKEN_WORKBENCH_DATA = {
       "id": "sk-unslop",
       "name": "unslop",
       "repo": "heydamir/unslop",
-      "category": "界面设计 / UI 美化",
+      "category": "前端设计",
       "desc": "Claude 技能：把 vibecoding 产出的「AI 味」界面改造成有设计感的界面，去 AI 味。",
       "install": "在 Claude Code 中通过 skills 安装 heydamir/unslop，或复制技能目录到 ~/.claude/skills/",
       "url": "https://github.com/heydamir/unslop",
       "sourceUrl": "https://findarepo.com/skills/claude/claude-code/",
       "installs": "21.2K stars",
-      "tier": 80,
+      "tier": 50,
       "tags": [
         "UI设计",
         "去AI味",
@@ -6729,37 +7139,16 @@ window.TOKEN_WORKBENCH_DATA = {
       "status": "active"
     },
     {
-      "id": "sk-hallmark",
-      "name": "hallmark",
-      "repo": "Nutlope/hallmark",
-      "category": "界面设计 / UI 美化",
-      "desc": "反 AI-slop 设计技能，适用于 Claude Code、Cursor 与 Codex，提升生成界面质感。",
-      "install": "在 Claude Code / Cursor / Codex 中安装 Nutlope/hallmark 技能",
-      "url": "https://github.com/Nutlope/hallmark",
-      "sourceUrl": "https://findarepo.com/skills/claude/claude-code/",
-      "installs": "60.5K stars",
-      "tier": 80,
-      "tags": [
-        "UI设计",
-        "反AI味",
-        "Claude Code",
-        "多客户端"
-      ],
-      "notes": "CSS，60,479 stars（2026-11-24 API 核验），MIT 许可。",
-      "discoveredAt": "2026-11-25",
-      "status": "active"
-    },
-    {
       "id": "sk-lemo-opuscar",
       "name": "lemo-opuscar",
       "repo": "lemomo-ai/lemo-opuscar",
-      "category": "音视频创作 / 视频风格",
+      "category": "多媒体创作",
       "desc": "用代码制作的电影风格工具箱（Claude Code 技能）：99 种现成风格，并可创建自定义风格。",
       "install": "在 Claude Code 中通过 skills 安装 lemomo-ai/lemo-opuscar，或复制技能目录到 ~/.claude/skills/",
       "url": "https://github.com/lemomo-ai/lemo-opuscar",
       "sourceUrl": "https://findarepo.com/skills/claude/claude-code/",
-      "installs": "16K stars",
-      "tier": 60,
+      "installs": "20,692 stars（2026-11-25）",
+      "tier": 50,
       "tags": [
         "视频风格",
         "电影风格",
@@ -6773,12 +7162,12 @@ window.TOKEN_WORKBENCH_DATA = {
       "id": "sk-nestjs-agent-skills",
       "name": "nestjs-agent-skills",
       "repo": "nestjs/agent-skills",
-      "category": "后端开发 / Node.js",
+      "category": "开发工程",
       "desc": "NestJS 框架专属的 Agent 技能，辅助高效编写规范的 Node.js 代码。",
       "install": "在 Claude Code 中通过 skills 安装 nestjs/agent-skills，或复制技能目录到 ~/.claude/skills/",
       "url": "https://github.com/nestjs/agent-skills",
       "sourceUrl": "https://agentskillshub.top/daily/2026-11-21",
-      "installs": "61 stars",
+      "installs": "160 stars（2026-11-25）",
       "tier": 50,
       "tags": [
         "NestJS",
@@ -6793,13 +7182,13 @@ window.TOKEN_WORKBENCH_DATA = {
       "id": "sk-claude-best-practices-zh",
       "name": "claude-best-practices-zh",
       "repo": "yibie/claude-best-practices-zh",
-      "category": "知识库 / 最佳实践",
+      "category": "资源目录",
       "desc": "Claude 官方最佳实践全集中文译文：173 篇中文译文 + 100 个概念的 LLM Wiki 知识网络 + 交互式知识图谱/思维导图。",
       "install": "克隆仓库作为知识库，或在 Claude Code 中作为参考资料引用",
       "url": "https://github.com/yibie/claude-best-practices-zh",
       "sourceUrl": "https://agentskillshub.top/daily/2026-11-21",
-      "installs": "88 stars",
-      "tier": 60,
+      "installs": "113 stars（2026-11-25）",
+      "tier": 20,
       "tags": [
         "中文",
         "最佳实践",
@@ -6808,6 +7197,394 @@ window.TOKEN_WORKBENCH_DATA = {
       ],
       "notes": "2026-11-21 新收录，中文 Claude 最佳实践知识库，适合系统检索学习。",
       "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "sk-academy-guide",
+      "name": "academy-guide",
+      "repo": "anthropics/skills",
+      "category": "效率记忆",
+      "desc": "用户询问 Claude / AI 用法时自动匹配并推荐官方 Academy 课程、教程与用例。",
+      "install": "npx skills add https://github.com/anthropics/skills --skill academy-guide",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/academy-guide",
+      "sourceUrl": "https://skills.sh/",
+      "installs": "19,920（skills.sh，2026-11-25）",
+      "tier": 100,
+      "tags": [
+        "官方",
+        "学习指南",
+        "效率"
+      ],
+      "notes": "2026-08 由 claude-academy-guide 改名，周安装量 1,125→1,928；SKILL.md 与仓库 200，最近提交 2026-11-16。",
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "sk-brand-guidelines",
+      "name": "brand-guidelines",
+      "repo": "anthropics/skills",
+      "category": "前端设计",
+      "desc": "把官方配色与字体规范套用到视觉产物，并按背景自动选色保证可读性。",
+      "install": "npx skills add https://github.com/anthropics/skills --skill brand-guidelines",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+      "sourceUrl": "https://skills.sh/",
+      "installs": "123,626（skills.sh，2026-11-25）",
+      "tier": 100,
+      "tags": [
+        "官方",
+        "品牌规范",
+        "排版"
+      ],
+      "notes": "官方仓库现存但未收录；SKILL.md 200，仓库近 30 天活跃。",
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "sk-grill-with-docs",
+      "name": "grill-with-docs",
+      "repo": "mattpocock/skills",
+      "category": "开发工程",
+      "desc": "深度需求访谈同时构建领域模型、更新 GLOSSARY.md 与 ADR，解决 Agent 与真实需求错位。",
+      "install": "npx skills add https://github.com/mattpocock/skills --skill grill-with-docs",
+      "url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs",
+      "sourceUrl": "https://www.skills.sh/mattpocock/skills/grill-with-docs",
+      "installs": "1,371,384（skills.sh，2026-11-25）",
+      "tier": 50,
+      "tags": [
+        "需求澄清",
+        "领域模型",
+        "工程"
+      ],
+      "notes": "README 列为核心技能；SKILL.md raw 200，仓库 push 于 2026-11-24。",
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "sk-prototype",
+      "name": "prototype",
+      "repo": "mattpocock/skills",
+      "category": "开发工程",
+      "desc": "用可丢弃 HTML 原型或同路由多版本 UI 快速回答设计问题，避免过早投入正式实现。",
+      "install": "npx skills add https://github.com/mattpocock/skills --skill prototype",
+      "url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype",
+      "sourceUrl": "https://www.skills.sh/mattpocock/skills/prototype",
+      "installs": "1,117,401（skills.sh，2026-11-25）",
+      "tier": 50,
+      "tags": [
+        "原型",
+        "UI验证",
+        "工程"
+      ],
+      "notes": "SKILL.md raw 200，仓库 push 于 2026-11-24；与现有条目无主题重复。",
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "sk-fireworks-tech-graph",
+      "name": "fireworks-tech-graph",
+      "repo": "yizhiyanhua-ai/fireworks-tech-graph",
+      "category": "文档办公",
+      "desc": "用自然语言生成架构图、数据流图、时序图、C4 与云部署图，中文输入友好。",
+      "install": "npx skills add https://github.com/yizhiyanhua-ai/fireworks-tech-graph --skill fireworks-tech-graph",
+      "url": "https://github.com/yizhiyanhua-ai/fireworks-tech-graph",
+      "sourceUrl": "https://github.com/yizhiyanhua-ai/fireworks-tech-graph",
+      "installs": "18,504（skills.sh，2026-11-25）",
+      "tier": 50,
+      "tags": [
+        "技术图表",
+        "中文",
+        "文档"
+      ],
+      "notes": "GitHub 仓库与根目录 SKILL.md 均 200，最近提交 2026-10-21；中文合集与 skills.sh Hot 榜双来源推荐。",
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "sk-claude-video-effects",
+      "name": "claude-video-effects",
+      "repo": "Vibha-Ramprakash/claude-video-effects",
+      "category": "多媒体创作",
+      "desc": "给口播视频一键加 51 种特效，在 Claude Code 中输入 /effects 即可调用。",
+      "install": "在 Claude Code 中安装该技能包，使用 /effects 命令",
+      "url": "https://github.com/Vibha-Ramprakash/claude-video-effects",
+      "sourceUrl": "https://github.com/Vibha-Ramprakash/claude-video-effects",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "视频特效",
+        "Claude Code"
+      ],
+      "notes": "2026-11-26 GitHub 核验：1,202 星，Python；口播视频后期特效技能。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-line-art-animation",
+      "name": "line-art-animation",
+      "repo": "JDhruv14/line-art-animation",
+      "category": "多媒体创作",
+      "desc": "可行走、会反应的线稿小人 SVG 动画组件，附 Claude Skill 与 TS 库。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/JDhruv14/line-art-animation",
+      "sourceUrl": "https://github.com/JDhruv14/line-art-animation",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "SVG动画",
+        "Claude Skill"
+      ],
+      "notes": "2026-11-26 GitHub 核验：1,242 星，TypeScript。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-cinematic-skill",
+      "name": "cinematic-skill",
+      "repo": "Moh4696/cinematic-skill",
+      "category": "多媒体创作",
+      "desc": "纯用代码把照片与地图串成一镜到底、带旁白的电影短片。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/Moh4696/cinematic-skill",
+      "sourceUrl": "https://github.com/Moh4696/cinematic-skill",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "视频创作",
+        "Agent Skill"
+      ],
+      "notes": "2026-11-26 GitHub 核验：995 星，Python。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-sprite-stacking",
+      "name": "sprite-stacking",
+      "repo": "danielwh2/sprite-stacking",
+      "category": "多媒体创作",
+      "desc": "将四视图像素画自动转为可旋转的伪 3D 精灵，适配多款 AI 编程助手。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "sourceUrl": "https://github.com/danielwh2/sprite-stacking",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "像素画",
+        "游戏素材"
+      ],
+      "notes": "2026-11-26 GitHub 核验：879 星，HTML；AgentSkillsHub 2026-11-21 新收录。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-plotter",
+      "name": "plotter",
+      "repo": "pasqualevitiello/plotter",
+      "category": "多媒体创作",
+      "desc": "生成可编辑的蓝图插画与动画，借助视觉语法与智能体技能快速出图。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/pasqualevitiello/plotter",
+      "sourceUrl": "https://github.com/pasqualevitiello/plotter",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "插画",
+        "蓝图"
+      ],
+      "notes": "2026-11-26 GitHub 核验：252 星，TypeScript。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-creator-generalist",
+      "name": "creator-generalist",
+      "repo": "codepawl/creator-generalist",
+      "category": "多媒体创作",
+      "desc": "让智能体像 2D、3D 全能美术一样完成模型、地图与短视频素材制作。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/codepawl/creator-generalist",
+      "sourceUrl": "https://github.com/codepawl/creator-generalist",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "2D",
+        "3D",
+        "素材生成"
+      ],
+      "notes": "2026-11-26 GitHub 核验：369 星，Python。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-beyondgtaclips",
+      "name": "beyondgtaclips",
+      "repo": "beyondtahir/beyondgtaclips",
+      "category": "多媒体创作",
+      "desc": "自动将 GTA 6 长直播剪成 9:16 竖屏短视频，支持 Claude 本地免费调用。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/beyondtahir/beyondgtaclips",
+      "sourceUrl": "https://github.com/beyondtahir/beyondgtaclips",
+      "installs": null,
+      "tier": 20,
+      "tags": [
+        "短视频",
+        "剪辑"
+      ],
+      "notes": "2026-11-26 GitHub 核验：158 星，Python。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-subtle",
+      "name": "subtle",
+      "repo": "0xpratzyy/subtle",
+      "category": "多媒体创作",
+      "desc": "生成 26 种本地动态字幕与卡点歌词视频，无缝衔接 Codex 与 Claude Code。",
+      "install": "在 Claude Code / Codex 中安装该技能包",
+      "url": "https://github.com/0xpratzyy/subtle",
+      "sourceUrl": "https://github.com/0xpratzyy/subtle",
+      "installs": null,
+      "tier": 20,
+      "tags": [
+        "字幕",
+        "歌词视频"
+      ],
+      "notes": "2026-11-26 GitHub 核验：156 星，TypeScript。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-article2media",
+      "name": "article2media",
+      "repo": "threerocks/article2media",
+      "category": "营销增长",
+      "desc": "把一篇文章或视频（抖音、B 站、YouTube，先转逐字稿）一键做成小红书图文、杂志长图、公众号排版和 AI 配音口播短视频。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/threerocks/article2media",
+      "sourceUrl": "https://github.com/threerocks/article2media",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "内容矩阵",
+        "中文",
+        "图文转视频"
+      ],
+      "notes": "2026-11-26 GitHub 核验：569 星，JavaScript；中文场景的一键内容转媒体技能。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-blackhole",
+      "name": "blackhole",
+      "repo": "tommy0103/blackhole",
+      "category": "开发工程",
+      "desc": "把 Claude Code 关进只挂当前目录的 Linux 容器，隔离本机文件与网络。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/tommy0103/blackhole",
+      "sourceUrl": "https://github.com/tommy0103/blackhole",
+      "installs": null,
+      "tier": 50,
+      "tags": [
+        "沙箱",
+        "安全隔离"
+      ],
+      "notes": "2026-11-26 GitHub 核验：112 星，Shell。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-rounds",
+      "name": "rounds",
+      "repo": "krispuckett/rounds",
+      "category": "开发工程",
+      "desc": "聚合展示 Claude Code 会话生成的全部内容，用本地画布理清开发产物。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/krispuckett/rounds",
+      "sourceUrl": "https://github.com/krispuckett/rounds",
+      "installs": null,
+      "tier": 20,
+      "tags": [
+        "会话可视化",
+        "画布"
+      ],
+      "notes": "2026-11-26 GitHub 核验：115 星，TypeScript。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-lochness",
+      "name": "lochness",
+      "repo": "ronyfadel/lochness",
+      "category": "开发工程",
+      "desc": "查询 Mac 本地构建的苹果官方译文库，让 Claude Code 精准完成应用本地化。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/ronyfadel/lochness",
+      "sourceUrl": "https://github.com/ronyfadel/lochness",
+      "installs": null,
+      "tier": 20,
+      "tags": [
+        "本地化",
+        "macOS"
+      ],
+      "notes": "2026-11-26 GitHub 核验：52 星，Python。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-orb-audio",
+      "name": "orb-audio",
+      "repo": "stdevMac/orb-audio",
+      "category": "多媒体创作",
+      "desc": "将文本描述直接转为 48kHz 音频，用轻量引擎帮智能体实现声音代码化。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/stdevMac/orb-audio",
+      "sourceUrl": "https://github.com/stdevMac/orb-audio",
+      "installs": null,
+      "tier": 20,
+      "tags": [
+        "语音生成",
+        "轻量引擎"
+      ],
+      "notes": "2026-11-26 GitHub 核验：29 星，Python。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-claude-xcode-agent",
+      "name": "claude-xcode-agent",
+      "repo": "yusuke-114/claude-xcode-agent",
+      "category": "开发工程",
+      "desc": "在 Xcode 27 里把 Claude Code 设成编码智能体，用你自己的 API Key 驱动。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/yusuke-114/claude-xcode-agent",
+      "sourceUrl": "https://github.com/yusuke-114/claude-xcode-agent",
+      "installs": null,
+      "tier": 20,
+      "tags": [
+        "Xcode",
+        "编码Agent"
+      ],
+      "notes": "2026-11-26 GitHub 核验：68 星，Shell。",
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "sk-ai-software-factory",
+      "name": "ai-software-factory",
+      "repo": "piomin/ai-software-factory",
+      "category": "开发工程",
+      "desc": "基于 Kubernetes、Tekton 与 vLLM 的 AI 软件工厂，自动化推进软件研发流程。",
+      "install": "在 Claude Code 中安装该技能包",
+      "url": "https://github.com/piomin/ai-software-factory",
+      "sourceUrl": "https://github.com/piomin/ai-software-factory",
+      "installs": null,
+      "tier": 20,
+      "tags": [
+        "CI/CD",
+        "K8s",
+        "vLLM"
+      ],
+      "notes": "2026-11-26 GitHub 核验：200 星，Dockerfile。",
+      "discoveredAt": "2026-11-26",
       "status": "active"
     }
   ],
@@ -8629,14 +9406,14 @@ window.TOKEN_WORKBENCH_DATA = {
       "duration": "4 单元",
       "desc": "免费自步课程，覆盖 Agent 基础（工具、思考、行动、观察）与 smolagents、LlamaIndex、LangGraph 三大框架，结课完成基准 Agent 作业；官方称认证流程免费。",
       "url": "https://huggingface.co/agents-course",
-      "sourceUrl": "https://dev.to/jathurshan_sownthararasa_/5-free-ai-and-cs-workshops-and-courses-you-can-start-now-nov-2026-a0i",
+      "sourceUrl": "https://github.com/huggingface/agents-course",
       "tags": [
         "Agent",
         "免费认证",
         "smolagents",
         "LangGraph"
       ],
-      "tier": 90,
+      "tier": 100,
       "discoveredAt": "2026-11-25",
       "status": "active"
     },
@@ -8651,14 +9428,14 @@ window.TOKEN_WORKBENCH_DATA = {
       "duration": "约 2 小时",
       "desc": "免费自步视频课，面向把 AI Agent 接入外部工具/数据库/API 的开发者：讲解 MCP 基础、真实泄露案例、OWASP MCP Top 10 与企业 MCP 安全体系，并解读 Simon Willison 的「致命三要素」。",
       "url": "https://www.freecodecamp.org/news/secure-your-ai-agents-free-model-context-protocol-mcp-security-course/",
-      "sourceUrl": "https://dev.to/jathurshan_sownthararasa_/5-free-ai-and-cs-workshops-and-courses-you-can-start-now-nov-2026-a0i",
+      "sourceUrl": "https://www.freecodecamp.org/news/secure-your-ai-agents-free-model-context-protocol-mcp-security-course/",
       "tags": [
         "MCP",
         "安全",
         "Agent",
         "免费"
       ],
-      "tier": 80,
+      "tier": 50,
       "discoveredAt": "2026-11-25",
       "status": "active"
     },
@@ -8668,19 +9445,19 @@ window.TOKEN_WORKBENCH_DATA = {
       "category": "AI工作流与自动化",
       "org": "Datawhale",
       "level": "入门→进阶",
-      "format": "中文开源教程",
+      "format": "开源教程",
       "lang": "中文",
       "duration": "16 章（约 44 万字）",
       "desc": "Datawhale 出品的智能体系统教程：从 Agent 原理到多智能体实战，全中文、配代码仓库与阶段作业，2026 年 Agent 开发方向的首选免费中文学习路径。",
       "url": "https://github.com/datawhalechina/hello-agents",
-      "sourceUrl": "https://so.html5.qq.com/page/real/search_news?docid=70000021_5566b03bb9364552",
+      "sourceUrl": "https://github.com/datawhalechina/hello-agents",
       "tags": [
         "Agent",
         "中文",
         "多智能体",
         "免费"
       ],
-      "tier": 90,
+      "tier": 100,
       "discoveredAt": "2026-11-25",
       "status": "active"
     },
@@ -8695,15 +9472,350 @@ window.TOKEN_WORKBENCH_DATA = {
       "duration": "7 章 + 附录",
       "desc": "用 PyTorch 从零一步步实现类 ChatGPT 的大模型：从分词到可训练的 GPT，2026-11 仍在更新，适合想拆开模型本身理解的开发者（需 GPU 算力）。",
       "url": "https://github.com/rasbt/LLMs-from-scratch",
-      "sourceUrl": "https://so.html5.qq.com/page/real/search_news?docid=70000021_5566b03bb9364552",
+      "sourceUrl": "https://github.com/rasbt/LLMs-from-scratch",
       "tags": [
         "从零实现",
         "PyTorch",
         "大模型",
         "免费"
       ],
-      "tier": 85,
+      "tier": 100,
       "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-dlai-transformer-llms",
+      "title": "How Transformer LLMs Work",
+      "category": "大模型应用与开发",
+      "org": "DeepLearning.AI",
+      "level": "入门",
+      "format": "视频课程",
+      "lang": "英文",
+      "duration": "1 小时 34 分 / 13 视频 + 2 代码示例",
+      "desc": "《Hands-On LLM》作者主讲，从词嵌入、自注意力讲到 KV 缓存与 GQA，并对照 Hugging Face 实现。",
+      "url": "https://www.deeplearning.ai/courses/how-transformer-llms-work",
+      "sourceUrl": "https://www.deeplearning.ai/courses/how-transformer-llms-work",
+      "tags": [
+        "Transformer",
+        "注意力机制",
+        "原理入门"
+      ],
+      "tier": 100,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-smartedu-ai-foundations",
+      "title": "人工智能基础（国家高等教育智慧教育平台）",
+      "category": "大模型应用与开发",
+      "org": "国家高等教育智慧教育平台",
+      "level": "入门",
+      "format": "高校课程",
+      "lang": "中文",
+      "duration": "6 讲",
+      "desc": "面向非计算机专业的通识课，含提示词工程、Transformer 原理、DeepSeek 本地部署实验与生成式 AI 使用指南。",
+      "url": "https://www.chinaooc.com.cn/course/69b9c1c395df98bb27eb662d",
+      "sourceUrl": "https://www.chinaooc.com.cn/course/69b9c1c395df98bb27eb662d",
+      "tags": [
+        "通识课",
+        "大模型原理",
+        "提示词工程"
+      ],
+      "tier": 100,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-comfy-wan22-video",
+      "title": "Wan 2.2 5B 图生/文生视频官方工作流",
+      "category": "AIGC创意与视觉设计",
+      "org": "ComfyUI 官方",
+      "level": "入门→进阶",
+      "format": "官方框架",
+      "lang": "英文",
+      "duration": "单工作流 + 问答",
+      "desc": "官方节点模板演示 UNETLoader→CLIP→KSampler→VAEDecode→SaveVideo 全链路，含 8GB 显存与图生视频开关说明。",
+      "url": "https://comfy.org/hub/workflows/wan-2-2-5b-video-generation-f83ee3caa04e/",
+      "sourceUrl": "https://comfy.org/hub/workflows/wan-2-2-5b-video-generation-f83ee3caa04e/",
+      "tags": [
+        "Wan2.2",
+        "图生视频",
+        "ComfyUI"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-lora-comfyui-guide",
+      "title": "ComfyUI LoRA 使用指南（2026）",
+      "category": "AIGC创意与视觉设计",
+      "org": "ModelTrends",
+      "level": "入门→进阶",
+      "format": "实战文章",
+      "lang": "中文",
+      "duration": "约 10 分钟阅读",
+      "desc": "对比 LoraLoader 与 LoraLoaderModelOnly，给出强度、触发词、叠加 LoRA 与按底座模型排错的逐步流程。",
+      "url": "https://modeltrends.ai/chinese/%E6%8C%87%E5%8D%97/how-to-use-loras-in-comfyui",
+      "sourceUrl": "https://modeltrends.ai/chinese/%E6%8C%87%E5%8D%97/how-to-use-loras-in-comfyui",
+      "tags": [
+        "LoRA",
+        "ComfyUI",
+        "中文实战"
+      ],
+      "tier": 20,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-hf-robotics-course",
+      "title": "Hugging Face Robotics Course",
+      "category": "具身智能与硬件AI",
+      "org": "Hugging Face",
+      "level": "入门→进阶",
+      "format": "文档课程",
+      "lang": "英文",
+      "duration": "已发布单元 0/1/2，后续连载",
+      "desc": "官方免费交互课，用 LeRobot 讲经典机器人学到基于学习的迁移，含真实数据集与模拟环境练习。",
+      "url": "https://huggingface.co/learn/robotics-course",
+      "sourceUrl": "https://robotics.growbotics.ai/zh/news/hugging-face-robotics-course-lerobot",
+      "tags": [
+        "LeRobot",
+        "机器人学习",
+        "官方课程"
+      ],
+      "tier": 100,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-datawhale-hello-robot",
+      "title": "Hello-Robot：具身智能开源实践教程",
+      "category": "具身智能与硬件AI",
+      "org": "Datawhale",
+      "level": "进阶",
+      "format": "开源教程",
+      "lang": "中文",
+      "duration": "递进式章节 + 视频",
+      "desc": "以仿真起步，串起感知、建图、规划、控制与 VLM/VLA/WM，覆盖 Isaac Sim + ROS 2 到真机链路。",
+      "url": "https://github.com/datawhalechina/hello-robot",
+      "sourceUrl": "https://github.com/datawhalechina/hello-robot",
+      "tags": [
+        "具身智能",
+        "ROS2",
+        "中文开源"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-n8n-academy",
+      "title": "n8n Academy 免费官方课程",
+      "category": "AI工作流与自动化",
+      "org": "n8n",
+      "level": "入门→进阶",
+      "format": "文档课程",
+      "lang": "英文",
+      "duration": "4 门共 12–19 小时",
+      "desc": "官方课程包含 Quickstart、Essentials、Integrations、In Practice，含工作流实操评分与可验证徽章。",
+      "url": "https://learn.n8n.io/",
+      "sourceUrl": "https://learn.n8n.io/",
+      "tags": [
+        "n8n",
+        "自动化",
+        "免费认证"
+      ],
+      "tier": 100,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-edwartens-agents-mcp",
+      "title": "AI Agents and MCP for Engineers",
+      "category": "AI工作流与自动化",
+      "org": "EDWartens",
+      "level": "进阶",
+      "format": "视频课程",
+      "lang": "英文",
+      "duration": "13 模块 / 11 小时 04 分",
+      "desc": "自步课：Agent 循环、Python 工具调用、MCP 规范、FastMCP 只读工业数据源、LangGraph/Agent SDK 与人工审批护栏。",
+      "url": "https://edwartens.com/free/ai-agents-and-mcp-for-engineers",
+      "sourceUrl": "https://edwartens.com/free/ai-agents-and-mcp-for-engineers",
+      "tags": [
+        "MCP",
+        "Agent",
+        "工程实践"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-ai-safety-atlas",
+      "title": "AI Safety Atlas",
+      "category": "AI安全、治理与伦理",
+      "org": "CeSIA（法国 AI 安全中心）",
+      "level": "进阶",
+      "format": "在线书",
+      "lang": "英文",
+      "duration": "8 章，季度更新",
+      "desc": "研究者编写的开放教材，按能力、威胁模型、评测、可解释性、监督与治理建立统一概念地图。",
+      "url": "https://aisafetyatlas.com/",
+      "sourceUrl": "https://aisafetyatlas.com/",
+      "tags": [
+        "AI安全",
+        "开放教材",
+        "评测"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-lens-ai-control",
+      "title": "AI Control Fundamentals",
+      "category": "AI安全、治理与伦理",
+      "org": "Lens Academy",
+      "level": "高级",
+      "format": "视频课程",
+      "lang": "英文",
+      "duration": "25 小时 / 5 周制",
+      "desc": "免费小组课，聚焦 AI 控制与监督技术，含 1 对 1 指导与证书；建议先具备 AI 安全基础。",
+      "url": "https://lensacademy.org/courses/ai-control-fundamentals",
+      "sourceUrl": "https://lensacademy.org/courses/ai-control-fundamentals",
+      "tags": [
+        "AI控制",
+        "对齐",
+        "研讨课"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-aipm-wiki",
+      "title": "AIPM-Wiki：AI 产品经理入门知识库",
+      "category": "AI商业战略与产品",
+      "org": "破壁 BreakingWall",
+      "level": "入门→进阶",
+      "format": "开源教程",
+      "lang": "中文",
+      "duration": "6 大板块，按编号自学",
+      "desc": "学习路线、AI 基础、PM 技能、案例拆解与面试题库，模型价格与政策核实至 2026-07，支持 Obsidian 检索。",
+      "url": "https://github.com/archlizheng/AIPM-Wiki",
+      "sourceUrl": "https://github.com/archlizheng/AIPM-Wiki",
+      "tags": [
+        "AI产品经理",
+        "面试",
+        "中文"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-ai-for-pm-handbook",
+      "title": "AI for Product Managers（开源手册）",
+      "category": "AI商业战略与产品",
+      "org": "ombharatiya",
+      "level": "入门→进阶",
+      "format": "在线书",
+      "lang": "英文",
+      "duration": "12–16 周可选路径",
+      "desc": "CC BY 4.0 手册，覆盖 LLM/评测/RAG/Agent/产品工艺、7 个行业案例与 160+ 面试题，事实逐条标注来源。",
+      "url": "https://github.com/ombharatiya/AI-for-Product-Managers",
+      "sourceUrl": "https://github.com/ombharatiya/AI-for-Product-Managers",
+      "tags": [
+        "AI PM",
+        "面试题",
+        "开源手册"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "tu-evaluating-ai-agents",
+      "title": "Evaluating AI Agents（DeepLearning.AI）",
+      "category": "AI工作流与自动化",
+      "org": "DeepLearning.AI × Arize AI",
+      "level": "入门",
+      "format": "视频+代码",
+      "lang": "英文",
+      "duration": "约 2 小时 41 分",
+      "desc": "系统学习 Agent 评测：为 Agent 添加可观测性、搭建组件级评测（代码评测器/LLM-as-a-Judge）、组织结构化实验并部署到生产监控。",
+      "url": "https://www.deeplearning.ai/short-courses/evaluating-ai-agents/",
+      "sourceUrl": "https://www.deeplearning.ai/short-courses/evaluating-ai-agents/",
+      "tags": [
+        "Agent评测",
+        "可观测性",
+        "短课程"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "tu-develop-ai-agents-azure",
+      "title": "Develop AI Agents on Azure（Microsoft Learn）",
+      "category": "大模型应用与开发",
+      "org": "Microsoft",
+      "level": "中级",
+      "format": "学习路径",
+      "lang": "英文",
+      "duration": "约 10 小时 42 分",
+      "desc": "基于 Microsoft Foundry Agent Service 与 Microsoft Agent Framework，学习在 Azure 上构建、测试、部署与集成 AI Agent。",
+      "url": "https://learn.microsoft.com/en-us/training/paths/develop-ai-agents-azure/",
+      "sourceUrl": "https://learn.microsoft.com/en-us/training/paths/develop-ai-agents-azure/",
+      "tags": [
+        "Azure",
+        "Foundry",
+        "学习路径"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "tu-12-factor-agents",
+      "title": "12-Factor Agents（生产级 Agent 十二原则）",
+      "category": "AI工作流与自动化",
+      "org": "humanlayer",
+      "level": "入门→进阶",
+      "format": "开源文档",
+      "lang": "英文",
+      "duration": "阅读约 2–4 小时",
+      "desc": "面向生产环境构建 LLM 驱动软件的 12 条原则，涵盖部署、状态管理、错误处理与可观测性等工程实践。",
+      "url": "https://github.com/humanlayer/12-factor-agents",
+      "sourceUrl": "https://github.com/humanlayer/12-factor-agents",
+      "tags": [
+        "生产实践",
+        "原则指南"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "tu-agents-towards-production",
+      "title": "Agents Towards Production（端到端代码教程）",
+      "category": "AI工作流与自动化",
+      "org": "NirDiamant",
+      "level": "入门→进阶",
+      "format": "代码教程",
+      "lang": "英文",
+      "duration": "24 个代码优先教程",
+      "desc": "端到端、代码优先的生产级 GenAI Agent 教程，覆盖记忆、MCP、安全、追踪与部署等主题。",
+      "url": "https://github.com/NirDiamant/agents-towards-production",
+      "sourceUrl": "https://github.com/NirDiamant/agents-towards-production",
+      "tags": [
+        "生产实践",
+        "代码教程",
+        "MCP"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
       "status": "active"
     }
   ],
@@ -8746,6 +9858,10 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "自由职业平台数据：AI增强服务工作量同比+72%（新浪科技）",
           "url": "https://tech.sina.cn/2026-10-14/detail-iniveqvs1283467.d.html"
+        },
+        {
+          "name": "Upwork：AI 视频内容需求洞察",
+          "url": "https://upwork.com/research/upwork-monthly-hiring-insights-august-2026"
         }
       ],
       "tools": [
@@ -8829,6 +9945,10 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "AI-Driven Digital Product Passive Income: From Idea Validation to Sales",
           "url": "https://moneymindset.digital/?p=2661"
+        },
+        {
+          "name": "Stable Diffusion WebUI 开源仓库",
+          "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
         }
       ],
       "tools": [
@@ -8924,6 +10044,14 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "AI虚拟主播直播：24小时无人直播的变现与风险（71muke）",
           "url": "http://a.71muke.com/announcement/2026083983"
+        },
+        {
+          "name": "HeyGen 官方免费档说明",
+          "url": "https://heygen.com/pricing"
+        },
+        {
+          "name": "HeyGen 数字人平台对比",
+          "url": "https://heygen.com/blog/best-ai-avatar-platform-corporate-training-videos"
         }
       ],
       "tools": [
@@ -9191,6 +10319,14 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "AI副业复盘：给独立开发者做RAG与Agent集成顾问",
           "url": "https://aibotgo.net/blog/ai-side-hustle-reality-check-2026"
+        },
+        {
+          "name": "Dify 工作流 101",
+          "url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-01.md"
+        },
+        {
+          "name": "投资人看好的 48 个 AI 应用与成交数据",
+          "url": "https://www.woshipm.com/ai/6463036.html"
         }
       ],
       "tools": [
@@ -9293,6 +10429,14 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "Generative Engine Optimization: What the Research Really Says（Princeton论文与2026研究综述）",
           "url": "https://getdesignify.com/blog/generative-engine-optimization"
+        },
+        {
+          "name": "GEO 统计数据（逐条标注来源）",
+          "url": "https://shila.so/blog/generative-engine-optimization-statistics"
+        },
+        {
+          "name": "GEO 服务采购需求证据",
+          "url": "https://somethinginc.com/blog/generative-engine-optimization-services"
         }
       ],
       "tools": [
@@ -9325,6 +10469,12 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.semrush.com/",
           "kind": "网页入口",
           "note": "官方提供免费试用，完整AI可见性功能需付费"
+        },
+        {
+          "name": "Bing Webmaster Tools",
+          "url": "https://www.bing.com/webmasters",
+          "kind": "网页入口",
+          "note": "免费，含 AI Performance 数据分析"
         }
       ],
       "tags": [
@@ -9522,7 +10672,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "按月/年收费，提供持续的工具或服务。",
       "logic": "把一次性交付变成可预期的经常性收入（Recurring Revenue），客户生命周期价值最大化。",
       "source": "用户原文",
-      "sourceUrl": "https://l8bites.com/blog/ai-monetization-strategies-7-revenue-streams-2026",
+      "sourceUrl": "https://a16z.com/100-gen-ai-apps-7/",
       "level": "入门",
       "resources": [
         {
@@ -9544,6 +10694,22 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "微SaaS市场2026：经常性收入与盈利分布数据",
           "url": "https://digitalmarket.world/content/trends/D358.html"
+        },
+        {
+          "name": "Stripe Billing 官方文档",
+          "url": "https://docs.stripe.com/billing"
+        },
+        {
+          "name": "无代码搭建订阅收费",
+          "url": "https://docs.stripe.com/billing/subscriptions/build-subscriptions"
+        },
+        {
+          "name": "a16z：生成式 AI 应用订阅变现数据",
+          "url": "https://a16z.com/100-gen-ai-apps-7/"
+        },
+        {
+          "name": "Lemon Squeezy 官方文档",
+          "url": "https://docs.lemonsqueezy.com/"
         }
       ],
       "tools": [
@@ -9570,12 +10736,24 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.feishu.cn/download",
           "kind": "下载安装",
           "note": "免费版可做社群运营与客户管理"
+        },
+        {
+          "name": "小红书",
+          "url": "https://www.xiaohongshu.com/",
+          "kind": "网页入口",
+          "note": "免费发布内容，可导流至付费会员"
+        },
+        {
+          "name": "知识星球",
+          "url": "https://www.zsxq.com/",
+          "kind": "网页入口",
+          "note": "免费注册建立付费专栏"
         }
       ],
       "tags": [
         "订阅制",
-        "SaaS",
-        "经常性收入"
+        "MRR",
+        "留存"
       ],
       "tier": 100,
       "discoveredAt": "2026-11-23",
@@ -9589,7 +10767,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "根据API调用次数、生成内容数量或解决任务的数量收费。",
       "logic": "降低客户试错门槛，成本与收入直接挂钩，适合API封装类与批量生成类服务。",
       "source": "用户原文",
-      "sourceUrl": "https://untappedai.io/how-to-make-money-with-ai-in-2026-7-proven-methods/",
+      "sourceUrl": "https://docs.stripe.com/billing/subscriptions/usage-based",
       "level": "入门",
       "resources": [
         {
@@ -9611,6 +10789,22 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "How to Make Money With AI: Full Guide 2026（GetResponse）",
           "url": "https://www.getresponse.com/blog/how-to-make-money-with-ai"
+        },
+        {
+          "name": "Stripe 按量计费文档",
+          "url": "https://docs.stripe.com/billing/subscriptions/usage-based"
+        },
+        {
+          "name": "LiteLLM 开源网关",
+          "url": "https://github.com/BerriAI/litellm"
+        },
+        {
+          "name": "Langfuse 开源观测",
+          "url": "https://langfuse.com/"
+        },
+        {
+          "name": "Helicone 成本观测免费层",
+          "url": "https://www.helicone.ai/"
         }
       ],
       "tools": [
@@ -9637,12 +10831,24 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.postman.com/downloads/",
           "kind": "下载安装",
           "note": "免费版可调试与测试 API 计费接口"
+        },
+        {
+          "name": "LiteLLM",
+          "url": "https://github.com/BerriAI/litellm",
+          "kind": "开源自托管",
+          "note": "MIT 开源免费，统一模型计费网关"
+        },
+        {
+          "name": "Langfuse",
+          "url": "https://langfuse.com/",
+          "kind": "开源自托管",
+          "note": "开源免费，可自托管并有免费云层"
         }
       ],
       "tags": [
         "按量计费",
-        "API",
-        "定价"
+        "成本观测",
+        "API网关"
       ],
       "tier": 100,
       "discoveredAt": "2026-11-23",
@@ -9656,7 +10862,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "针对企业定制开发或GEO优化，按最终交付的商业结果或项目整体收费。",
       "logic": "为结果定价而非工时，客单价高；关键是明确定义可衡量的交付标准。",
       "source": "用户原文",
-      "sourceUrl": "https://kafsols.com/blog/how-to-make-money-with-ai-2026",
+      "sourceUrl": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/17/why-ai-product-companies-are-moving-into-services-and-what-should-existing-service-companies-do",
       "level": "进阶",
       "resources": [
         {
@@ -9678,6 +10884,22 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "自由职业平台数据：客户购买的是解决问题的能力（新浪科技）",
           "url": "https://tech.sina.cn/2026-10-14/detail-iniveqvs1283467.d.html"
+        },
+        {
+          "name": "Forbes：从按小时到按结果定价",
+          "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/17/why-ai-product-companies-are-moving-into-services-and-what-should-existing-service-companies-do"
+        },
+        {
+          "name": "Forbes：AI 增长运营师全周期交付",
+          "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/16/the-ai-growth-operator-when-one-hire-does-the-work-of-a-marketing-team"
+        },
+        {
+          "name": "Upwork：AI 应用开发工时与报价参考",
+          "url": "https://upwork.com/resources/ai-in-app-development"
+        },
+        {
+          "name": "Upwork：AI 技能需求增长数据",
+          "url": "https://upwork.com/resources/how-to-hire-freelancers"
         }
       ],
       "tools": [
@@ -9704,12 +10926,24 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.feishu.cn/download",
           "kind": "下载安装",
           "note": "免费版可协同跟进项目进度"
+        },
+        {
+          "name": "腾讯文档",
+          "url": "https://docs.qq.com/",
+          "kind": "网页入口",
+          "note": "免费版可写验收单与交付说明"
+        },
+        {
+          "name": "Trello",
+          "url": "https://trello.com/",
+          "kind": "网页入口",
+          "note": "免费版可管理项目看板"
         }
       ],
       "tags": [
-        "项目制",
         "结果付费",
-        "高客单"
+        "交付验收",
+        "服务化"
       ],
       "tier": 100,
       "discoveredAt": "2026-11-23",
@@ -9745,6 +10979,14 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "普通人如何用AI赚钱（含先交钱才赚钱的骗局提醒）",
           "url": "https://www.toutiao.com/a7696124475368145458"
+        },
+        {
+          "name": "Forbes：一人公司不再等于小生意",
+          "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/17/one-person-business-no-longer-means-small"
+        },
+        {
+          "name": "Forbes：AI 增长运营师的一人多职模式",
+          "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/16/the-ai-growth-operator-when-one-hire-does-the-work-of-a-marketing-team"
         }
       ],
       "tools": [
@@ -9777,6 +11019,12 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.coze.cn/",
           "kind": "网页入口",
           "note": "个人版免费额度，可快速把想法做成可验证的demo"
+        },
+        {
+          "name": "秘塔 AI 搜索",
+          "url": "https://metaso.cn/",
+          "kind": "网页入口",
+          "note": "免费版可做轻量行业调研"
         }
       ],
       "tags": [
@@ -9822,6 +11070,14 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "20 AI Digital Products：用Google Trends/Etsy/Reddit验证需求",
           "url": "https://mavensynergy.com/?p=2514"
+        },
+        {
+          "name": "Upwork：细分 AI 招聘需求洞察",
+          "url": "https://upwork.com/research/upwork-monthly-hiring-insights-august-2026"
+        },
+        {
+          "name": "Upwork：专业角色需求数据",
+          "url": "https://upwork.com/research/upwork-monthly-hiring-insights-september-2026"
         }
       ],
       "tools": [
@@ -9854,6 +11110,12 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.semrush.com/",
           "kind": "网页入口",
           "note": "官方免费试用，可查关键词竞争度"
+        },
+        {
+          "name": "知乎",
+          "url": "https://www.zhihu.com/",
+          "kind": "网页入口",
+          "note": "免费浏览讨论，用于发现真实痛点"
         }
       ],
       "tags": [
@@ -9873,7 +11135,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "一人公司雇佣无数个24小时无休的智能体，去做面向全球化的生意。跑通一个闭环后，狠狠把它挖深。",
       "logic": "用Agent放大个人产能，把单一闭环做深做透，形成可规模化的个人商业系统。",
       "source": "用户原文",
-      "sourceUrl": "https://www.hustlestackdaily.com/2026/09/the-2026-ai-passive-income-blueprint.html",
+      "sourceUrl": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/17/one-person-business-no-longer-means-small",
       "level": "进阶",
       "resources": [
         {
@@ -9949,11 +11211,8 @@ window.TOKEN_WORKBENCH_DATA = {
       ],
       "tags": [
         "一人公司",
-        "OPC",
-        "Agent",
-        "全球化",
-        "AI OPC",
-        "政策扶持"
+        "AI原生",
+        "杠杆"
       ],
       "tier": 100,
       "discoveredAt": "2026-11-23",
@@ -10147,6 +11406,14 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "How to Make Money with AI in 2026（Beebom，数字艺术路径）",
           "url": "https://beebom.com/how-to-make-money-with-ai/"
+        },
+        {
+          "name": "Lemon Squeezy 数字商品结算文档",
+          "url": "https://docs.lemonsqueezy.com/"
+        },
+        {
+          "name": "a16z：数字商品变现模式数据",
+          "url": "https://a16z.com/100-gen-ai-apps-7/"
         }
       ],
       "tools": [
@@ -10155,12 +11422,6 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://leonardo.ai/",
           "kind": "网页入口",
           "note": "免费层可生成图形"
-        },
-        {
-          "name": "Midjourney",
-          "url": "https://www.midjourney.com/",
-          "kind": "网页入口",
-          "note": "高质量出图"
         },
         {
           "name": "即梦AI",
@@ -10173,6 +11434,18 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://klingai.com/",
           "kind": "网页入口",
           "note": "快手官方免费额度，可生成动态视觉素材"
+        },
+        {
+          "name": "ComfyUI",
+          "url": "https://github.com/comfyanonymous/ComfyUI",
+          "kind": "开源自托管",
+          "note": "GPL-3.0 开源免费，本地出图与放大"
+        },
+        {
+          "name": "Stable Diffusion WebUI",
+          "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+          "kind": "开源自托管",
+          "note": "开源免费，适合批量生成与印刷素材"
         }
       ],
       "tags": [
@@ -10217,12 +11490,6 @@ window.TOKEN_WORKBENCH_DATA = {
         }
       ],
       "tools": [
-        {
-          "name": "Chatbase",
-          "url": "https://chatbase.com/",
-          "kind": "网页入口",
-          "note": "基于网站数据训练 AI 客服机器人"
-        },
         {
           "name": "Voiceflow",
           "url": "https://www.voiceflow.com/",
@@ -10346,12 +11613,36 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "AI漫剧代工接单（新手单集 80-150 元，熟练后 200-400 元，10 集成套 800-1500 元）；同时制作剪映工程文件模板（.剪proj）在闲鱼售卖，单套 9.9-19.9 元，合集包 29.9-49.9 元。剪映模板分两条独立路线：官方模板广场拿平台分成，闲鱼卖工程源文件，互不冲突。",
       "logic": "用 AI 工作流把漫剧/模板制作成本压到极低，代工赚现钱、模板赚被动收入，双线并行、持续铺量。",
       "source": "网络补充",
-      "sourceUrl": "http://mp.weixin.qq.com/s?__biz=MzY4OTUxNjA1Mw==&mid=2247483671&idx=1&sn=16f331a1a90a7fe56e8dbd06f3cfd5a1&chksm=f2c892c7618c5c2c08bfdbba6b83abad663725f7929262c9393a274e299be66080996e52d84a#rd",
+      "sourceUrl": "https://www.woshipm.com/ai/6461537.html",
       "level": "入门",
       "resources": [
         {
           "name": "2026 AI副业落地全攻略：接单平台分成，避开高门槛坑（公众号原文）",
           "url": "http://mp.weixin.qq.com/s?__biz=MzY4OTUxNjA1Mw==&mid=2247483671&idx=1&sn=16f331a1a90a7fe56e8dbd06f3cfd5a1&chksm=f2c892c7618c5c2c08bfdbba6b83abad663725f7929262c9393a274e299be66080996e52d84a#rd"
+        },
+        {
+          "name": "漫剧从0到1五步流程与报价（人人都是产品经理）",
+          "url": "https://www.woshipm.com/ai/6461537.html"
+        },
+        {
+          "name": "做 AI 短剧的人在愁什么：单集算力与 Skills 资产",
+          "url": "https://www.woshipm.com/share/6472107.html"
+        },
+        {
+          "name": "Dify 工作流 101",
+          "url": "https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-01.md"
+        },
+        {
+          "name": "Dify 快速入门",
+          "url": "https://docs.dify.ai/zh/quick-start.md"
+        },
+        {
+          "name": "n8n 自托管文档",
+          "url": "https://docs.n8n.io/hosting/"
+        },
+        {
+          "name": "可灵 AI 官方免费额度",
+          "url": "https://klingai.com/"
         }
       ],
       "tools": [
@@ -10366,13 +11657,30 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://jimeng.jianying.com/",
           "kind": "网页入口",
           "note": "免费额度内生图，适配国内平台审核规则"
+        },
+        {
+          "name": "ComfyUI",
+          "url": "https://github.com/comfyanonymous/ComfyUI",
+          "kind": "开源自托管",
+          "note": "GPL-3.0 开源免费，可本地生成漫剧分镜"
+        },
+        {
+          "name": "Whisper",
+          "url": "https://github.com/openai/whisper",
+          "kind": "开源自托管",
+          "note": "MIT 开源免费，本地转写与配音字幕"
+        },
+        {
+          "name": "FFmpeg",
+          "url": "https://www.ffmpeg.org/download.html",
+          "kind": "开源自托管",
+          "note": "开源免费，批量转码与合成"
         }
       ],
       "tags": [
-        "漫剧",
-        "剪映模板",
-        "闲鱼",
-        "被动收入"
+        "AI漫剧",
+        "短剧代工",
+        "剪映模板"
       ],
       "tier": 50,
       "discoveredAt": "2026-11-25",
@@ -10386,7 +11694,7 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "用 AI 做文档整理、表格、思维导图、简历优化、述职材料等办公代做；在小红书、闲鱼、知乎等平台发布作品案例接单，前期低价引流积累口碑，熟练后做 AI 咨询与小工具定制。也可把实测筛选过的提示词包、模板资料包上架售卖，一次整理反复成交。",
       "logic": "AI 把内容产出效率提升 10 倍以上，靠高频输出、稳定交付与口碑积累实现持续增收。",
       "source": "网络补充",
-      "sourceUrl": "https://www.toutiao.com/article/7705747690818109952",
+      "sourceUrl": "https://upwork.com/resources/ai-tools-for-developers",
       "level": "入门",
       "resources": [
         {
@@ -10396,6 +11704,26 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "黄仁勋的提醒：靠AI赚到100万思路并不复杂，真正难的是落地执行（今日头条）",
           "url": "https://www.toutiao.com/a7703172259317301760"
+        },
+        {
+          "name": "Upwork 开发者 AI 工具清单（含免费层）",
+          "url": "https://upwork.com/resources/ai-tools-for-developers"
+        },
+        {
+          "name": "Upwork 月度招聘洞察（AI 自动化居首）",
+          "url": "https://upwork.com/research/upwork-monthly-hiring-insights-august-2026"
+        },
+        {
+          "name": "a16z：B2A 经济，Agent 成为新客户",
+          "url": "https://a16z.com/welcome-to-the-b2a-economy/"
+        },
+        {
+          "name": "Dify Cloud 免费 Sandbox",
+          "url": "https://docs.dify.ai/zh/cloud/use-dify/getting-started/introduction.md"
+        },
+        {
+          "name": "n8n 免费社区版文档",
+          "url": "https://docs.n8n.io/hosting/"
         }
       ],
       "tools": [
@@ -10404,13 +11732,36 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.goofish.com/",
           "kind": "网页入口",
           "note": "免费开店，上架提示词包、模板与代做服务"
+        },
+        {
+          "name": "豆包",
+          "url": "https://www.doubao.com/",
+          "kind": "网页入口",
+          "note": "官方免费版，可辅助写方案与脚本"
+        },
+        {
+          "name": "扣子 Coze",
+          "url": "https://www.coze.cn/",
+          "kind": "网页入口",
+          "note": "个人版有免费额度，可零代码搭建交付工作流"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/",
+          "kind": "网页入口",
+          "note": "免费公开仓库，可托管 Skill 与交付模板"
+        },
+        {
+          "name": "小红书",
+          "url": "https://www.xiaohongshu.com/",
+          "kind": "网页入口",
+          "note": "免费注册发布，用于内容获客"
         }
       ],
       "tags": [
-        "接单",
-        "办公代做",
-        "提示词售卖",
-        "闲鱼"
+        "AI接单",
+        "工具赋能",
+        "自由职业"
       ],
       "tier": 50,
       "discoveredAt": "2026-11-25",
@@ -10424,12 +11775,32 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "选一个熟悉的垂类，用 AI 批量生产内容每周发 5-7 条，靠测试密度找爆款结构；或用 AI 做有剧情的短剧/短片带出话题再植入产品；进阶可做 TikTok Shop 出海，用 AI 生成产品展示视频、英文配音与本地化脚本，挂联盟商品拿佣金。",
       "logic": "AI 把「讲故事」成本降到人人可负担，垂类账号沉淀私域变现，出海赛道竞争密度低、天花板更高。",
       "source": "网络补充",
-      "sourceUrl": "https://www.jxxy.net/ai/articles/Shenmeili1213-2065745435936112807",
+      "sourceUrl": "https://www.woshipm.com/share/6472107.html",
       "level": "进阶",
       "resources": [
         {
           "name": "180元拍了一条AI短视频，带出50亿话题——普通人的机会来了（觉醒学院）",
           "url": "https://www.jxxy.net/ai/articles/Shenmeili1213-2065745435936112807"
+        },
+        {
+          "name": "短剧行业成本与 Skills 玩法复盘",
+          "url": "https://www.woshipm.com/share/6472107.html"
+        },
+        {
+          "name": "HeyGen 官方免费档说明",
+          "url": "https://heygen.com/pricing"
+        },
+        {
+          "name": "HeyGen 数字人平台对比",
+          "url": "https://heygen.com/blog/best-ai-avatar-platform-corporate-training-videos"
+        },
+        {
+          "name": "Upwork 月度招聘洞察：AI 视频需求",
+          "url": "https://upwork.com/research/upwork-monthly-hiring-insights-september-2026"
+        },
+        {
+          "name": "a16z：AI 流量与订单增长数据",
+          "url": "https://a16z.com/welcome-to-the-b2a-economy/"
         }
       ],
       "tools": [
@@ -10440,17 +11811,28 @@ window.TOKEN_WORKBENCH_DATA = {
           "note": "AI 视频/生图，免费额度内可用"
         },
         {
-          "name": "Kling 3.0 / Seedance 2.0",
-          "url": "https://klingai.com/",
+          "name": "CapCut 国际版",
+          "url": "https://www.capcut.com/",
           "kind": "网页入口",
-          "note": "AI 视频生成，用于产品展示视频；部分功能需付费，注意免费额度"
+          "note": "免费版可导出，部分素材带水印"
+        },
+        {
+          "name": "ElevenLabs",
+          "url": "https://elevenlabs.io/",
+          "kind": "网页入口",
+          "note": "免费层有配音额度，超出需付费"
+        },
+        {
+          "name": "Whisper",
+          "url": "https://github.com/openai/whisper",
+          "kind": "开源自托管",
+          "note": "MIT 开源免费，本地批量字幕"
         }
       ],
       "tags": [
-        "短视频",
-        "出海",
-        "TikTok",
-        "垂类账号"
+        "短剧出海",
+        "AI视频",
+        "带货"
       ],
       "tier": 50,
       "discoveredAt": "2026-11-25",
@@ -10464,12 +11846,32 @@ window.TOKEN_WORKBENCH_DATA = {
       "way": "用 AI 批量制作可重复售卖的数字素材：职场 PPT 模板、Excel 表格模板、短视频脚本模板、朋友圈文案、育儿素材等，整理成完整素材包上架闲鱼、小红书、知识星球等平台售卖，一次制作长期被动成交。",
       "logic": "把 AI 产出标准化为可复制的数字资产，前期集中铺量、后期只维护店铺，实现复利式被动收入。",
       "source": "网络补充",
-      "sourceUrl": "https://www.toutiao.com/a7703172259317301760",
+      "sourceUrl": "https://a16z.com/100-gen-ai-apps-7/",
       "level": "入门",
       "resources": [
         {
           "name": "黄仁勋的提醒：靠AI赚到100万思路并不复杂，真正难的是落地执行（今日头条）",
           "url": "https://www.toutiao.com/a7703172259317301760"
+        },
+        {
+          "name": "Lemon Squeezy 官方文档",
+          "url": "https://docs.lemonsqueezy.com/"
+        },
+        {
+          "name": "a16z：100 个生成式 AI 应用的收费模式（84% 订阅 / 64% 按量）",
+          "url": "https://a16z.com/100-gen-ai-apps-7/"
+        },
+        {
+          "name": "Forbes：一人公司案例与真实规模数据",
+          "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/17/one-person-business-no-longer-means-small"
+        },
+        {
+          "name": "Stable Diffusion WebUI 开源仓库",
+          "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
+        },
+        {
+          "name": "Dify 开源仓库",
+          "url": "https://github.com/langgenius/dify"
         }
       ],
       "tools": [
@@ -10478,12 +11880,36 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://www.zsxq.com/",
           "kind": "网页入口",
           "note": "免费注册，可上架付费素材包与专栏"
+        },
+        {
+          "name": "豆包",
+          "url": "https://www.doubao.com/",
+          "kind": "网页入口",
+          "note": "官方免费版，辅助素材文案与选题"
+        },
+        {
+          "name": "腾讯文档",
+          "url": "https://docs.qq.com/",
+          "kind": "网页入口",
+          "note": "免费版可协作与交付说明文档"
+        },
+        {
+          "name": "Gumroad",
+          "url": "https://gumroad.com/",
+          "kind": "网页入口",
+          "note": "免费注册上架，成交后平台抽成"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/",
+          "kind": "网页入口",
+          "note": "免费公开仓库，可分发开源数字素材"
         }
       ],
       "tags": [
         "数字资产",
-        "被动收入",
-        "模板售卖"
+        "被动收益",
+        "订阅"
       ],
       "tier": 50,
       "discoveredAt": "2026-11-25",
@@ -10491,18 +11917,26 @@ window.TOKEN_WORKBENCH_DATA = {
     },
     {
       "id": "m-ai-neutral-stack-advisor",
-      "group": "三、技术型高客单变现",
+      "group": "二、B端重服务与解决方案",
       "track": "AI工具中立部署顾问",
       "tagline": "2026 下半年最确定的红利之一",
       "way": "为中小企业搭建「不依赖单一供应商」的多模型工具栈（OpenRouter / 本地 Ollama + 多模型路由）并做应急预案，避免被任何一家大模型公司卡脖子；由 OpenAI 切断 Cursor 等事件催生的确定性新需求。",
       "logic": "需求刚性、客单高、方案可复用，模型供应收紧时需求会反复出现，单人可承接高客单咨询与部署。",
       "source": "网络文章",
-      "sourceUrl": "https://www.winkids.tech/article/146",
-      "level": "中-高",
+      "sourceUrl": "https://a16z.com/100-gen-ai-apps-7/",
+      "level": "进阶",
       "resources": [
         {
           "name": "AI 工具中立部署 / 多模型迁移顾问服务（每日日报 2026-11-02）",
           "url": "https://www.winkids.tech/article/146"
+        },
+        {
+          "name": "a16z：多模型路由与中立选型优势",
+          "url": "https://a16z.com/100-gen-ai-apps-7/"
+        },
+        {
+          "name": "LiteLLM 开源多模型网关",
+          "url": "https://github.com/BerriAI/litellm"
         }
       ],
       "tools": [
@@ -10513,32 +11947,37 @@ window.TOKEN_WORKBENCH_DATA = {
           "note": "多模型聚合路由，统一接入多家模型"
         },
         {
-          "name": "Ollama",
-          "url": "https://ollama.com/",
-          "kind": "本地部署",
-          "note": "本地运行开源模型，配合多模型路由做备份栈"
+          "name": "LiteLLM",
+          "url": "https://github.com/BerriAI/litellm",
+          "kind": "开源自托管",
+          "note": "MIT 开源免费，统一多模型接口"
+        },
+        {
+          "name": "Dify",
+          "url": "https://github.com/langgenius/dify",
+          "kind": "开源自托管",
+          "note": "Apache-2.0 开源免费，可自托管 Agent 平台"
         }
       ],
       "tags": [
-        "技术型",
-        "高客单",
-        "多模型",
-        "顾问"
+        "中立部署",
+        "多模型路由",
+        "B端服务"
       ],
-      "tier": 85,
+      "tier": 50,
       "discoveredAt": "2026-11-25",
       "status": "active"
     },
     {
       "id": "m-ai-local-merchant-service",
-      "group": "二、本地与服务型变现",
+      "group": "二、B端重服务与解决方案",
       "track": "AI便民技能服务（本地商家代运营）",
       "tagline": "冷门、竞争小、需求大",
       "way": "对接本地实体店与小商家的线上宣传需求：用 AI 改写朋友圈文案、店铺简介、团购话术，批量剪辑店铺宣传短视频与产品介绍视频，优化线上店铺图文；单店每月几百到一千元，一天可对接 3-5 家。",
       "logic": "商家普遍不会线上引流、雇人成本高，AI 代运营属刚需服务，复购率高、可长期稳定做，单人即可规模化对接。",
       "source": "网络文章",
-      "sourceUrl": "https://www.toutiao.com/a7704320026731446799",
-      "level": "入门",
+      "sourceUrl": "https://a16z.com/welcome-to-the-b2a-economy/",
+      "level": "进阶",
       "resources": [
         {
           "name": "AI 便民技能服务对接本地小商家需求（今日头条）",
@@ -10547,6 +11986,14 @@ window.TOKEN_WORKBENCH_DATA = {
         {
           "name": "AI 数字人无人直播带货（同一来源的延伸赛道）",
           "url": "https://www.toutiao.com/a7704320026731446799"
+        },
+        {
+          "name": "AI 漫剧与短视频代工全流程",
+          "url": "https://www.woshipm.com/ai/6461537.html"
+        },
+        {
+          "name": "a16z：B2A 本地商家入口",
+          "url": "https://a16z.com/welcome-to-the-b2a-economy/"
         }
       ],
       "tools": [
@@ -10567,16 +12014,230 @@ window.TOKEN_WORKBENCH_DATA = {
           "url": "https://jimeng.jianying.com/",
           "kind": "网页入口",
           "note": "生成海报与配图"
+        },
+        {
+          "name": "抖音来客",
+          "url": "https://life.douyin.com/",
+          "kind": "网页入口",
+          "note": "免费入驻，管理本地商家线索与团购"
         }
       ],
       "tags": [
-        "本地服务",
+        "本地商家",
         "代运营",
-        "短视频",
-        "复购"
+        "线索获客"
       ],
-      "tier": 80,
+      "tier": 50,
       "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "m-b1-agentic-commerce",
+      "group": "二、B端重服务与解决方案",
+      "track": "AI Agent 商务入口优化（B2A / Agentic Commerce）",
+      "tagline": "让 Agent 替用户完成评估与下单",
+      "way": "为品牌接入商品源、连接器与 MCP，优化被 Agent 选中、引用与结算的全路径。",
+      "logic": "a16z 2026-11 指出 GEO 只解决「发现」，Agent 正向评估与购买延伸；其文中引用 Shopify AI 流量同比 8 倍、AI 搜索订单近 13 倍。",
+      "source": "网络更新",
+      "sourceUrl": "https://a16z.com/welcome-to-the-b2a-economy/",
+      "level": "高阶",
+      "resources": [
+        {
+          "name": "a16z：Welcome to the B2A Economy",
+          "url": "https://a16z.com/welcome-to-the-b2a-economy/"
+        },
+        {
+          "name": "a16z：100 Gen AI Apps 收费模式",
+          "url": "https://a16z.com/100-gen-ai-apps-7/"
+        },
+        {
+          "name": "Stripe 按量计费文档",
+          "url": "https://docs.stripe.com/billing/subscriptions/usage-based"
+        },
+        {
+          "name": "Upwork：Agent 开发者需求洞察",
+          "url": "https://upwork.com/research/upwork-monthly-hiring-insights-september-2026"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Stripe",
+          "url": "https://stripe.com/",
+          "kind": "网页入口",
+          "note": "免费注册，按交易收费"
+        },
+        {
+          "name": "Supabase",
+          "url": "https://supabase.com/",
+          "kind": "网页入口",
+          "note": "开源免费层，免费额度适配原型"
+        },
+        {
+          "name": "n8n",
+          "url": "https://docs.n8n.io/hosting/",
+          "kind": "开源自托管",
+          "note": "免费社区版，可自托管商品同步流程"
+        }
+      ],
+      "tags": [
+        "B2A",
+        "Agentic Commerce",
+        "MCP",
+        "GEO延伸"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-25",
+      "status": "active"
+    },
+    {
+      "id": "m-c1-webnovel-audio",
+      "group": "一、C端轻资产变现",
+      "track": "AI 网文与有声内容创作",
+      "tagline": "AI 辅助日更，平台稿费与流量双变现",
+      "way": "用 AI 辅助番茄、七猫等网文平台的大纲、章节扩写与剧情构思，人工把控人设、逻辑、节奏并润色，稳定更新拿平台稿费；也可将故事脚本做成有声书、AI 漫剧。",
+      "logic": "网文平台长期缺稳定日更的作者，AI 降低创作门槛；AI 漫剧赛道仍有流量红利，不少小团队靠爆款跑出成绩。",
+      "source": "网络补充",
+      "sourceUrl": "https://www.toutiao.com/article/7705747690818109952",
+      "level": "低阶",
+      "resources": [
+        {
+          "name": "番茄作家平台",
+          "url": "https://fanqienovel.com/"
+        },
+        {
+          "name": "七猫中文网作者中心",
+          "url": "https://www.qimao.com/"
+        }
+      ],
+      "tools": [
+        {
+          "name": "番茄作家平台",
+          "url": "https://fanqienovel.com/",
+          "kind": "网页入口",
+          "note": "平台稿费分成，免费注册"
+        },
+        {
+          "name": "剪映",
+          "url": "https://www.capcut.cn/",
+          "kind": "下载安装",
+          "note": "免费，漫剧/有声内容后期剪辑"
+        }
+      ],
+      "tags": [
+        "网文",
+        "有声书",
+        "漫剧",
+        "稿费"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "m-b2-agent-reality-layer",
+      "group": "二、B端重服务与解决方案",
+      "track": "AI Agent 现实执行层服务",
+      "tagline": "给 Agent 装上现实世界的执行能力",
+      "way": "把 Agent 接入用户已有的 Cursor/Claude Code/Codex 工作流，让 Agent 自主完成公司注册、银行开户、电话号与云资源开通等现实操作，按单收费而非另起炉灶。",
+      "logic": "增长最快的用户是「AI 自动化代理公司」（替牙科诊所接电话、替中介跟客户）；叠加现实执行层是高杠杆入口，但需警惕身份/金融/KYC 等合规与平台政策风险。",
+      "source": "网络补充",
+      "sourceUrl": "https://winkids.tech/article/155",
+      "level": "高阶",
+      "resources": [
+        {
+          "name": "比格网：每日日报 2026-11-11（好点子点评）",
+          "url": "https://winkids.tech/article/155"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Claude Code",
+          "url": "https://claude.com/claude-code",
+          "kind": "网页入口",
+          "note": "Agent 工作流载体，免费档可用"
+        },
+        {
+          "name": "OpenAI",
+          "url": "https://openai.com/",
+          "kind": "网页入口",
+          "note": "官方 API 入口，按量计费"
+        }
+      ],
+      "tags": [
+        "Agent执行层",
+        "高杠杆",
+        "合规"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "m-b2-overseas-insight-engine",
+      "group": "二、B端重服务与解决方案",
+      "track": "出海消费洞察引擎（虚拟消费者分身）",
+      "tagline": "用虚拟消费者分身替中企做海外调研",
+      "way": "用 AI 原生方式构建数百个不同国别、文化与决策逻辑的虚拟消费者分身，让中小企业足不出户与「海外消费者」对话，替代传统 30–50 万元、8–16 周的跨国调研。",
+      "logic": "直击中企出海「离用户太远」的硬痛点，小团队即可服务全球；壁垒在于跨文化心理建模与多市场数据融合质量，适合做垂直而非通用。",
+      "source": "网络补充",
+      "sourceUrl": "https://winkids.tech/article/155",
+      "level": "高阶",
+      "resources": [
+        {
+          "name": "比格网：每日日报 2026-11-11（OPC 出海消费洞察引擎）",
+          "url": "https://winkids.tech/article/155"
+        }
+      ],
+      "tools": [
+        {
+          "name": "大模型 API",
+          "url": "https://openrouter.ai/",
+          "kind": "网页入口",
+          "note": "免费模型档可做原型验证，按量计费"
+        }
+      ],
+      "tags": [
+        "出海",
+        "调研",
+        "虚拟消费者",
+        "OPC"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
+      "status": "active"
+    },
+    {
+      "id": "m-b2-privacy-local-agent",
+      "group": "二、B端重服务与解决方案",
+      "track": "端侧隐私自动化 Agent（垂直行业版）",
+      "tagline": "截图不出设备、本地运行的行业自动化",
+      "way": "做截图不出设备、本地运行的办公/内网 GUI 自动化 Agent，主攻金融、医疗等强合规场景的垂直行业方案。",
+      "logic": "避开云端 Agent 的数据安全顾虑，技术门槛高但壁垒深，适合做行业垂直而非通用，是 2026 下半年确定性红利之一。",
+      "source": "网络补充",
+      "sourceUrl": "https://www.winkids.tech/article/146",
+      "level": "高阶",
+      "resources": [
+        {
+          "name": "比格网：每日日报 2026-11-02（端侧 GUI 自动化点子）",
+          "url": "https://www.winkids.tech/article/146"
+        }
+      ],
+      "tools": [
+        {
+          "name": "本地大模型（Ollama）",
+          "url": "https://ollama.com/",
+          "kind": "开源自托管",
+          "note": "免费开源，本地运行保证数据不出设备"
+        }
+      ],
+      "tags": [
+        "端侧",
+        "隐私",
+        "金融",
+        "医疗"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-26",
       "status": "active"
     }
   ],
@@ -10678,6 +12339,111 @@ window.TOKEN_WORKBENCH_DATA = {
       "summary": "OpenAI与思科联合发布Shirudo，基于eBPF在运行中的系统上布设临时防护盾，无需重启即可拦截漏洞利用，已通过Java4Shell攻击拦截测试，采用BSD 2-Clause许可。",
       "url": "http://mp.weixin.qq.com/s?__biz=MzAwMTExODAwOQ==&mid=2448766690&idx=1&sn=f9dff8294ebeedcbe9d20e8644390ca0&chksm=8f65d72375ae969abb11c105887ba1799f88707dab7964b6b2f024ff5422bb1ea4dd85289206#rd",
       "source": "IT之家"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "黄仁勋复职后首次召开全员大会，称英伟达不需要接班人计划",
+      "summary": "黄仁勋在复职后首次员工全员大会上就此前导致辞职的行为向员工道歉，承认犯下严重个人错误，并表示英伟达拥有多位能干的领导者，不需要常规的接班人计划。",
+      "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_5186b0634ec28552",
+      "source": "每日经济新闻"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "Anthropic上市第四个交易日收跌6.54%，正式跌破83美元IPO发行价",
+      "summary": "Anthropic上市第四个交易日收跌6.54%、报81.905美元，正式跌破83美元IPO发行价，盘后继续走低，市场对其高估值的接受程度仍存分歧。",
+      "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_5186b0634ec28552",
+      "source": "每日经济新闻"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "戴尔第三财季营收同比增长103%，AI服务器积压订单达1323亿美元创新高",
+      "summary": "戴尔2027财年第三季度营收549.37亿美元、同比增长103%，AI优化服务器业务收入同比增长291%，当季新增AI服务器订单602亿美元，期末积压订单1323亿美元均创历史新高。",
+      "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_5186b0634ec28552",
+      "source": "每日经济新闻"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "DXC与Anthropic推出AI代码安全服务Frontier Code Assurance",
+      "summary": "全球IT服务商DXC推出基于Anthropic Claude模型的托管式代码安全服务，可识别、验证企业软件中的安全漏洞并协助修复，补足传统安全扫描工具可能遗漏的漏洞。",
+      "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_5186b0634ec28552",
+      "source": "每日经济新闻"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "OpenAI与Anthropic内部开始讨论停训，未发布前沿模型被指难以安全发布",
+      "summary": "Axios援引二十余名知情人士报道，OpenAI与Anthropic内部未发布的前沿模型能力增长超出现有控制手段，部分员工主张暂停训练更强模型或停止公开发布；OpenAI称新安全准则可能放缓前沿模型发布节奏。",
+      "url": "https://k.sina.com.cn/article_5953189932_162d6782c0670554ol.html",
+      "source": "机器之心"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "Meta个人智能体Muse登陆英国，面向18岁以上用户开放",
+      "summary": "Meta宣布其个人智能体Muse向英国18岁以上用户开放，可通过手机、网页与WhatsApp跨服务代办任务，发送邮件或购买前须经用户批准，Muse在美国下载量已超1000万次。",
+      "url": "https://www.aiimpacthub.com/ai-news/2026-11-25",
+      "source": "AI Impact Hub"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "Meta FAIR开源AgentBox，面向HPC与Slurm的多智能体容器编排器",
+      "summary": "Meta FAIR发布AgentBox，基于Apptainer在Linux与Slurm集群上运行隔离的智能体容器，面向无需root权限的多智能体HPC研究场景，已在GitHub开源。",
+      "url": "https://www.explainx.ai/catch-up-on-ai/2026-11-25",
+      "source": "ExplainX"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "Sakana发布30B推理模型Namazu Small，25项基准测试超越Nemotron 3 Super",
+      "summary": "Sakana AI发布30B参数推理模型Namazu Small，基于英伟达Nemotron 3 Nano基座继续预训练与后训练，官方称在25项基准测试上超越Nemotron 3 Super，详细部署信息将于12月初公布。",
+      "url": "https://www.explainx.ai/catch-up-on-ai/2026-11-25",
+      "source": "ExplainX"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "亚马逊签署协议收购Decart优化技术与团队",
+      "summary": "亚马逊宣布已签署协议收购Decart的专有优化技术栈（Decart Optimization Stack），并将Decart创始人与团队纳入亚马逊，交易尚待监管等交割条件完成，未披露收购金额。",
+      "url": "https://www.aiimpacthub.com/ai-news/2026-11-25",
+      "source": "AI Impact Hub"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "上海团队发布全球首个记忆原生大模型MemT1.0 Pro，长历史记忆评测登顶",
+      "summary": "上海记忆张量联合英伟达发布MemT1.0 Pro，以原生记忆模块实现快慢双记忆，两项长历史记忆评测与综合得分排名世界第一，实测任务完成率提升约30%、Token消耗降低60%至70%。",
+      "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_5676b05138f47452",
+      "source": "看看新闻"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "MiniMax发布H3 Family模型矩阵，视频生成低至0.16元/秒起",
+      "summary": "MiniMax发布H3 Family模型矩阵，涵盖H3与H3-Image系列旗舰及多个扩展模型，视频生成三档定价0.5元、0.26元、0.16元每秒，H3开源百天衍生模型1472个、下载量超1.48亿次。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzkxOTAwMjQ3OA==&mid=2247485726&idx=1&sn=6fcfe732f11d2adee7d7f59767040c50&chksm=c0c25e85ddad9219410998c0f8ac08a4d01d59e72668e123119dd4178477e467e245def46ecba#rd",
+      "source": "观点网"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "DeepSeek完成约1055亿元第二轮融资，投后估值约6078亿元",
+      "summary": "DeepSeek近日完成工商变更，本轮外部融资统一持股平台新增31名合伙人，市场消息称此轮融资合计募集约1055亿元、投后估值约6078亿元，合伙人涵盖中国移动、腾讯、美团等产业资本。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzkxOTAwMjQ3OA==&mid=2247485726&idx=1&sn=6fcfe732f11d2adee7d7f59767040c50&chksm=c0c25e85ddad9219410998c0f8ac08a4d01d59e72668e123119dd4178477e467e245def46ecba#rd",
+      "source": "21财经"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "商汤开源SenseNova U1.6多模态模型，8B首次引入原生图像自修正",
+      "summary": "商汤科技发布并开源原生多模态模型SenseNova U1.6，首次为8B开源模型引入原生图像自修正能力，可对照原始提示检查并自动修正文字模糊、错字乱码等问题，UltraTextBench密集信息图得分升至92.28。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzkxOTAwMjQ3OA==&mid=2247485726&idx=1&sn=6fcfe732f11d2adee7d7f59767040c50&chksm=c0c25e85ddad9219410998c0f8ac08a4d01d59e72668e123119dd4178477e467e245def46ecba#rd",
+      "source": "腾讯新闻"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "字节跳动AI个人助理小豆开启邀请制公测",
+      "summary": "字节跳动旗下豆包AI个人助理产品小豆正式开启邀请制公测，经用户授权后可接入抖音、飞书、日历等应用，主动跟进任务并执行下单、定时发资料等操作，未来将逐步集成至豆包App。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzkxOTAwMjQ3OA==&mid=2247485726&idx=1&sn=6fcfe732f11d2adee7d7f59767040c50&chksm=c0c25e85ddad9219410998c0f8ac08a4d01d59e72668e123119dd4178477e467e245def46ecba#rd",
+      "source": "凤凰网"
+    },
+    {
+      "date": "2026-11-25",
+      "title": "百度文心5.5 Flash Preview正式开源，Apache 2.0协议全球开放",
+      "summary": "百度文心5.5 Flash Preview正式开源，权重与配套资源已上架Hugging Face与ModelScope，总参数2800亿、支持100万Token上下文、生成速度超200 tokens/s，CodeArena WebDev榜单位列开源模型第二。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzU5NTAzNDI0NA==&mid=2247492417&idx=1&sn=569ada26c70bee3beed27bf15f335928&chksm=ff82cad6e55bf45e8b2df434e2c93d20bce3f47f06938c4fd5c195eb84a8df0df0d6bbabb8ed#rd",
+      "source": "百度AI早报"
     }
   ],
   "projects": [
@@ -10736,6 +12502,16 @@ window.TOKEN_WORKBENCH_DATA = {
   ],
   "updateLog": [
     {
+      "date": "2026-11-26",
+      "summary": "免费Token新增 3 条（Linkup 4,000 次免费查询、Routeway 免费档每日 200 次请求、Tripo AI 免费在线 3D 生成）；公众号 2 篇（《每天免费约 1 亿 Tokens》《Agnes免费生图》）提及的 7 个平台经比对均已收录，offers 无重复新增。免费服务器/域名/数据库资源新增 7 条（Civo 试用赠金、Serv00 永久免费托管、三丰云国内永久免费 VPS、TiDB Cloud 免费数据库、IONOS Cloud、Kamatera、Akamai Cloud）。GitHub 热门新增 11 条（ARTEX、rust-anything、ECC、ponytail、OpenMausBot、craft-anything、DeepTutor、hermes-agent、crawl4ai、deer-flow、paperclip、graphify，均经 GitHub API 实时核验）。Skill 新增 15 条（claude-video-effects、line-art-animation、cinematic-skill、sprite-stacking、plotter、creator-generalist、beyondgtaclips、subtle、article2media、blackhole、rounds、lochness、orb-audio、claude-xcode-agent、ai-software-factory）。AI 教程新增 4 条（Evaluating AI Agents、Develop AI Agents on Azure、12-Factor Agents、Agents Towards Production）。AI 变现新增 4 条（AI 网文与有声内容创作、AI Agent 现实执行层服务、出海消费洞察引擎、端侧隐私自动化 Agent）。",
+      "source": "公众号 2 篇 + 全网搜索 + GitHub API / 官网核验"
+    },
+    {
+      "date": "2026-11-25",
+      "summary": "Token 活动：新增 8 条（含 2 条停服替代），更新 10 条，新增过期 3 条（IteraCompute 推广结束、Mistral 免费 API 取消、GitHub Models 全面停服并保留）。免费服务器/域名资源：新增 3 条、更新 1 条、过期 0 条。GitHub 热门：更新 29 条（今日榜 16 + 本周榜 13 的 Star/Fork/周期新增/排名），新增 0 条。Skill：新增 5 条、更新 15 条、淘汰 5 条（sk-google-agents-cli：GitHub 仓库 404、官网入口 404，无可用 SKILL.md（2026-11-25 实测）；sk-handoff：GitHub 仓库 404、官网入口 404，空壳条目（2026-11-25 实测）；sk-azure-validate：GitHub 仓库 404；实际来源 microsoft/azure-skills 安装量与已有 sk-ms-azure-skills 重复且更低；sk-tailwind-design-system：GitHub 仓库 404；实际来源 wshobson/agents 已被 sk-wshobson-agents 覆盖，重复且 installs 为日期占位；sk-hallmark：此前已按蹭名/空壳条目淘汰，违反「被淘汰条目不得再次加回」规则，本次清除），另有 4 条不合规分类及 3 条越界 tier 归并。教程：新增 12 条（六大分类分布：2/2/2/2/2/2），更新 4 条 tier/sourceUrl。AI 变现：补充 51 条 resources、29 条免费工具链接，移除 5 条失效或无免费层工具，新增赛道 1 条（m-b1-agentic-commerce：AI Agent 商务入口优化 B2A/Agentic Commerce），2 条赛道归入四大板块标准分类。重点关注：Token=AssemblyAI 注册送 $50 语音赠金；免费资源=US.KG 永久免费 .us.kg 域名；GitHub=backnotprop/plannotator（周增 1956 Star）与 google-labs-code/stitch-skills（周增 2626 Star）；Skill=官方 academy-guide 与 brand-guidelines；教程=n8n Academy 免费官方课程与 Datawhale Hello-Robot；变现资源=a16z《Welcome to the B2A Economy》（Shopify AI 流量同比 8 倍、AI 搜索订单近 13 倍，来源 a16z）。收益因人而异，不构成收益承诺；所有工具链接均为官网、官方入口或官方开源仓库。",
+      "source": "服务商官网/官方文档、GitHub Trending 今日与本周榜、skills.sh、全球教程与商业研究（a16z/Forbes/Upwork/人人都是产品经理）、2026-11-25 链接实测"
+    },
+    {
       "date": "2026-11-25",
       "summary": "免费Token新增 7 条（七牛云 Conatus Free 认证每日 1 亿 Token、Regolo.ai 新客 30 天免费、Articul8 Bivia 早期用户 10 亿 Token、LLM.kiwi 免卡免费 API、OpenTyphoon 泰语研究 API、阶跃星辰 Step 5 Preview 长期免费、OVHcloud AI Endpoints 匿名免注册、Gonka Broker 每月免费 Token）；免费资源新增 1 条（Spacefast Automattic 推出的 Personal 永久免费托管）。GitHub 热门新增 18 条（rea、dsh-superagent-prototype、open-design、openmotion、dsh-our-free-model、Claude-Code-Game-Studios、t3code、unslop、hallmark、herdr、pi、marketingskills、OpenMontage、hyperframes、lemo-opuscar、nestjs-agent-skills、claude-best-practices-zh、hello-agents、LLMs-from-scratch）。Skills 新增 5 条（unslop、hallmark、hyperframes、lemo-opuscar、nestjs-agent-skills、claude-best-practices-zh）。教程新增 4 条（HF AI Agents Course、freeCodeCamp MCP Security、Datawhale Hello-Agents、LLMs from Scratch）。变现新增 2 条（AI 工具中立部署顾问、AI 便民技能服务对接本地商家）。两篇公众号文章（每天免费约1亿Tokens、Agnes免费生图）提取的 7 个平台（AnyAPI.ai、RusherAI、APIsFreeLLM、One AI API Key、Packet AI、Inferbase、Agnes AI）经 provider+url 比对均已收录，offers 无重复新增。剔除项：FreeInference（官网公告因安全事件暂停服务）、NovAI（nov.ai 为域名停放页）、AgentRouter（agentrouter.io 为域名停放页）、Dewlance（官网未展示免费套餐）。",
       "source": "公众号原文 2 篇 + 网络搜索与官网核验（free-llm.com、aifree.dev、findarepo.com、github.locker、whatstrending.ai、agentskillshub.top、qiniu.com、regolo.ai、articul8.ai、llm.kiwi、opentyphoon.ai、stepfun.com、ovhcloud.com、gonka.ai、spacefast.com、GitHub API/页面核验）"
@@ -10749,6 +12525,11 @@ window.TOKEN_WORKBENCH_DATA = {
       "date": "2026-11-25",
       "summary": "免费Token新增 3 条（Scaleway Generative APIs 新客 100 万 Token、Maritaca AI S5-free 限时不计费、商汤 SenseNova Token Plan 公测免费）；免费资源新增 2 条（Glitch 免费托管、PythonAnywhere 免费 Python 托管）；GitHub 热门新增 6 条（agent-desktop、Scrapling、nanochat、colibri、heretic、orca）；Skills 新增 1 条（Anthropic 官方 Agent Skills 仓库）；教程新增 3 条（HF MCP Course、LangGraph Essentials、LangChain Essentials）；变现新增 4 条（漫剧代工与剪映模板、工具接单、垂类短视频出海、数字资产被动收益）。两篇公众号文章（每天免费约1亿Tokens、Agnes免费生图）提取的平台均已收录，offers 无重复新增。",
       "source": "公众号原文 2 篇 + 网络搜索（perq.sh、free-llm.com、aitujian.cn、ipipp.com、coddykit.com、datahive.pro、vibecodes.net、dev.to、toutiao、jxxy.net 等）"
+    },
+    {
+      "date": "2026-11-25",
+      "summary": "AI 新闻资讯板块更新：新增 15 条当天 AI 资讯。",
+      "source": "全网搜索"
     },
     {
       "date": "2026-11-24",
