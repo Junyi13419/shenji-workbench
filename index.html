@@ -350,6 +350,18 @@ tbody tr:hover{background:rgba(212,175,55,.045)}
 .qr-side-link .t{flex:1;font-size:11.5px;color:var(--muted);line-height:1.45}
 .qr-side-link .t b{display:block;font-size:12px;color:var(--text)}
 .qr-side-link .go{font-size:10.5px;color:var(--accent);white-space:nowrap}
+/* 分享工作台弹窗 */
+.share-btn{color:var(--accent);border-color:var(--accent-soft)}
+.share-btn:hover{background:var(--accent-soft)}
+.share-modal{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.share-qr-box{background:#fff;border-radius:14px;padding:14px;box-shadow:0 6px 24px rgba(0,0,0,.25);line-height:0}
+.share-qr-box img{width:220px;height:220px;display:block;border-radius:6px}
+.share-modal .share-desc{font-size:12.5px;color:var(--muted);line-height:1.6;margin:0}
+.share-link-row{display:flex;gap:8px;width:100%;align-items:stretch}
+.share-link-row input{flex:1;min-width:0;background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:9px 11px;font-size:11.5px;color:var(--muted);outline:none;font-family:monospace}
+.share-link-row input:focus{border-color:var(--accent)}
+.share-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:100%}
+.share-actions .btn{flex:1 1 auto;min-width:120px}
 #toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:#242b39;border:1px solid var(--border);color:var(--text);padding:10px 18px;border-radius:10px;font-size:12.5px;opacity:0;pointer-events:none;transition:.25s;z-index:99;box-shadow:var(--shadow)}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
@@ -790,6 +802,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
           <option value="de">Deutsch</option>
           <option value="it">Italiano</option>
         </select>
+        <button class="btn share-btn" data-act="share" data-i18n-title="share_btn_tip" title="分享工作台给朋友"><span data-i18n="btn_share">分享</span></button>
         <button class="btn login-btn" id="login-btn" data-act="login" data-admin-only="1" style="display:none" data-i18n="btn_login">☁ 登录同步</button>
         <span class="login-user" id="login-user" data-admin-only="1" style="display:none"></span>
         <button class="btn" id="logout-btn" data-act="logout" data-admin-only="1" style="display:none" data-i18n="btn_logout">退出登录</button>
@@ -12982,7 +12995,7 @@ nav_offers:'免费额度',nav_xiaodou:'小豆码池',nav_resources:'服务器 / 
 nav_tutorials:'AI 教程大全',nav_monetization:'AI 变现全景图',nav_profile:'注册资料',nav_records:'注册记录',nav_patrol:'巡检中心',nav_log:'更新日志',
 side_update:'每日 09:00 自动更新',side_saved:'数据本地保存 · 不上传云端',side_lastupdate:'最近更新',
 side_contact:'联系方式 · 点击复制',side_wechat:'微信',side_qq:'QQ',side_copy:'复制',
-btn_login:'☁ 登录同步',admin_on:'管理模式已开启',admin_off:'管理模式已关闭',emoji_title:'表情',emoji_hint:'点击表情插入到昵称末尾，可继续输入文字',pf_nickname_hint:'支持添加表情，最多 32 个字符',pf_nickname_max:'昵称最多 32 个字符（含表情）',emoji_close:'关闭',emoji_cat_common:'常用',emoji_cat_symbols:'符号',btn_logout:'退出登录',btn_contact:'✆ 联系我',btn_export:'⬇ 导出备份',
+btn_login:'☁ 登录同步',admin_on:'管理模式已开启',admin_off:'管理模式已关闭',emoji_title:'表情',emoji_hint:'点击表情插入到昵称末尾，可继续输入文字',pf_nickname_hint:'支持添加表情，最多 32 个字符',pf_nickname_max:'昵称最多 32 个字符（含表情）',emoji_close:'关闭',emoji_cat_common:'常用',emoji_cat_symbols:'符号',btn_logout:'退出登录',btn_contact:'✆ 联系我',btn_export:'⬇ 导出备份',btn_share:'分享',share_btn_tip:'分享工作台给朋友',share_title:'分享 · 扫码打开工作台',share_desc:'扫码或点击下方按钮复制链接，把神机工作台分享给朋友，手机扫码即可直接打开。',share_copy:'复制链接',share_download:'下载二维码',
 btn_import:'⬆ 导入备份',btn_add_offer:'＋ 添加活动',btn_add_resource:'＋ 添加资源',
 btn_add_skill:'＋ 添加 Skill',btn_add_tutorial:'＋ 添加教程',
 title_offers:'免费 Token 额度',sub_offers:'全网渠道汇集 · 一键注册辅助 · 资料自动保存',
@@ -13117,7 +13130,7 @@ nav_offers:'Free Quota',nav_xiaodou:'Bean Code Pool',nav_resources:'Servers / Do
 nav_tutorials:'AI Tutorials',nav_monetization:'AI Monetization',nav_profile:'Profile',nav_records:'Records',nav_patrol:'Patrol Center',nav_log:'Update Log',
 side_update:'Auto-updated daily at 09:00',side_saved:'Data saved locally · Not uploaded',side_lastupdate:'Last updated',
 side_contact:'Contact · Click to copy',side_wechat:'WeChat',side_qq:'QQ',side_copy:'Copy',
-btn_login:'☁ Login Sync',admin_on:'Admin mode on',admin_off:'Admin mode off',emoji_title:'Emoji',emoji_hint:'Click an emoji to append it to the nickname; you can keep typing text after',pf_nickname_hint:'Emoji supported, up to 32 characters',pf_nickname_max:'Nickname allows up to 32 characters (including emoji)',emoji_close:'Close',emoji_cat_common:'Common',emoji_cat_symbols:'Symbols',btn_logout:'Sign Out',btn_contact:'✆ Contact',btn_export:'⬇ Export Backup',
+btn_login:'☁ Login Sync',admin_on:'Admin mode on',admin_off:'Admin mode off',emoji_title:'Emoji',emoji_hint:'Click an emoji to append it to the nickname; you can keep typing text after',pf_nickname_hint:'Emoji supported, up to 32 characters',pf_nickname_max:'Nickname allows up to 32 characters (including emoji)',emoji_close:'Close',emoji_cat_common:'Common',emoji_cat_symbols:'Symbols',btn_logout:'Sign Out',btn_contact:'✆ Contact',btn_export:'⬇ Export Backup',btn_share:'Share',share_btn_tip:'Share this workbench with friends',share_title:'Share · Scan to open',share_desc:'Scan the QR code or copy the link below to share the SHENJI workbench — friends can open it on mobile instantly.',share_copy:'Copy link',share_download:'Download QR',
 btn_import:'⬆ Import Backup',btn_add_offer:'＋ Add Offer',btn_add_resource:'＋ Add Resource',
 btn_add_skill:'＋ Add Skill',btn_add_tutorial:'＋ Add Tutorial',
 title_offers:'Free Token Quota',sub_offers:'Curated from all channels · Assisted registration · Auto-saved',
@@ -13252,7 +13265,7 @@ nav_offers:'โควตาฟรี',nav_xiaodou:'พูลโค้ดถั�
 nav_tutorials:'สอน AI',nav_monetization:'สร้างรายได้ AI',nav_profile:'โปรไฟล์',nav_records:'บันทึก',nav_patrol:'ศูนย์ตรวจสอบ',nav_log:'ประวัติอัปเดต',
 side_update:'อัปเดตอัตโนมัติทุกวัน 09:00',side_saved:'ข้อมูลบันทึกในเครื่อง · ไม่อัปโหลด',side_lastupdate:'อัปเดตล่าสุด',
 side_contact:'ติดต่อ · คลิกเพื่อคัดลอก',side_wechat:'WeChat',side_qq:'QQ',side_copy:'คัดลอก',
-btn_login:'☁ เข้าสู่ระบบ',admin_on:'เปิดโหมดผู้ดูแล',admin_off:'ปิดโหมดผู้ดูแล',emoji_title:'อีโมจิ',emoji_hint:'คลิกอีโมจิเพื่อแทรกต่อท้ายชื่อผู้ใช้ สามารถพิมพ์ข้อความต่อได้',pf_nickname_hint:'รองรับอีโมจิ สูงสุด 32 ตัวอักษร',pf_nickname_max:'ชื่อผู้ใช้สูงสุด 32 ตัวอักษร (รวมอีโมจิ)',emoji_close:'ปิด',emoji_cat_common:'ใช้บ่อย',emoji_cat_symbols:'สัญลักษณ์',btn_logout:'ออกจากระบบ',btn_contact:'✆ ติดต่อ',btn_export:'⬇ ส่งออกสำรอง',
+btn_login:'☁ เข้าสู่ระบบ',admin_on:'เปิดโหมดผู้ดูแล',admin_off:'ปิดโหมดผู้ดูแล',emoji_title:'อีโมจิ',emoji_hint:'คลิกอีโมจิเพื่อแทรกต่อท้ายชื่อผู้ใช้ สามารถพิมพ์ข้อความต่อได้',pf_nickname_hint:'รองรับอีโมจิ สูงสุด 32 ตัวอักษร',pf_nickname_max:'ชื่อผู้ใช้สูงสุด 32 ตัวอักษร (รวมอีโมจิ)',emoji_close:'ปิด',emoji_cat_common:'ใช้บ่อย',emoji_cat_symbols:'สัญลักษณ์',btn_logout:'ออกจากระบบ',btn_contact:'✆ ติดต่อ',btn_export:'⬇ ส่งออกสำรอง',btn_share:'แชร์',share_btn_tip:'แชร์เวิร์กเบนช์ให้เพื่อน',share_title:'แชร์ · สแกนเพื่อเปิด',share_desc:'สแกน QR หรือคัดลอกลิงก์ด้านล่างเพื่อแชร์ SHENJI Workbench ให้เพื่อน เปิดบนมือถือได้ทันที',share_copy:'คัดลอกลิงก์',share_download:'ดาวน์โหลด QR',
 btn_import:'⬆ นำเข้าสำรอง',btn_add_offer:'＋ เพิ่มกิจกรรม',btn_add_resource:'＋ เพิ่มทรัพยากร',
 btn_add_skill:'＋ เพิ่ม Skill',btn_add_tutorial:'＋ เพิ่มสอน',
 title_offers:'โควตา Token ฟรี',sub_offers:'รวบรวมทุกช่องทาง · ช่วยลงทะเบียน · บันทึกอัตโนมัติ',
@@ -13387,7 +13400,7 @@ nav_offers:'無料枠',nav_xiaodou:'小豆コードプール',nav_resources:'サ
 nav_tutorials:'AI チュートリアル',nav_monetization:'AI 収益化',nav_profile:'プロフィール',nav_records:'記録',nav_patrol:'パトロールセンター',nav_log:'更新履歴',
 side_update:'毎日 09:00 自動更新',side_saved:'データはローカル保存 · アップロードしない',side_lastupdate:'最終更新',
 side_contact:'連絡先 · クリックでコピー',side_wechat:'WeChat',side_qq:'QQ',side_copy:'コピー',
-btn_login:'☁ ログイン同期',admin_on:'管理モードをオン',admin_off:'管理モードをオフ',emoji_title:'絵文字',emoji_hint:'絵文字をクリックするとニックネームの末尾に挿入します。その後も文字入力できます',pf_nickname_hint:'絵文字対応・最大32文字まで',pf_nickname_max:'ニックネームは最大32文字まで（絵文字を含む）',emoji_close:'閉じる',emoji_cat_common:'よく使う',emoji_cat_symbols:'記号',btn_logout:'ログアウト',btn_contact:'✆ 連絡',btn_export:'⬇ バックアップ出力',
+btn_login:'☁ ログイン同期',admin_on:'管理モードをオン',admin_off:'管理モードをオフ',emoji_title:'絵文字',emoji_hint:'絵文字をクリックするとニックネームの末尾に挿入します。その後も文字入力できます',pf_nickname_hint:'絵文字対応・最大32文字まで',pf_nickname_max:'ニックネームは最大32文字まで（絵文字を含む）',emoji_close:'閉じる',emoji_cat_common:'よく使う',emoji_cat_symbols:'記号',btn_logout:'ログアウト',btn_contact:'✆ 連絡',btn_export:'⬇ バックアップ出力',btn_share:'共有',share_btn_tip:'ワークベンチを友達と共有',share_title:'共有 · スキャンして開く',share_desc:'QR をスキャンするか下のリンクをコピーして、神机ワークベンチを友達に共有しましょう。スマホでスキャンするだけで開けます。',share_copy:'リンクをコピー',share_download:'QRをダウンロード',
 btn_import:'⬆ バックアップ取込',btn_add_offer:'＋ 追加',btn_add_resource:'＋ リソース追加',
 btn_add_skill:'＋ Skill 追加',btn_add_tutorial:'＋ チュートリアル追加',
 title_offers:'無料 Token 枠',sub_offers:'全チャンネル集約 · 登録補助 · 自動保存',
@@ -13522,7 +13535,7 @@ nav_offers:'무료 쿼터',nav_xiaodou:'소두 코드 풀',nav_resources:'서버
 nav_tutorials:'AI 튜토리얼',nav_monetization:'AI 수익화',nav_profile:'프로필',nav_records:'기록',nav_patrol:'순찰 센터',nav_log:'업데이트 내역',
 side_update:'매일 09:00 자동 업데이트',side_saved:'데이터 로컬 저장 · 업로드 안 함',side_lastupdate:'최근 업데이트',
 side_contact:'연락처 · 클릭하여 복사',side_wechat:'WeChat',side_qq:'QQ',side_copy:'복사',
-btn_login:'☁ 로그인 동기화',admin_on:'관리자 모드 켜짐',admin_off:'관리자 모드 꺼짐',emoji_title:'이모지',emoji_hint:'이모지를 클릭하면 닉네임 끝에 추가되며, 뒤에 계속 텍스트를 입력할 수 있습니다',pf_nickname_hint:'이모지 지원, 최대 32자',pf_nickname_max:'닉네임은 이모지 포함 최대 32자까지',emoji_close:'닫기',emoji_cat_common:'자주 쓰는',emoji_cat_symbols:'기호',btn_logout:'로그아웃',btn_contact:'✆ 연락',btn_export:'⬇ 백업 내보내기',
+btn_login:'☁ 로그인 동기화',admin_on:'관리자 모드 켜짐',admin_off:'관리자 모드 꺼짐',emoji_title:'이모지',emoji_hint:'이모지를 클릭하면 닉네임 끝에 추가되며, 뒤에 계속 텍스트를 입력할 수 있습니다',pf_nickname_hint:'이모지 지원, 최대 32자',pf_nickname_max:'닉네임은 이모지 포함 최대 32자까지',emoji_close:'닫기',emoji_cat_common:'자주 쓰는',emoji_cat_symbols:'기호',btn_logout:'로그아웃',btn_contact:'✆ 연락',btn_export:'⬇ 백업 내보내기',btn_share:'공유',share_btn_tip:'워크벤치를 친구에게 공유',share_title:'공유 · 스캔하여 열기',share_desc:'QR을 스캔하거나 아래 링크를 복사해 신기 워크벤치를 친구에게 공유하세요. 휴대폰으로 스캔하면 바로 열립니다.',share_copy:'링크 복사',share_download:'QR 다운로드',
 btn_import:'⬆ 백업 가져오기',btn_add_offer:'＋ 추가',btn_add_resource:'＋ 리소스 추가',
 btn_add_skill:'＋ Skill 추가',btn_add_tutorial:'＋ 튜토리얼 추가',
 title_offers:'무료 Token 쿼터',sub_offers:'전 채널 집약 · 등록 보조 · 자동 저장',
@@ -13657,7 +13670,7 @@ nav_offers:'Gratis-Quota',nav_xiaodou:'Bohnen-Code-Pool',nav_resources:'Server /
 nav_tutorials:'AI-Tutorials',nav_monetization:'AI-Monetarisierung',nav_profile:'Profil',nav_records:'Einträge',nav_patrol:'Überwachungscenter',nav_log:'Update-Log',
 side_update:'Täglich 09:00 automatisch aktualisiert',side_saved:'Daten lokal gespeichert · Nicht hochgeladen',side_lastupdate:'Zuletzt aktualisiert',
 side_contact:'Kontakt · Zum Kopieren klicken',side_wechat:'WeChat',side_qq:'QQ',side_copy:'Kopieren',
-btn_login:'☁ Login-Synchronisierung',admin_on:'Admin-Modus aktiviert',admin_off:'Admin-Modus deaktiviert',emoji_title:'Emoji',emoji_hint:'Klicken Sie auf ein Emoji, um es am Ende des Namens einzufügen; danach können Sie weiter Text eingeben',pf_nickname_hint:'Emoji unterstützt, bis zu 32 Zeichen',pf_nickname_max:'Name erlaubt bis zu 32 Zeichen (inkl. Emoji)',emoji_close:'Schließen',emoji_cat_common:'Häufig',emoji_cat_symbols:'Symbole',btn_logout:'Abmelden',btn_contact:'✆ Kontakt',btn_export:'⬇ Backup exportieren',
+btn_login:'☁ Login-Synchronisierung',admin_on:'Admin-Modus aktiviert',admin_off:'Admin-Modus deaktiviert',emoji_title:'Emoji',emoji_hint:'Klicken Sie auf ein Emoji, um es am Ende des Namens einzufügen; danach können Sie weiter Text eingeben',pf_nickname_hint:'Emoji unterstützt, bis zu 32 Zeichen',pf_nickname_max:'Name erlaubt bis zu 32 Zeichen (inkl. Emoji)',emoji_close:'Schließen',emoji_cat_common:'Häufig',emoji_cat_symbols:'Symbole',btn_logout:'Abmelden',btn_contact:'✆ Kontakt',btn_export:'⬇ Backup exportieren',btn_share:'Teilen',share_btn_tip:'Workbench mit Freunden teilen',share_title:'Teilen · Zum Öffnen scannen',share_desc:'QR-Code scannen oder Link unten kopieren, um die SHENJI Workbench zu teilen — Freunde öffnen sie per Handy-Scan sofort.',share_copy:'Link kopieren',share_download:'QR herunterladen',
 btn_import:'⬆ Backup importieren',btn_add_offer:'＋ Angebot hinzufügen',btn_add_resource:'＋ Ressource hinzufügen',
 btn_add_skill:'＋ Skill hinzufügen',btn_add_tutorial:'＋ Tutorial hinzufügen',
 title_offers:'Gratis-Token-Quota',sub_offers:'Kanäle gebündelt · Registrierungsassistent · Automatisch gespeichert',
@@ -13792,7 +13805,7 @@ nav_offers:'Quota gratuiti',nav_xiaodou:'Pool codici Fagiolo',nav_resources:'Ser
 nav_tutorials:'Tutorial AI',nav_monetization:'Monetizzazione AI',nav_profile:'Profilo',nav_records:'Registri',nav_patrol:'Centro di monitoraggio',nav_log:'Cronologia aggiornamenti',
 side_update:'Aggiornamento automatico ogni giorno alle 09:00',side_saved:'Dati salvati localmente · Non caricati',side_lastupdate:'Ultimo aggiornamento',
 side_contact:'Contatti · Clicca per copiare',side_wechat:'WeChat',side_qq:'QQ',side_copy:'Copia',
-btn_login:'☁ Login Sincrono',admin_on:'Modalità admin attivata',admin_off:'Modalità admin disattivata',emoji_title:'Emoji',emoji_hint:'Clicca un emoji per inserirlo alla fine del nome; puoi continuare a digitare',pf_nickname_hint:'Emoji supportati, fino a 32 caratteri',pf_nickname_max:'Il nome consente fino a 32 caratteri (emoticon inclusi)',emoji_close:'Chiudi',emoji_cat_common:'Comune',emoji_cat_symbols:'Simboli',btn_logout:'Esci',btn_contact:'✆ Contatti',btn_export:'⬇ Esporta backup',
+btn_login:'☁ Login Sincrono',admin_on:'Modalità admin attivata',admin_off:'Modalità admin disattivata',emoji_title:'Emoji',emoji_hint:'Clicca un emoji per inserirlo alla fine del nome; puoi continuare a digitare',pf_nickname_hint:'Emoji supportati, fino a 32 caratteri',pf_nickname_max:'Il nome consente fino a 32 caratteri (emoticon inclusi)',emoji_close:'Chiudi',emoji_cat_common:'Comune',emoji_cat_symbols:'Simboli',btn_logout:'Esci',btn_contact:'✆ Contatti',btn_export:'⬇ Esporta backup',btn_share:'Condividi',share_btn_tip:'Condividi la workbench con gli amici',share_title:'Condividi · Scansiona per aprire',share_desc:'Scansiona il QR o copia il link qui sotto per condividere la SHENJI Workbench — gli amici la aprono subito dallo smartphone.',share_copy:'Copia link',share_download:'Scarica QR',
 btn_import:'⬆ Importa backup',btn_add_offer:'＋ Aggiungi offerta',btn_add_resource:'＋ Aggiungi risorsa',
 btn_add_skill:'＋ Aggiungi Skill',btn_add_tutorial:'＋ Aggiungi tutorial',
 title_offers:'Quota Token gratuita',sub_offers:'Canali aggregati · Supporto alla registrazione · Salvataggio automatico',
@@ -14519,6 +14532,12 @@ function xdSnapshotUrl(){
   /* 线上部署要求资源请求携带 sharecode，否则 403；本地 file:// 下无此参数则直接读相对路径 */
   var m=location.search.match(/[?&]sharecode=([^&]+)/);
   return XD_SNAPSHOT_URL+(m?('?sharecode='+encodeURIComponent(m[1])+'&t='):'?t=')+Date.now();
+}
+/* 分享弹窗二维码图片地址：线上须带 sharecode，本地直接读相对路径 */
+var SHARE_URL='https://shenji-resource-workbench.app.workbuddy.host/?sharecode=LWIAFQPA2A';
+function shareQrUrl(){
+  var m=location.search.match(/[?&]sharecode=([^&]+)/);
+  return 'assets/qr-share.png'+(m?('?sharecode='+encodeURIComponent(m[1])):'');
 }
 var XD_REFRESH_SEC=5;
 var XD_SOURCE='https://xiaodou-code-pool-e54blnpc9ma.qoder.website/';
@@ -15367,6 +15386,17 @@ function openModal(title,body,foot){
   document.getElementById('modal-mask').classList.add('show');
 }
 function closeModal(){document.getElementById('modal-mask').classList.remove('show');}
+function openShareModal(){
+  var body='<div class="share-modal">'+
+    '<div class="share-qr-box"><img src="'+shareQrUrl()+'" alt="Share QR"></div>'+
+    '<p class="share-desc">'+esc(t('share_desc'))+'</p>'+
+    '<div class="share-link-row"><input id="share-link-input" readonly value="'+esc(SHARE_URL)+'" aria-label="share link"></div>'+
+    '<div class="share-actions">'+
+      '<button class="btn primary" data-act="share-copy">'+esc(t('share_copy'))+'</button>'+
+      '<button class="btn" data-act="share-download">'+esc(t('share_download'))+'</button>'+
+    '</div></div>';
+  openModal(t('share_title'),body,'<button class="btn" data-act="close-modal">'+esc(t('contact_close'))+'</button>');
+}
 function openRecordModal(id){
   var o=findOffer(id); if(!o)return;
   var r=getRecords()[id]||{};
@@ -15632,6 +15662,12 @@ document.addEventListener('click',function(e){
       '</div>'+
       '<p class="c-tip">'+esc(t('qr_tip'))+'</p></div>';
     openModal(t('qr_modal_title'),qbody,'<button class="btn" data-act="close-modal">'+esc(t('contact_close'))+'</button>');
+  }
+  else if(act==='share')openShareModal();
+  else if(act==='share-copy')copyText(SHARE_URL);
+  else if(act==='share-download'){
+    var a=document.createElement('a');a.href=shareQrUrl();a.download='shenji-workbench-qr.png';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
   }
   else if(act==='contact'){
     var wxIco='<span class="cico wx"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8.7 3C4.9 3 2 5.6 2 8.9c0 1.9 1 3.5 2.6 4.6L4 16l2.7-1.3c.6.2 1.3.3 2 .3h.6c-.1-.6-.2-1.3-.2-2 0-3.2 3.1-5.8 7-5.8h.5C16.1 4.7 12.8 3 8.7 3zM6.2 7.6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/><path d="M22 13.5c0-2.7-2.6-4.9-5.8-4.9s-5.8 2.2-5.8 4.9 2.6 4.9 5.8 4.9c.7 0 1.4-.1 2-.3L21 19l-.6-2.3c1-.9 1.6-2 1.6-3.2zM13.8 12.4a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm3.8 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg></span>';
