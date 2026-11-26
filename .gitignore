@@ -2,6 +2,7 @@
 backup_*.json
 *.bak
 _dedupe_keys.json
+_*.json
 _*.js
 _*.html
 _*.png
