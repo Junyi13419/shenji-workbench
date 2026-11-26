@@ -1,7 +1,52 @@
 {
-  "lastUpdated": "2026-11-26 19:10 北京时间",
-  "lastSinceId": "2125907497399812472",
+  "lastUpdated": "2026-11-26 21:11 北京时间",
+  "lastSinceId": "2125938481436246110",
   "codes": [
+    {
+      "code": "Z87EZC",
+      "postId": "2125938224162033874",
+      "author": "VaneAILab",
+      "postUrl": "https://x.com/VaneAILab/status/2125938224162033874",
+      "postedAt": "2026-11-26 21:02:25 北京时间",
+      "postedAtUtc": "2026-11-26T13:02:25.000Z",
+      "replyCount": 0,
+      "status": "maybe_available"
+    },
+    {
+      "code": "U7LVW5",
+      "postId": "2125937794405282260",
+      "author": "Yiyue7788",
+      "postUrl": "https://x.com/Yiyue7788/status/2125937794405282260",
+      "postedAt": "2026-11-26 21:00:42 北京时间",
+      "postedAtUtc": "2026-11-26T13:00:42.000Z",
+      "replyCount": 0,
+      "status": "maybe_available",
+      "expires": "2026-11-28 20:59"
+    },
+    {
+      "code": "M-DHSELK",
+      "postId": "2125916687035924548",
+      "author": "apdwfi",
+      "postUrl": "https://x.com/apdwfi/status/2125916687035924548",
+      "postedAt": "2026-11-26 19:36:50 北京时间",
+      "postedAtUtc": "2026-11-26T11:36:50.000Z",
+      "replyCount": 0,
+      "status": "maybe_available",
+      "officialUrl": "https://activity.doubao.com/ug/invite-share/M-DHSELK",
+      "note": "官方邀请页 https://activity.doubao.com/ug/invite-share/M-DHSELK",
+      "expires": "2026-11-28 16:29"
+    },
+    {
+      "code": "DHSELK",
+      "postId": "2125916687035924548",
+      "author": "apdwfi",
+      "postUrl": "https://x.com/apdwfi/status/2125916687035924548",
+      "postedAt": "2026-11-26 19:36:50 北京时间",
+      "postedAtUtc": "2026-11-26T11:36:50.000Z",
+      "replyCount": 0,
+      "status": "maybe_available",
+      "expires": "2026-11-28 16:29"
+    },
     {
       "code": "JUSTIN",
       "postId": "2125906852235903421",
@@ -9,8 +54,8 @@
       "postUrl": "https://x.com/Budgetlander/status/2125906852235903421",
       "postedAt": "2026-11-26 18:57:45 北京时间",
       "postedAtUtc": "2026-11-26T10:57:45.000Z",
-      "replyCount": 0,
-      "status": "maybe_available"
+      "replyCount": 1,
+      "status": "maybe_used"
     },
     {
       "code": "OPENED",
@@ -19,8 +64,8 @@
       "postUrl": "https://x.com/Budgetlander/status/2125906852235903421",
       "postedAt": "2026-11-26 18:57:45 北京时间",
       "postedAtUtc": "2026-11-26T10:57:45.000Z",
-      "replyCount": 0,
-      "status": "maybe_available"
+      "replyCount": 1,
+      "status": "maybe_used"
     },
     {
       "code": "ALMOST",
@@ -29,8 +74,8 @@
       "postUrl": "https://x.com/Budgetlander/status/2125906852235903421",
       "postedAt": "2026-11-26 18:57:45 北京时间",
       "postedAtUtc": "2026-11-26T10:57:45.000Z",
-      "replyCount": 0,
-      "status": "maybe_available"
+      "replyCount": 1,
+      "status": "maybe_used"
     },
     {
       "code": "E6X4KX",
