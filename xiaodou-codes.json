@@ -1,7 +1,59 @@
 {
-  "lastUpdated": "2026-11-26 17:05 北京时间",
-  "lastSinceId": "2125877707665818062",
+  "lastUpdated": "2026-11-26 19:10 北京时间",
+  "lastSinceId": "2125907497399812472",
   "codes": [
+    {
+      "code": "JUSTIN",
+      "postId": "2125906852235903421",
+      "author": "Budgetlander",
+      "postUrl": "https://x.com/Budgetlander/status/2125906852235903421",
+      "postedAt": "2026-11-26 18:57:45 北京时间",
+      "postedAtUtc": "2026-11-26T10:57:45.000Z",
+      "replyCount": 0,
+      "status": "maybe_available"
+    },
+    {
+      "code": "OPENED",
+      "postId": "2125906852235903421",
+      "author": "Budgetlander",
+      "postUrl": "https://x.com/Budgetlander/status/2125906852235903421",
+      "postedAt": "2026-11-26 18:57:45 北京时间",
+      "postedAtUtc": "2026-11-26T10:57:45.000Z",
+      "replyCount": 0,
+      "status": "maybe_available"
+    },
+    {
+      "code": "ALMOST",
+      "postId": "2125906852235903421",
+      "author": "Budgetlander",
+      "postUrl": "https://x.com/Budgetlander/status/2125906852235903421",
+      "postedAt": "2026-11-26 18:57:45 北京时间",
+      "postedAtUtc": "2026-11-26T10:57:45.000Z",
+      "replyCount": 0,
+      "status": "maybe_available"
+    },
+    {
+      "code": "E6X4KX",
+      "postId": "2125886066934907006",
+      "author": "Handizoct",
+      "postUrl": "https://x.com/Handizoct/status/2125886066934907006",
+      "postedAt": "2026-11-26 17:35:10 北京时间",
+      "postedAtUtc": "2026-11-26T09:35:10.000Z",
+      "replyCount": 1,
+      "status": "maybe_used",
+      "expires": "2026-11-28 17:33"
+    },
+    {
+      "code": "Y5JPEM",
+      "postId": "2125881335319523359",
+      "author": "Handizoct",
+      "postUrl": "https://x.com/Handizoct/status/2125881335319523359",
+      "postedAt": "2026-11-26 17:16:21 北京时间",
+      "postedAtUtc": "2026-11-26T09:16:21.000Z",
+      "replyCount": 1,
+      "status": "maybe_used",
+      "expires": "2026-11-28 16:58"
+    },
     {
       "code": "ROBOTS",
       "postId": "2125877707665818062",
