@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-11-27 00:25 北京时间",
-  "lastSinceId": "2125988365116059795",
+  "lastUpdated": "2026-11-27 13:56 北京时间",
+  "lastSinceId": "2126189808695578629",
   "codes": [
+    {
+      "code": "W36Z5Q",
+      "postId": "2126189541375840360",
+      "author": "HzeroixSco26",
+      "postUrl": "https://x.com/HzeroixSco26/status/2126189541375840360",
+      "postedAt": "2026-11-27 13:41:04 北京时间",
+      "postedAtUtc": "2026-11-27T05:41:04.000Z",
+      "replyCount": 1,
+      "status": "maybe_used",
+      "expires": "2026-11-29 12:42"
+    },
     {
       "code": "DUIADY",
       "postId": "2125987562166927816",
@@ -9,8 +20,8 @@
       "postUrl": "https://x.com/Mobiustuan/status/2125987562166927816",
       "postedAt": "2026-11-27 00:18:28 北京时间",
       "postedAtUtc": "2026-11-26T16:18:28.000Z",
-      "replyCount": 0,
-      "status": "maybe_available"
+      "replyCount": 1,
+      "status": "maybe_used"
     },
     {
       "code": "CZ4V50",
