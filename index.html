@@ -762,6 +762,128 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
 .ad-safety p{margin:0;font-size:11.5px;color:var(--muted);line-height:1.65}
 .ad-foot{display:flex;gap:6px;margin-top:auto;flex-wrap:wrap}
 @media(max-width:640px){.ad-grid{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   神机 UI 设计系统（适配自开源项目 Gentelella v4 的设计令牌与组件，
+   来源：github.com/ColorlibHQ/gentelella，MIT License）
+   统一以 tw- 前缀命名，与工作台既有金色主题样式互不冲突。
+   ========================================================================== */
+:root{
+  --tw-primary:#1ABB9C;
+  --tw-primary-dk:#169f85;
+  --tw-primary-lt:rgba(26,187,156,.10);
+  --tw-blue:#066fd1;--tw-green:#2fb344;--tw-yellow:#f59f00;
+  --tw-orange:#f76707;--tw-red:#d63939;--tw-purple:#ae3ec9;--tw-indigo:#4263eb;
+  --tw-green-lt:rgba(47,179,68,.10);--tw-red-lt:rgba(214,57,57,.10);
+  --tw-yellow-lt:rgba(245,159,0,.10);--tw-blue-lt:rgba(6,111,209,.10);
+  --tw-purple-lt:rgba(174,62,201,.10);
+  --tw-r:6px;--tw-r-sm:4px;--tw-r-lg:10px;
+  --tw-font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;
+  --tw-font-mono:'SF Mono',Monaco,Consolas,'Liberation Mono',monospace;
+}
+/* 按钮 */
+.tw-btn{display:inline-flex;align-items:center;gap:5px;height:34px;padding:0 14px;border-radius:var(--tw-r-sm);font:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1px solid transparent;transition:background .12s,border-color .12s,color .12s,box-shadow .12s;line-height:1;white-space:nowrap}
+.tw-btn svg{width:14px;height:14px}
+.tw-btn-primary{background:var(--tw-primary);color:#fff;border-color:var(--tw-primary-dk)}
+.tw-btn-primary:hover{background:var(--tw-primary-dk)}
+.tw-btn-outline{background:var(--panel);color:var(--muted);border-color:var(--border)}
+.tw-btn-outline:hover{background:var(--panel2);color:var(--text)}
+.tw-btn-sm{height:28px;padding:0 10px;font-size:12px}
+.tw-btn-danger{background:var(--tw-red);color:#fff;border-color:#a82b2b}
+.tw-btn-danger:hover{background:#a82b2b}
+.tw-btn-danger.outline{background:transparent;color:var(--tw-red);border-color:rgba(214,57,57,.4)}
+.tw-btn-danger.outline:hover{background:var(--tw-red-lt)}
+.tw-btn-ghost{background:transparent;color:var(--muted);border-color:transparent}
+.tw-btn-ghost:hover{background:var(--panel2);color:var(--text)}
+/* 卡片 / 面板 */
+.tw-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--tw-r-lg);box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.tw-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--border-soft);min-height:44px}
+.tw-card-title{font-size:13px;font-weight:700;color:var(--text)}
+.tw-card-sub{font-size:11.5px;color:var(--dim);margin-top:1px}
+.tw-card-body{padding:16px}
+/* 表格 */
+.tw-table-wrap{overflow-x:auto}
+.tw-table{width:100%;border-collapse:collapse;font-size:13px}
+.tw-table th{text-align:left;padding:8px 16px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--dim);background:var(--panel2);border-bottom:1px solid var(--border)}
+.tw-table td{padding:9px 16px;border-bottom:1px solid var(--border-soft);color:var(--muted);vertical-align:middle}
+.tw-table tr:last-child td{border-bottom:none}
+.tw-table tbody tr{transition:background .08s}
+.tw-table tbody tr:hover{background:var(--panel2)}
+/* 状态徽章 */
+.tw-status{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600}
+.tw-status::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.tw-status.s-green{color:var(--tw-green)}.tw-status.s-green::before{background:var(--tw-green)}
+.tw-status.s-yellow{color:#b45309}.tw-status.s-yellow::before{background:var(--tw-yellow)}
+.tw-status.s-blue{color:var(--tw-blue)}.tw-status.s-blue::before{background:var(--tw-blue)}
+.tw-status.s-red{color:var(--tw-red)}.tw-status.s-red::before{background:var(--tw-red)}
+/* 开关 */
+.tw-toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--border-soft)}
+.tw-toggle-row:last-child{border-bottom:none}
+.tw-toggle-row .t-label{font-size:13px;color:var(--text);font-weight:600}
+.tw-toggle-row .t-desc{font-size:11.5px;color:var(--dim);margin-top:2px;line-height:1.5}
+.tw-toggle{width:38px;height:21px;background:#d1d5db;border-radius:11px;position:relative;cursor:pointer;flex-shrink:0;transition:background .15s;border:none;padding:0}
+.tw-toggle.on{background:var(--tw-primary)}
+.tw-toggle::after{content:'';position:absolute;top:2px;left:2px;width:17px;height:17px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .15s}
+.tw-toggle.on::after{transform:translateX(17px)}
+/* 弹窗 */
+body.tw-modal-open{overflow:hidden}
+.tw-modal-backdrop{position:fixed;inset:0;z-index:200;background:rgba(5,7,11,.65);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:24px}
+.tw-modal-backdrop.show{display:flex}
+.tw-modal-dialog{background:var(--panel);border:1px solid var(--border);border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.6);width:100%;max-width:520px;max-height:calc(100vh - 48px);display:flex;flex-direction:column;animation:tw-pop .2s cubic-bezier(.2,0,0,1)}
+@keyframes tw-pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.tw-modal-sm{max-width:400px}
+.tw-modal-lg{max-width:720px}
+.tw-modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border-soft);flex-shrink:0}
+.tw-modal-title{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.1px}
+.tw-modal-close{width:28px;height:28px;border:none;background:transparent;border-radius:var(--tw-r-sm);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--dim);font-size:18px;line-height:1}
+.tw-modal-close:hover{background:var(--panel2);color:var(--text)}
+.tw-modal-body{padding:16px 18px;overflow-y:auto;flex:1 1 auto}
+.tw-modal-foot{display:flex;justify-content:flex-end;gap:8px;padding:12px 18px;border-top:1px solid var(--border-soft);flex-shrink:0}
+@media(max-width:480px){.tw-modal-backdrop{padding:12px}.tw-modal-dialog,.tw-modal-sm,.tw-modal-lg{max-width:calc(100vw - 24px)}}
+/* 弹窗内表单 */
+.tw-form-row{margin-bottom:14px}
+.tw-form-row:last-child{margin-bottom:0}
+.tw-form-row label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:5px}
+.tw-form-row label .req{color:var(--tw-red);margin-left:2px}
+.tw-input,.tw-textarea,.tw-select{width:100%;height:36px;padding:0 11px;background:var(--panel);border:1px solid var(--border);border-radius:var(--tw-r);font:inherit;font-size:13px;color:var(--text);outline:none;transition:border-color .12s,box-shadow .12s}
+.tw-textarea{height:auto;min-height:76px;padding:8px 11px;resize:vertical;line-height:1.55}
+.tw-input:focus,.tw-textarea:focus,.tw-select:focus{border-color:var(--tw-primary);box-shadow:0 0 0 3px var(--tw-primary-lt)}
+.tw-input.err,.tw-textarea.err{border-color:var(--tw-red);box-shadow:0 0 0 3px var(--tw-red-lt)}
+.tw-hint{font-size:11px;color:var(--tw-red);margin-top:4px;display:none}
+.tw-hint.show{display:block}
+.tw-hint.ok{color:var(--tw-green)}
+/* toast */
+.tw-toast-host{position:fixed;right:16px;bottom:16px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:8px;pointer-events:none}
+.tw-toast{pointer-events:auto;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:var(--tw-r);box-shadow:0 8px 24px rgba(0,0,0,.5);padding:10px 14px;font-size:13px;font-weight:600;max-width:360px;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .18s,transform .18s}
+.tw-toast.show{opacity:1;transform:translateY(0)}
+.tw-toast.ok{border-left:3px solid var(--tw-green);padding-left:11px}
+.tw-toast.err{border-left:3px solid var(--tw-red);padding-left:11px}
+/* 空状态 */
+.tw-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;color:var(--dim);gap:6px}
+.tw-empty .e-icon{width:48px;height:48px;border-radius:50%;background:var(--panel2);color:var(--dim);display:flex;align-items:center;justify-content:center;margin-bottom:8px;font-size:22px}
+.tw-empty .e-title{font-size:14px;font-weight:600;color:var(--text)}
+.tw-empty .e-text{font-size:12.5px;max-width:320px;line-height:1.5}
+/* 横幅提示 */
+.tw-banner{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:var(--tw-r);background:var(--tw-primary-lt);border:1px solid rgba(26,187,156,.25);font-size:12.5px;color:var(--text);line-height:1.55}
+.tw-banner.warn{background:var(--tw-yellow-lt);border-color:rgba(245,159,0,.28)}
+.tw-banner.danger{background:var(--tw-red-lt);border-color:rgba(214,57,57,.28)}
+.tw-banner.info{background:var(--tw-blue-lt);border-color:rgba(6,111,209,.25)}
+.tw-banner .b-icon{flex-shrink:0;font-size:16px;line-height:1.3}
+/* 列表组 */
+.tw-list{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--tw-r);overflow:hidden}
+.tw-list-item{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--panel);border:none;border-bottom:1px solid var(--border-soft);text-decoration:none;color:var(--text);font-size:13px;cursor:pointer;transition:background .1s;text-align:left;width:100%;font-family:inherit}
+.tw-list-item:last-child{border-bottom:none}
+.tw-list-item:hover{background:var(--panel2);text-decoration:none}
+.tw-list-item .meta{margin-left:auto;color:var(--dim);font-size:11.5px;text-align:right;flex-shrink:0}
+/* 抽屉 */
+.tw-drawer-backdrop{position:fixed;inset:0;background:rgba(5,7,11,.55);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:250;opacity:0;pointer-events:none;transition:opacity .2s}
+.tw-drawer-backdrop.open{opacity:1;pointer-events:auto}
+.tw-drawer{position:fixed;top:0;right:0;width:min(460px,100vw);height:100vh;background:var(--panel);z-index:260;box-shadow:-10px 0 30px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .24s cubic-bezier(.2,0,0,1);display:flex;flex-direction:column}
+.tw-drawer.open{transform:translateX(0)}
+.tw-drawer-head{display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid var(--border-soft);gap:10px}
+.tw-drawer-title{font-size:15px;font-weight:700;color:var(--text);flex:1}
+.tw-drawer-body{flex:1;overflow-y:auto;padding:16px}
+.tw-drawer-foot{padding:12px 16px;border-top:1px solid var(--border-soft);display:flex;gap:8px;justify-content:flex-end}
 </style>
 </head>
 <body>
@@ -814,6 +936,7 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
       <button data-view="records"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span data-i18n="nav_records">注册记录</span><span class="cnt" id="nav-records">0</span></button>
       <button data-view="patrol"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><span data-i18n="nav_patrol">巡检中心</span><span class="cnt" id="nav-patrol"></span></button>
       <button data-view="log"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span><span data-i18n="nav_log">更新日志</span></button>
+      <button data-view="admin"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><span data-i18n="nav_admin">管理系统</span></button>
     </nav>
     <div class="side-foot">
       <div class="contact-box">
@@ -1141,6 +1264,47 @@ body::after{content:"";position:fixed;left:-160px;top:8%;width:460px;height:460p
         <h2 data-i18n="log_title">数据更新日志</h2>
         <div class="sub" data-i18n="log_sub">每日自动搜索全网免费 Token 活动、免费服务器/域名资源、GitHub 热门项目、Agent Skill、全球 AI 教程与 AI 变现赛道资源，并按各自分类合并更新；过期项自动标注补替，低质 Skill 会被清理。历史记录保留在下方，个人注册资料不受更新影响。</div>
         <div class="timeline" id="timeline"></div>
+      </div>
+    </div>
+
+    <div id="view-admin" style="display:none">
+      <div class="tw-banner" id="admin-mode-banner">
+        <span class="b-icon" id="admin-mode-icon">⚙</span>
+        <div class="b-body" id="admin-mode-text"></div>
+      </div>
+      <div class="tw-card" style="margin-bottom:14px">
+        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_mode_toggle">管理员模式</div><div class="tw-card-sub" data-i18n="admin_mode_desc">开启后可在各板块添加自定义项目并管理数据；关闭后仅可浏览</div></div></div>
+        <div class="tw-card-body">
+          <div class="tw-toggle-row">
+            <div><div class="t-label" data-i18n="admin_mode_toggle">管理员模式</div></div>
+            <button class="tw-toggle" id="admin-mode-toggle" data-act="admin-toggle"></button>
+          </div>
+        </div>
+      </div>
+      <div class="tw-card" style="margin-bottom:14px">
+        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_panel_stats">数据概览</div><div class="tw-card-sub" data-i18n="admin_panel_stats_desc">各板块自定义项目数量统计</div></div></div>
+        <div class="tw-card-body" id="admin-stats"></div>
+      </div>
+      <div class="tw-card" style="margin-bottom:14px">
+        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_panel_custom">自定义内容管理</div><div class="tw-card-sub" data-i18n="admin_panel_custom_desc">快速跳转到对应板块管理自定义项目</div></div></div>
+        <div class="tw-card-body">
+          <div class="tw-list" id="admin-custom-list"></div>
+        </div>
+      </div>
+      <div class="tw-card" style="margin-bottom:14px">
+        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_panel_airdrop">空投自定义项目</div><div class="tw-card-sub" data-i18n="admin_panel_custom_desc">查看与管理已添加的自定义空投</div></div>
+          <button class="tw-btn tw-btn-outline tw-btn-sm" data-act="go-airdrop-add" data-i18n="btn_admin_go_airdrop">去空投板块添加</button>
+        </div>
+        <div class="tw-card-body">
+          <div class="tw-list" id="admin-airdrop-list"></div>
+        </div>
+      </div>
+      <div class="tw-card">
+        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_panel_import">数据备份</div><div class="tw-card-sub" data-i18n="admin_panel_import_desc">导出全部数据备份，或从备份文件恢复</div></div></div>
+        <div class="tw-card-body" style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="tw-btn tw-btn-primary" data-act="export">⬇ <span data-i18n="btn_export">导出备份</span></button>
+          <button class="tw-btn tw-btn-outline" data-act="import">⬆ <span data-i18n="btn_import">导入备份</span></button>
+        </div>
       </div>
     </div>
   </main>
@@ -13470,9 +13634,10 @@ toast_export:'备份已下载',toast_import_ok:'备份导入成功',toast_import
 toast_logout:'已退出登录',toast_code_sent:'验证码已发送',toast_tutorial_fields:'请填写教程名称、简介和链接',toast_skill_fields:'请填写技能名称、功能描述和链接',toast_custom_fields:'请填写平台名称、标题和链接',
 confirm_del_skill:'确定删除这个自定义 Skill 吗？',confirm_del_tutorial:'确定删除这个自定义教程吗？',confirm_del_record:'确定删除这条注册记录吗？',confirm_del_custom:'确定删除这一条吗？',
 boot_skip:'跳过 SKIP ›',boot_enter:'进入神机 →',boot_brand:'神机',boot_slogan:'以神之眼，观万物之机',boot_init:'初始化神机内核',lang_title:'界面语言',
-nav_news:'AI 新闻资讯',nav_projects:'项目展示',title_news:'AI 新闻资讯',sub_news:'每日全网搜索当天 AI 资讯动态，自动去重追加',title_projects:'项目展示',sub_projects:'汇集已上线的 AI 项目作品，一键直达',notice_news:'AI 新闻资讯：每日全网搜索当天相关的 AI 资讯与新闻动态，自动去重后追加到本板块，按时间倒序排列。只要有新的 AI 资讯或新闻，都会自动更新到这里。',notice_projects:'项目展示：汇集已上线的 AI 项目作品，一键直达。点击「添加项目」可随时把新的项目收录进来，添加的项目会自动同步到云端，多端可见。',stat_news:'新闻总数',stat_news_today:'今日新增',stat_news_sources:'资讯来源',stat_projects:'项目总数',stat_projects_custom:'自定义项目',search_news:'搜索新闻标题、摘要…',search_projects:'搜索项目名称、标签…',news_range_all:'全部时间',news_range_today:'今天',news_range_7d:'近 7 天',news_source:'来源',news_view:'查看原文',news_empty:'暂无新闻，每日更新后将自动出现。',projects_empty:'暂无项目，点击「添加项目」开始收录。',btn_add_project:'添加项目',project_modal_title:'添加项目',p_name:'项目名称',p_name_ph:'请输入项目名称',p_desc:'项目简介',p_desc_ph:'一句话描述项目',p_url:'项目链接',p_url_ph:'请输入项目访问链接',p_tags:'标签（逗号分隔）',p_tags_ph:'用逗号分隔多个标签',project_open:'打开项目',custom_tag:'自定义',toast_project_fields:'请填写项目名称、简介与链接',toast_project_added:'项目已添加',src_orig:'原文',src_web:'网络补充',src_webupd:'网络更新',src_user:'用户原文',type_cloud:'云服务器',type_vm:'云主机',type_serverless:'Serverless',type_hosting:'托管平台',type_domain:'域名',type_vhost:'虚拟主机',type_db:'数据库',cd_daily:'每日',cd_monthly:'每月',cd_once:'一次性',cd_perm:'永久',cd_usage:'按量',cd_weekly:'每周',cd_year:'一年',cd_12m:'12个月',cd_6m:'6个月',cd_12mperm:'12个月 + 永久',cd_permonce:'永久 + 一次性',cd_45d:'每45天续期',cd_renewyear:'每年续期',cd_13m:'1-3个月',reg_domestic:'国内',reg_overseas:'海外',reg_domintl:'国内/国际',reg_ovdom:'海外/国内可用',lv_beginner:'入门',lv_intermediate:'进阶',lv_advanced:'高级',lv_high:'高阶',lv_b2i:'入门→进阶',lv_b2a:'入门→高级',lg_zh:'中文',lg_en:'英文',tk_download:'下载安装',tk_web:'网页入口',tk_selfhost:'开源自托管',nav_airdrop:'零撸空投项目',title_airdrop:'零撸空投项目',sub_airdrop:'零本金参与 · 规则透明 · 附领取教程与安全提示',notice_airdrop:'<b>零撸空投项目：</b>只收录零本金可参与、规则透明可验证的空投项目，附领取教程与安全提示。每日 00:00 自动搜索全网新增空投，去重后追加，自检通过才同步。<b>添加项目仅限管理员</b>（连点左上角品牌名 5 次开启管理模式）；普通访客仅可浏览。空投有风险，参与前请务必阅读官方规则，谨防假冒页面。',stat_airdrop:'收录空投项目',stat_airdrop_claim:'领取进行中',stat_airdrop_custom:'自定义项目',search_airdrop:'搜索项目名称、链、标签…',airdrop_empty:'暂无空投项目，每日自动搜索后将出现。',btn_add_airdrop:'＋ 添加空投项目',airdrop_modal_title:'添加空投项目',a_name:'项目名称 *',a_name_ph:'如 AS Aster 第六阶段',a_desc:'项目简介 *',a_desc_ph:'一句话说明项目做什么、凭什么零撸',a_url:'官网 / 领取页链接 *',a_url_ph:'请输入官方链接',a_chain:'所在链 / 网络',a_chain_ph:'如 BSDC / ETH / SOL',a_reward:'奖励内容',a_reward_ph:'如 64,000,000 ASTER',a_claim:'领取方式',a_claim_ph:'如 连接钱包一键领取',a_deadline:'领取截止',a_steps_t:'领取教程',a_safety_t:'安全提示',a_tags:'标签（逗号分隔）',a_tags_ph:'空投, 零撸, 进行中',toast_airdrop_fields:'请填写项目名称、简介与链接',toast_airdrop_added:'空投项目已添加',confirm_del_airdrop:'确定删除这个自定义空投项目吗？',toast_admin_only:'仅管理员可操作，请先开启管理模式',
+nav_news:'AI 新闻资讯',nav_projects:'项目展示',title_news:'AI 新闻资讯',sub_news:'每日全网搜索当天 AI 资讯动态，自动去重追加',title_projects:'项目展示',sub_projects:'汇集已上线的 AI 项目作品，一键直达',notice_news:'AI 新闻资讯：每日全网搜索当天相关的 AI 资讯与新闻动态，自动去重后追加到本板块，按时间倒序排列。只要有新的 AI 资讯或新闻，都会自动更新到这里。',notice_projects:'项目展示：汇集已上线的 AI 项目作品，一键直达。点击「添加项目」可随时把新的项目收录进来，添加的项目会自动同步到云端，多端可见。',stat_news:'新闻总数',stat_news_today:'今日新增',stat_news_sources:'资讯来源',stat_projects:'项目总数',stat_projects_custom:'自定义项目',search_news:'搜索新闻标题、摘要…',search_projects:'搜索项目名称、标签…',news_range_all:'全部时间',news_range_today:'今天',news_range_7d:'近 7 天',news_source:'来源',news_view:'查看原文',news_empty:'暂无新闻，每日更新后将自动出现。',projects_empty:'暂无项目，点击「添加项目」开始收录。',btn_add_project:'添加项目',project_modal_title:'添加项目',p_name:'项目名称',p_name_ph:'请输入项目名称',p_desc:'项目简介',p_desc_ph:'一句话描述项目',p_url:'项目链接',p_url_ph:'请输入项目访问链接',p_tags:'标签（逗号分隔）',p_tags_ph:'用逗号分隔多个标签',project_open:'打开项目',custom_tag:'自定义',toast_project_fields:'请填写项目名称、简介与链接',toast_project_added:'项目已添加',src_orig:'原文',src_web:'网络补充',src_webupd:'网络更新',src_user:'用户原文',type_cloud:'云服务器',type_vm:'云主机',type_serverless:'Serverless',type_hosting:'托管平台',type_domain:'域名',type_vhost:'虚拟主机',type_db:'数据库',cd_daily:'每日',cd_monthly:'每月',cd_once:'一次性',cd_perm:'永久',cd_usage:'按量',cd_weekly:'每周',cd_year:'一年',cd_12m:'12个月',cd_6m:'6个月',cd_12mperm:'12个月 + 永久',cd_permonce:'永久 + 一次性',cd_45d:'每45天续期',cd_renewyear:'每年续期',cd_13m:'1-3个月',reg_domestic:'国内',reg_overseas:'海外',reg_domintl:'国内/国际',reg_ovdom:'海外/国内可用',lv_beginner:'入门',lv_intermediate:'进阶',lv_advanced:'高级',lv_high:'高阶',lv_b2i:'入门→进阶',lv_b2a:'入门→高级',lg_zh:'中文',lg_en:'英文',tk_download:'下载安装',tk_web:'网页入口',tk_selfhost:'开源自托管',nav_airdrop:'零撸空投项目',title_airdrop:'零撸空投项目',sub_airdrop:'零本金参与 · 规则透明 · 附领取教程与安全提示',notice_airdrop:'<b>零撸空投项目：</b>只收录零本金可参与、规则透明可验证的空投项目，附领取教程与安全提示。每日 00:00 自动搜索全网新增空投，去重后追加，自检通过才同步。<b>添加项目仅限管理员</b>（点击导航栏「管理系统」开启管理模式）；普通访客仅可浏览。空投有风险，参与前请务必阅读官方规则，谨防假冒页面。',stat_airdrop:'收录空投项目',stat_airdrop_claim:'领取进行中',stat_airdrop_custom:'自定义项目',search_airdrop:'搜索项目名称、链、标签…',airdrop_empty:'暂无空投项目，每日自动搜索后将出现。',btn_add_airdrop:'＋ 添加空投项目',airdrop_modal_title:'添加空投项目',a_name:'项目名称 *',a_name_ph:'如 AS Aster 第六阶段',a_desc:'项目简介 *',a_desc_ph:'一句话说明项目做什么、凭什么零撸',a_url:'官网 / 领取页链接 *',a_url_ph:'请输入官方链接',a_chain:'所在链 / 网络',a_chain_ph:'如 BSDC / ETH / SOL',a_reward:'奖励内容',a_reward_ph:'如 64,000,000 ASTER',a_claim:'领取方式',a_claim_ph:'如 连接钱包一键领取',a_deadline:'领取截止',a_steps_t:'领取教程',a_safety_t:'安全提示',a_tags:'标签（逗号分隔）',a_tags_ph:'空投, 零撸, 进行中',toast_airdrop_fields:'请填写项目名称、简介与链接',toast_airdrop_added:'空投项目已添加',confirm_del_airdrop:'确定删除这个自定义空投项目吗？',toast_admin_only:'仅管理员可操作，请先开启管理模式',
 skcat_agent:'Agent 开发 / 工作流',skcat_cloud:'云服务 / 运维',skcat_fe:'前端设计',skcat_fe_ds:'前端设计 / 设计系统',skcat_be:'后端开发 / Rust',skcat_mm:'多媒体创作',skcat_sec:'安全审计',skcat_dev:'开发工程',skcat_opt:'技能优化 / Agent',skcat_eff_cloud:'效率 / 云盘',skcat_eff_collab:'效率 / 协作',skcat_mem:'效率记忆',skcat_data:'数据科研',skcat_office:'文档办公',skcat_browser:'浏览器自动化',skcat_game:'游戏开发 / 游戏特效',skcat_mkt:'营销增长',skcat_video_agent:'视频制作 / Agent',skcat_video_cam:'视频制作 / 运镜',skcat_res:'资源目录',tucat_aigc:'AIGC创意与视觉设计',tucat_biz:'AI商业战略与产品',tucat_gov:'AI安全、治理与伦理',tucat_wf:'AI工作流与自动化',tucat_agent:'Agent 开发',tucat_agent_gc:'Agent 开发 / Google Cloud',tucat_agent_mcp:'Agent 开发与 MCP',tucat_agent_pat:'Agent 开发与设计模式',tucat_emb:'具身智能与硬件AI',tucat_llm:'大模型应用与开发',tucat_ml:'机器学习基础',tucat_gpu:'深度学习 / GPU 计算',
-fmt_nb_mini:'Notebook 微课程',fmt_nb:'Notebook 课程',fmt_yt:'YouTube 视频',fmt_col:'专栏',fmt_col_pod:'专栏 / 播客',fmt_zhrepo:'中文课程 + 代码仓库',fmt_gpulab:'云 GPU Lab',fmt_lab:'交互实验室',fmt_recipe:'代码食谱',fmt_spec:'在线专项课',fmt_book:'在线书',fmt_manual:'在线手册',fmt_course:'在线课程',fmt_courselab:'在线课程 + Lab',fmt_sec:'安全指南',fmt_doc:'官方文档',fmt_fw:'官方框架',fmt_guide:'实战指南',fmt_article:'实战文章',fmt_oszh:'开源中文课程',fmt_os:'开源教程',fmt_oslib:'开源教程库',fmt_osdoc:'开源文档',fmt_oscourse:'开源课程',fmt_osproj:'开源项目',fmt_doct:'文档教程',fmt_docc:'文档课程',fmt_law:'法规解读',fmt_series:'视频系列',fmt_video:'视频课程',fmt_res:'资源指南',fmt_uni:'高校课程',mg_c_light:'一、C端轻资产变现',mg_b_service:'二、B端重服务与解决方案',mg_b_content:'二、内容与流量变现',mg_model:'三、主流商业化收费模式',mg_b_svc2:'三、B 端服务变现',mg_brand:'四、个人品牌变现',mg_advice:'四、核心破局建议'
+fmt_nb_mini:'Notebook 微课程',fmt_nb:'Notebook 课程',fmt_yt:'YouTube 视频',fmt_col:'专栏',fmt_col_pod:'专栏 / 播客',fmt_zhrepo:'中文课程 + 代码仓库',fmt_gpulab:'云 GPU Lab',fmt_lab:'交互实验室',fmt_recipe:'代码食谱',fmt_spec:'在线专项课',fmt_book:'在线书',fmt_manual:'在线手册',fmt_course:'在线课程',fmt_courselab:'在线课程 + Lab',fmt_sec:'安全指南',fmt_doc:'官方文档',fmt_fw:'官方框架',fmt_guide:'实战指南',fmt_article:'实战文章',fmt_oszh:'开源中文课程',fmt_os:'开源教程',fmt_oslib:'开源教程库',fmt_osdoc:'开源文档',fmt_oscourse:'开源课程',fmt_osproj:'开源项目',fmt_doct:'文档教程',fmt_docc:'文档课程',fmt_law:'法规解读',fmt_series:'视频系列',fmt_video:'视频课程',fmt_res:'资源指南',fmt_uni:'高校课程',mg_c_light:'一、C端轻资产变现',mg_b_service:'二、B端重服务与解决方案',mg_b_content:'二、内容与流量变现',mg_model:'三、主流商业化收费模式',mg_b_svc2:'三、B 端服务变现',mg_brand:'四、个人品牌变现',mg_advice:'四、核心破局建议',
+btn_admin_panel:'⚙ 管理系统',admin_panel_title:'管理系统',admin_panel_sub:'统一管理管理模式、自定义空投项目与数据备份',admin_mode_toggle:'管理员模式',admin_mode_desc:'开启后可在各板块添加自定义项目并管理数据；关闭后仅可浏览',btn_admin_close:'退出管理',btn_admin_go_airdrop:'去空投板块添加',admin_panel_stats:'数据概览',admin_panel_stats_desc:'各板块自定义项目数量统计',admin_panel_custom:'自定义内容管理',admin_panel_custom_desc:'快速跳转到对应板块管理自定义项目',admin_panel_airdrop:'空投自定义项目',admin_panel_airdrop_empty:'暂无自定义空投项目，到空投板块添加第一个吧',admin_panel_import:'数据备份',admin_panel_import_desc:'导出全部数据备份，或从备份文件恢复',btn_export:'导出备份',btn_import:'导入备份',toast_airdrop_updated:'空投项目已更新',toast_airdrop_bad_url:'链接格式不正确，请输入以 http:// 或 https:// 开头的完整网址',toast_airdrop_dup:'已存在名称或链接相同的空投项目',toast_airdrop_no_change:'内容没有变化',airdrop_edit:'编辑空投项目',airdrop_edit_btn:'编辑',btn_add_airdrop:'＋ 添加空投项目',a_url_hint:'必须以 http:// 或 https:// 开头，且为完整可访问的网址',a_steps_ph:'每行一个操作步骤，如：1. 打开官网',a_safety_ph:'如：不输入助记词、不转保证金、认准官方合约地址',nav_admin:'管理系统',title_admin:'管理系统',sub_admin:'管理模式开关 · 自定义项目与数据备份统一管理',admin_panel_offers:'自定义活动',admin_panel_resources:'自定义资源',admin_panel_skills:'自定义 Skill',admin_panel_tutorials:'自定义教程',admin_panel_projects:'自定义项目',a_status_claiming:'领取中',a_status_ended:'已结束',
 },
 en:{
 doc_title:'SHENJI · GOD AI — The Eye of God, Seeing All Mechanisms',
@@ -15110,10 +15275,10 @@ function renderXiaodou(){
 
 /* ---------- 视图 ---------- */
 var currentView='offers';
-var TITLES={offers:['title_offers','sub_offers'],xiaodou:['title_xiaodou','sub_xiaodou'],resources:['title_resources','sub_resources'],github:['title_github','sub_github'],skills:['title_skills','sub_skills'],tutorials:['title_tutorials','sub_tutorials'],monetization:['title_monetization','sub_monetization'],news:['title_news','sub_news'],projects:['title_projects','sub_projects'],airdrop:['title_airdrop','sub_airdrop'],profile:['title_profile','sub_profile'],records:['title_records','sub_records'],patrol:['title_patrol','sub_patrol'],log:['title_log','sub_log']};
+var TITLES={offers:['title_offers','sub_offers'],xiaodou:['title_xiaodou','sub_xiaodou'],resources:['title_resources','sub_resources'],github:['title_github','sub_github'],skills:['title_skills','sub_skills'],tutorials:['title_tutorials','sub_tutorials'],monetization:['title_monetization','sub_monetization'],news:['title_news','sub_news'],projects:['title_projects','sub_projects'],airdrop:['title_airdrop','sub_airdrop'],profile:['title_profile','sub_profile'],records:['title_records','sub_records'],patrol:['title_patrol','sub_patrol'],log:['title_log','sub_log'],admin:['title_admin','sub_admin']};
 function setView(v){
   currentView=v;
-  ['offers','xiaodou','resources','github','skills','tutorials','monetization','news','projects','airdrop','profile','records','patrol','log'].forEach(function(x){document.getElementById('view-'+x).style.display=x===v?'':'none';});
+  ['offers','xiaodou','resources','github','skills','tutorials','monetization','news','projects','airdrop','profile','records','patrol','log','admin'].forEach(function(x){document.getElementById('view-'+x).style.display=x===v?'':'none';});
   applyAdminVisibility();
   Array.prototype.forEach.call(document.querySelectorAll('#nav button'),function(b){b.classList.toggle('active',b.dataset.view===v);});
   document.getElementById('view-title').textContent=t(TITLES[v][0]);
@@ -15684,8 +15849,75 @@ function renderAirdrops(){
       (tags?'<div class="proj-tags">'+tags+'</div>':'')+
       steps+safety+
       '<div class="ad-foot"><a class="btn primary sm" href="'+esc(p.url)+'" target="_blank" rel="noopener noreferrer">'+esc(t('project_open'))+'</a>'+
-      (p.custom&&loggedIn?'<button class="btn sm danger" data-act="del-airdrop" data-id="'+esc(p.id)+'">'+esc(t('del'))+'</button>':'')+'</div></div>';
+      (p.custom&&isAdminMode()?'<button class="btn sm" data-act="edit-airdrop" data-id="'+esc(p.id)+'" title="'+esc(t('airdrop_edit_btn')||'编辑')+'">✎</button><button class="btn sm danger" data-act="del-airdrop" data-id="'+esc(p.id)+'">'+esc(t('del'))+'</button>':'')+'</div></div>';
   }).join('');
+}
+
+/* ---------- 管理系统 ---------- */
+function setAdminMode(on){
+  try{if(on)localStorage.setItem(ADMIN_KEY,'1');else localStorage.removeItem(ADMIN_KEY);}catch(e){}
+  applyAdminVisibility();
+  toast(t(on?'admin_on':'admin_off'));
+  if(currentView==='admin')renderAdmin();
+}
+function renderAdmin(){
+  var admin=isAdminMode();
+  var tog=document.getElementById('admin-mode-toggle');
+  if(tog)tog.classList.toggle('on',admin);
+  var bIcon=document.getElementById('admin-mode-icon');
+  var bText=document.getElementById('admin-mode-text');
+  if(bIcon)bIcon.textContent=admin?'✓':'⚠';
+  if(bText)bText.innerHTML=admin?'<b>'+esc(t('admin_on'))+'：</b>'+esc(t('admin_mode_desc')):'<b>'+esc(t('toast_admin_only'))+'</b>：'+esc(t('admin_mode_desc'));
+  var banner=document.getElementById('admin-mode-banner');
+  if(banner){banner.classList.toggle('warn',!admin);banner.classList.toggle('info',admin);}
+  var stats=document.getElementById('admin-stats');
+  if(stats){
+    stats.innerHTML=
+      '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px">'+
+      [['offers',getCustom().length,t('btn_add_offer')],
+       ['resources',getCustomRes().length,t('btn_add_resource')],
+       ['skills',getCustomSkills().length,t('btn_add_skill')],
+       ['tutorials',getCustomTutorials().length,t('btn_add_tutorial')],
+       ['projects',getCustomProjects().length,t('btn_add_project')],
+       ['airdrop',getCustomAirdrops().length,t('btn_add_airdrop')]].map(function(x){
+        return '<div style="background:var(--panel2);border:1px solid var(--border-soft);border-radius:10px;padding:12px">'+
+          '<div style="font-size:22px;font-weight:700;color:var(--accent)">'+x[1]+'</div>'+
+          '<div style="font-size:11.5px;color:var(--dim);margin-top:3px">'+esc(t('admin_panel_'+x[0]))+'</div></div>';
+      }).join('')+'</div>';
+  }
+  var clist=document.getElementById('admin-custom-list');
+  if(clist){
+    var entries=[
+      {view:'offers',name:t('btn_add_offer'),n:getCustom().length},
+      {view:'resources',name:t('btn_add_resource'),n:getCustomRes().length},
+      {view:'skills',name:t('btn_add_skill'),n:getCustomSkills().length},
+      {view:'tutorials',name:t('btn_add_tutorial'),n:getCustomTutorials().length},
+      {view:'projects',name:t('btn_add_project'),n:getCustomProjects().length}
+    ];
+    clist.innerHTML=entries.map(function(e){
+      return '<button class="tw-list-item" data-act="go-custom" data-view="'+e.view+'">'+
+        '<span>'+esc(e.name)+'</span><span class="meta">'+e.n+' 项 · '+esc(t('admin_panel_custom_desc'))+'</span></button>';
+    }).join('');
+  }
+  var adList=document.getElementById('admin-airdrop-list');
+  if(adList){
+    var ads=getCustomAirdrops().slice().sort(function(a,b){return String(b.addedAt||'').localeCompare(String(a.addedAt||''));});
+    if(!ads.length){
+      adList.innerHTML='<div class="tw-empty"><div class="e-icon">🪂</div><div class="e-text">'+esc(t('admin_panel_airdrop_empty'))+'</div></div>';
+    }else{
+      adList.innerHTML=ads.map(function(a){
+        var st=String(a.status||'claiming')==='ended'?'s-red':'s-green';
+        var stTxt=String(a.status||'claiming')==='ended'?t('a_status_ended'):t('a_status_claiming');
+        return '<div class="tw-list-item" style="cursor:default">'+
+          '<span style="flex:1;min-width:0"><b style="display:block;color:var(--text);font-size:13px">'+esc(a.name)+'</b>'+
+          '<span style="font-size:11px;color:var(--dim)">'+esc(a.chain||'')+' · '+esc(a.url)+'</span></span>'+
+          '<span class="tw-status '+st+'">'+esc(stTxt)+'</span>'+
+          (admin?'<span style="display:flex;gap:4px;flex-shrink:0"><button class="tw-btn tw-btn-outline tw-btn-sm" data-act="edit-airdrop" data-id="'+esc(a.id)+'">'+esc(t('airdrop_edit_btn')||'编辑')+'</button>'+
+          '<button class="tw-btn tw-btn-danger outline tw-btn-sm" data-act="del-airdrop" data-id="'+esc(a.id)+'">'+esc(t('del'))+'</button></span>':'')+
+          '</div>';
+      }).join('');
+    }
+  }
 }
 function render(){
   renderStats();
@@ -15703,6 +15935,7 @@ function render(){
   if(currentView==='records')renderRecords();
   if(currentView==='patrol')renderPatrol();
   if(currentView==='log')renderLog();
+  if(currentView==='admin')renderAdmin();
 }
 
 /* ---------- 巡检中心 ---------- */
@@ -15961,22 +16194,39 @@ function openProjectModal(){
   var foot='<button class="btn" data-act="close-modal">'+esc(t('modal_cancel'))+'</button><button class="btn primary" data-act="save-project">'+esc(t('btn_add_project'))+'</button>';
   openModal(t('project_modal_title'),body,foot);
 }
-function openAirdropModal(){
+var editingAdId=null;
+function openAirdropModal(editId){
   if(!isAdminMode()){toast(t('toast_admin_only'));return;}
-  var body='<div class="form-grid">'+
-    '<div class="field" style="grid-column:1/-1"><label>'+esc(t('a_name'))+'</label><input id="a-name" placeholder="'+esc(t('a_name_ph'))+'"></div>'+
-    '<div class="field" style="grid-column:1/-1"><label>'+esc(t('a_desc'))+'</label><input id="a-desc" placeholder="'+esc(t('a_desc_ph'))+'"></div>'+
-    '<div class="field" style="grid-column:1/-1"><label>'+esc(t('a_url'))+'</label><input id="a-url" placeholder="'+esc(t('a_url_ph'))+'"></div>'+
-    '<div class="field"><label>'+esc(t('a_chain'))+'</label><input id="a-chain" placeholder="'+esc(t('a_chain_ph'))+'"></div>'+
-    '<div class="field"><label>'+esc(t('a_reward'))+'</label><input id="a-reward" placeholder="'+esc(t('a_reward_ph'))+'"></div>'+
-    '<div class="field"><label>'+esc(t('a_claim'))+'</label><input id="a-claim" placeholder="'+esc(t('a_claim_ph'))+'"></div>'+
-    '<div class="field"><label>'+esc(t('a_deadline'))+'</label><input id="a-deadline" type="date"></div>'+
-    '<div class="field" style="grid-column:1/-1"><label>'+esc(t('a_tags'))+'</label><input id="a-tags" placeholder="'+esc(t('a_tags_ph'))+'"></div>'+
-    '<div class="field" style="grid-column:1/-1"><label>'+esc(t('a_steps_t'))+'</label><textarea id="a-steps" rows="4" placeholder="'+esc(t('a_steps_t'))+'"></textarea></div>'+
-    '<div class="field" style="grid-column:1/-1"><label>'+esc(t('a_safety_t'))+'</label><textarea id="a-safety" rows="3"></textarea></div>'+
-    '</div>';
-  var foot='<button class="btn" data-act="close-modal">'+esc(t('modal_cancel'))+'</button><button class="btn primary" data-act="save-airdrop">'+esc(t('btn_add_airdrop'))+'</button>';
-  openModal(t('airdrop_modal_title'),body,foot);
+  editingAdId=(editId!==undefined&&editId!==null)?String(editId):null;
+  var cur=null;
+  if(editingAdId){
+    cur=getCustomAirdrops().filter(function(x){return String(x.id)===editingAdId;})[0];
+    if(!cur){toast(t('toast_deleted'));render();return;}
+  }
+  function row(label,inner,hint){
+    return '<div class="tw-form-row">'+(hint?'<label>'+esc(label)+'</label>':'<label>'+esc(label)+'<span class="req">*</span></label>')+inner+
+      (hint?'<div class="t-desc" style="margin-top:4px">'+hint+'</div>':'')+'</div>';
+  }
+  function field(id,val,ph){
+    return '<input class="tw-input" id="'+id+'" value="'+esc(val||'')+'" placeholder="'+esc(ph)+'">';
+  }
+  var body=''+
+    row(t('a_name'),field('a-name',cur&&cur.name,t('a_name_ph')))+
+    row(t('a_desc'),field('a-desc',cur&&cur.desc,t('a_desc_ph')))+
+    row(t('a_url'),field('a-url',cur&&cur.url,t('a_url_ph')),t('a_url_hint'))+
+    row(t('a_chain'),field('a-chain',cur&&cur.chain,t('a_chain_ph')))+
+    row(t('a_reward'),field('a-reward',cur&&cur.reward,t('a_reward_ph')))+
+    row(t('a_claim'),field('a-claim',cur&&cur.claimMethod,t('a_claim_ph')))+
+    row(t('a_deadline'),'<input class="tw-input" id="a-deadline" type="date" value="'+esc(cur&&cur.deadline||'')+'">')+
+    row(t('a_tags'),field('a-tags',(cur&&cur.tags||[]).join('，'),t('a_tags_ph')))+
+    row(t('a_steps_t'),'<textarea class="tw-textarea" id="a-steps" placeholder="'+esc(t('a_steps_ph')||t('a_steps_t'))+'">'+esc((cur&&cur.steps||[]).join('\n'))+'</textarea>')+
+    row(t('a_safety_t'),'<textarea class="tw-textarea" id="a-safety" placeholder="'+esc(t('a_safety_ph')||t('a_safety_t'))+'">'+esc(cur&&cur.safety||'')+'</textarea>')+
+    '<div class="tw-hint" id="a-url-err"></div>';
+  var isEdit=!!cur;
+  var foot='<button class="btn" data-act="close-modal">'+esc(t('modal_cancel'))+'</button>'+
+    '<button class="tw-btn tw-btn-primary" data-act="save-airdrop">'+esc(isEdit?t('airdrop_edit_btn')||'编辑':t('btn_add_airdrop'))+'</button>';
+  openModal(isEdit?t('airdrop_edit'):t('airdrop_modal_title'),body,foot);
+  setTimeout(function(){var el=document.getElementById('a-name');if(el)el.focus();},100);
 }
 
 /* ---------- 事件 ---------- */
@@ -16210,20 +16460,50 @@ document.addEventListener('click',function(e){
     var adName=document.getElementById('a-name').value.trim();
     var adDesc=document.getElementById('a-desc').value.trim();
     var adUrl=document.getElementById('a-url').value.trim();
+    var errEl=document.getElementById('a-url-err');
+    function showErr(msg){if(errEl){errEl.textContent=msg;errEl.classList.add('show');}}
+    if(errEl){errEl.textContent='';errEl.classList.remove('show');}
+    ['a-name','a-desc','a-url','a-chain','a-reward','a-claim','a-tags','a-steps','a-safety','a-deadline'].forEach(function(id){
+      var el=document.getElementById(id);if(el)el.classList.remove('err');
+    });
     if(!adName||!adDesc||!adUrl){toast(t('toast_airdrop_fields'));return;}
+    if(!/^https?:\/\/.+\..+/i.test(adUrl)){
+      var uerr=document.getElementById('a-url');if(uerr)uerr.classList.add('err');
+      showErr(t('toast_airdrop_bad_url'));toast(t('toast_airdrop_bad_url'));return;
+    }
     var adList=getCustomAirdrops();
-    adList.push({
-      id:'custom-ad-'+Date.now(),name:adName,desc:adDesc,url:adUrl,
+    var dup=adList.filter(function(x){
+      return String(x.name).trim()===adName&&String(x.id)!==editingAdId;
+    }).length>0||adList.some(function(x){
+      return String(x.url).trim()===adUrl&&String(x.id)!==editingAdId;
+    });
+    if(dup){toast(t('toast_airdrop_dup'));return;}
+    var adItem={
+      name:adName,desc:adDesc,url:adUrl,
       chain:document.getElementById('a-chain').value.trim(),
       reward:document.getElementById('a-reward').value.trim(),
       claimMethod:document.getElementById('a-claim').value.trim(),
       deadline:document.getElementById('a-deadline').value||null,
       steps:document.getElementById('a-steps').value.split(/\r?\n/).map(function(x){return x.trim();}).filter(Boolean),
       safety:document.getElementById('a-safety').value.trim(),
-      tags:document.getElementById('a-tags').value.split(/[，,]/).map(function(x){return x.trim();}).filter(Boolean),
-      status:'claiming',addedAt:new Date().toISOString().slice(0,10),custom:true
-    });
-    save(K_CUSTOM_AD,adList);closeModal();toast(t('toast_airdrop_added'));render();
+      tags:document.getElementById('a-tags').value.split(/[，,]/).map(function(x){return x.trim();}).filter(Boolean)
+    };
+    var cur=editingAdId?adList.filter(function(x){return String(x.id)===editingAdId;})[0]:null;
+    if(cur){
+      if(JSON.stringify(cur)==JSON.stringify(Object.assign({},cur,adItem))){toast(t('toast_airdrop_no_change'));editingAdId=null;closeModal();return;}
+      Object.assign(cur,adItem,{updatedAt:new Date().toISOString()});
+      save(K_CUSTOM_AD,adList);closeModal();toast(t('toast_airdrop_updated'));render();
+    }else{
+      adItem.id='custom-ad-'+Date.now();
+      adItem.status='claiming';adItem.addedAt=new Date().toISOString().slice(0,10);adItem.custom=true;
+      adList.push(adItem);
+      save(K_CUSTOM_AD,adList);closeModal();toast(t('toast_airdrop_added'));render();
+    }
+    editingAdId=null;
+  }
+  else if(act==='edit-airdrop'){
+    if(!isAdminMode()){toast(t('toast_admin_only'));return;}
+    openAirdropModal(id);
   }
   else if(act==='del-airdrop'){
     if(!isAdminMode()){toast(t('toast_admin_only'));return;}
@@ -16232,6 +16512,12 @@ document.addEventListener('click',function(e){
     if(!confirm(t('confirm_del_airdrop')))return;
     save(K_CUSTOM_AD,getCustomAirdrops().filter(function(x){return String(x.id)!==id;}));
     toast(t('toast_deleted'));render();
+  }
+  else if(act==='admin-toggle'){setAdminMode(!isAdminMode());return;}
+  else if(act==='go-custom'){setView(b.dataset.view||'offers');return;}
+  else if(act==='go-airdrop-add'){
+    if(!isAdminMode()){toast(t('toast_admin_only'));return;}
+    setView('airdrop');setTimeout(function(){var b=document.querySelector('[data-act="add-airdrop"]');if(b)b.click();},120);
   }
   else if(act==='save-tutorial'){
     var title=document.getElementById('t-title').value.trim();
