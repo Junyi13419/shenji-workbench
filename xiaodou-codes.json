@@ -1,7 +1,73 @@
 {
-  "lastUpdated": "2026-11-27 13:56 北京时间",
-  "lastSinceId": "2126189808695578629",
+  "lastUpdated": "2026-11-27 19:01 北京时间",
+  "lastSinceId": "2126267708341915818",
   "codes": [
+    {
+      "code": "A5W6MT",
+      "postId": "2126261005621788690",
+      "author": "deanshen7",
+      "postUrl": "https://x.com/deanshen7/status/2126261005621788690",
+      "postedAt": "2026-11-27 18:25:02 北京时间",
+      "postedAtUtc": "2026-11-27T10:25:02.000Z",
+      "replyCount": 3,
+      "status": "maybe_used",
+      "expires": "2026-11-29 17:32"
+    },
+    {
+      "code": "QNEB2R",
+      "postId": "2126259514760720787",
+      "author": "SignalNewsDaily",
+      "postUrl": "https://x.com/SignalNewsDaily/status/2126259514760720787",
+      "postedAt": "2026-11-27 18:19:06 北京时间",
+      "postedAtUtc": "2026-11-27T10:19:06.000Z",
+      "replyCount": 1,
+      "status": "maybe_used"
+    },
+    {
+      "code": "KBCAUY",
+      "postId": "2126250728595624027",
+      "author": "Chieh_Zh",
+      "postUrl": "https://x.com/Chieh_Zh/status/2126250728595624027",
+      "postedAt": "2026-11-27 17:44:12 北京时间",
+      "postedAtUtc": "2026-11-27T09:44:12.000Z",
+      "replyCount": 0,
+      "status": "maybe_available"
+    },
+    {
+      "code": "3RGZM5",
+      "postId": "2126243841934348700",
+      "author": "runyixuan",
+      "postUrl": "https://x.com/runyixuan/status/2126243841934348700",
+      "postedAt": "2026-11-27 17:16:50 北京时间",
+      "postedAtUtc": "2026-11-27T09:16:50.000Z",
+      "replyCount": 0,
+      "status": "maybe_available",
+      "expires": "2026-11-29 17:14"
+    },
+    {
+      "code": "M-Z5U953",
+      "postId": "2126242317350944792",
+      "author": "peng_xun",
+      "postUrl": "https://x.com/peng_xun/status/2126242317350944792",
+      "postedAt": "2026-11-27 17:10:46 北京时间",
+      "postedAtUtc": "2026-11-27T09:10:46.000Z",
+      "replyCount": 0,
+      "status": "maybe_available",
+      "officialUrl": "https://activity.doubao.com/ug/invite-share/M-Z5U953",
+      "note": "官方邀请页 https://activity.doubao.com/ug/invite-share/M-Z5U953",
+      "expires": "2026-11-29 17:01"
+    },
+    {
+      "code": "Z5U953",
+      "postId": "2126242317350944792",
+      "author": "peng_xun",
+      "postUrl": "https://x.com/peng_xun/status/2126242317350944792",
+      "postedAt": "2026-11-27 17:10:46 北京时间",
+      "postedAtUtc": "2026-11-27T09:10:46.000Z",
+      "replyCount": 0,
+      "status": "maybe_available",
+      "expires": "2026-11-29 17:01"
+    },
     {
       "code": "W36Z5Q",
       "postId": "2126189541375840360",
