@@ -47,36 +47,9 @@
  *   tier 100=权威, 50=推荐, 20=实用
  */
 window.TOKEN_WORKBENCH_DATA = {
-  "lastUpdated": "2026-11-26T00:14:08+08:00",
+  "lastUpdated": "2026-11-28T02:26:40+08:00",
   "nextCheck": "每日 09:00 自动搜索更新",
   "offers": [
-    {
-      "id": "qiniu-conatus",
-      "provider": "七牛云 Conatus",
-      "title": "每天免费 1 亿 Token，充值后最高 10 亿/天",
-      "quota": "每天 1 亿 Token；单笔充值满 100 元后每日上限升至 10 亿 Token",
-      "quotaTier": 100,
-      "cadence": "每日",
-      "claimMethod": "完成实名认证后，调用模型 qiniu/conatus-free",
-      "url": "https://www.qiniu.com/ai/free-models/conatus-2026",
-      "deadline": "2026-11-30",
-      "deadlineText": "2026-11-30 截止",
-      "requirements": [
-        "实名认证",
-        "七牛云账号"
-      ],
-      "region": "国内",
-      "source": "原文",
-      "sourceUrl": "https://mp.weixin.qq.com/s/6YO6uWC0mW0q-AOEzBCObA",
-      "tags": [
-        "超大额度",
-        "实名认证",
-        "限时"
-      ],
-      "notes": "本期额度最大的国内活动。另有常规注册礼约 300 万 Token，可一并领取。",
-      "discoveredAt": "2026-11-23",
-      "statusTag": "active"
-    },
     {
       "id": "scnet",
       "provider": "超算互联网",
@@ -1339,7 +1312,8 @@ window.TOKEN_WORKBENCH_DATA = {
         "每日重置",
         "工具调用",
         "多模态",
-        "国内"
+        "国内",
+        "本期最大额度"
       ],
       "notes": "2026-11-25 官网活动页复核：活动 2026-10-24 至 11-30，认证用户每日 1 亿 Token，充值后 10 亿；免费额度不结转、活动结束即停。",
       "discoveredAt": "2026-11-25",
@@ -3260,6 +3234,41 @@ window.TOKEN_WORKBENCH_DATA = {
       "notes": "2026-11-26 多篇 2026 免费云资源盘点收录（原 Linode 系）；需经指定推广入口，额度以活动页为准。",
       "discoveredAt": "2026-11-26",
       "statusTag": "active"
+    },
+    {
+      "id": "liveterminal-blackfriday-vps",
+      "provider": "LiveTerminal",
+      "title": "4核8G DDR5 VPS 首年免费（Cyber Monday 活动）",
+      "type": "云服务器",
+      "quota": "首年 $0（原价 $9.99/月）：4 vCPU（AMD Ryzen 9 7950X3D 共享）/ 8GB DDR5 / 10GB NVMe / 1Gbps 共享带宽不限流量 / 芬兰机房 NAT 共享 IPv4",
+      "quotaTier": 10,
+      "cadence": "一次性",
+      "claimMethod": "① 官网注册新账号 ② 打开控制面板右下角聊天窗口 ③ 发送活动口令「LET Cyber Monday」申请升级 Lite 套餐",
+      "url": "https://liveterminal.ai",
+      "deadline": "2026-11-30",
+      "deadlineText": "2026-11-30 23:59（美国太平洋时间）",
+      "requirements": [
+        "需为新注册账号",
+        "需在面板聊天窗口发送口令「LET Cyber Monday」申请",
+        "每月提交两三行使用反馈",
+        "连续 14 天不使用可能被回收",
+        "每人限领一台"
+      ],
+      "region": "海外",
+      "source": "原文",
+      "sourceUrl": "https://liveterminal.ai",
+      "tags": [
+        "限时免费",
+        "首年免费",
+        "Cyber Monday",
+        "高配置",
+        "DDR5",
+        "芬兰机房",
+        "需活跃"
+      ],
+      "notes": "2026-11-28 官网复核：定价页标注 From $9.99/month、4 vCPU / 8GB / 10GB，与活动描述一致。适合跑轻量 AI 工具、自动化脚本、Docker 项目；额外扩容收费，NAT 共享 IP 非独占公网 IPv4，重要数据仍需自备份。",
+      "discoveredAt": "2026-11-28",
+      "statusTag": "ending"
     }
   ],
   "githubTrending": [
@@ -3425,42 +3434,6 @@ window.TOKEN_WORKBENCH_DATA = {
       ]
     },
     {
-      "id": "daily-mvanhorn-last30days-skill",
-      "rank": 10,
-      "period": "today",
-      "fullName": "mvanhorn/last30days-skill",
-      "language": "Python",
-      "stars": 74236,
-      "forks": 6545,
-      "gain": 703,
-      "description": "智能体技能：聚合 Reddit、X、YouTube、HN 等近 30 天内容，自动调研任意主题并生成报告。",
-      "url": "https://github.com/mvanhorn/last30days-skill",
-      "discoveredAt": "2026-11-23",
-      "tags": [
-        "AI Agent",
-        "调研",
-        "技能包"
-      ]
-    },
-    {
-      "id": "daily-google-stitch-skills",
-      "rank": 11,
-      "period": "today",
-      "fullName": "google-labs-code/stitch-skills",
-      "language": "TypeScript",
-      "stars": 12663,
-      "forks": 1525,
-      "gain": 403,
-      "description": "配合 Stitch MCP 服务器使用的 Agent Skills 库，用于生成和编辑界面设计稿。",
-      "url": "https://github.com/google-labs-code/stitch-skills",
-      "discoveredAt": "2026-11-23",
-      "tags": [
-        "Google",
-        "MCP",
-        "AI Agent"
-      ]
-    },
-    {
       "id": "daily-mjmirza-app-store-compliance",
       "rank": 12,
       "period": "today",
@@ -3565,7 +3538,9 @@ window.TOKEN_WORKBENCH_DATA = {
         "Google",
         "MCP",
         "AI Agent"
-      ]
+      ],
+      "rankToday": 11,
+      "notes": "同一仓库今日榜第 11、本周榜第 2，已合并为一条。"
     },
     {
       "id": "weekly-googlechrome-modern-web-guidance",
@@ -3619,7 +3594,9 @@ window.TOKEN_WORKBENCH_DATA = {
         "AI Agent",
         "调研",
         "技能包"
-      ]
+      ],
+      "rankToday": 10,
+      "notes": "同一仓库今日榜第 10、本周榜第 5，已合并为一条。"
     },
     {
       "id": "weekly-chromedevtools-mcp",
@@ -5658,25 +5635,6 @@ window.TOKEN_WORKBENCH_DATA = {
         "漏洞"
       ],
       "notes": "CC BY-SA 4.0，安全方向首选。",
-      "discoveredAt": "2026-11-23",
-      "status": "active"
-    },
-    {
-      "id": "sk-security-guidance",
-      "name": "security-guidance",
-      "repo": "anthropics/claude-plugins-official",
-      "category": "安全审计",
-      "desc": "官方安全检查清单：密钥处理、依赖风险与常见注入防护。",
-      "install": "/plugin 中搜索 security-guidance",
-      "url": "https://github.com/anthropics/claude-plugins-official",
-      "sourceUrl": "https://github.com/anthropics/claude-plugins-official",
-      "installs": "官方",
-      "tier": 50,
-      "tags": [
-        "安全",
-        "官方"
-      ],
-      "notes": "官方市场已经内置。",
       "discoveredAt": "2026-11-23",
       "status": "active"
     },
@@ -8041,27 +7999,6 @@ window.TOKEN_WORKBENCH_DATA = {
         "机器学习",
         "Notebook",
         "免费证书"
-      ],
-      "tier": 100,
-      "discoveredAt": "2026-11-24",
-      "status": "active"
-    },
-    {
-      "id": "tu-datawhale-hello-agents",
-      "title": "Hello-Agents 智能体系统教程",
-      "category": "大模型应用与开发",
-      "org": "Datawhale",
-      "level": "入门→进阶",
-      "format": "中文课程 + 代码仓库",
-      "lang": "中文",
-      "duration": "分阶段作业",
-      "desc": "Datawhale 出品的中文智能体系统教程，从 Agent 原理到多智能体实战，配代码仓库与阶段作业，2026 年 Agent 开发方向的首选免费中文路径。",
-      "url": "https://github.com/datawhalechina/hello-agents",
-      "sourceUrl": "https://usefulai.cloud/courses",
-      "tags": [
-        "Agent",
-        "中文",
-        "Datawhale"
       ],
       "tier": 100,
       "discoveredAt": "2026-11-24",
@@ -11509,6 +11446,16 @@ window.TOKEN_WORKBENCH_DATA = {
     }
   ],
   "updateLog": [
+    {
+      "date": "2026-11-28",
+      "summary": "去重清理 5 条：七牛 Conatus 同日重复 1、GitHub 同仓库跨榜重复 2（已合并标注双榜名次）、claude-plugins-official 同 url 冗余 1、Hello-Agents 同教程重复 1",
+      "source": "人工复核"
+    },
+    {
+      "date": "2026-11-28",
+      "summary": "resources +1：LiveTerminal 4核8G DDR5 VPS 首年免费（Cyber Monday 口令申请，11-30 截止）",
+      "source": "https://liveterminal.ai"
+    },
     {
       "date": "2026-11-26",
       "summary": "免费Token新增 3 条（Linkup 4,000 次免费查询、Routeway 免费档每日 200 次请求、Tripo AI 免费在线 3D 生成）；公众号 2 篇（《每天免费约 1 亿 Tokens》《Agnes免费生图》）提及的 7 个平台经比对均已收录，offers 无重复新增。免费服务器/域名/数据库资源新增 7 条（Civo 试用赠金、Serv00 永久免费托管、三丰云国内永久免费 VPS、TiDB Cloud 免费数据库、IONOS Cloud、Kamatera、Akamai Cloud）。GitHub 热门新增 11 条（ARTEX、rust-anything、ECC、ponytail、OpenMausBot、craft-anything、DeepTutor、hermes-agent、crawl4ai、deer-flow、paperclip、graphify，均经 GitHub API 实时核验）。Skill 新增 15 条（claude-video-effects、line-art-animation、cinematic-skill、sprite-stacking、plotter、creator-generalist、beyondgtaclips、subtle、article2media、blackhole、rounds、lochness、orb-audio、claude-xcode-agent、ai-software-factory）。AI 教程新增 4 条（Evaluating AI Agents、Develop AI Agents on Azure、12-Factor Agents、Agents Towards Production）。AI 变现新增 4 条（AI 网文与有声内容创作、AI Agent 现实执行层服务、出海消费洞察引擎、端侧隐私自动化 Agent）。",
