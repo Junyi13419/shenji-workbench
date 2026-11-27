@@ -15820,7 +15820,7 @@ function cardHtml(o,recs){
     (done?'<span class="chip done">'+esc(t('chip_done'))+'</span>':'');
   var delAct=o.customRes?'del-custom-res':(o.custom?'del-custom':'');
   var _ck=o.customRes?'resource':'offer';var _ph=ghImageName(o.url)||themeImageFor(_ck,o);
-  var cover=mediaCover(_ck,o.id||o.provider,{badge:o.provider,corner:trVal(o.cadence),photo:_ph});
+  var cover=mediaCover(_ck,o.id||o.provider,{badge:o.provider,corner:trVal(o.cadence),photo:o.image||_ph});
   return '<article class="'+cls+'">'+cover+
     '<div class="card-top"><span class="provider">'+esc(o.provider)+'</span>'+chips+'</div>'+
     '<div class="card-title">'+esc(o.title)+'</div>'+
@@ -15892,7 +15892,7 @@ function renderGithub(){
   document.getElementById('gh-cards').innerHTML=list.length?list.map(function(p){
     var rc=p.rank===1?'top1':(p.rank===2?'top2':(p.rank===3?'top3':''));
     var today=p.period==='today';
-    var cover=mediaCover('github',p.id||p.fullName,{badge:p.fullName,corner:'#'+(p.rank||'-')+' · '+(today?t('gh_today'):t('gh_week')),photo:ghImageName(p.url||p.htmlUrl),large:true});
+    var cover=mediaCover('github',p.id||p.fullName,{badge:p.fullName,corner:'#'+(p.rank||'-')+' · '+(today?t('gh_today'):t('gh_week')),photo:p.image||ghImageName(p.url||p.htmlUrl),large:true});
     return '<article class="card">'+cover+
       '<div class="card-top"><span class="rank-badge '+rc+'">'+(p.rank||'-')+'</span><span class="gh-name">'+esc(p.fullName)+'</span><span class="chip">'+(today?esc(t('gh_today')):esc(t('gh_week')))+'</span></div>'+
       '<div class="gh-desc">'+esc(p.description)+'</div>'+
@@ -15936,7 +15936,7 @@ function renderSkills(){
   });
   document.getElementById('sk-cards').innerHTML=list.length?list.map(function(s){
     var id=esc(s.id);
-    var cover=mediaCover('skill',s.id||s.name,{badge:s.name,corner:(s.category?trVal(s.category):t('uncategorized')),photo:ghImageName(s.url)||themeImageFor('skill',s),large:true});
+    var cover=mediaCover('skill',s.id||s.name,{badge:s.name,corner:(s.category?trVal(s.category):t('uncategorized')),photo:s.image||ghImageName(s.url)||themeImageFor('skill',s),large:true});
     return '<article class="card">'+cover+
       '<div class="card-top"><span class="sk-name">'+esc(s.name)+'</span>'+tierChip(s.tier)+'</div>'+
       '<div class="sk-repo">'+esc(s.repo||t('custom_repo'))+' · '+esc(s.category?trVal(s.category):t('uncategorized'))+'</div>'+
@@ -15990,7 +15990,7 @@ function renderTutorials(){
   document.getElementById('tu-cards').innerHTML=list.length?list.map(function(tu){
     var id=esc(tu.id);
     var vf=tu.format||'';
-    var cover=mediaCover('tutorial',tu.id||tu.title,{badge:tu.org||tu.title,corner:(vf?trVal(vf):t('uncategorized')),video:isVideoFormat(vf),duration:(vf&&isVideoFormat(vf))?(tu.duration||''):'',photo:ghImageName(tu.url)||themeImageFor('tutorial',tu),large:true});
+    var cover=mediaCover('tutorial',tu.id||tu.title,{badge:tu.org||tu.title,corner:(vf?trVal(vf):t('uncategorized')),video:isVideoFormat(vf),duration:(vf&&isVideoFormat(vf))?(tu.duration||''):'',photo:tu.image||ghImageName(tu.url)||themeImageFor('tutorial',tu),large:true});
     return '<article class="card">'+cover+
       '<div class="card-top"><span class="tu-title">'+esc(tu.title)+'</span>'+tierChip(tu.tier)+'</div>'+
       '<div class="tu-org">'+esc(tu.org||'—')+' · '+esc(tu.category?trVal(tu.category):t('uncategorized'))+'</div>'+
@@ -16032,7 +16032,7 @@ function moCardHtml(m){
   var resources=(m.resources||[]).map(function(r){
     return '<a href="'+esc(r.url)+'" target="_blank" rel="noopener"><span class="ar">↗</span><span>'+esc(r.name)+'</span></a>';
   }).join('');
-  var cover=mediaCover('money',m.track||m.id,{badge:m.track,corner:moGroupLabel(m.group),photo:themeImageFor('money',m)});
+  var cover=mediaCover('money',m.track||m.id,{badge:m.track,corner:moGroupLabel(m.group),photo:m.image||themeImageFor('money',m)});
   return '<article class="m-card">'+cover+
     '<div class="m-hd"><span class="m-name">'+esc(m.track)+'</span><span class="m-tag">'+esc(m.tagline||'')+'</span></div>'+
     '<div class="m-row"><b>'+esc(t('mo_way'))+'</b>'+esc(m.way)+'</div>'+
@@ -16205,7 +16205,7 @@ function renderNews(){
     var _ni=window.__newsIndexMap&&window.__newsIndexMap[n.title];var _nph=(_ni!==undefined&&_ni!==null&&NEWS_PHOTO_IDX[_ni])?('news__'+_ni+'.webp'):'';
     if(!_nph){var _themes=['th__ai-model.webp','th__ai-tool.webp','th__ai-project.webp','th__ai-cloud.webp','th__ai-video.webp','th__ai-money.webp','th__ai-domain.webp'];
       _nph=_themes[mcHash(n.title||'')%_themes.length];}
-    var cover=mediaCover('news',n.id||n.title,{badge:n.source||t('news_source'),corner:n.date,photo:_nph,large:true});
+    var cover=mediaCover('news',n.id||n.title,{badge:n.source||t('news_source'),corner:n.date,photo:n.image||_nph,large:true});
     return '<article class="card">'+cover+
       '<div class="news-title">'+esc(n.title)+'</div>'+
       '<div class="news-sum">'+esc(n.summary||'')+'</div>'+
@@ -16223,7 +16223,7 @@ function renderProjects(){
   if(!list.length){grid.innerHTML='<div style="text-align:center;padding:45px;color:var(--dim)">'+esc(t('projects_empty'))+'</div>';return;}
   grid.innerHTML=list.map(function(p){
     var tags=(p.tags||[]).map(function(tg){return '<span class="tag">'+esc(tg)+'</span>';}).join('');
-    var cover=mediaCover('project',p.id||p.name,{badge:p.name,corner:(p.tags&&p.tags[0])?trVal(p.tags[0]):t('project_open'),photo:themeImageFor('project',p),large:true});
+    var cover=mediaCover('project',p.id||p.name,{badge:p.name,corner:(p.tags&&p.tags[0])?trVal(p.tags[0]):t('project_open'),photo:p.image||themeImageFor('project',p),large:true});
     return '<div class="card proj-card">'+cover+
       '<div class="proj-head"><span class="proj-ico">✦</span><b>'+esc(p.name)+'</b>'+(p.custom?'<span class="tag custom">'+esc(t('custom_tag'))+'</span>':'')+'</div>'+
       '<div class="proj-desc">'+esc(p.desc||'')+'</div>'+
