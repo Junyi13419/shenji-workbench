@@ -945,6 +945,87 @@ body.tw-modal-open{overflow:hidden}
 .admin-warn{color:#e3b341;border:1px solid rgba(227,179,65,.25)}
 .admin-hit-count{font-size:11.5px;color:var(--dim);margin-bottom:8px}
 @media(max-width:720px){.tw-mini-stats{gap:6px}.tw-mini-stats>div{padding:8px}.admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* ===== 管理控制台 v2 ===== */
+#view-admin .adm-shell{display:flex;flex-direction:column;gap:14px}
+#view-admin .adm-topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 20px;border:1px solid var(--au-line);border-radius:15px;background:linear-gradient(135deg,rgba(232,196,106,.07),rgba(19,16,9,.9))}
+#view-admin .adm-topbar-id{display:flex;align-items:center;gap:13px;min-width:0}
+#view-admin .adm-mark{width:44px;height:44px;flex:none;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--au-gold);background:rgba(232,196,106,.1);border:1px solid rgba(232,196,106,.25)}
+#view-admin .adm-mark svg{width:23px;height:23px}
+#view-admin .adm-title{font-size:16px;font-weight:800;color:var(--au-text);letter-spacing:.02em}
+#view-admin .adm-sub{font-size:11.5px;color:var(--dim);margin-top:3px}
+#view-admin .adm-topbar-actions{display:flex;align-items:center;gap:12px}
+#view-admin .adm-pill{font-size:11px;font-weight:700;padding:5px 11px;border-radius:20px;border:1px solid rgba(232,196,106,.3);color:var(--au-gold);background:rgba(232,196,106,.09)}
+#view-admin .adm-pill.off{color:var(--dim);border-color:var(--border);background:var(--panel2)}
+#view-admin .adm-body{display:grid;grid-template-columns:196px minmax(0,1fr);gap:14px;align-items:start}
+#view-admin .adm-side{position:sticky;top:14px;display:flex;flex-direction:column;gap:4px;padding:12px 10px;border:1px solid var(--border);border-radius:14px;background:var(--panel)}
+#view-admin .adm-side-cap{font-size:10px;letter-spacing:.14em;color:var(--dim);padding:4px 10px 8px;text-transform:uppercase}
+#view-admin .adm-nav{display:flex;align-items:center;gap:10px;width:100%;padding:10px 11px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);font-size:12.5px;font-weight:600;cursor:pointer;text-align:left;transition:background .15s,color .15s,border-color .15s}
+#view-admin .adm-nav:hover{background:var(--panel2);color:var(--text)}
+#view-admin .adm-nav.on{background:rgba(232,196,106,.13);border-color:rgba(232,196,106,.28);color:var(--au-gold)}
+#view-admin .an-ic{width:17px;height:17px;flex:none;display:flex;align-items:center;justify-content:center}
+#view-admin .an-ic svg{width:17px;height:17px}
+#view-admin .an-badge{margin-left:auto;font-size:10px;font-weight:700;color:var(--dim);background:var(--panel2);border-radius:9px;padding:1px 7px}
+#view-admin .adm-nav.on .an-badge{color:var(--au-gold);background:rgba(232,196,106,.16)}
+#view-admin .adm-side-foot{margin-top:8px;padding:10px;border-top:1px solid var(--border-soft);font-size:10px;color:var(--dim);text-align:center}
+#view-admin .adm-main{min-width:0;display:flex;flex-direction:column;gap:0}
+#view-admin .adm-panel{display:none;padding:20px;border:1px solid var(--border);border-radius:14px;background:var(--panel);min-height:420px}
+#view-admin .adm-panel.on{display:block}
+#view-admin .adm-phead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border-soft)}
+#view-admin .adm-phead h3{font-size:16px;font-weight:800;color:var(--au-text);margin:0}
+#view-admin .adm-phead p{font-size:11.5px;color:var(--dim);margin:4px 0 0;flex:1;min-width:180px}
+#view-admin .adm-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:18px}
+#view-admin .adm-metric{padding:15px 16px;border:1px solid var(--border);border-radius:12px;background:var(--panel2)}
+#view-admin .adm-metric .mv{font-size:26px;font-weight:800;color:var(--au-gold);line-height:1.1}
+#view-admin .adm-metric .ml{font-size:11px;color:var(--dim);margin-top:5px}
+#view-admin .adm-metric:nth-child(2) .mv{color:#b9a6ff}
+#view-admin .adm-metric:nth-child(3) .mv{color:var(--text)}
+#view-admin .adm-quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border-soft)}
+#view-admin .adm-quick button{display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 10px;border:1px solid var(--au-line);border-radius:10px;background:var(--panel2);color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;transition:border-color .15s,color .15s}
+#view-admin .adm-quick button:hover{border-color:var(--au-gold);color:var(--au-gold)}
+#view-admin .adm-toolbar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:14px}
+#view-admin .adm-input{background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:9px 11px;color:var(--text);font-size:12px;outline:none;min-width:0}
+#view-admin .adm-input:focus{border-color:var(--au-gold)}
+#view-admin .adm-input.grow{flex:1;min-width:180px}
+#view-admin .adm-btn{padding:9px 14px;border:1px solid var(--border);border-radius:9px;background:var(--panel2);color:var(--text);font-size:12px;font-weight:700;cursor:pointer;transition:border-color .15s}
+#view-admin .adm-btn:hover{border-color:var(--au-gold)}
+#view-admin .adm-btn.primary{background:linear-gradient(135deg,var(--au-gold-2),var(--au-gold));color:#1a1409;border-color:transparent}
+#view-admin .adm-btn.danger{color:#ef8b7a;border-color:rgba(239,139,122,.3)}
+#view-admin .adm-btn.danger:hover{border-color:#ef8b7a}
+#view-admin .adm-btn.sm{padding:5px 10px;font-size:11px;border-radius:7px}
+#view-admin .adm-tablewrap{overflow-x:auto;border:1px solid var(--border-soft);border-radius:11px}
+#view-admin .adm-table{width:100%;border-collapse:collapse;font-size:12px}
+#view-admin .adm-table th{position:sticky;top:0;background:var(--panel2);text-align:left;padding:10px 12px;font-size:10.5px;letter-spacing:.03em;color:var(--dim);border-bottom:1px solid var(--border)}
+#view-admin .adm-table td{padding:10px 12px;border-bottom:1px solid var(--border-soft);color:var(--muted);vertical-align:middle}
+#view-admin .adm-table tr:last-child td{border-bottom:none}
+#view-admin .adm-table tbody tr:hover{background:rgba(232,196,106,.035)}
+#view-admin .adm-ck{width:34px;text-align:center}
+#view-admin .adm-ck input{accent-color:var(--au-gold);cursor:pointer}
+#view-admin .adm-cell-name{color:var(--text);font-weight:600;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#view-admin .adm-tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:6px;background:var(--panel2);border:1px solid var(--border);color:var(--dim)}
+#view-admin .adm-tag.on{color:#7dd3a8;border-color:rgba(125,211,168,.3);background:rgba(125,211,168,.08)}
+#view-admin .adm-tag.off{color:#c99a9a;border-color:rgba(201,154,154,.3);background:rgba(201,154,154,.08)}
+#view-admin .adm-tag.builtin{color:var(--au-gold);border-color:rgba(232,196,106,.3);background:rgba(232,196,106,.08)}
+#view-admin .adm-ops{display:flex;gap:5px;flex-wrap:wrap}
+#view-admin .adm-form .adm-field{margin-bottom:13px}
+#view-admin .adm-form label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:6px;font-weight:600}
+#view-admin .adm-form textarea{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:10px 12px;color:var(--text);font-size:12px;outline:none;resize:vertical}
+#view-admin .adm-form textarea:focus{border-color:var(--au-gold)}
+#view-admin .adm-preview{padding:12px;border:1px dashed var(--au-line);border-radius:10px;background:rgba(232,196,106,.035)}
+#view-admin .adm-preview-label{font-size:10.5px;color:var(--dim);margin-bottom:8px}
+#view-admin .adm-backup-actions{display:flex;gap:10px;flex-wrap:wrap}
+#view-admin .adm-hintbox{margin-top:16px;padding:12px;border:1px solid var(--border-soft);border-radius:10px;background:var(--panel2);font-size:11.5px;color:var(--dim);line-height:1.7}
+#view-admin .adm-empty{text-align:center;padding:42px 16px;color:var(--dim);font-size:12.5px}
+#view-admin .adm-empty b{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
+#view-admin .admin-hint{padding:14px;color:var(--dim);font-size:12px;text-align:center}
+#view-admin .adm-edit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+#view-admin .adm-edit-grid .field{display:flex;flex-direction:column;gap:5px;min-width:0}
+#view-admin .adm-edit-grid .field.wide{grid-column:1/-1}
+#view-admin .adm-edit-grid label{font-size:11px;color:var(--dim)}
+#view-admin .adm-edit-grid input,#view-admin .adm-edit-grid textarea{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;color:var(--text);font-size:12px;outline:none}
+#view-admin .adm-edit-grid input:focus,#view-admin .adm-edit-grid textarea:focus{border-color:var(--au-gold)}
+@media(max-width:980px){#view-admin .adm-body{grid-template-columns:1fr}#view-admin .adm-side{position:static;flex-direction:row;flex-wrap:wrap;gap:5px}#view-admin .adm-side-cap,#view-admin .adm-side-foot{display:none}#view-admin .adm-nav{width:auto}#view-admin .adm-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}#view-admin .adm-quick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){#view-admin .adm-metrics{grid-template-columns:1fr}#view-admin .adm-edit-grid{grid-template-columns:1fr}}
+
 
 .admin-gate{text-align:center;padding:6px 4px 2px}
 .admin-gate .ag-lock{font-size:30px;margin-bottom:6px}
@@ -1554,55 +1635,64 @@ body.tw-modal-open{overflow:hidden}
     </div>
 
     <div id="view-admin" style="display:none">
-      <div class="tw-banner" id="admin-mode-banner">
-        <span class="b-icon" id="admin-mode-icon">⚙</span>
-        <div class="b-body" id="admin-mode-text"></div>
-      </div>
-      <div class="tw-card" style="margin-bottom:14px">
-        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_mode_toggle">管理员模式</div><div class="tw-card-sub" data-i18n="admin_mode_desc">开启后可管理各板块自定义条目与数据；关闭后仅可浏览</div></div></div>
-        <div class="tw-card-body">
-          <div class="tw-toggle-row">
-            <div><div class="t-label" data-i18n="admin_mode_toggle">管理员模式</div></div>
-            <button class="tw-toggle" id="admin-mode-toggle" data-act="admin-toggle"></button>
+      <div class="adm-shell">
+        <div class="adm-topbar">
+          <div class="adm-topbar-id">
+            <div class="adm-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 3v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <div><div class="adm-title" data-i18n="adm_title">管理控制台</div><div class="adm-sub" id="admin-mode-text"></div></div>
+          </div>
+          <div class="adm-topbar-actions">
+            <span class="adm-pill" id="admin-status-pill"></span>
+            <button class="tw-toggle" id="admin-mode-toggle" data-act="admin-toggle" aria-label="管理员模式"></button>
           </div>
         </div>
-      </div>
-
-      <div class="tw-card" style="margin-bottom:14px">
-        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_overview">工作台总览</div><div class="tw-card-sub" data-i18n="admin_overview_desc">全部板块内置与自定义条目实时统计</div></div></div>
-        <div class="tw-card-body" id="admin-overview"></div>
-      </div>
-
-      <div class="tw-card" style="margin-bottom:14px">
-        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_search">全站检索</div><div class="tw-card-sub" data-i18n="admin_search_desc">跨板块搜索任意条目的名称、简介、标签与网址</div></div></div>
-        <div class="tw-card-body">
-          <input class="tw-input" id="admin-search-input" data-i18n-ph="admin_search_ph" placeholder="输入关键词检索全部板块…" autocomplete="off">
-          <div id="admin-search-results" style="margin-top:10px"></div>
-        </div>
-      </div>
-
-      <div class="tw-card" style="margin-bottom:14px">
-        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_manage">自定义内容管理</div><div class="tw-card-sub" data-i18n="admin_manage_desc">管理全部板块的自定义条目，内置条目只读</div></div></div>
-        <div class="tw-card-body" id="admin-custom-manage"></div>
-      </div>
-
-      <div class="tw-card" style="margin-bottom:14px">
-        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_fancy_title">靓号系统设置</div><div class="tw-card-sub" data-i18n="admin_fancy_desc">设置靓号池的号码、说明与备注，保存后立即在前台生效（仅存本机浏览器）</div></div></div>
-        <div class="tw-card-body" id="admin-fancy-manage"></div>
-      </div>
-
-      <div class="tw-card" style="margin-bottom:14px">
-        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_health">数据健康自检</div><div class="tw-card-sub" data-i18n="admin_health_desc">检查重复 ID、无效链接与关键字段缺失</div></div>
-          <button class="tw-btn tw-btn-outline tw-btn-sm" data-act="admin-health-run" data-i18n="admin_health_run">开始自检</button>
-        </div>
-        <div class="tw-card-body" id="admin-health-results"></div>
-      </div>
-
-      <div class="tw-card">
-        <div class="tw-card-head"><div><div class="tw-card-title" data-i18n="admin_panel_import">数据备份</div><div class="tw-card-sub" data-i18n="admin_panel_import_desc">导出全部数据备份，或从备份文件恢复</div></div></div>
-        <div class="tw-card-body" style="display:flex;gap:10px;flex-wrap:wrap">
-          <button class="tw-btn tw-btn-primary" data-act="export">⬇ <span data-i18n="btn_export">导出备份</span></button>
-          <button class="tw-btn tw-btn-outline" data-act="import">⬆ <span data-i18n="btn_import">导入备份</span></button>
+        <div class="adm-body">
+          <nav class="adm-side" id="adm-side">
+            <div class="adm-side-cap" data-i18n="adm_nav_cap">管理模块</div>
+            <button class="adm-nav on" data-act="adm-tab" data-tab="overview"><span class="an-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span data-i18n="adm_tab_overview">总览</span></button>
+            <button class="adm-nav" data-act="adm-tab" data-tab="content"><span class="an-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="7" cy="6" r="1.4" fill="currentColor" stroke="none"/><circle cx="7" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span><span data-i18n="adm_tab_content">内容管理</span><b class="an-badge" id="adm-content-badge">0</b></button>
+            <button class="adm-nav" data-act="adm-tab" data-tab="search"><span class="an-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><span data-i18n="adm_tab_search">全站检索</span></button>
+            <button class="adm-nav" data-act="adm-tab" data-tab="fancy"><span class="an-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.6 6.4L21 11l-6.4 2.6L12 20l-2.6-6.4L3 11l6.4-2.6L12 2z"/></svg></span><span data-i18n="adm_tab_fancy">靓号设置</span></button>
+            <button class="adm-nav" data-act="adm-tab" data-tab="health"><span class="an-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l2-5 3 10 2-5h7"/></svg></span><span data-i18n="adm_tab_health">健康自检</span></button>
+            <button class="adm-nav" data-act="adm-tab" data-tab="backup"><span class="an-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h16v12H4z"/><path d="M8 8V4h8v4M8 13h8M8 17h5"/></svg></span><span data-i18n="adm_tab_backup">数据备份</span></button>
+            <div class="adm-side-foot"><span data-i18n="adm_console_ver">控制台 v2</span></div>
+          </nav>
+          <div class="adm-main">
+            <section class="adm-panel on" data-panel="overview">
+              <div class="adm-phead"><h3 data-i18n="admin_overview">工作台总览</h3><p data-i18n="admin_overview_desc">全部板块内置与自定义条目实时统计</p></div>
+              <div id="admin-overview"></div>
+              <div class="adm-quick" id="adm-quick"></div>
+            </section>
+            <section class="adm-panel" data-panel="content">
+              <div class="adm-phead"><h3 data-i18n="adm_tab_content">内容管理</h3><p data-i18n="adm_content_desc">筛选、编辑、启停、批量删除全部自定义条目</p></div>
+              <div class="adm-toolbar">
+                <select class="adm-input" id="adm-filter-view" data-i18n-title="adm_filter_all"></select>
+                <select class="adm-input" id="adm-filter-state"><option value="" data-i18n="adm_state_all">全部状态</option><option value="on" data-i18n="adm_state_on">已启用</option><option value="off" data-i18n="adm_state_off">已停用</option></select>
+                <input class="adm-input" id="adm-filter-q" data-i18n-ph="admin_search_ph" placeholder="输入关键词筛选…">
+                <button class="adm-btn primary" data-act="adm-add" data-i18n="adm_add">新增条目</button>
+                <button class="adm-btn danger" data-act="adm-batch-del" data-i18n="adm_batch_del">批量删除</button>
+              </div>
+              <div class="adm-tablewrap"><table class="adm-table"><thead><tr><th class="adm-ck"><input type="checkbox" id="adm-check-all"></th><th data-i18n="adm_col_name">名称</th><th data-i18n="adm_col_section">板块</th><th data-i18n="adm_col_state">状态</th><th data-i18n="adm_col_link">链接</th><th data-i18n="adm_col_ops">操作</th></tr></thead><tbody id="admin-custom-manage"></tbody></table></div>
+            </section>
+            <section class="adm-panel" data-panel="search">
+              <div class="adm-phead"><h3 data-i18n="admin_search">全站检索</h3><p data-i18n="admin_search_desc">跨板块搜索任意条目的名称、简介、标签与网址</p></div>
+              <div class="adm-toolbar"><input class="adm-input grow" id="admin-search-input" data-i18n-ph="admin_search_ph" placeholder="输入关键词检索全部板块…" autocomplete="off"></div>
+              <div id="admin-search-results"></div>
+            </section>
+            <section class="adm-panel" data-panel="fancy">
+              <div class="adm-phead"><h3 data-i18n="admin_fancy_title">靓号系统设置</h3><p data-i18n="admin_fancy_desc">设置靓号池的号码、说明与备注，保存后立即在前台生效</p></div>
+              <div class="adm-form" id="admin-fancy-manage"></div>
+            </section>
+            <section class="adm-panel" data-panel="health">
+              <div class="adm-phead"><h3 data-i18n="admin_health">数据健康自检</h3><p data-i18n="admin_health_desc">检查重复 ID、无效链接与关键字段缺失</p><button class="adm-btn primary" data-act="admin-health-run" data-i18n="admin_health_run">开始自检</button></div>
+              <div id="admin-health-results"></div>
+            </section>
+            <section class="adm-panel" data-panel="backup">
+              <div class="adm-phead"><h3 data-i18n="admin_panel_import">数据备份</h3><p data-i18n="admin_panel_import_desc">导出全部数据备份，或从备份文件恢复</p></div>
+              <div class="adm-backup-actions"><button class="adm-btn primary" data-act="export">↓ <span data-i18n="btn_export">导出备份</span></button><button class="adm-btn" data-act="import">↑ <span data-i18n="btn_import">导入备份</span></button></div>
+              <div class="adm-hintbox" data-i18n="adm_backup_hint">备份包含个人资料、注册记录与全部自定义内容；导入会覆盖当前数据，请先导出留存。</div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -1669,7 +1759,7 @@ body.tw-modal-open{overflow:hidden}
  *   tier 100=权威, 50=推荐, 20=实用
  */
 window.TOKEN_WORKBENCH_DATA = {
-  "lastUpdated": "2026-11-28T02:53:30+08:00",
+  "lastUpdated": "2026-11-29T00:10:54+08:00",
   "nextCheck": "每日 09:00 自动搜索更新",
   "offers": [
     {
@@ -3399,6 +3489,64 @@ window.TOKEN_WORKBENCH_DATA = {
       "notes": "2026-11-26 官网实测：免费在线 3D 模型生成，支持高精细雕刻级与引擎可用智能网格，导出 GLB/FBX/OBJ/USD。",
       "discoveredAt": "2026-11-26",
       "statusTag": "active"
+    },
+    {
+      "id": "hyperbolic-free",
+      "provider": "Hyperbolic",
+      "title": "Hyperbolic 注册送 $1 推理额度",
+      "type": "LLM API",
+      "quota": "$1 赠金（手机号验证后到账，可用于推理）",
+      "quotaTier": 20,
+      "cadence": "一次性",
+      "claimMethod": "注册账号并验证手机号，$1 赠金自动到账，可直接调用 OpenAI 兼容推理 API",
+      "url": "https://app.hyperbolic.ai",
+      "deadline": null,
+      "deadlineText": "赠金长期有效（官方未标注过期时间）",
+      "requirements": [
+        "注册账号",
+        "手机号验证"
+      ],
+      "region": "海外",
+      "source": "官方文档",
+      "sourceUrl": "https://www.hyperbolic.ai/docs/inference/overview",
+      "tags": [
+        "推理",
+        "免信用卡",
+        "开源模型",
+        "OpenAI兼容"
+      ],
+      "notes": "2026-11-29 复核官方文档：免费层账号验证手机号后即可使用推理 API，赠送 $1 额度，覆盖 Llama、Qwen、DeepSeek 等开源模型与部分 VLM；赠金不可用于 GPU 租赁（需充值 $5 升级 Pro）。",
+      "discoveredAt": "2026-11-29",
+      "statusTag": "active",
+      "image": "img__hyperbolic-free.webp"
+    },
+    {
+      "id": "ai21-free",
+      "provider": "AI21 Labs",
+      "title": "AI21 Labs 注册送 $10 试用额度",
+      "type": "LLM API",
+      "quota": "$10 试用额度（有效期 3 个月）",
+      "quotaTier": 20,
+      "cadence": "一次性",
+      "claimMethod": "注册 AI21 账号，额度自动发放至账户",
+      "url": "https://www.ai21.com",
+      "deadline": null,
+      "deadlineText": "额度自领取起 3 个月内有效",
+      "requirements": [
+        "注册账号"
+      ],
+      "region": "海外",
+      "source": "第三方汇总",
+      "sourceUrl": "https://aitujian.cn/free-ai-api.html",
+      "tags": [
+        "试用",
+        "Jamba",
+        "推理"
+      ],
+      "notes": "2026-11-29 收录：可调用 Jamba 1.5 / 1.6 等自研模型，有效期 3 个月；额度条款以 AI21 官网最新说明为准。",
+      "discoveredAt": "2026-11-29",
+      "statusTag": "active",
+      "image": "img__ai21-free.webp"
     }
   ],
   "resources": [
@@ -4977,6 +5125,68 @@ window.TOKEN_WORKBENCH_DATA = {
       "discoveredAt": "2026-11-28",
       "statusTag": "active",
       "image": "img__res-googiehost.webp"
+    },
+    {
+      "id": "res-dartnode",
+      "provider": "DartNode Open Source",
+      "title": "DartNode 开源项目免费 VPS（无限流量）",
+      "type": "云服务器",
+      "quota": "免费 VPS：1 vCPU / 1GB RAM / 10GB 存储，无限流量，每日异地备份",
+      "quotaTier": 50,
+      "cadence": "永久（README 标注持续有效）",
+      "claimMethod": "GitHub/GitLab 公开仓库满 1000 星、创建满 90 天且非 fork；在 README 挂 DartNode logo 并链接官网，提交申请表单自动审核",
+      "url": "https://dartnode.com/open-source",
+      "deadline": null,
+      "deadlineText": "长期有效（需保留 README 中的 DartNode 标注）",
+      "requirements": [
+        "开源项目 ≥1000 星",
+        "创建满 90 天、非 fork、未归档",
+        "README 挂 DartNode logo 并链接官网"
+      ],
+      "region": "海外",
+      "source": "官方页面",
+      "sourceUrl": "https://dartnode.com/open-source",
+      "tags": [
+        "永久免费",
+        "开源项目",
+        "无限流量",
+        "VPS"
+      ],
+      "notes": "2026-11-29 复核官网：已赞助 1197+ 个开源项目，自动审核通过后发放实例，机房位于美国休斯顿，自有 AS 网络，100% 在线 SLA。",
+      "discoveredAt": "2026-11-29",
+      "statusTag": "active",
+      "image": "th__ai-project.webp"
+    },
+    {
+      "id": "res-vtexs",
+      "provider": "VTEXS",
+      "title": "VTEXS 开源开发者免费 VPS（活跃可续期）",
+      "type": "云服务器",
+      "quota": "免费 VPS：起步 1H1G，可按项目需求申请配置与升级，项目活跃即可免费续期",
+      "quotaTier": 50,
+      "cadence": "永久（项目保持活跃）",
+      "claimMethod": "以活跃的公开开源项目提交申请（需开源许可证并在文档中提及 VTEXS），人工审核约 1-2 周，通过后分配实例",
+      "url": "https://console.vtexs.com",
+      "deadline": null,
+      "deadlineText": "长期有效（项目保持活跃即可续期）",
+      "requirements": [
+        "活跃的公开开源项目",
+        "MIT/GPL/Apache 等开源许可证",
+        "项目文档中提及 VTEXS"
+      ],
+      "region": "海外",
+      "source": "官方控制台",
+      "sourceUrl": "https://console.vtexs.com",
+      "tags": [
+        "永久免费",
+        "开源项目",
+        "VPS",
+        "开发者"
+      ],
+      "notes": "2026-11-29 收录：人工审核较慢（约 1-2 周），通过后按项目需求分配实例，之后可提交升级申请；申请材料需如实填写，抄袭他人项目会被拒绝。",
+      "discoveredAt": "2026-11-29",
+      "statusTag": "active",
+      "image": "th__ai-project.webp"
     }
   ],
   "githubTrending": [
@@ -5008,9 +5218,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "elementalsouls/Claude-BugHunter",
       "language": "Python",
-      "stars": 25711,
-      "forks": 2625,
-      "gain": 1615,
+      "stars": 26840,
+      "forks": 2760,
+      "gain": 1372,
       "description": "Claude Code 漏洞挖掘技能包：84 个技能、15 个斜杠命令、覆盖 24 类漏洞的 681 份公开报告模式，并含企业身份与基础设施攻击矩阵。",
       "url": "https://github.com/elementalsouls/Claude-BugHunter",
       "discoveredAt": "2026-11-23",
@@ -5044,9 +5254,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "HKUDS/CLI-Anything",
       "language": "Python",
-      "stars": 66862,
-      "forks": 6125,
-      "gain": 668,
+      "stars": 67303,
+      "forks": 6200,
+      "gain": 561,
       "description": "让所有软件原生支持智能体的命令行框架，通过 CLI-Hub 将桌面与专业软件封装为可调用工具。",
       "url": "https://github.com/HKUDS/CLI-Anything",
       "discoveredAt": "2026-11-23",
@@ -5062,9 +5272,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "jingyaogong/minimind",
       "language": "Python",
-      "stars": 72146,
-      "forks": 9406,
-      "gain": 667,
+      "stars": 72456,
+      "forks": 9487,
+      "gain": 391,
       "description": "两小时从零训练 64M 参数小模型的完整教程与代码，覆盖数据、预训练、监督微调与评估。",
       "url": "https://github.com/jingyaogong/minimind",
       "discoveredAt": "2026-11-23",
@@ -5080,9 +5290,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "cursor/plugins",
       "language": "TypeScript",
-      "stars": 19962,
-      "forks": 2213,
-      "gain": 242,
+      "stars": 20118,
+      "forks": 2275,
+      "gain": 214,
       "description": "Cursor 插件规范与官方插件集合，展示如何为编辑器扩展智能体能力。",
       "url": "https://github.com/cursor/plugins",
       "discoveredAt": "2026-11-23",
@@ -5098,9 +5308,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "firecrawl/firecrawl",
       "language": "TypeScript",
-      "stars": 211506,
-      "forks": 11117,
-      "gain": 833,
+      "stars": 212054,
+      "forks": 11178,
+      "gain": 717,
       "description": "为智能体提供搜索、抓取与结构化抽取的知识基础设施，把网页转成 LLM 可用的数据。",
       "url": "https://github.com/firecrawl/firecrawl",
       "discoveredAt": "2026-11-23",
@@ -5116,9 +5326,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "nginx/nginx",
       "language": "C",
-      "stars": 33637,
-      "forks": 8470,
-      "gain": 148,
+      "stars": 33724,
+      "forks": 8502,
+      "gain": 131,
       "description": "NGINX 开源官方仓库，高性能 Web 服务器与反向代理。",
       "url": "https://github.com/nginx/nginx",
       "discoveredAt": "2026-11-23",
@@ -5133,9 +5343,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "openvinotoolkit/openvino",
       "language": "C++",
-      "stars": 12916,
-      "forks": 3786,
-      "gain": 152,
+      "stars": 13000,
+      "forks": 3834,
+      "gain": 111,
       "description": "英特尔开源 AI 推理优化与部署工具套件，支持跨硬件加速。",
       "url": "https://github.com/openvinotoolkit/openvino",
       "discoveredAt": "2026-11-23",
@@ -5151,9 +5361,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "cathrynlavery/diagram-design",
       "language": "HTML",
-      "stars": 74337,
-      "forks": 5006,
-      "gain": 731,
+      "stars": 74754,
+      "forks": 5067,
+      "gain": 499,
       "description": "面向 Claude Code、Codex 等编码助手的编辑级图表设计技能，生成更专业的架构与流程示意图。",
       "url": "https://github.com/cathrynlavery/diagram-design",
       "discoveredAt": "2026-11-23",
@@ -5169,9 +5379,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "mjmirza/app-store-compliance",
       "language": "Shell",
-      "stars": 7652,
-      "forks": 552,
-      "gain": 531,
+      "stars": 8330,
+      "forks": 646,
+      "gain": 907,
       "description": "开源审核手册与技能，帮助应用规避 App Store 与 Google Play 常见拒绝理由。",
       "url": "https://github.com/mjmirza/app-store-compliance",
       "discoveredAt": "2026-11-23",
@@ -5187,9 +5397,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "Tracer-Cloud/opensre",
       "language": "Python",
-      "stars": 16048,
-      "forks": 2125,
-      "gain": 326,
+      "stars": 16291,
+      "forks": 2184,
+      "gain": 270,
       "description": "面向 CI/CD 可靠性的开源智能体，自动诊断与修复流水线故障。",
       "url": "https://github.com/Tracer-Cloud/opensre",
       "discoveredAt": "2026-11-23",
@@ -5205,9 +5415,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "toeverything/AFFiNE",
       "language": "TypeScript",
-      "stars": 79318,
-      "forks": 5806,
-      "gain": 469,
+      "stars": 79728,
+      "forks": 5880,
+      "gain": 495,
       "description": "集文档、白板与数据库于一体的开源知识协作工具，可替代 Notion 与 Miro。",
       "url": "https://github.com/toeverything/AFFiNE",
       "discoveredAt": "2026-11-23",
@@ -5223,9 +5433,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "XiaoYouChR/Ghost-Downloader-3",
       "language": "Python",
-      "stars": 19715,
-      "forks": 1227,
-      "gain": 843,
+      "stars": 20320,
+      "forks": 1307,
+      "gain": 664,
       "description": "开源下载器集大成者，支持多站点、多协议与批量任务管理。",
       "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
       "discoveredAt": "2026-11-23",
@@ -5240,9 +5450,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "backnotprop/plannotator",
       "language": "TypeScript",
-      "stars": 15390,
-      "forks": 1472,
-      "gain": 1631,
+      "stars": 15507,
+      "forks": 1480,
+      "gain": 1596,
       "description": "智能体工作区：在同一界面规划、评审与跟踪多个编码代理任务，保持对进度的掌控。",
       "url": "https://github.com/backnotprop/plannotator",
       "discoveredAt": "2026-11-23",
@@ -5258,9 +5468,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "google-labs-code/stitch-skills",
       "language": "TypeScript",
-      "stars": 13513,
-      "forks": 1600,
-      "gain": 311,
+      "stars": 13783,
+      "forks": 1660,
+      "gain": 2616,
       "description": "配合 Stitch MCP 服务器使用的 Agent Skills 库，用于生成和编辑界面设计稿。",
       "url": "https://github.com/google-labs-code/stitch-skills",
       "discoveredAt": "2026-11-23",
@@ -5269,8 +5479,8 @@ window.TOKEN_WORKBENCH_DATA = {
         "MCP",
         "AI Agent"
       ],
-      "rankToday": 11,
-      "notes": "同一仓库今日榜第 11、本周榜第 2，已合并为一条。"
+      "rankToday": 9,
+      "notes": "同一仓库今日榜第 11、本周榜第 2，已合并为一条。 GitHub 官方数据：今日榜第 9、本周榜第 2，已合并为一条。"
     },
     {
       "id": "weekly-googlechrome-modern-web-guidance",
@@ -5278,9 +5488,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "GoogleChrome/modern-web-guidance-src",
       "language": "TypeScript",
-      "stars": 11412,
-      "forks": 846,
-      "gain": 2209,
+      "stars": 11564,
+      "forks": 851,
+      "gain": 2008,
       "description": "Chrome 团队维护的现代 Web 开发指南源，让编码代理持续遵循最新浏览器最佳实践。",
       "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
       "discoveredAt": "2026-11-23",
@@ -5296,9 +5506,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "alibaba/open-code-review",
       "language": "Go",
-      "stars": 56859,
-      "forks": 4699,
-      "gain": 2284,
+      "stars": 57028,
+      "forks": 4715,
+      "gain": 2335,
       "description": "阿里巴巴开源的混合架构代码审查智能体，强调安全、快速与大规模实战。",
       "url": "https://github.com/alibaba/open-code-review",
       "discoveredAt": "2026-11-23",
@@ -5314,9 +5524,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "mvanhorn/last30days-skill",
       "language": "Python",
-      "stars": 76247,
-      "forks": 6769,
-      "gain": 664,
+      "stars": 76662,
+      "forks": 6829,
+      "gain": 5072,
       "description": "智能体技能：聚合 Reddit、X、YouTube、HN 等近 30 天内容，自动调研任意主题并生成报告。",
       "url": "https://github.com/mvanhorn/last30days-skill",
       "discoveredAt": "2026-11-23",
@@ -5334,9 +5544,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "ChromeDevTools/chrome-devtools-mcp",
       "language": "TypeScript",
-      "stars": 59600,
-      "forks": 4902,
-      "gain": 1175,
+      "stars": 59681,
+      "forks": 4852,
+      "gain": 1150,
       "description": "把 Chrome DevTools 暴露为 MCP 工具，供编码代理调试页面、检查网络与性能。",
       "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
       "discoveredAt": "2026-11-23",
@@ -5352,9 +5562,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "tradermonty/claude-trading-skills",
       "language": "Python",
-      "stars": 8701,
-      "forks": 1569,
-      "gain": 1381,
+      "stars": 8802,
+      "forks": 1578,
+      "gain": 1332,
       "description": "面向股票投资者与交易者的 Claude Code 技能集，涵盖市场分析、选股与风险管理。",
       "url": "https://github.com/tradermonty/claude-trading-skills",
       "discoveredAt": "2026-11-23",
@@ -5370,9 +5580,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "ag-ui-protocol/ag-ui",
       "language": "TypeScript",
-      "stars": 21927,
-      "forks": 2192,
-      "gain": 1269,
+      "stars": 22021,
+      "forks": 2194,
+      "gain": 1185,
       "description": "AG-UI 智能体与前端交互协议，标准化事件流与状态同步。",
       "url": "https://github.com/ag-ui-protocol/ag-ui",
       "discoveredAt": "2026-11-23",
@@ -5388,9 +5598,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "meta/astryx",
       "language": "TypeScript",
-      "stars": 33494,
-      "forks": 2609,
-      "gain": 2519,
+      "stars": 33631,
+      "forks": 2625,
+      "gain": 2306,
       "description": "Meta 开源的可完全定制、面向智能体的设计系统。",
       "url": "https://github.com/meta/astryx",
       "discoveredAt": "2026-11-23",
@@ -5423,9 +5633,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "we-promise/sure",
       "language": "Ruby",
-      "stars": 18190,
-      "forks": 1581,
-      "gain": 1430,
+      "stars": 18290,
+      "forks": 1598,
+      "gain": 1375,
       "description": "面向所有人的开源个人理财应用，支持协作与多平台。",
       "url": "https://github.com/we-promise/sure",
       "discoveredAt": "2026-11-23",
@@ -5440,9 +5650,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "dream-num/univer",
       "language": "TypeScript",
-      "stars": 32039,
-      "forks": 2878,
-      "gain": 1825,
+      "stars": 32046,
+      "forks": 2867,
+      "gain": 1280,
       "description": "Univer Office SDK：用开源套件构建自己的 AI 办公应用，支持编辑、表格与协作。",
       "url": "https://github.com/dream-num/univer",
       "discoveredAt": "2026-11-23",
@@ -5458,9 +5668,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "week",
       "fullName": "kajisho5/ffmpeg-skill",
       "language": "Python",
-      "stars": 11816,
-      "forks": 979,
-      "gain": 3229,
+      "stars": 12172,
+      "forks": 1006,
+      "gain": 3169,
       "description": "本地视频编辑技能，为编码代理提供 42 个 FFmpeg 工具与机器可读接口。",
       "url": "https://github.com/kajisho5/ffmpeg-skill",
       "discoveredAt": "2026-11-23",
@@ -5476,9 +5686,9 @@ window.TOKEN_WORKBENCH_DATA = {
       "period": "today",
       "fullName": "zhouxiaoka/autoclip",
       "language": "Python",
-      "stars": 17488,
-      "forks": 2464,
-      "gain": 733,
+      "stars": 17933,
+      "forks": 2528,
+      "gain": 517,
       "description": "AutoClip：一个链接一键出片的开源 AI 视频剪辑桌面工具，自动切片长视频并生成字幕、封面与发布文案。",
       "url": "https://github.com/zhouxiaoka/autoclip",
       "discoveredAt": "2026-11-23",
@@ -6387,6 +6597,27 @@ window.TOKEN_WORKBENCH_DATA = {
         "团队协作"
       ],
       "notes": "The open-source app to manage agents at work"
+    },
+    {
+      "id": "daily-n8n-io-nod",
+      "rank": 4,
+      "period": "week",
+      "fullName": "n8n-io/nod",
+      "language": "TypeScript",
+      "stars": 4657,
+      "forks": 708,
+      "gain": 1424,
+      "description": "n8n 出品的开源个人智能体：拥有自己的「电脑」，能追发票、准备通话、在真实网站上取消试用，行动前会先征求你的同意；在本地运行，模型自选。",
+      "url": "https://github.com/n8n-io/nod",
+      "discoveredAt": "2026-11-29",
+      "tags": [
+        "AI Agent",
+        "自动化",
+        "TypeScript",
+        "Trending"
+      ],
+      "notes": "GitHub Trending 周榜第 4（2026-11-29 抓取）：4657 stars / 708 forks / 本周 +1424 stars。",
+      "image": "img__daily-n8n-io-nod.webp"
     }
   ],
   "skills": [
@@ -8327,6 +8558,52 @@ window.TOKEN_WORKBENCH_DATA = {
       "discoveredAt": "2026-11-28",
       "status": "active",
       "image": "img__sk-remotion-skills.webp"
+    },
+    {
+      "id": "sk-stitch-skills",
+      "name": "stitch-skills",
+      "repo": "google-labs-code/stitch-skills",
+      "category": "开发工具 / MCP",
+      "desc": "Google Labs 官方 Agent Skills 库：为 Stitch MCP 服务器设计的技能集合，每个技能均遵循 Agent Skills 开放标准，兼容 Antigravity、Gemini CLI、Claude Code、Cursor 等编码智能体。",
+      "install": "npx skills add google-labs-code/stitch-skills，或将技能目录复制到 ~/.claude/skills/ 由 Claude Code 自动加载",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "sourceUrl": "https://github.com/google-labs-code/stitch-skills",
+      "installs": "13.8K stars",
+      "tier": 50,
+      "status": "active",
+      "tags": [
+        "Agent Skills",
+        "MCP",
+        "Google Labs",
+        "Stitch",
+        "官方"
+      ],
+      "notes": "2026-11-29 收录：GitHub Trending 日榜/周榜在榜，含真实仓库与 SKILL.md，符合 Agent Skills 开放标准。",
+      "discoveredAt": "2026-11-29",
+      "image": "img__sk-stitch-skills.webp"
+    },
+    {
+      "id": "sk-claude-bughunter",
+      "name": "Claude-BugHunter",
+      "repo": "elementalsouls/Claude-BugHunter",
+      "category": "安全 / 红队",
+      "desc": "面向漏洞挖掘与外部红队工作的 Claude Code 技能包：85 个技能、16 个斜杠命令、681 个已公开报告模式，覆盖 24 类核心漏洞，另含企业身份与基础设施攻击矩阵。",
+      "install": "git clone 本仓库，将技能目录复制到 ~/.claude/skills/，或通过插件市场安装",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "sourceUrl": "https://github.com/elementalsouls/Claude-BugHunter",
+      "installs": "26.8K stars",
+      "tier": 50,
+      "status": "active",
+      "tags": [
+        "漏洞挖掘",
+        "红队",
+        "安全",
+        "Claude Code",
+        "Trending"
+      ],
+      "notes": "2026-11-29 收录：GitHub Trending 日榜在榜，含 SKILL.md 与完整技能结构，仓库持续活跃。",
+      "discoveredAt": "2026-11-29",
+      "image": "img__sk-claude-bughunter.webp"
     }
   ],
   "tutorials": [
@@ -10609,6 +10886,98 @@ window.TOKEN_WORKBENCH_DATA = {
       "discoveredAt": "2026-11-28",
       "status": "active",
       "image": "img__tu-ai-engineering-from-scratch.webp"
+    },
+    {
+      "id": "tu-datawhalechina-agentic-ai",
+      "title": "Agentic AI 中文课程（Datawhale 吴恩达课程翻译）",
+      "category": "大模型应用与开发",
+      "org": "Datawhale",
+      "level": "入门→进阶",
+      "format": "文档课程",
+      "lang": "中文",
+      "duration": "系列课程",
+      "desc": "对 DeepLearning.AI 吴恩达 Agentic AI 系列课程的中文翻译与知识整理：包含课程内容翻译、知识点梳理与示例代码解读，适合智能体零基础学习者。",
+      "url": "https://github.com/datawhalechina/agentic-ai",
+      "sourceUrl": "https://github.com/datawhalechina/agentic-ai",
+      "tags": [
+        "Agent",
+        "中文",
+        "吴恩达",
+        "免费"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-29",
+      "status": "active",
+      "image": "img__tu-datawhalechina-agentic-ai.webp"
+    },
+    {
+      "id": "tu-datawhalechina-all-in-rag",
+      "title": "All-in-RAG：RAG 技术全栈指南（Datawhale）",
+      "category": "大模型应用与开发",
+      "org": "Datawhale",
+      "level": "进阶",
+      "format": "文档课程",
+      "lang": "中文",
+      "duration": "体系化课程",
+      "desc": "面向大模型应用开发者的 RAG（检索增强生成）技术全栈教程：体系化学习路径加动手实践项目，帮助掌握基于大语言模型的 RAG 应用开发，构建生产级智能问答与知识检索系统。",
+      "url": "https://github.com/datawhalechina/all-in-rag",
+      "sourceUrl": "https://github.com/datawhalechina/all-in-rag",
+      "tags": [
+        "RAG",
+        "中文",
+        "免费",
+        "实战"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-29",
+      "status": "active",
+      "image": "img__tu-datawhalechina-all-in-rag.webp"
+    },
+    {
+      "id": "tu-datawhalechina-every-embodied",
+      "title": "具身智能零基础入门（Datawhale）",
+      "category": "具身智能与硬件AI",
+      "org": "Datawhale",
+      "level": "入门",
+      "format": "文档课程",
+      "lang": "中文",
+      "duration": "体系化课程",
+      "desc": "具身智能零基础入门教程：初步了解具身智能的发展与相关技术，并复现具身智能的基础算法，适合对机器人技术感兴趣的学生、工程师与研究人员（需 Python 基础）。",
+      "url": "https://github.com/datawhalechina/every-embodied",
+      "sourceUrl": "https://github.com/datawhalechina/every-embodied",
+      "tags": [
+        "具身智能",
+        "机器人",
+        "中文",
+        "免费"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-29",
+      "status": "active",
+      "image": "img__tu-datawhalechina-every-embodied.webp"
+    },
+    {
+      "id": "tu-datawhalechina-easy-vibe",
+      "title": "easy-vibe：Vibe Coding 项目制教程（Datawhale）",
+      "category": "大模型应用与开发",
+      "org": "Datawhale",
+      "level": "入门→进阶",
+      "format": "文档课程",
+      "lang": "中文",
+      "duration": "项目制课程",
+      "desc": "项目制教学、对零基础学习者友好：在一个又一个项目制学习挑战中，独立完成游戏、实用工具、产品原型的实现，系统覆盖 AI 的常见能力与典型应用场景，由入门扩展到高级应用。",
+      "url": "https://github.com/datawhalechina/easy-vibe",
+      "sourceUrl": "https://github.com/datawhalechina/easy-vibe",
+      "tags": [
+        "Vibe Coding",
+        "项目制",
+        "中文",
+        "免费"
+      ],
+      "tier": 50,
+      "discoveredAt": "2026-11-29",
+      "status": "active",
+      "image": "img__tu-datawhalechina-easy-vibe.webp"
     }
   ],
   "monetization": [
@@ -13102,9 +13471,243 @@ window.TOKEN_WORKBENCH_DATA = {
       "discoveredAt": "2026-11-28",
       "status": "active",
       "image": "th__ai-money.webp"
+    },
+    {
+      "id": "m-ai-ppt-",
+      "group": "一、C端轻资产变现",
+      "track": "AI PPT/简历代做",
+      "tagline": "门槛最低、复制性最强",
+      "way": "在闲鱼、小红书接单，用 Gamma、Kimi、ChatGPT 等工具的免费额度为客户生成 PPT 与简历初稿，手动精修约 30% 后交付，靠稳定交付积累好评与复购。",
+      "logic": "工具几乎免费、客户精准刚需（学生与职场人永远需要）、客单价稳定（30-800 元/单）、5 步可上手、复购率高；这是拼执行力而非拼创意的赛道。",
+      "source": "案例文章",
+      "sourceUrl": "http://a.71muke.com/announcement/2026084429",
+      "level": "入门",
+      "tier": 50,
+      "status": "active",
+      "resources": [
+        {
+          "name": "用AI帮人做PPT/简历：5步上手案例（含真实接单数据）",
+          "url": "http://a.71muke.com/announcement/2026084429"
+        },
+        {
+          "name": "Gamma 官网（免费额度 10 张/月）",
+          "url": "https://gamma.app"
+        },
+        {
+          "name": "Kimi 官网（长文档处理）",
+          "url": "https://kimi.com"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Gamma",
+          "url": "https://gamma.app",
+          "kind": "网页入口",
+          "note": "AI 自动生成 PPT，新用户免费额度 10 张/月"
+        },
+        {
+          "name": "Kimi",
+          "url": "https://kimi.com",
+          "kind": "网页入口",
+          "note": "免费处理长文档，辅助 PPT 内容整理"
+        },
+        {
+          "name": "Canva 可画",
+          "url": "https://www.canva.com",
+          "kind": "网页入口",
+          "note": "套模板精修排版，免费版模板充足"
+        }
+      ],
+      "tags": [
+        "PPT",
+        "简历",
+        "代做",
+        "闲鱼",
+        "复购"
+      ],
+      "discoveredAt": "2026-11-29",
+      "image": "img__m-ai-ppt-.webp"
+    },
+    {
+      "id": "m-ai-agent-bot-",
+      "group": "一、C端轻资产变现",
+      "track": "AI Agent 接单（零代码 Bot 定制）",
+      "tagline": "客单价高、收益上限高",
+      "way": "用 Coze 等零代码平台为客户搭建客服 Bot、知识库 Bot，挂到闲鱼/小红书接单，交付时录屏说明 Bot 能力与边界，逐步承接更高客单价的定制单与按月维护。",
+      "logic": "免费注册、拖拽式搭建半小时可出 Demo；基础单功能 Bot 200-300 元、带知识库客服 Bot 500-800 元、维护按月 200-500 元；先跑通「搭建—挂出—接单—交付—收款」完整闭环再放大。",
+      "source": "实操案例",
+      "sourceUrl": "https://www.toutiao.com/article/7709403314948981275",
+      "level": "入门→进阶",
+      "tier": 50,
+      "status": "active",
+      "resources": [
+        {
+          "name": "下班后两小时，用 AI 智能体接单月入过万（含定价与交付方法）",
+          "url": "https://www.toutiao.com/article/7709403314948981275"
+        },
+        {
+          "name": "扣子 Coze 官网",
+          "url": "https://www.coze.cn"
+        },
+        {
+          "name": "Dify 官网",
+          "url": "https://dify.ai"
+        }
+      ],
+      "tools": [
+        {
+          "name": "扣子 Coze",
+          "url": "https://www.coze.cn",
+          "kind": "网页入口",
+          "note": "字节出品零代码平台，免费注册，半小时搭出可用 Bot"
+        },
+        {
+          "name": "Dify",
+          "url": "https://dify.ai",
+          "kind": "开源自托管",
+          "note": "开源生态强、插件多，适合做更复杂的流程"
+        }
+      ],
+      "tags": [
+        "Agent",
+        "接单",
+        "Coze",
+        "零代码",
+        "定制"
+      ],
+      "discoveredAt": "2026-11-29",
+      "image": "img__m-ai-agent-bot-.webp"
     }
   ],
   "news": [
+    {
+      "date": "2026-11-28",
+      "title": "国内首个人机操作数据集 HumanCOIN 开源，赋能具身 AI 训练",
+      "summary": "德马科技联合智源研究院正式开源 HumanCOIN 高质量数据集，收录海量人类真实操作、精细动作、环境交互数据，专门用于人形机器人、工业具身智能体训练。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzYyMTI1ODEyMA==&mid=2247484504&idx=1&sn=55cb9ed24f6ee4fcc8ad91dffa61b9f9&chksm=fe3caa5c781a28362dc152e5b4ae0175ec30e153301b5d8d12714eb2f10ee8ab9be59af4898",
+      "source": "AI 新闻快速报",
+      "image": "img__news--humancoin-ai-.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "智源发布全国首个物理 AI 真实能力评测体系 REAL",
+      "summary": "智源研究院正式上线 REAL 物理 AI 评测榜单，全部基于真实场景、真实操作、真实环境考核机器人能力，区别于传统实验室跑分，解决「实验室超强、落地拉胯」的乱象。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzYyMTI1ODEyMA==&mid=2247484504&idx=1&sn=55cb9ed24f6ee4fcc8ad91dffa61b9f9&chksm=fe3caa5c781a28362dc152e5b4ae0175ec30e153301b5d8d12714eb2f10ee8ab9be59af4898",
+      "source": "AI 新闻快速报",
+      "image": "img__news--ai-real.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "OpenAI 上线 Control Room 安全管控平台，35 秒极速熔断高危任务",
+      "summary": "OpenAI 正式推出 Control Room 底层安全管控平台，下沉至模型推理核心层，可实时监控、识别、阻断高危实验与越权操作，最高实现 35 秒极速熔断风险任务，形成全自动安全闭环。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzYyMTI1ODEyMA==&mid=2247484504&idx=1&sn=55cb9ed24f6ee4fcc8ad91dffa61b9f9&chksm=fe3caa5c781a28362dc152e5b4ae0175ec30e153301b5d8d12714eb2f10ee8ab9be59af4898",
+      "source": "AI 新闻快速报",
+      "image": "img__news-openai-control-room-35-.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "MCP v2.6.0 修补 8 个漏洞，AI 攻击框架 Cairn 11 分钟挖出零时差",
+      "summary": "MCP 服务器发布 v2.6.0，修补 Git LFS 权限提升与环境变量泄漏等 8 个漏洞；同期安全周刊披露 AI 攻击框架 Cairn 仅用 11 分钟就挖出医疗影像软件 MONAI Label 的零时差漏洞。",
+      "url": "http://mp.weixin.qq.com/s?__biz=Mzg2NTgzMjM3NQ==&mid=2247497136&idx=2&sn=81b885a720a17dd88c471f1106d981a9c0c8d80afb82d30d97d672988720c6a0381ed994af51f",
+      "source": "AI 日报 / 安全周刊",
+      "image": "th__ai-tool.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "英伟达开源「像素即代码」图像模型 Nemotron-Labs-Image-30B-A3B",
+      "summary": "英伟达在 Hugging Face 发布 30B 参数图像模型权重，基于「Pixel as Code」概念以自回归方式预测离散视觉 token，替代扩散路径；许可为非商用，长文本渲染表现突出。",
+      "url": "http://mp.weixin.qq.com/s?__biz=Mzg2NTgzMjM3NQ==&mid=2247497136&idx=2&sn=81b885a720a17dd88c471f1106d981a9c0c8d80afb82d30d97d672988720c6a0381ed994af51f",
+      "source": "AI 日报",
+      "image": "th__ai-model.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "谷歌 Mass Spec Skills：Gemini 分子识别准确率从不足 4% 跃升至约 97%",
+      "summary": "谷歌联合分析化学家推出面向 Antigravity 平台的 Mass Spec Skills，把 Gemini 化学推理与质谱工具串成工作流：接入技能后三款模型分子识别准确率均从不足 4% 提升至约 97%，token 消耗同时下降。",
+      "url": "http://mp.weixin.qq.com/s?__biz=Mzg2NTgzMjM3NQ==&mid=2247497136&idx=2&sn=81b885a720a17dd88c471f1106d981a9c0c8d80afb82d30d97d672988720c6a0381ed994af51f",
+      "source": "AI 日报",
+      "image": "th__ai-tool.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "GPT-6 Astra 参与写出 83 页量子重力论文，耗约 4 亿 Token",
+      "summary": "斯坦福大学物理学家与 OpenAI 合作，借助 GPT-6 Astra 开发一套量子重力理论并以 83 页论文形式发布，历时数月、消耗约 4 亿 token；论文目前为未经同行评审的预印本，学界存在争议。",
+      "url": "http://mp.weixin.qq.com/s?__biz=Mzg2NTgzMjM3NQ==&mid=2247497136&idx=2&sn=81b885a720a17dd88c471f1106d981a9c0c8d80afb82d30d97d672988720c6a0381ed994af51f",
+      "source": "AI 日报",
+      "image": "th__ai-model.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "黄仁勋质疑 10% 灭绝风险预测，辛顿公开反驳",
+      "summary": "TED 访谈中，AI 教父辛顿回应黄仁勋对其 10% 灭绝概率预测的质疑，称若研究者相信风险却选择沉默才真正不负责任；他警告大规模失业威胁，同时承认曾误判放射科医生被取代。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "TED / 电子工程专辑",
+      "image": "img__news--10-.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "微软披露 ARTEX 自动化 AI 攻击框架，已被国家级黑客使用",
+      "summary": "微软 11 月 27 日公布 ARTEX 网络攻击框架技术架构，称自 2026 年 7 月以来被中国、朝鲜背景黑客组织及犯罪团伙用于自动入侵，几乎无需人工介入；建议以蜜罐与伪造成功信号欺骗防御。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "Microsoft / The Register",
+      "image": "img__news--artex-ai-.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "国家数据局就 AI 用数规则公开征求意见",
+      "summary": "国家数据局 11 月 27 日就人工智能用数规则公开征求意见，涉及训练数据授权使用与数据付费机制，为大模型训练数据的合规流通确立规则框架。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "新华社 / 每日瞰AI",
+      "image": "img__news--ai-.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "八部门发布服务贸易五年规划，推动大模型服务出海",
+      "summary": "八部门 11 月 27 日发布服务贸易五年规划，提出有序推动大模型服务出海；同日国家数据局就 AI 用数规则征求意见，国产 AI 国际化与数据合规框架同步推进。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "新华社 / 电子工程专辑",
+      "image": "img__news--.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "OpenAI 承认 GPT-6.2 计费错误，用户额度提前约 40% 耗尽",
+      "summary": "OpenAI 确认 GPT-6.2 的 Astra 与 Sol 上线时用量被错误按较低标准计费，导致同任务额度分别提前约 40% 和 25% 耗尽；问题已修复且不追溯补差价，付费用户获一次额度重置机会。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "商业内幕 / 赛迪网",
+      "image": "img__news-openai-gpt-6-2-40-.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "英伟达联手铠侠：SSD 扩展 GPU 内存至 1.1PB",
+      "summary": "铠侠 11 月 26 日宣布与英伟达开展概念验证，用 144 块 7.68TB SSD 配合 GB200 NVL72 机架，将 GPU 有效内存扩展至约 1.1PB，从存储侧破解 HBM 瓶颈。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "赛迪网 / AI News Insight",
+      "image": "img__news--ssd-gpu-1-1pb.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "Anthropic 用 AI 证明 VP 不等于 VNP，并在 Lean 中完成形式化验证",
+      "summary": "Anthropic 内部 Claude 模型发现 VP 不等于 VNP 的证明并在 Lean 中形式化，给出代数复杂性理论的超多项式下界；虽为 P≠NP 的弱归约证据，仍被视为 AI 驱动数学的重大突破。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "So Yesterday AI / Lean",
+      "image": "img__news-anthropic-ai-vp-vnp-lean.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "谷歌 AI 一口气写出 6 篇数学论文，研究 Agent Cogentic 基于 Gemini 4",
+      "summary": "谷歌研究团队 11 月 27 日公开 6 篇由数学研究 Agent Cogentic 生成的论文，以 Gemini 4 为基础，除初始提示外研究过程无需人工交互，涉及整数分解等问题，AI 自主科研再进一步。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "Google Research / 网易科技",
+      "image": "img__news--ai-6-agent-cogentic-gem.webp"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "生数科技发布 20B 世界动作模型 Motubrain 2.0，六项机器人基准五项第一",
+      "summary": "生数科技 11 月 27 日发布 20B 参数世界动作模型 Motubrain 2.0 及配套 Harness，宣称六项机器人基准五项第一，预训练直播 25 天 20 万步，模型近期将开源。",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzcwNDM1NjUwMA==&mid=2247484974&idx=1&sn=25a5e4275bdc70e9268b67ab331af4a0&chksm=f59fa503f6c6c1ab7f38e68815a7f7037555eb263a88cc85870f91d2b90780d7ab7870fe77e3",
+      "source": "SegmentFault / AIbase",
+      "image": "img__news--20b-motubrain-2-0-.webp"
+    },
     {
       "date": "2026-11-24",
       "title": "神机工作台新增 AI 新闻资讯与项目展示板块",
@@ -13504,6 +14107,21 @@ window.TOKEN_WORKBENCH_DATA = {
       "addedAt": "2026-11-28",
       "custom": false,
       "image": "img__pr-cli-anything.webp"
+    },
+    {
+      "id": "proj-n8n-nod",
+      "name": "n8n nod",
+      "desc": "n8n 出品的开源个人智能体：拥有自己的「电脑」，能自动追发票、准备通话、在真实网站上取消试用，行动前会先征求你的同意；完全在本地运行，模型自选，开源免费。",
+      "url": "https://github.com/n8n-io/nod",
+      "tags": [
+        "AI Agent",
+        "自动化",
+        "开源",
+        "本地运行"
+      ],
+      "addedAt": "2026-11-29",
+      "custom": false,
+      "image": "img__proj-n8n-nod.webp"
     }
   ],
   "airdrops": [
@@ -13617,9 +14235,43 @@ window.TOKEN_WORKBENCH_DATA = {
       "safety": "只认 airdrop.axisrobotics.ai 与 hub.axisrobotics.ai 官方域名，官方声明绝不会索要助记词或私钥；持有积分不保证任何分配，任务与领取规则以官方文档为准；任务名额（每任务 1,200 个）有限，建议新任务发布后尽早参与；不点群内仿冒链接，领取仅需少量 Base 链 gas。",
       "addedAt": "2026-11-28",
       "custom": false
+    },
+    {
+      "id": "air-zoi-network-",
+      "name": "Zoi Network · ZOI 零撸挖矿空投",
+      "desc": "让手机成为无需互联网的加密网络节点：官方 Zoi App 已上线，零本金参与，在 App 内每 4 小时点击同步即可获得 ZOI 奖励，连续天数越多倍率越高（最高 x1.7），邀请活跃好友再获加成；ZOI 尚未 TGE，官方白皮书规划 TGE 时余额 1:1 迁移主网。",
+      "url": "https://zoi.network",
+      "chain": "自建网络（TGE 待定，主网后 1:1 迁移）",
+      "reward": "ZOI 代币（App 内同步挖矿获取，TGE 时 1:1 迁移主网）",
+      "claimMethod": "下载官方 Zoi App，完成手机端面部活体验证后，每 4 小时点击一次「同步」即可获得 ZOI",
+      "deadline": "无固定截止（TGE 时间待官方公布，白皮书目标为 2026 Q4 起陆续推进）",
+      "status": "claiming",
+      "steps": [
+        "书签官方站点 zoi.network，只认官方域名与官方应用商店",
+        "从官网或 App Store / Google Play 下载 Zoi App（无 Google Play 的安卓可从官网直接下载 APK）",
+        "完成 App 内的面部活体验证（验证在手机本地进行，无需提交身份证件）",
+        "每 4 小时窗口内点击一次「同步」，每次同步基础奖励 10 ZOI",
+        "每天至少同步一次保持连续天数，连击越长同步倍率越高，最高 x1.7（365 天）",
+        "可选：邀请保持活跃的好友，获得其每次同步 10% 的奖励，新用户凭你的码加入一次性加 20 ZOI"
+      ],
+      "safety": "只认 zoi.network 官方域名与官方应用商店，勿点任何「代领/加速」链接；任何索要助记词、私钥或要求先转账「激活」的均为假站诈骗；ZOI 尚未 TGE，当前奖励为积分性质、规则可能调整，零成本参与，切勿投入资金。",
+      "tags": [
+        "零撸",
+        "空投",
+        "领取中",
+        "离线网络"
+      ],
+      "addedAt": "2026-11-29",
+      "custom": false,
+      "image": "img__air-zoi-network-.webp"
     }
   ],
   "updateLog": [
+    {
+      "date": "2026-11-29",
+      "summary": "2026-11-29 夜间全板块更新：新增 offers +2、resources +2、githubTrending +1（另更新 25 条 Star/Fork/gain）、skills +2、tutorials +4、monetization +2、news +16、projects +1、airdrops +1；无过期条目；去重复检完成，重复组数 {'offers': 0, 'resources': 0, 'tutorials': 0, 'projects': 0, 'airdrops': 0, 'githubTrending': 0, 'news': 0}。",
+      "source": "全网自动搜索（WebSearch/WebFetch）"
+    },
     {
       "date": "2026-11-28",
       "summary": "新增「零撸空投项目」板块：收录零本金、规则透明可验证的空投项目，附领取教程与安全提示；添加项目仅限管理员（管理模式），普通访客仅浏览；每日 00:00 自动搜索全网新空投，去重、自检通过后同步。首个推荐项目：AS Aster 第六阶段空投（64,000,000 ASTER，领取窗口至 2026-12-04 20:00 北京时间，连接钱包一键领取，零本金仅需 gas）。",
@@ -13911,7 +14563,7 @@ nav_news:'AI 新闻资讯',nav_projects:'项目展示',title_news:'AI 新闻资�
 skcat_agent:'Agent 开发 / 工作流',skcat_cloud:'云服务 / 运维',skcat_fe:'前端设计',skcat_fe_ds:'前端设计 / 设计系统',skcat_be:'后端开发 / Rust',skcat_mm:'多媒体创作',skcat_sec:'安全审计',skcat_dev:'开发工程',skcat_opt:'技能优化 / Agent',skcat_eff_cloud:'效率 / 云盘',skcat_eff_collab:'效率 / 协作',skcat_mem:'效率记忆',skcat_data:'数据科研',skcat_office:'文档办公',skcat_browser:'浏览器自动化',skcat_game:'游戏开发 / 游戏特效',skcat_mkt:'营销增长',skcat_video_agent:'视频制作 / Agent',skcat_video_cam:'视频制作 / 运镜',skcat_res:'资源目录',tucat_aigc:'AIGC创意与视觉设计',tucat_biz:'AI商业战略与产品',tucat_gov:'AI安全、治理与伦理',tucat_wf:'AI工作流与自动化',tucat_agent:'Agent 开发',tucat_agent_gc:'Agent 开发 / Google Cloud',tucat_agent_mcp:'Agent 开发与 MCP',tucat_agent_pat:'Agent 开发与设计模式',tucat_emb:'具身智能与硬件AI',tucat_llm:'大模型应用与开发',tucat_ml:'机器学习基础',tucat_gpu:'深度学习 / GPU 计算',
 fmt_nb_mini:'Notebook 微课程',fmt_nb:'Notebook 课程',fmt_yt:'YouTube 视频',fmt_col:'专栏',fmt_col_pod:'专栏 / 播客',fmt_zhrepo:'中文课程 + 代码仓库',fmt_gpulab:'云 GPU Lab',fmt_lab:'交互实验室',fmt_recipe:'代码食谱',fmt_spec:'在线专项课',fmt_book:'在线书',fmt_manual:'在线手册',fmt_course:'在线课程',fmt_courselab:'在线课程 + Lab',fmt_sec:'安全指南',fmt_doc:'官方文档',fmt_fw:'官方框架',fmt_guide:'实战指南',fmt_article:'实战文章',fmt_oszh:'开源中文课程',fmt_os:'开源教程',fmt_oslib:'开源教程库',fmt_osdoc:'开源文档',fmt_oscourse:'开源课程',fmt_osproj:'开源项目',fmt_doct:'文档教程',fmt_docc:'文档课程',fmt_law:'法规解读',fmt_series:'视频系列',fmt_video:'视频课程',fmt_res:'资源指南',fmt_uni:'高校课程',mg_c_light:'一、C端轻资产变现',mg_b_service:'二、B端重服务与解决方案',mg_b_content:'二、内容与流量变现',mg_model:'三、主流商业化收费模式',mg_b_svc2:'三、B 端服务变现',mg_brand:'四、个人品牌变现',mg_advice:'四、核心破局建议',
 btn_admin_panel:'⚙ 管理系统',admin_panel_title:'管理系统',admin_panel_sub:'统一管理管理模式、自定义空投项目与数据备份',admin_mode_toggle:'管理员模式',admin_mode_desc:'开启后可在各板块添加自定义项目并管理数据；关闭后仅可浏览',btn_admin_close:'退出管理',btn_admin_go_airdrop:'去空投板块添加',admin_panel_stats:'数据概览',admin_panel_stats_desc:'各板块自定义项目数量统计',admin_panel_custom:'自定义内容管理',admin_panel_custom_desc:'快速跳转到对应板块管理自定义项目',admin_panel_airdrop:'空投自定义项目',admin_panel_airdrop_empty:'暂无自定义空投项目，到空投板块添加第一个吧',admin_panel_import:'数据备份',admin_panel_import_desc:'导出全部数据备份，或从备份文件恢复',btn_export:'导出备份',btn_import:'导入备份',toast_airdrop_updated:'空投项目已更新',toast_airdrop_bad_url:'链接格式不正确，请输入以 http:// 或 https:// 开头的完整网址',toast_airdrop_dup:'已存在名称或链接相同的空投项目',toast_airdrop_no_change:'内容没有变化',airdrop_edit:'编辑空投项目',airdrop_edit_btn:'编辑',btn_add_airdrop:'＋ 添加空投项目',a_url_hint:'必须以 http:// 或 https:// 开头，且为完整可访问的网址',a_steps_ph:'每行一个操作步骤，如：1. 打开官网',a_safety_ph:'如：不输入助记词、不转保证金、认准官方合约地址',nav_admin:'管理系统',ps_registered:'已注册项目',ps_completeness:'资料完整度',ps_cloud:'云端同步',admin_entry_sub:'管理员入口 · 需验证',title_admin:'管理系统',sub_admin:'管理模式开关 · 自定义项目与数据备份统一管理',admin_panel_offers:'自定义活动',admin_panel_resources:'自定义资源',admin_panel_skills:'自定义 Skill',admin_panel_tutorials:'自定义教程',admin_panel_projects:'自定义项目',a_status_claiming:'领取中',a_status_ended:'已结束',
-admin_builtin:'内置',admin_custom:'自定义',admin_total:'合计',admin_overview:'工作台总览',admin_overview_desc:'全部板块内置与自定义条目实时统计',admin_search:'全站检索',admin_search_desc:'跨板块搜索任意条目的名称、简介、标签与网址',admin_search_ph:'输入关键词检索全部板块…',admin_search_hint:'在上方输入关键词，可检索全部板块的条目',admin_search_none:'没有找到匹配的条目',admin_search_found:'找到',admin_locate:'定位',admin_manage:'自定义内容管理',admin_manage_desc:'管理全部板块的自定义条目，内置条目只读',admin_custom_empty:'还没有添加自定义条目。开启管理员模式后，可在各板块点击“＋ 添加”创建。',admin_health:'数据健康自检',admin_health_desc:'检查重复 ID、无效链接与关键字段缺失',admin_health_run:'开始自检',admin_health_running:'正在检查全部板块数据…',admin_health_ok:'未发现问题，数据状态良好',admin_health_found:'发现问题共',admin_health_dup:'重复 ID',admin_health_url:'无效链接',admin_health_missing:'关键字段缺失',admin_gate_title:'管理员验证',admin_gate_desc:'该区域仅限管理员访问，请输入管理密码',admin_gate_ph:'请输入管理密码',admin_gate_submit:'验证并进入',admin_gate_wrong:'密码错误，请重新输入',admin_gate_ok:'验证通过，已进入管理模式',reg_profile_title:'完善注册资料（随账号保存）',reg_avatar:'头像',reg_avatar_tip:'选择下方内置头像，或点击左侧头像上传自定义图片（可选）',admin_fancy_title:'靓号系统设置',admin_fancy_desc:'设置靓号池的号码、说明与备注，保存后立即在前台生效（仅存本机浏览器）',admin_fancy_numbers:'号码列表（每行一个，也可用逗号分隔）',admin_fancy_intro:'靓号池说明',admin_fancy_note:'备注提示',admin_fancy_save:'保存靓号设置',admin_fancy_saved:'靓号设置已保存',admin_fancy_empty:'请先填写至少一个号码',admin_fancy_ph:'例如：100000',admin_fancy_preview:'当前预览',reg_age:'年龄',reg_age_ph:'请输入年龄',reg_qq:'QQ 号',reg_qq_ph:'你的 QQ 号',reg_wechat:'微信号',reg_wechat_ph:'你的微信号'
+admin_builtin:'内置',admin_custom:'自定义',admin_total:'合计',admin_overview:'工作台总览',admin_overview_desc:'全部板块内置与自定义条目实时统计',admin_search:'全站检索',admin_search_desc:'跨板块搜索任意条目的名称、简介、标签与网址',admin_search_ph:'输入关键词检索全部板块…',admin_search_hint:'在上方输入关键词，可检索全部板块的条目',admin_search_none:'没有找到匹配的条目',admin_search_found:'找到',admin_locate:'定位',admin_manage:'自定义内容管理',admin_manage_desc:'管理全部板块的自定义条目，内置条目只读',admin_custom_empty:'还没有添加自定义条目。开启管理员模式后，可在各板块点击“＋ 添加”创建。',admin_health:'数据健康自检',admin_health_desc:'检查重复 ID、无效链接与关键字段缺失',admin_health_run:'开始自检',admin_health_running:'正在检查全部板块数据…',admin_health_ok:'未发现问题，数据状态良好',admin_health_found:'发现问题共',admin_health_dup:'重复 ID',admin_health_url:'无效链接',admin_health_missing:'关键字段缺失',admin_gate_title:'管理员验证',admin_gate_desc:'该区域仅限管理员访问，请输入管理密码',admin_gate_ph:'请输入管理密码',admin_gate_submit:'验证并进入',admin_gate_wrong:'密码错误，请重新输入',admin_gate_ok:'验证通过，已进入管理模式',reg_profile_title:'完善注册资料（随账号保存）',reg_avatar:'头像',reg_avatar_tip:'选择下方内置头像，或点击左侧头像上传自定义图片（可选）',adm_title:'管理控制台',adm_nav_cap:'管理模块',adm_tab_overview:'总览',adm_tab_content:'内容管理',adm_tab_search:'全站检索',adm_tab_fancy:'靓号设置',adm_tab_health:'健康自检',adm_tab_backup:'数据备份',adm_console_ver:'控制台 v2',adm_state_on:'已启用',adm_state_off:'已停用',adm_state_all:'全部状态',adm_filter_all:'全部板块',adm_add:'新增条目',adm_batch_del:'批量删除',adm_col_name:'名称',adm_col_section:'板块',adm_col_state:'状态',adm_col_link:'链接',adm_col_ops:'操作',adm_no_items:'没有匹配的条目',adm_edit:'编辑',adm_enable:'启用',adm_disable:'停用',adm_save:'保存',adm_saved:'修改已保存',adm_toggled:'状态已切换',adm_select_first:'请先勾选要删除的条目',adm_confirm_batch:'确定删除选中的 {n} 条自定义内容？此操作不可撤销。',adm_content_desc:'筛选、编辑、启停、批量删除全部自定义条目',adm_backup_hint:'备份包含个人资料、注册记录与全部自定义内容；导入会覆盖当前数据，请先导出留存。',admin_state_on:'管理模式已开启',admin_state_off:'管理模式已关闭',admin_state_desc_on:'可编辑与删除自定义条目',admin_state_desc_off:'只读模式 · 开启右上角开关以管理',admin_fancy_title:'靓号系统设置',admin_fancy_desc:'设置靓号池的号码、说明与备注，保存后立即在前台生效（仅存本机浏览器）',admin_fancy_numbers:'号码列表（每行一个，也可用逗号分隔）',admin_fancy_intro:'靓号池说明',admin_fancy_note:'备注提示',admin_fancy_save:'保存靓号设置',admin_fancy_saved:'靓号设置已保存',admin_fancy_empty:'请先填写至少一个号码',admin_fancy_ph:'例如：100000',admin_fancy_preview:'当前预览',reg_age:'年龄',reg_age_ph:'请输入年龄',reg_qq:'QQ 号',reg_qq_ph:'你的 QQ 号',reg_wechat:'微信号',reg_wechat_ph:'你的微信号'
 
 },
 en:{
@@ -14049,7 +14701,7 @@ nav_news:'AI News',nav_projects:'Projects',title_news:'AI News',sub_news:'Daily 
 skcat_agent:'Agent Dev / Workflow',skcat_cloud:'Cloud Services / Ops',skcat_fe:'Frontend Design',skcat_fe_ds:'Frontend Design / Design System',skcat_be:'Backend Dev / Rust',skcat_mm:'Multimedia Creation',skcat_sec:'Security Audit',skcat_dev:'Dev Engineering',skcat_opt:'Skill Optimization / Agent',skcat_eff_cloud:'Efficiency / Cloud Drive',skcat_eff_collab:'Efficiency / Collaboration',skcat_mem:'Efficiency Memory',skcat_data:'Data Research',skcat_office:'Documents & Office',skcat_browser:'Browser Automation',skcat_game:'Game Dev / Effects',skcat_mkt:'Marketing Growth',skcat_video_agent:'Video Production / Agent',skcat_video_cam:'Video Production / Camera Work',skcat_res:'Resource Catalog',tucat_aigc:'AIGC Creative & Visual Design',tucat_biz:'AI Business Strategy & Product',tucat_gov:'AI Safety, Governance & Ethics',tucat_wf:'AI Workflow & Automation',tucat_agent:'Agent Development',tucat_agent_gc:'Agent Development / Google Cloud',tucat_agent_mcp:'Agent Development & MCP',tucat_agent_pat:'Agent Development & Design Patterns',tucat_emb:'Embodied AI & Hardware AI',tucat_llm:'LLM Application & Development',tucat_ml:'Machine Learning Basics',tucat_gpu:'Deep Learning / GPU Computing',
 fmt_nb_mini:'Notebook Mini-course',fmt_nb:'Notebook Course',fmt_yt:'YouTube Video',fmt_col:'Column',fmt_col_pod:'Column / Podcast',fmt_zhrepo:'Chinese Course + Repo',fmt_gpulab:'Cloud GPU Lab',fmt_lab:'Interactive Lab',fmt_recipe:'Code Recipes',fmt_spec:'Online Special Course',fmt_book:'Online Book',fmt_manual:'Online Manual',fmt_course:'Online Course',fmt_courselab:'Online Course + Lab',fmt_sec:'Security Guide',fmt_doc:'Official Docs',fmt_fw:'Official Framework',fmt_guide:'Practical Guide',fmt_article:'Practical Articles',fmt_oszh:'Open-source Chinese Course',fmt_os:'Open-source Tutorial',fmt_oslib:'Open-source Tutorial Library',fmt_osdoc:'Open-source Docs',fmt_oscourse:'Open-source Course',fmt_osproj:'Open-source Project',fmt_doct:'Doc Tutorial',fmt_docc:'Doc Course',fmt_law:'Regulation Explained',fmt_series:'Video Series',fmt_video:'Video Course',fmt_res:'Resource Guide',fmt_uni:'University Course',mg_c_light:'1. C-side Light-asset Monetization',mg_b_service:'2. B-side Heavy Services & Solutions',mg_b_content:'2. Content & Traffic Monetization',mg_model:'3. Mainstream Commercial Models',mg_b_svc2:'3. B-side Service Monetization',mg_brand:'4. Personal Brand Monetization',mg_advice:'4. Core Breakthrough Advice',
 admin_builtin:'Built-in',admin_custom:'Custom',admin_total:'Total',admin_overview:'Workbench Overview',admin_overview_desc:'Live counts of built-in and custom entries across all sections',admin_search:'Global Search',admin_search_desc:'Search names, summaries, tags and URLs across all sections',admin_search_ph:'Type a keyword to search all sections…',admin_search_hint:'Enter a keyword above to search entries across all sections',admin_search_none:'No matching entries found',admin_search_found:'Found',admin_locate:'Locate',admin_manage:'Custom Content Manager',admin_manage_desc:'Manage custom entries in every section; built-in entries are read-only',admin_custom_empty:'No custom entries yet. Turn on admin mode and use the + Add button in each section.',admin_health:'Data Health Check',admin_health_desc:'Scan for duplicate IDs, invalid URLs and missing key fields',admin_health_run:'Run Check',admin_health_running:'Checking all sections…',admin_health_ok:'No issues found. Data looks healthy.',admin_health_found:'Issues found:',admin_health_dup:'Duplicate ID',admin_health_url:'Invalid URL',admin_health_missing:'Missing key field',admin_gate_title:'Administrator Verification',admin_gate_desc:'This area is restricted to administrators. Please enter the admin password.',admin_gate_ph:'Enter admin password',admin_gate_submit:'Verify & Enter',admin_gate_wrong:'Incorrect password, please try again',admin_gate_ok:'Verified. Admin mode enabled.',
-nav_admin:'Management',ps_registered:'Registered',ps_completeness:'Profile Completeness',ps_cloud:'Cloud Sync',admin_entry_sub:'Admin access · verification required',reg_profile_title:'Registration details (saved with your account)',reg_avatar:'Avatar',reg_avatar_tip:'Pick a built-in avatar below, or click the avatar on the left to upload your own (optional)',admin_fancy_title:'Fancy Number Settings',admin_fancy_desc:'Configure numbers, description and note for the fancy pool. Changes take effect immediately (stored in this browser only).',admin_fancy_numbers:'Number list (one per line, commas also work)',admin_fancy_intro:'Pool description',admin_fancy_note:'Note',admin_fancy_save:'Save fancy settings',admin_fancy_saved:'Fancy settings saved',admin_fancy_empty:'Enter at least one number first',admin_fancy_ph:'e.g. 100000',admin_fancy_preview:'Current preview',reg_age:'Age',reg_age_ph:'Your age',reg_qq:'QQ Number',reg_qq_ph:'Your QQ number',reg_wechat:'WeChat ID',reg_wechat_ph:'Your WeChat ID'
+nav_admin:'Management',ps_registered:'Registered',ps_completeness:'Profile Completeness',ps_cloud:'Cloud Sync',admin_entry_sub:'Admin access · verification required',reg_profile_title:'Registration details (saved with your account)',reg_avatar:'Avatar',reg_avatar_tip:'Pick a built-in avatar below, or click the avatar on the left to upload your own (optional)',adm_title:'Admin console',adm_nav_cap:'Modules',adm_tab_overview:'Overview',adm_tab_content:'Content',adm_tab_search:'Search',adm_tab_fancy:'Fancy numbers',adm_tab_health:'Health check',adm_tab_backup:'Backup',adm_console_ver:'Console v2',adm_state_on:'Enabled',adm_state_off:'Disabled',adm_state_all:'All states',adm_filter_all:'All sections',adm_add:'Add item',adm_batch_del:'Batch delete',adm_col_name:'Name',adm_col_section:'Section',adm_col_state:'Status',adm_col_link:'Link',adm_col_ops:'Actions',adm_no_items:'No matching items',adm_edit:'Edit',adm_enable:'Enable',adm_disable:'Disable',adm_save:'Save',adm_saved:'Changes saved',adm_toggled:'Status updated',adm_select_first:'Select items to delete first',adm_confirm_batch:'Delete {n} selected custom items? This cannot be undone.',adm_content_desc:'Filter, edit, enable or disable, and batch-delete custom items',adm_backup_hint:'Backup includes your profile, registration records and all custom items. Import overwrites current data - export first.',admin_state_on:'Admin mode on',admin_state_off:'Admin mode off',admin_state_desc_on:'You can edit and delete custom items',admin_state_desc_off:'Read only - turn on the switch to manage',admin_fancy_title:'Fancy Number Settings',admin_fancy_desc:'Configure numbers, description and note for the fancy pool. Changes take effect immediately (stored in this browser only).',admin_fancy_numbers:'Number list (one per line, commas also work)',admin_fancy_intro:'Pool description',admin_fancy_note:'Note',admin_fancy_save:'Save fancy settings',admin_fancy_saved:'Fancy settings saved',admin_fancy_empty:'Enter at least one number first',admin_fancy_ph:'e.g. 100000',admin_fancy_preview:'Current preview',reg_age:'Age',reg_age_ph:'Your age',reg_qq:'QQ Number',reg_qq_ph:'Your QQ number',reg_wechat:'WeChat ID',reg_wechat_ph:'Your WeChat ID'
 
 },
 th:{
@@ -14187,7 +14839,7 @@ nav_news:'ข่าว AI',nav_projects:'โครงการ',title_news:'ข�
 skcat_agent:'พัฒนา Agent / เวิร์กโฟลว์',skcat_cloud:'คลาวด์บริการ / ดำเนินงาน',skcat_fe:'ออกแบบส่วนหน้า',skcat_fe_ds:'ออกแบบส่วนหน้า / ระบบออกแบบ',skcat_be:'พัฒนาส่วนหลัง / Rust',skcat_mm:'สร้างสรรค์มัลติมีเดีย',skcat_sec:'ตรวจสอบความปลอดภัย',skcat_dev:'วิศวกรรมพัฒนา',skcat_opt:'ปรับแต่งสกิล / Agent',skcat_eff_cloud:'ประสิทธิภาพ / คลาวด์ไดรฟ์',skcat_eff_collab:'ประสิทธิภาพ / ความร่วมมือ',skcat_mem:'ประสิทธิภาพและความจำ',skcat_data:'วิจัยข้อมูล',skcat_office:'เอกสารและสำนักงาน',skcat_browser:'ทำงานอัตโนมัติบนเบราว์เซอร์',skcat_game:'พัฒนาเกม / เอฟเฟกต์',skcat_mkt:'การตลาดและการเติบโต',skcat_video_agent:'ผลิตวิดีโอ / Agent',skcat_video_cam:'ผลิตวิดีโอ / การควบคุมกล้อง',skcat_res:'สารบัญทรัพยากร',tucat_aigc:'AIGC ความคิดสร้างสรรค์และการออกแบบภาพ',tucat_biz:'กลยุทธ์ธุรกิจ AI และผลิตภัณฑ์',tucat_gov:'ความปลอดภัย AI การกำกับดูแลและจริยธรรม',tucat_wf:'เวิร์กโฟลว์ AI และระบบอัตโนมัติ',tucat_agent:'พัฒนา Agent',tucat_agent_gc:'พัฒนา Agent / Google Cloud',tucat_agent_mcp:'พัฒนา Agent และ MCP',tucat_agent_pat:'พัฒนา Agent และรูปแบบการออกแบบ',tucat_emb:'AI รู้กายและ AI ฮาร์ดแวร์',tucat_llm:'การประยุกต์และพัฒนาโมเดลขนาดใหญ่',tucat_ml:'พื้นฐานการเรียนรู้ของเครื่อง',tucat_gpu:'การเรียนรู้เชิงลึก / การประมวลผล GPU',
 fmt_nb_mini:'ไมโครคอร์ส Notebook',fmt_nb:'คอร์ส Notebook',fmt_yt:'วิดีโอ YouTube',fmt_col:'คอลัมน์',fmt_col_pod:'คอลัมน์ / พอดแคสต์',fmt_zhrepo:'คอร์สภาษาจีน + คลังโค้ด',fmt_gpulab:'คลาวด์ GPU Lab',fmt_lab:'ห้องแล็บเชิงโต้ตอบ',fmt_recipe:'สูตรโค้ด',fmt_spec:'คอร์สพิเศษออนไลน์',fmt_book:'หนังสือออนไลน์',fmt_manual:'คู่มือออนไลน์',fmt_course:'คอร์สออนไลน์',fmt_courselab:'คอร์สออนไลน์ + Lab',fmt_sec:'คู่มือความปลอดภัย',fmt_doc:'เอกสารทางการ',fmt_fw:'เฟรมเวิร์กทางการ',fmt_guide:'คู่มือปฏิบัติ',fmt_article:'บทความปฏิบัติ',fmt_oszh:'คอร์สภาษาจีนโอเพนซอร์ส',fmt_os:'สอนโอเพนซอร์ส',fmt_oslib:'คลังสอนโอเพนซอร์ส',fmt_osdoc:'เอกสารโอเพนซอร์ส',fmt_oscourse:'คอร์สโอเพนซอร์ส',fmt_osproj:'โครงการโอเพนซอร์ส',fmt_doct:'สอนจากเอกสาร',fmt_docc:'คอร์สจากเอกสาร',fmt_law:'คำอธิบายกฎหมาย',fmt_series:'ซีรีส์วิดีโอ',fmt_video:'คอร์สวิดีโอ',fmt_res:'คู่มือทรัพยากร',fmt_uni:'คอร์สมหาวิทยาลัย',mg_c_light:'1. สร้างรายได้ฝั่ง C แบบเบา',mg_b_service:'2. บริการหนักและโซลูชันฝั่ง B',mg_b_content:'2. สร้างรายได้จากเนื้อหาและทราฟฟิก',mg_model:'3. รูปแบบการสร้างรายได้หลัก',mg_b_svc2:'3. สร้างรายได้จากบริการฝั่ง B',mg_brand:'4. สร้างรายได้จากแบรนด์ส่วนตัว',mg_advice:'4. ข้อเสนอแนะหลักเพื่อทะลุขีดจำกัด',
 admin_builtin:'ที่มีอยู่',admin_custom:'กำหนดเอง',admin_total:'ทั้งหมด',admin_overview:'ภาพรวมเวิร์กเบนช์',admin_overview_desc:'สถิติรายการที่มีอยู่และที่กำหนดเองของทุกหมวด',admin_search:'ค้นหาทั้งไซต์',admin_search_desc:'ค้นหาชื่อ สรุป ป้ายกำกับ และลิงก์ในทุกหมวด',admin_search_ph:'พิมพ์คำค้นหาเพื่อค้นหาทุกหมวด…',admin_search_hint:'พิมพ์คำค้นหาด้านบนเพื่อค้นหารายการในทุกหมวด',admin_search_none:'ไม่พบรายการที่ตรงกัน',admin_search_found:'พบ',admin_locate:'ไปยัง',admin_manage:'จัดการเนื้อหาที่กำหนดเอง',admin_manage_desc:'จัดการรายการที่กำหนดเองในทุกหมวด รายการที่มีอยู่เป็นแบบอ่านอย่างเดียว',admin_custom_empty:'ยังไม่มีรายการที่กำหนดเอง เปิดโหมดผู้ดูแลแล้วใช้ปุ่ม ＋ เพิ่มในแต่ละหมวด',admin_health:'ตรวจสุขภาพข้อมูล',admin_health_desc:'ตรวจรหัสซ้ำ ลิงก์ไม่ถูกต้อง และฟิลด์สำคัญที่ขาดหาย',admin_health_run:'เริ่มตรวจ',admin_health_running:'กำลังตรวจทุกหมวด…',admin_health_ok:'ไม่พบปัญหา ข้อมูลอยู่ในสภาพดี',admin_health_found:'พบปัญหาทั้งหมด',admin_health_dup:'รหัสซ้ำ',admin_health_url:'ลิงก์ไม่ถูกต้อง',admin_health_missing:'ฟิลด์สำคัญขาดหาย',admin_gate_title:'การยืนยันผู้ดูแล',admin_gate_desc:'พื้นที่นี้สำหรับผู้ดูแลเท่านั้น กรุณาใส่รหัสผ่านผู้ดูแล',admin_gate_ph:'ใส่รหัสผ่านผู้ดูแล',admin_gate_submit:'ยืนยันและเข้าใช้',admin_gate_wrong:'รหัสผ่านไม่ถูกต้อง กรุณาลองใหม่',admin_gate_ok:'ยืนยันแล้ว เปิดโหมดผู้ดูแลแล้ว',
-nav_admin:'ระบบจัดการ',ps_registered:'ลงทะเบียนแล้ว',ps_completeness:'ความสมบูรณ์ของโปรไฟล์',ps_cloud:'ซิงก์คลาวด์',admin_entry_sub:'ทางเข้าผู้ดูแล · ต้องยืนยัน',reg_profile_title:'กรอกข้อมูลสมัคร (บันทึกพร้อมบัญชี)',reg_avatar:'รูปโปรไฟล์',reg_avatar_tip:'เลือกอวาตาร์ด้านล่าง หรือแตะที่อวาตาร์ด้านซ้ายเพื่ออัปโหลดรูปของคุณ (ไม่บังคับ)',admin_fancy_title:'ตั้งค่าเลขพิเศษ',admin_fancy_desc:'กำหนดหมายเลข คำอธิบาย และหมายเหตุของชุดเลขพิเศษ มีผลทันทีหลังบันทึก (จัดเก็บในเบราว์เซอร์นี้เท่านั้น)',admin_fancy_numbers:'รายการหมายเลข (บรรทัดละหมายเลข หรือคั่นด้วยเครื่องหมายจุลภาค)',admin_fancy_intro:'คำอธิบายชุดหมายเลข',admin_fancy_note:'หมายเหตุ',admin_fancy_save:'บันทึกการตั้งค่า',admin_fancy_saved:'บันทึกการตั้งค่าแล้ว',admin_fancy_empty:'กรุณากรอกหมายเลขอย่างน้อยหนึ่งหมายเลข',admin_fancy_ph:'เช่น 100000',admin_fancy_preview:'ตัวอย่างปัจจุบัน',reg_age:'อายุ',reg_age_ph:'อายุของคุณ',reg_qq:'หมายเลข QQ',reg_qq_ph:'หมายเลข QQ ของคุณ',reg_wechat:'ID WeChat',reg_wechat_ph:'ID WeChat ของคุณ'
+nav_admin:'ระบบจัดการ',ps_registered:'ลงทะเบียนแล้ว',ps_completeness:'ความสมบูรณ์ของโปรไฟล์',ps_cloud:'ซิงก์คลาวด์',admin_entry_sub:'ทางเข้าผู้ดูแล · ต้องยืนยัน',reg_profile_title:'กรอกข้อมูลสมัคร (บันทึกพร้อมบัญชี)',reg_avatar:'รูปโปรไฟล์',reg_avatar_tip:'เลือกอวาตาร์ด้านล่าง หรือแตะที่อวาตาร์ด้านซ้ายเพื่ออัปโหลดรูปของคุณ (ไม่บังคับ)',adm_title:'คอนโซลผู้ดูแล',adm_nav_cap:'โมดูล',adm_tab_overview:'ภาพรวม',adm_tab_content:'จัดการเนื้อหา',adm_tab_search:'ค้นหาทั้งระบบ',adm_tab_fancy:'หมายเลขพิเศษ',adm_tab_health:'ตรวจสุขภาพ',adm_tab_backup:'สำรองข้อมูล',adm_console_ver:'คอนโซล v2',adm_state_on:'เปิดอยู่',adm_state_off:'ปิดอยู่',adm_state_all:'ทุกสถานะ',adm_filter_all:'ทุกหมวด',adm_add:'เพิ่มรายการ',adm_batch_del:'ลบหลายรายการ',adm_col_name:'ชื่อ',adm_col_section:'หมวด',adm_col_state:'สถานะ',adm_col_link:'ลิงก์',adm_col_ops:'จัดการ',adm_no_items:'ไม่มีรายการที่ตรงกัน',adm_edit:'แก้ไข',adm_enable:'เปิดใช้งาน',adm_disable:'ปิดใช้งาน',adm_save:'บันทึก',adm_saved:'บันทึกการเปลี่ยนแปลงแล้ว',adm_toggled:'เปลี่ยนสถานะแล้ว',adm_select_first:'กรุณาเลือก รายการที่ต้องการลบก่อน',adm_confirm_batch:'ลบ รายการที่เลือก {n} รายการหรือไม่? ไม่สามารถย้อนกลับได้',adm_content_desc:'กรอง แก้ไข เปิด-ปิด และลบหลายรายการ',adm_backup_hint:'ข้อมูลสำรองรวมโปรไฟล์ บันทึก และเนื้อหาที่กำหนดเอง การนำเข้าจะแทนที่ข้อมูลปัจจุบัน',admin_state_on:'โหมดผู้ดูแลเปิดอยู่',admin_state_off:'โหมดผู้ดูแลปิดอยู่',admin_state_desc_on:'สามารถแก้ไขและลบรายการที่กำหนดเองได้',admin_state_desc_off:'อ่านอย่างเดียว เปิดสวิตช์เพื่อจัดการ',admin_fancy_title:'ตั้งค่าเลขพิเศษ',admin_fancy_desc:'กำหนดหมายเลข คำอธิบาย และหมายเหตุของชุดเลขพิเศษ มีผลทันทีหลังบันทึก (จัดเก็บในเบราว์เซอร์นี้เท่านั้น)',admin_fancy_numbers:'รายการหมายเลข (บรรทัดละหมายเลข หรือคั่นด้วยเครื่องหมายจุลภาค)',admin_fancy_intro:'คำอธิบายชุดหมายเลข',admin_fancy_note:'หมายเหตุ',admin_fancy_save:'บันทึกการตั้งค่า',admin_fancy_saved:'บันทึกการตั้งค่าแล้ว',admin_fancy_empty:'กรุณากรอกหมายเลขอย่างน้อยหนึ่งหมายเลข',admin_fancy_ph:'เช่น 100000',admin_fancy_preview:'ตัวอย่างปัจจุบัน',reg_age:'อายุ',reg_age_ph:'อายุของคุณ',reg_qq:'หมายเลข QQ',reg_qq_ph:'หมายเลข QQ ของคุณ',reg_wechat:'ID WeChat',reg_wechat_ph:'ID WeChat ของคุณ'
 
 },
 ja:{
@@ -14325,7 +14977,7 @@ nav_news:'AIニュース',nav_projects:'プロジェクト',title_news:'AI ニ�
 skcat_agent:'Agent 開発 / ワークフロー',skcat_cloud:'クラウドサービス / 運用',skcat_fe:'フロントエンドデザイン',skcat_fe_ds:'フロントエンドデザイン / デザインシステム',skcat_be:'バックエンド開発 / Rust',skcat_mm:'マルチメディア制作',skcat_sec:'セキュリティ監査',skcat_dev:'開発工程',skcat_opt:'スキル最適化 / Agent',skcat_eff_cloud:'効率 / クラウドドライブ',skcat_eff_collab:'効率 / コラボレーション',skcat_mem:'効率と記憶',skcat_data:'データ研究',skcat_office:'文書オフィス',skcat_browser:'ブラウザ自動化',skcat_game:'ゲーム開発 / ゲーム特效',skcat_mkt:'マーケティング成長',skcat_video_agent:'動画制作 / Agent',skcat_video_cam:'動画制作 / カメラワーク',skcat_res:'リソースカタログ',tucat_aigc:'AIGC クリエイティブとビジュアルデザイン',tucat_biz:'AI ビジネス戦略とプロダクト',tucat_gov:'AI 安全、ガバナンスと倫理',tucat_wf:'AI ワークフローと自動化',tucat_agent:'Agent 開発',tucat_agent_gc:'Agent 開発 / Google Cloud',tucat_agent_mcp:'Agent 開発と MCP',tucat_agent_pat:'Agent 開発とデザインパターン',tucat_emb:'具身知能とハードウェア AI',tucat_llm:'大規模モデルの応用と開発',tucat_ml:'機械学習の基礎',tucat_gpu:'深層学習 / GPU 計算',
 fmt_nb_mini:'Notebook ミニ講座',fmt_nb:'Notebook 講座',fmt_yt:'YouTube 動画',fmt_col:'コラム',fmt_col_pod:'コラム / ポッドキャスト',fmt_zhrepo:'中国語講座 + コードリポジトリ',fmt_gpulab:'クラウド GPU Lab',fmt_lab:'インタラクティブラボ',fmt_recipe:'コードレシピ',fmt_spec:'オンライン特別講座',fmt_book:'オンライン書籍',fmt_manual:'オンラインマニュアル',fmt_course:'オンライン講座',fmt_courselab:'オンライン講座 + Lab',fmt_sec:'セキュリティガイド',fmt_doc:'公式ドキュメント',fmt_fw:'公式フレームワーク',fmt_guide:'実践ガイド',fmt_article:'実践記事',fmt_oszh:'オープンソース中国語講座',fmt_os:'オープンソースチュートリアル',fmt_oslib:'オープンソースチュートリアルライブラリ',fmt_osdoc:'オープンソースドキュメント',fmt_oscourse:'オープンソース講座',fmt_osproj:'オープンソースプロジェクト',fmt_doct:'ドキュメントチュートリアル',fmt_docc:'ドキュメント講座',fmt_law:'法規解説',fmt_series:'動画シリーズ',fmt_video:'動画講座',fmt_res:'リソースガイド',fmt_uni:'大学講座',mg_c_light:'1. C 側の軽資産変現',mg_b_service:'2. B 側の重サービスとソリューション',mg_b_content:'2. コンテンツとトラフィック変現',mg_model:'3. 主流のビジネスモデル',mg_b_svc2:'3. B 側サービス変現',mg_brand:'4. パーソナルブランド変現',mg_advice:'4. 核心的な突破口の提言',
 admin_builtin:'組み込み',admin_custom:'カスタム',admin_total:'合計',admin_overview:'ワークベンチ概要',admin_overview_desc:'全セクションの組み込み・カスタム項目のリアルタイム統計',admin_search:'サイト内検索',admin_search_desc:'すべてのセクションの名前・概要・タグ・URLを検索',admin_search_ph:'キーワードを入力して全セクションを検索…',admin_search_hint:'上の入力欄にキーワードを入力すると全セクションを検索します',admin_search_none:'一致する項目が見つかりません',admin_search_found:'見つかった項目',admin_locate:'移動',admin_manage:'カスタムコンテンツ管理',admin_manage_desc:'全セクションのカスタム項目を管理します。組み込み項目は読み取り専用です',admin_custom_empty:'カスタム項目はまだありません。管理者モードをオンにして各セクションの「＋追加」を使用してください。',admin_health:'データ健全性チェック',admin_health_desc:'重複ID、無効なリンク、必須項目の欠落を確認します',admin_health_run:'チェック開始',admin_health_running:'すべてのセクションを確認中…',admin_health_ok:'問題は見つかりませんでした。データは正常です。',admin_health_found:'検出された問題',admin_health_dup:'重複ID',admin_health_url:'無効なリンク',admin_health_missing:'必須項目の欠落',admin_gate_title:'管理者認証',admin_gate_desc:'このエリアは管理者のみ利用できます。管理者パスワードを入力してください',admin_gate_ph:'管理者パスワードを入力',admin_gate_submit:'認証して入る',admin_gate_wrong:'パスワードが正しくありません。もう一度入力してください',admin_gate_ok:'認証完了。管理者モードを有効にしました',
-nav_admin:'管理システム',ps_registered:'登録済み',ps_completeness:'プロフィール完成度',ps_cloud:'クラウド同期',admin_entry_sub:'管理者向け · 認証が必要',reg_profile_title:'登録情報（アカウントと一緒に保存）',reg_avatar:'アバター',reg_avatar_tip:'下のアバターを選ぶか、左のアバターをクリックして画像をアップロード（任意）',admin_fancy_title:'特別番号の管理',admin_fancy_desc:'特別番号プールの番号・説明・備考を登録します。保存後すぐに反映されます（このブラウザーにのみ保存）。',admin_fancy_numbers:'番号リスト（1行に1つ、カンマ区切りも可）',admin_fancy_intro:'プールの説明',admin_fancy_note:'備考',admin_fancy_save:'保存',admin_fancy_saved:'保存しました',admin_fancy_empty:'番号を1つ以上入力してください',admin_fancy_ph:'例: 100000',admin_fancy_preview:'現在のプレビュー',reg_age:'年齢',reg_age_ph:'年齢を入力',reg_qq:'QQ 番号',reg_qq_ph:'QQ 番号',reg_wechat:'WeChat ID',reg_wechat_ph:'WeChat ID'
+nav_admin:'管理システム',ps_registered:'登録済み',ps_completeness:'プロフィール完成度',ps_cloud:'クラウド同期',admin_entry_sub:'管理者向け · 認証が必要',reg_profile_title:'登録情報（アカウントと一緒に保存）',reg_avatar:'アバター',reg_avatar_tip:'下のアバターを選ぶか、左のアバターをクリックして画像をアップロード（任意）',adm_title:'管理コンソール',adm_nav_cap:'モジュール',adm_tab_overview:'概要',adm_tab_content:'コンテンツ管理',adm_tab_search:'全体検索',adm_tab_fancy:'特別番号設定',adm_tab_health:'ヘルスチェック',adm_tab_backup:'バックアップ',adm_console_ver:'コンソール v2',adm_state_on:'有効',adm_state_off:'無効',adm_state_all:'すべての状態',adm_filter_all:'すべてのセクション',adm_add:'項目を追加',adm_batch_del:'一括削除',adm_col_name:'名前',adm_col_section:'セクション',adm_col_state:'状態',adm_col_link:'リンク',adm_col_ops:'操作',adm_no_items:'一致する項目がありません',adm_edit:'編集',adm_enable:'有効化',adm_disable:'無効化',adm_save:'保存',adm_saved:'変更を保存しました',adm_toggled:'状態を変更しました',adm_select_first:'削除する項目を先に選択してください',adm_confirm_batch:'選択した {n} 件のカスタム項目を削除しますか? 元に戻せません。',adm_content_desc:'カスタム項目の絞り込み・編集・有効無効・一括削除',adm_backup_hint:'バックアップにはプロフィール、登録記録、カスタム項目が含まれます。読み込みは現在のデータを上書きします。',admin_state_on:'管理者モード オン',admin_state_off:'管理者モード オフ',admin_state_desc_on:'カスタム項目を編集・削除できます',admin_state_desc_off:'読み取り専用 右上のスイッチで管理できます',admin_fancy_title:'特別番号の管理',admin_fancy_desc:'特別番号プールの番号・説明・備考を登録します。保存後すぐに反映されます（このブラウザーにのみ保存）。',admin_fancy_numbers:'番号リスト（1行に1つ、カンマ区切りも可）',admin_fancy_intro:'プールの説明',admin_fancy_note:'備考',admin_fancy_save:'保存',admin_fancy_saved:'保存しました',admin_fancy_empty:'番号を1つ以上入力してください',admin_fancy_ph:'例: 100000',admin_fancy_preview:'現在のプレビュー',reg_age:'年齢',reg_age_ph:'年齢を入力',reg_qq:'QQ 番号',reg_qq_ph:'QQ 番号',reg_wechat:'WeChat ID',reg_wechat_ph:'WeChat ID'
 
 },
 ko:{
@@ -14463,7 +15115,7 @@ nav_news:'AI 뉴스',nav_projects:'프로젝트',title_news:'AI 뉴스',sub_news
 skcat_agent:'Agent 개발 / 워크플로',skcat_cloud:'클라우드 서비스 / 운영',skcat_fe:'프린트엔드 디자인',skcat_fe_ds:'프린트엔드 디자인 / 디자인 시스템',skcat_be:'백엔드 개발 / Rust',skcat_mm:'멀티미디어 제작',skcat_sec:'보안 감사',skcat_dev:'개발 공학',skcat_opt:'스킬 최적화 / Agent',skcat_eff_cloud:'효율 / 클라우드 드라이브',skcat_eff_collab:'효율 / 협업',skcat_mem:'효율 및 메모리',skcat_data:'데이터 연구',skcat_office:'문서 사무',skcat_browser:'브라우저 자동화',skcat_game:'게임 개발 / 게임 효과',skcat_mkt:'마케팅 성장',skcat_video_agent:'영상 제작 / Agent',skcat_video_cam:'영상 제작 / 카메라 워크',skcat_res:'리소스 카탈로그',tucat_aigc:'AIGC 창의성과 시각 디자인',tucat_biz:'AI 비즈니스 전략과 제품',tucat_gov:'AI 안전, 거버넌스와 윤리',tucat_wf:'AI 워크플로와 자동화',tucat_agent:'Agent 개발',tucat_agent_gc:'Agent 개발 / Google Cloud',tucat_agent_mcp:'Agent 개발과 MCP',tucat_agent_pat:'Agent 개발과 디자인 패턴',tucat_emb:'구현 지능과 하드웨어 AI',tucat_llm:'대규모 모델 응용 및 개발',tucat_ml:'머신러닝 기초',tucat_gpu:'심층 학습 / GPU 계산',
 fmt_nb_mini:'Notebook 미니 강의',fmt_nb:'Notebook 강의',fmt_yt:'YouTube 영상',fmt_col:'칼럼',fmt_col_pod:'칼럼 / 팟캐스트',fmt_zhrepo:'중국어 강의 + 코드 저장소',fmt_gpulab:'클라우드 GPU Lab',fmt_lab:'인터랙티브 랩',fmt_recipe:'코드 레시피',fmt_spec:'온라인 특별 강의',fmt_book:'온라인 책',fmt_manual:'온라인 매뉴얼',fmt_course:'온라인 강의',fmt_courselab:'온라인 강의 + Lab',fmt_sec:'보안 가이드',fmt_doc:'공식 문서',fmt_fw:'공식 프레임워크',fmt_guide:'실전 가이드',fmt_article:'실전 글',fmt_oszh:'오픈소스 중국어 강의',fmt_os:'오픈소스 튜토리얼',fmt_oslib:'오픈소스 튜토리얼 라이브러리',fmt_osdoc:'오픈소스 문서',fmt_oscourse:'오픈소스 강의',fmt_osproj:'오픈소스 프로젝트',fmt_doct:'문서 튜토리얼',fmt_docc:'문서 강의',fmt_law:'법규 해설',fmt_series:'영상 시리즈',fmt_video:'영상 강의',fmt_res:'리소스 가이드',fmt_uni:'대학교 강의',mg_c_light:'1. C사이트 경량 자산 수익화',mg_b_service:'2. B사이트 중량 서비스와 솔루션',mg_b_content:'2. 콘텐츠와 트래픽 수익화',mg_model:'3. 주류 상업 수익 모델',mg_b_svc2:'3. B사이트 서비스 수익화',mg_brand:'4. 개인 브랜딩 수익화',mg_advice:'4. 핵심 돌파 제안',
 admin_builtin:'내장',admin_custom:'사용자 정의',admin_total:'합계',admin_overview:'워크벤치 개요',admin_overview_desc:'모든 섹션의 내장·사용자 정의 항목 실시간 통계',admin_search:'전체 검색',admin_search_desc:'모든 섹션의 이름, 요약, 태그, URL 검색',admin_search_ph:'키워드를 입력해 모든 섹션 검색…',admin_search_hint:'위에 키워드를 입력하면 모든 섹션의 항목을 검색합니다',admin_search_none:'일치하는 항목이 없습니다',admin_search_found:'검색 결과',admin_locate:'이동',admin_manage:'사용자 정의 콘텐츠 관리',admin_manage_desc:'모든 섹션의 사용자 정의 항목을 관리합니다. 내장 항목은 읽기 전용입니다',admin_custom_empty:'사용자 정의 항목이 없습니다. 관리자 모드를 켠 뒤 각 섹션의 ＋ 추가를 사용하세요.',admin_health:'데이터 상태 점검',admin_health_desc:'중복 ID, 잘못된 링크, 누락된 주요 필드를 확인합니다',admin_health_run:'점검 시작',admin_health_running:'모든 섹션 점검 중…',admin_health_ok:'문제가 없습니다. 데이터가 정상입니다.',admin_health_found:'발견된 문제',admin_health_dup:'중복 ID',admin_health_url:'잘못된 링크',admin_health_missing:'주요 필드 누락',admin_gate_title:'관리자 인증',admin_gate_desc:'이 영역은 관리자만 사용할 수 있습니다. 관리자 비밀번호를 입력하세요',admin_gate_ph:'관리자 비밀번호 입력',admin_gate_submit:'인증 후 이동',admin_gate_wrong:'비밀번호가 틀렸습니다. 다시 입력하세요',admin_gate_ok:'인증 완료. 관리자 모드가 활성화되었습니다',
-nav_admin:'관리 시스템',ps_registered:'등록됨',ps_completeness:'프로필 완성도',ps_cloud:'클라우드 동기화',admin_entry_sub:'관리자 진입 · 인증 필요',reg_profile_title:'가입 정보 (계정과 함께 저장)',reg_avatar:'아바타',reg_avatar_tip:'아래 기본 아바타를 선택하거나 왼쪽 아바타를 눌러 직접 업로드 (선택)',admin_fancy_title:'특별 번호 설정',admin_fancy_desc:'특별 번호 풀의 번호, 설명, 메모를 설정합니다. 저장하면 즉시 반영됩니다(이 브라우저에만 저장).',admin_fancy_numbers:'번호 목록(한 줄에 하나, 쉼표로 구분 가능)',admin_fancy_intro:'풀 설명',admin_fancy_note:'메모',admin_fancy_save:'설정 저장',admin_fancy_saved:'설정이 저장되었습니다',admin_fancy_empty:'번호를 하나 이상 입력하세요',admin_fancy_ph:'예: 100000',admin_fancy_preview:'현재 미리보기',reg_age:'나이',reg_age_ph:'나이 입력',reg_qq:'QQ 번호',reg_qq_ph:'QQ 번호 입력',reg_wechat:'WeChat ID',reg_wechat_ph:'WeChat ID 입력'
+nav_admin:'관리 시스템',ps_registered:'등록됨',ps_completeness:'프로필 완성도',ps_cloud:'클라우드 동기화',admin_entry_sub:'관리자 진입 · 인증 필요',reg_profile_title:'가입 정보 (계정과 함께 저장)',reg_avatar:'아바타',reg_avatar_tip:'아래 기본 아바타를 선택하거나 왼쪽 아바타를 눌러 직접 업로드 (선택)',adm_title:'관리 콘솔',adm_nav_cap:'모듈',adm_tab_overview:'개요',adm_tab_content:'콘텐츠 관리',adm_tab_search:'전체 검색',adm_tab_fancy:'특별 번호',adm_tab_health:'상태 점검',adm_tab_backup:'백업',adm_console_ver:'콘솔 v2',adm_state_on:'활성',adm_state_off:'비활성',adm_state_all:'모든 상태',adm_filter_all:'모든 섹션',adm_add:'항목 추가',adm_batch_del:'일괄 삭제',adm_col_name:'이름',adm_col_section:'섹션',adm_col_state:'상태',adm_col_link:'링크',adm_col_ops:'작업',adm_no_items:'일치하는 항목이 없습니다',adm_edit:'편집',adm_enable:'활성화',adm_disable:'비활성화',adm_save:'저장',adm_saved:'변경 사항이 저장되었습니다',adm_toggled:'상태가 변경되었습니다',adm_select_first:'삭제할 항목을 먼저 선택하세요',adm_confirm_batch:'선택한 {n}개의 사용자 지정 항목을 삭제할까요? 되돌릴 수 없습니다.',adm_content_desc:'사용자 지정 항목 필터, 편집, 활성화, 일괄 삭제',adm_backup_hint:'백업에는 프로필, 등록 기록, 사용자 지정 항목이 포함됩니다. 가져오기는 현재 데이터를 덮어씁니다.',admin_state_on:'관리자 모드 켜짐',admin_state_off:'관리자 모드 꺼짐',admin_state_desc_on:'사용자 지정 항목을 편집하고 삭제할 수 있습니다',admin_state_desc_off:'읽기 전용 · 오른쪽 스위치를 켜서 관리',admin_fancy_title:'특별 번호 설정',admin_fancy_desc:'특별 번호 풀의 번호, 설명, 메모를 설정합니다. 저장하면 즉시 반영됩니다(이 브라우저에만 저장).',admin_fancy_numbers:'번호 목록(한 줄에 하나, 쉼표로 구분 가능)',admin_fancy_intro:'풀 설명',admin_fancy_note:'메모',admin_fancy_save:'설정 저장',admin_fancy_saved:'설정이 저장되었습니다',admin_fancy_empty:'번호를 하나 이상 입력하세요',admin_fancy_ph:'예: 100000',admin_fancy_preview:'현재 미리보기',reg_age:'나이',reg_age_ph:'나이 입력',reg_qq:'QQ 번호',reg_qq_ph:'QQ 번호 입력',reg_wechat:'WeChat ID',reg_wechat_ph:'WeChat ID 입력'
 
 },
 de:{
@@ -14601,7 +15253,7 @@ nav_news:'KI-News',nav_projects:'Projekte',title_news:'KI-News',sub_news:'Tägli
 skcat_agent:'Agent-Entwicklung / Workflows',skcat_cloud:'Cloud-Services / Ops',skcat_fe:'Frontend-Design',skcat_fe_ds:'Frontend-Design / Design-System',skcat_be:'Backend-Entwicklung / Rust',skcat_mm:'Multimedia-Erstellung',skcat_sec:'Sicherheitsaudit',skcat_dev:'Entwicklungsingenieurwesen',skcat_opt:'Skill-Optimierung / Agent',skcat_eff_cloud:'Effizienz / Cloud-Drive',skcat_eff_collab:'Effizienz / Kollaboration',skcat_mem:'Effizienz und Speicher',skcat_data:'Datenforschung',skcat_office:'Dokumentenarbeit',skcat_browser:'Browser-Automatisierung',skcat_game:'Spieleentwicklung / Effekte',skcat_mkt:'Marketing & Growth',skcat_video_agent:'Videoproduktion / Agent',skcat_video_cam:'Videoproduktion / Kameraführung',skcat_res:'Ressourcenverzeichnis',tucat_aigc:'AIGC Kreativität & Visuelles Design',tucat_biz:'AI-Businessstrategie & Produkt',tucat_gov:'AI-Sicherheit, Governance & Ethik',tucat_wf:'AI-Workflows & Automatisierung',tucat_agent:'Agent-Entwicklung',tucat_agent_gc:'Agent-Entwicklung / Google Cloud',tucat_agent_mcp:'Agent-Entwicklung & MCP',tucat_agent_pat:'Agent-Entwicklung & Design Patterns',tucat_emb:'Embodied AI & Hardware-AI',tucat_llm:'LLM-Anwendung & Entwicklung',tucat_ml:'Grundlagen Maschinelles Lernen',tucat_gpu:'Tiefes Lernen / GPU-Rechnung',
 fmt_nb_mini:'Notebook-Minikurs',fmt_nb:'Notebook-Kurs',fmt_yt:'YouTube-Video',fmt_col:'Kolumne',fmt_col_pod:'Kolumne / Podcast',fmt_zhrepo:'Chinesischer Kurs + Repo',fmt_gpulab:'Cloud GPU Lab',fmt_lab:'Interaktives Lab',fmt_recipe:'Code-Rezepte',fmt_spec:'Online-Spezialkurs',fmt_book:'Online-Buch',fmt_manual:'Online-Handbuch',fmt_course:'Online-Kurs',fmt_courselab:'Online-Kurs + Lab',fmt_sec:'Sicherheitsleitfaden',fmt_doc:'Offizielle Dokumente',fmt_fw:'Offizielles Framework',fmt_guide:'Praxisleitfaden',fmt_article:'Praxisartikel',fmt_oszh:'Open-Source-Chinesischkurs',fmt_os:'Open-Source-Tutorial',fmt_oslib:'Open-Source-Tutorial-Bibliothek',fmt_osdoc:'Open-Source-Dokumente',fmt_oscourse:'Open-Source-Kurs',fmt_osproj:'Open-Source-Projekt',fmt_doct:'Dokumentations-Tutorial',fmt_docc:'Dokumentationskurs',fmt_law:'Rechtskommentar',fmt_series:'Videoreihe',fmt_video:'Videokurs',fmt_res:'Ressourcenleitfaden',fmt_uni:'Universitätskurs',mg_c_light:'1. C-End-Leichtvermögen-Monetarisierung',mg_b_service:'2. B-End-Schwerdienste & Lösungen',mg_b_content:'2. Inhalt- & Traffic-Monetarisierung',mg_model:'3. Mainstream-Businessmodelle',mg_b_svc2:'3. B-End-Service-Monetarisierung',mg_brand:'4. Persönliche Marken-Monetarisierung',mg_advice:'4. Kern-Durchbruch-Empfehlungen',
 admin_builtin:'Integriert',admin_custom:'Eigen',admin_total:'Gesamt',admin_overview:'Workbench-Übersicht',admin_overview_desc:'Live-Statistik der integrierten und eigenen Einträge aller Bereiche',admin_search:'Globale Suche',admin_search_desc:'Namen, Zusammenfassungen, Tags und URLs in allen Bereichen suchen',admin_search_ph:'Suchbegriff eingeben, um alle Bereiche zu durchsuchen…',admin_search_hint:'Oben einen Suchbegriff eingeben, um Einträge in allen Bereichen zu finden',admin_search_none:'Keine passenden Einträge gefunden',admin_search_found:'Gefunden',admin_locate:'Öffnen',admin_manage:'Eigene Inhalte verwalten',admin_manage_desc:'Eigene Einträge in allen Bereichen verwalten; integrierte Einträge sind schreibgeschützt',admin_custom_empty:'Noch keine eigenen Einträge. Administratormodus aktivieren und in den Bereichen „＋ Hinzufügen“ nutzen.',admin_health:'Daten-Gesundheitscheck',admin_health_desc:'Doppelte IDs, ungültige Links und fehlende Pflichtfelder prüfen',admin_health_run:'Prüfung starten',admin_health_running:'Alle Bereiche werden geprüft…',admin_health_ok:'Keine Probleme gefunden. Daten sind gesund.',admin_health_found:'Gefundene Probleme',admin_health_dup:'Doppelte ID',admin_health_url:'Ungültiger Link',admin_health_missing:'Fehlendes Pflichtfeld',admin_gate_title:'Administratorprüfung',admin_gate_desc:'Dieser Bereich ist nur für Administratoren. Bitte Admin-Passwort eingeben.',admin_gate_ph:'Admin-Passwort eingeben',admin_gate_submit:'Prüfen & Öffnen',admin_gate_wrong:'Falsches Passwort, bitte erneut eingeben',admin_gate_ok:'Bestätigt. Administratormodus aktiviert.',
-nav_admin:'Verwaltung',ps_registered:'Registriert',ps_completeness:'Profilvollständigkeit',ps_cloud:'Cloud-Sync',admin_entry_sub:'Admin-Bereich · Verifizierung nötig',reg_profile_title:'Registrierungsdaten (mit dem Konto gespeichert)',reg_avatar:'Avatar',reg_avatar_tip:'Wähle unten einen Standard-Avatar oder klicke links zum Hochladen (optional)',admin_fancy_title:'Fancy-Nummern-Einstellungen',admin_fancy_desc:'Nummern, Beschreibung und Hinweis fuer den Fancy-Pool festlegen. Aenderungen wirken sofort (nur in diesem Browser gespeichert).',admin_fancy_numbers:'Nummernliste (eine pro Zeile, auch mit Komma trennbar)',admin_fancy_intro:'Pool-Beschreibung',admin_fancy_note:'Hinweis',admin_fancy_save:'Einstellungen speichern',admin_fancy_saved:'Einstellungen gespeichert',admin_fancy_empty:'Bitte zuerst mindestens eine Nummer eingeben',admin_fancy_ph:'z. B. 100000',admin_fancy_preview:'Aktuelle Vorschau',reg_age:'Alter',reg_age_ph:'Alter eingeben',reg_qq:'QQ-Nummer',reg_qq_ph:'Ihre QQ-Nummer',reg_wechat:'WeChat-ID',reg_wechat_ph:'Ihre WeChat-ID'
+nav_admin:'Verwaltung',ps_registered:'Registriert',ps_completeness:'Profilvollständigkeit',ps_cloud:'Cloud-Sync',admin_entry_sub:'Admin-Bereich · Verifizierung nötig',reg_profile_title:'Registrierungsdaten (mit dem Konto gespeichert)',reg_avatar:'Avatar',reg_avatar_tip:'Wähle unten einen Standard-Avatar oder klicke links zum Hochladen (optional)',adm_title:'Admin-Konsole',adm_nav_cap:'Module',adm_tab_overview:'Übersicht',adm_tab_content:'Inhalte',adm_tab_search:'Suche',adm_tab_fancy:'Fancy-Nummern',adm_tab_health:'Gesundheit',adm_tab_backup:'Backup',adm_console_ver:'Konsole v2',adm_state_on:'Aktiv',adm_state_off:'Inaktiv',adm_state_all:'Alle Status',adm_filter_all:'Alle Bereiche',adm_add:'Eintrag hinzufügen',adm_batch_del:'Stapellöschung',adm_col_name:'Name',adm_col_section:'Bereich',adm_col_state:'Status',adm_col_link:'Link',adm_col_ops:'Aktionen',adm_no_items:'Keine passenden Einträge',adm_edit:'Bearbeiten',adm_enable:'Aktivieren',adm_disable:'Deaktivieren',adm_save:'Speichern',adm_saved:'Änderungen gespeichert',adm_toggled:'Status geändert',adm_select_first:'Zuerst zu löschende Einträge auswählen',adm_confirm_batch:'{n} ausgewählte Einträge löschen? Dies kann nicht rückgängig gemacht werden.',adm_content_desc:'Einträge filtern, bearbeiten, aktivieren und stapelweise löschen',adm_backup_hint:'Backup enthält Profil, Registrierungen und alle eigenen Einträge. Import überschreibt aktuelle Daten - zuerst exportieren.',admin_state_on:'Admin-Modus aktiv',admin_state_off:'Admin-Modus inaktiv',admin_state_desc_on:'Eigene Einträge bearbeitbar',admin_state_desc_off:'Nur Lesen - Schalter oben rechts aktivieren',admin_fancy_title:'Fancy-Nummern-Einstellungen',admin_fancy_desc:'Nummern, Beschreibung und Hinweis fuer den Fancy-Pool festlegen. Aenderungen wirken sofort (nur in diesem Browser gespeichert).',admin_fancy_numbers:'Nummernliste (eine pro Zeile, auch mit Komma trennbar)',admin_fancy_intro:'Pool-Beschreibung',admin_fancy_note:'Hinweis',admin_fancy_save:'Einstellungen speichern',admin_fancy_saved:'Einstellungen gespeichert',admin_fancy_empty:'Bitte zuerst mindestens eine Nummer eingeben',admin_fancy_ph:'z. B. 100000',admin_fancy_preview:'Aktuelle Vorschau',reg_age:'Alter',reg_age_ph:'Alter eingeben',reg_qq:'QQ-Nummer',reg_qq_ph:'Ihre QQ-Nummer',reg_wechat:'WeChat-ID',reg_wechat_ph:'Ihre WeChat-ID'
 
 },
 it:{
@@ -14738,7 +15390,7 @@ boot_skip:'Salta SKIP ›',boot_enter:'Entra in SHENJI →',boot_brand:'SHENJI',
 nav_news:'Notizie AI',nav_projects:'Progetti',title_news:'Notizie AI',sub_news:'Ricerca quotidiana nel web delle notizie AI del giorno, deduplicazione automatica',title_projects:'Progetti',sub_projects:'Progetti AI attivi, a un clic di distanza',notice_news:'Notizie AI: Ogni giorno si cerca nel web le notizie e gli aggiornamenti AI del giorno, si rimuovono i duplicati e si aggiungono a questa sezione, in ordine cronologico inverso. Nuove notizie AI appariranno qui automaticamente.',notice_projects:'Progetti: Una raccolta di opere di progetti AI attivi, aperture a un clic. Clicca "Aggiungi progetto" per aggiungere nuovi progetti in qualsiasi momento; i progetti aggiunti vengono sincronizzati automaticamente nel cloud.',stat_news:'Notizie totali',stat_news_today:'Nuove oggi',stat_news_sources:'Fonti',stat_projects:'Progetti totali',stat_projects_custom:'Progetti personali',search_news:'Cerca titoli, riepiloghi delle notizie…',search_projects:'Cerca nome progetto, tag…',news_range_all:'Tutto il periodo',news_range_today:'Oggi',news_range_7d:'Ultimi 7 giorni',news_source:'Fonte',news_view:'Vedi originale',news_empty:'Nessuna notizia ancora. I nuovi elementi appariranno automaticamente dopo gli aggiornamenti quotidiani.',projects_empty:'Nessun progetto ancora. Clicca "Aggiungi progetto" per iniziare.',btn_add_project:'Aggiungi progetto',project_modal_title:'Aggiungi progetto',p_name:'Nome progetto',p_name_ph:'Inserisci il nome del progetto',p_desc:'Descrizione',p_desc_ph:'Descrivi brevemente il progetto',p_url:'URL progetto',p_url_ph:'Inserisci il link del progetto',p_tags:'Tag (separati da virgole)',p_tags_ph:'Separa più tag con le virgole',project_open:'Apri progetto',custom_tag:'Personale',toast_project_fields:'Compila nome, descrizione e URL del progetto',toast_project_added:'Progetto aggiunto',src_orig:'Originale',src_web:'Aggiunta dal web',src_webupd:'Aggiornamento dal web',src_user:'Fornito dall’utente',type_cloud:'Server cloud',type_vm:'VM cloud',type_serverless:'Serverless',type_hosting:'Piattaforma di hosting',type_domain:'Dominio',type_vhost:'Host virtuale',type_db:'Database',cd_daily:'Giornaliero',cd_monthly:'Mensile',cd_once:'Una volta',cd_perm:'Permanente',cd_usage:'Autilizzo',cd_weekly:'Settimanale',cd_year:'Annuale',cd_12m:'12 mesi',cd_6m:'6 mesi',cd_12mperm:'12 mesi + permanente',cd_permonce:'Permanente + una volta',cd_45d:'Rinnovo ogni 45 giorni',cd_renewyear:'Rinnovo annuale',cd_13m:'1-3 mesi',reg_domestic:'Nazionale',reg_overseas:'Estero',reg_domintl:'Nazionale / Internazionale',reg_ovdom:'Estero / disponibile in Italia',lv_beginner:'Iniziale',lv_intermediate:'Intermedio',lv_advanced:'Avanzato',lv_high:'Alto',lv_b2i:'Iniziale → Intermedio',lv_b2a:'Iniziale → Avanzato',lg_zh:'Cinese',lg_en:'Inglese',tk_download:'Scarica e installa',tk_web:'Ingresso web',tk_selfhost:'Open source autogestito',nav_airdrop:'Airdrop gratuiti',title_airdrop:'Progetti di airdrop gratuiti',sub_airdrop:'Participazione senza capitale · regole trasparenti · guida al ritiro e consigli di sicurezza',notice_airdrop:'<b>Progetti di airdrop gratuiti：</b> Vengono elencati solo i progetti accessibili senza capitale, con regole trasparenti e verificabili, corredati di guida al ritiro e consigli di sicurezza. Ogni giorno alle 00:00 si cercano nuovi airdrop in tutto il web, si eliminano i duplicati prima di aggiungerli e si sincronizzano solo dopo il superamento della verifica automatica. <b>L’aggiunta di progetti è riservata agli amministratori</b> (tappa 5 volte il nome del brand in alto a sinistra per attivare la modalità amministratore); i visitatori possono solo sfogliare. Gli airdrop comportano rischi: leggi sempre le regole ufficiali prima di partecipare e attenzione alle pagine fraudolente.',stat_airdrop:'Airdrop elencati',stat_airdrop_claim:'Ritiro in corso',stat_airdrop_custom:'Progetti personali',search_airdrop:'Cerca nome progetto, catena, tag…',airdrop_empty:'Nessun airdrop ancora. I nuovi elementi appariranno automaticamente dopo gli aggiornamenti quotidiani.',btn_add_airdrop:'＋ Aggiungi airdrop',airdrop_modal_title:'Aggiungi progetto airdrop',a_name:'Nome del progetto *',a_name_ph:'es. AS Aster fase 6',a_desc:'Descrizione *',a_desc_ph:'Di cosa si occupa il progetto e perché può essere partecipato gratuitamente',a_url:'URL ufficiale / di ritiro *',a_url_ph:'Inserisci il link ufficiale',a_chain:'Catena / rete',a_chain_ph:'es. BSDC / ETH / SOL',a_reward:'Ricompense',a_reward_ph:'es. 64.000.000 ASTER',a_claim:'Modalità di ritiro',a_claim_ph:'es. connessione del wallet e ritiro',a_deadline:'Scadenza del ritiro',a_steps_t:'Guida al ritiro',a_safety_t:'Consigli di sicurezza',a_tags:'Tag (separati da virgole)',a_tags_ph:'airdrop, gratuito, attivo',toast_airdrop_fields:'Compila nome, descrizione e URL del progetto',toast_airdrop_added:'Progetto airdrop aggiunto',confirm_del_airdrop:'Eliminare questo progetto airdrop personale?',toast_admin_only:'Operazione riservata agli amministratori. Attiva prima la modalità amministratore',
 skcat_agent:'Sviluppo Agent / Flussi di lavoro',skcat_cloud:'Servizi cloud / Ops',skcat_fe:'Design front-end',skcat_fe_ds:'Design front-end / Sistemi di design',skcat_be:'Sviluppo back-end / Rust',skcat_mm:'Creazione multimediale',skcat_sec:'Verifica di sicurezza',skcat_dev:'Ingegneria dello sviluppo',skcat_opt:'Ottimizzazione skill / Agent',skcat_eff_cloud:'Efficienza / Cloud drive',skcat_eff_collab:'Efficienza / Collaborazione',skcat_mem:'Efficienza e memoria',skcat_data:'Ricerca dati',skcat_office:'Lavoro documentale',skcat_browser:'Automazione del browser',skcat_game:'Sviluppo giochi / Effetti',skcat_mkt:'Marketing e crescita',skcat_video_agent:'Produzione video / Agent',skcat_video_cam:'Produzione video / Movimenti di camera',skcat_res:'Indice delle risorse',tucat_aigc:'AIGC creatività e design visivo',tucat_biz:'Strategia aziendale AI e prodotto',tucat_gov:'Sicurezza AI, governance ed etica',tucat_wf:'Flussi di lavoro AI e automazione',tucat_agent:'Sviluppo Agent',tucat_agent_gc:'Sviluppo Agent / Google Cloud',tucat_agent_mcp:'Sviluppo Agent e MCP',tucat_agent_pat:'Sviluppo Agent e pattern di design',tucat_emb:'AI incorporata e AI su hardware',tucat_llm:'Applicazioni e sviluppo di modelli grandi',tucat_ml:'Fondamenti di machine learning',tucat_gpu:'Deep learning / Calcolo GPU',
 fmt_nb_mini:'Minicorso Notebook',fmt_nb:'Corso Notebook',fmt_yt:'Video YouTube',fmt_col:'Colonna',fmt_col_pod:'Colonna / Podcast',fmt_zhrepo:'Corso cinese + repository di codice',fmt_gpulab:'Cloud GPU Lab',fmt_lab:'Lab interattivo',fmt_recipe:'Rette di codice',fmt_spec:'Corso speciale online',fmt_book:'Libro online',fmt_manual:'Manuale online',fmt_course:'Corso online',fmt_courselab:'Corso online + Lab',fmt_sec:'Guida alla sicurezza',fmt_doc:'Documenti ufficiali',fmt_fw:'Framework ufficiale',fmt_guide:'Guida pratica',fmt_article:'Articolo pratico',fmt_oszh:'Corso cinese open source',fmt_os:'Tutorial open source',fmt_oslib:'Libreria di tutorial open source',fmt_osdoc:'Documenti open source',fmt_oscourse:'Corso open source',fmt_osproj:'Progetto open source',fmt_doct:'Tutorial da documenti',fmt_docc:'Corso da documenti',fmt_law:'Commento normativo',fmt_series:'Serie di video',fmt_video:'Corso video',fmt_res:'Guida alle risorse',fmt_uni:'Corso universitario',mg_c_light:'1. Monetizzazione C-side a asset leggeri',mg_b_service:'2. Servizi pesanti e soluzioni B-side',mg_b_content:'2. Monetizzazione contenuti e traffico',mg_model:'3. Modelli di monetizzazione commerciali',mg_b_svc2:'3. Monetizzazione servizi B-side',mg_brand:'4. Monetizzazione del brand personale',mg_advice:'4. Consigli chiave per il passo avanti',
-nav_admin:'Gestione',ps_registered:'Registrati',ps_completeness:'Completezza profilo',ps_cloud:'Sincronizzazione cloud',admin_entry_sub:'Area admin · verifica richiesta',admin_gate_title:'Verifica amministratore',admin_gate_ph:'Inserisci password di amministratore',admin_gate_submit:'Verifica e accedi',admin_gate_wrong:'Password errata, riprova',admin_gate_ok:'Verifica riuscita, accesso consentito',reg_profile_title:'Dati di registrazione (salvati con l\'account)',reg_avatar:'Avatar',reg_avatar_tip:"Scegli un avatar predefinito qui sotto o clicca sull'avatar a sinistra per caricarne uno tuo (facoltativo)",admin_fancy_title:'Impostazioni numeri speciali',admin_fancy_desc:'Configura numeri, descrizione e nota del pool di numeri speciali. Le modifiche sono immediate (salvate solo in questo browser).',admin_fancy_numbers:'Elenco numeri (uno per riga, anche separati da virgola)',admin_fancy_intro:'Descrizione del pool',admin_fancy_note:'Nota',admin_fancy_save:'Salva impostazioni',admin_fancy_saved:'Impostazioni salvate',admin_fancy_empty:'Inserisci almeno un numero',admin_fancy_ph:'es. 100000',admin_fancy_preview:'Anteprima attuale',reg_age:'Età',reg_age_ph:'La tua età',reg_qq:'Numero QQ',reg_qq_ph:'Il tuo numero QQ',reg_wechat:'ID WeChat',reg_wechat_ph:'Il tuo ID WeChat'
+nav_admin:'Gestione',ps_registered:'Registrati',ps_completeness:'Completezza profilo',ps_cloud:'Sincronizzazione cloud',admin_entry_sub:'Area admin · verifica richiesta',admin_gate_title:'Verifica amministratore',admin_gate_ph:'Inserisci password di amministratore',admin_gate_submit:'Verifica e accedi',admin_gate_wrong:'Password errata, riprova',admin_gate_ok:'Verifica riuscita, accesso consentito',reg_profile_title:'Dati di registrazione (salvati con l\'account)',reg_avatar:'Avatar',reg_avatar_tip:"Scegli un avatar predefinito qui sotto o clicca sull'avatar a sinistra per caricarne uno tuo (facoltativo)",adm_title:'Console di amministrazione',adm_nav_cap:'Moduli',adm_tab_overview:'Panoramica',adm_tab_content:'Gestione contenuti',adm_tab_search:'Ricerca globale',adm_tab_fancy:'Numeri speciali',adm_tab_health:'Controllo salute',adm_tab_backup:'Backup',adm_console_ver:'Console v2',adm_state_on:'Attivo',adm_state_off:'Disattivo',adm_state_all:'Tutti gli stati',adm_filter_all:'Tutte le sezioni',adm_add:'Aggiungi voce',adm_batch_del:'Elimina multipla',adm_col_name:'Nome',adm_col_section:'Sezione',adm_col_state:'Stato',adm_col_link:'Link',adm_col_ops:'Azioni',adm_no_items:'Nessuna voce trovata',adm_edit:'Modifica',adm_enable:'Attiva',adm_disable:'Disattiva',adm_save:'Salva',adm_saved:'Modifiche salvate',adm_toggled:'Stato aggiornato',adm_select_first:'Seleziona prima le voci da eliminare',adm_confirm_batch:'Eliminare {n} voci selezionate? Questa azione non può essere annullata.',adm_content_desc:'Filtra, modifica, attiva e elimina le voci personalizzate',adm_backup_hint:'Il backup include profilo, registrazioni e contenuti personalizzati. L\'importazione sovrascrive i dati attuali.',admin_state_on:'Modalità admin attiva',admin_state_off:'Modalità admin inattiva',admin_state_desc_on:'Puoi modificare ed eliminare le voci personalizzate',admin_state_desc_off:'Sola lettura · attiva l\'interruttore in alto a destra',admin_fancy_title:'Impostazioni numeri speciali',admin_fancy_desc:'Configura numeri, descrizione e nota del pool di numeri speciali. Le modifiche sono immediate (salvate solo in questo browser).',admin_fancy_numbers:'Elenco numeri (uno per riga, anche separati da virgola)',admin_fancy_intro:'Descrizione del pool',admin_fancy_note:'Nota',admin_fancy_save:'Salva impostazioni',admin_fancy_saved:'Impostazioni salvate',admin_fancy_empty:'Inserisci almeno un numero',admin_fancy_ph:'es. 100000',admin_fancy_preview:'Anteprima attuale',reg_age:'Età',reg_age_ph:'La tua età',reg_qq:'Numero QQ',reg_qq_ph:'Il tuo numero QQ',reg_wechat:'ID WeChat',reg_wechat_ph:'Il tuo ID WeChat'
 
 },
 admin_builtin:'Integrati',admin_custom:'Personalizzati',admin_total:'Totale',admin_overview:'Panoramica Workbench',admin_overview_desc:'Statistiche in tempo reale delle voci integrate e personalizzate di tutte le sezioni',admin_search:'Ricerca globale',admin_search_desc:'Cerca nomi, riepiloghi, tag e URL in tutte le sezioni',admin_search_ph:'Digita una parola chiave per cercare in tutte le sezioni…',admin_search_hint:'Inserisci una parola chiave qui sopra per cercare le voci in tutte le sezioni',admin_search_none:'Nessuna voce trovata',admin_search_found:'Trovate',admin_locate:'Vai a',admin_manage:'Gestisci contenuti personalizzati',admin_manage_desc:'Gestisci le voci personalizzate in tutte le sezioni; le voci integrate sono di sola lettura',admin_custom_empty:'Nessuna voce personalizzata. Attiva la modalità amministratore e usa il pulsante ＋ Aggiungi nelle sezioni.',admin_health:'Controllo integrità dati',admin_health_desc:'Controlla ID duplicati, link non validi e campi chiave mancanti',admin_health_run:'Avvia controllo',admin_health_running:'Controllo di tutte le sezioni…',admin_health_ok:'Nessun problema trovato. I dati sono integri.',admin_health_found:'Problemi trovati',admin_health_dup:'ID duplicato',admin_health_url:'Link non valido',admin_health_missing:'Campo chiave mancante',admin_gate_title:'Verifica amministratore',admin_gate_desc:'Il sistema di gestione è riservato agli amministratori. Inserisci la password.',admin_gate_ph:'Inserisci password amministratore',admin_gate_submit:'Verifica e accedi',admin_gate_wrong:'Password errata, riprova',admin_gate_ok:'Verificato. Modalità amministratore attiva.',
@@ -16348,7 +17000,7 @@ function setAdminMode(on){
   try{if(on)localStorage.setItem(ADMIN_KEY,'1');else localStorage.removeItem(ADMIN_KEY);}catch(e){}
   applyAdminVisibility();
   toast(t(on?'admin_on':'admin_off'));
-  if(currentView==='admin')renderAdmin();
+  if(currentView==='admin'){setAdminTab(adminTab);}
 }
 function adminSections(){
   return [
@@ -16376,99 +17028,201 @@ function adminData(){
     {view:'airdrop',label:t('nav_airdrop'),rows:(DATA.airdrops||[]).concat(getCustomAirdrops()),name:function(o){return o.name||'';},desc:function(o){return o.desc||'';}}
   ];
 }
+var adminTab='overview';
+function setAdminTab(tab){
+  adminTab=tab;
+  Array.prototype.forEach.call(document.querySelectorAll('#adm-side .adm-nav'),function(b){b.classList.toggle('on',b.dataset.tab===tab);});
+  Array.prototype.forEach.call(document.querySelectorAll('#view-admin .adm-panel'),function(p){p.classList.toggle('on',p.dataset.panel===tab);});
+  renderAdmin();
+}
+function adminRaw(view){
+  if(view==='offers')return {key:K_CUSTOM,getter:getCustom};
+  if(view==='resources')return {key:K_CUSTOM_RES,getter:getCustomRes};
+  if(view==='skills')return {key:K_CUSTOM_SK,getter:getCustomSkills};
+  if(view==='tutorials')return {key:K_CUSTOM_TU,getter:getCustomTutorials};
+  if(view==='projects')return {key:K_PROJECTS,getter:getCustomProjects};
+  if(view==='airdrop')return {key:K_CUSTOM_AD,getter:getCustomAirdrops};
+  return null;
+}
 function renderAdmin(){
   var admin=isAdminMode();
   var tog=document.getElementById('admin-mode-toggle');
   if(tog)tog.classList.toggle('on',admin);
-  var bIcon=document.getElementById('admin-mode-icon');
-  var bText=document.getElementById('admin-mode-text');
-  var banner=document.getElementById('admin-mode-banner');
-  if(bIcon)bIcon.textContent=admin?'✓':'⚠';
-  if(bText)bText.innerHTML=admin?'<b>'+esc(t('admin_on'))+'：</b>'+esc(t('admin_mode_desc')):'<b>'+esc(t('toast_admin_only'))+'</b>：'+esc(t('admin_mode_desc'));
-  if(banner){banner.classList.toggle('warn',!admin);banner.classList.toggle('info',admin);}
+  var pill=document.getElementById('admin-status-pill');
+  if(pill){pill.textContent=t(admin?'admin_state_on':'admin_state_off');pill.classList.toggle('off',!admin);}
+  var at=document.getElementById('admin-mode-text');
+  if(at)at.textContent=t(admin?'admin_state_desc_on':'admin_state_desc_off');
 
-  /* 1) 全板块总览 */
   var sections=adminSections();
   var totalBuiltin=0,totalCustom=0;
   sections.forEach(function(x){totalBuiltin+=x.builtin;totalCustom+=x.custom;});
+
+  /* 侧栏自定义条目计数 */
+  var cb=document.getElementById('adm-content-badge');
+  if(cb)cb.textContent=String(totalCustom);
+
+  /* 1) 总览面板 */
   var ov=document.getElementById('admin-overview');
   if(ov){
-    var summary='<div class="tw-mini-stats" style="margin-bottom:10px">'+
-      '<div><span class="ms-num">'+totalBuiltin+'</span><span class="ms-label">'+esc(t('admin_builtin'))+'</span></div>'+
-      '<div><span class="ms-num">'+totalCustom+'</span><span class="ms-label">'+esc(t('admin_custom'))+'</span></div>'+
-      '<div><span class="ms-num">'+(totalBuiltin+totalCustom)+'</span><span class="ms-label">'+esc(t('admin_total'))+'</span></div>'+
-      '</div>';
-    ov.innerHTML=summary+'<div class="admin-grid">'+sections.map(function(x){
-      return '<button class="admin-tile" data-act="admin-goto" data-view="'+x.view+'">'+
-        '<span class="at-name">'+esc(x.label)+'</span>'+
-        '<span class="at-nums"><b>'+x.builtin+'</b><i>'+esc(t('admin_builtin'))+'</i><b>'+x.custom+'</b><i>'+esc(t('admin_custom'))+'</i></span>'+
-        '</button>';
-    }).join('')+'</div>';
+    ov.innerHTML='<div class="adm-metrics">'+
+      '<div class="adm-metric"><div class="mv">'+totalBuiltin+'</div><div class="ml">'+esc(t('admin_builtin'))+'</div></div>'+
+      '<div class="adm-metric"><div class="mv">'+totalCustom+'</div><div class="ml">'+esc(t('admin_custom'))+'</div></div>'+
+      '<div class="adm-metric"><div class="mv">'+(totalBuiltin+totalCustom)+'</div><div class="ml">'+esc(t('admin_total'))+'</div></div>'+
+      '</div><div class="admin-grid">'+sections.map(function(x){
+        return '<button class="admin-tile" data-act="adm-jump" data-view="'+x.view+'">'+
+          '<span class="at-name">'+esc(x.label)+'</span>'+
+          '<span class="at-nums"><b>'+x.builtin+'</b><i>'+esc(t('admin_builtin'))+'</i><b>'+x.custom+'</b><i>'+esc(t('admin_custom'))+'</i></span>'+
+          '</button>';
+      }).join('')+'</div>';
   }
+  var qk=document.getElementById('adm-quick');
+  if(qk)qk.innerHTML=
+    '<button data-act="adm-tab" data-tab="content">'+esc(t('adm_tab_content'))+'</button>'+
+    '<button data-act="adm-tab" data-tab="search">'+esc(t('adm_tab_search'))+'</button>'+
+    '<button data-act="adm-tab" data-tab="health">'+esc(t('adm_tab_health'))+'</button>'+
+    '<button data-act="adm-tab" data-tab="backup">'+esc(t('adm_tab_backup'))+'</button>';
 
-  /* 2) 自定义条目统一管理 */
-  var cm=document.getElementById('admin-custom-manage');
-  if(cm){
-    var any=false,html='';
-    sections.forEach(function(sec){
-      var items=sec.getter();
-      if(!items.length)return;
-      any=true;
-      html+='<div class="admin-group"><div class="ag-head"><span>'+esc(sec.label)+'</span><span class="ag-count">'+items.length+'</span></div>';
-      html+=items.map(function(o){
-        var nm=sec.name(o);
-        var u=String(o.url||o.repo||o.sourceUrl||'');
-        var link=u&&/^https?:\/\//.test(u)?'<a class="ag-link" href="'+esc(u)+'" target="_blank" rel="noopener noreferrer" title="'+esc(u)+'">↗</a>':'';
-        return '<div class="ag-row"><span class="ag-title" title="'+esc(nm)+'">'+esc(nm)+'</span>'+link+
-          '<button class="tw-btn tw-btn-outline tw-btn-sm" data-act="admin-goto" data-view="'+sec.view+'">'+esc(t('admin_locate'))+'</button>'+
-          (admin?'<button class="tw-btn tw-btn-danger outline tw-btn-sm" data-act="admin-del" data-view="'+sec.view+'" data-id="'+esc(String(o.id||''))+'">'+esc(t('del'))+'</button>':'')+
-          '</div>';
-      }).join('');
-      html+='</div>';
-    });
-    if(!any)html='<div class="tw-empty"><div class="e-icon">🗂</div><div class="e-text">'+esc(t('admin_custom_empty'))+'</div></div>';
-    cm.innerHTML=html;
+  /* 2) 内容管理面板：表格化 + 筛选 + 编辑/启停/删除 */
+  var fv=document.getElementById('adm-filter-view');
+  if(fv&&!fv.dataset.ready){
+    fv.innerHTML='<option value="">'+esc(t('adm_filter_all'))+'</option>'+sections.filter(function(x){return adminRaw(x.view);}).map(function(x){
+      return '<option value="'+x.view+'">'+esc(x.label)+'</option>';
+    }).join('');
+    fv.dataset.ready='1';
   }
+  renderAdminContent();
 
-  /* 3) 检索结果（若有关键词则重新渲染） */
+  /* 3) 检索结果 */
   var si=document.getElementById('admin-search-input');
   if(si&&si.value.trim())renderAdminSearch();else{
     var sr=document.getElementById('admin-search-results');
     if(sr)sr.innerHTML='<div class="admin-hint">'+esc(t('admin_search_hint'))+'</div>';
   }
 
-  /* 4) 靓号系统设置 */
+  /* 4) 靓号设置 */
   var fb=document.getElementById('admin-fancy-manage');
   if(fb){
     var f=getFancy(),dis=admin?'':' disabled';
-    var lbl='display:block;font-size:11px;color:var(--pc-muted);margin:10px 0 5px';
-    fb.innerHTML='<label style="'+lbl+'">'+esc(t('admin_fancy_numbers'))+'</label>'+
-      '<textarea id="admin-fancy-numbers" class="tw-input" rows="4"'+dis+' placeholder="'+esc(t('admin_fancy_ph'))+'">'+esc(f.numbers.join('\n'))+'</textarea>'+
-      '<label style="'+lbl+'">'+esc(t('admin_fancy_intro'))+'</label>'+
-      '<textarea id="admin-fancy-intro" class="tw-input" rows="2"'+dis+'>'+esc(f.intro)+'</textarea>'+
-      '<label style="'+lbl+'">'+esc(t('admin_fancy_note'))+'</label>'+
-      '<textarea id="admin-fancy-note" class="tw-input" rows="2"'+dis+'>'+esc(f.note)+'</textarea>'+
-      '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:11px;color:var(--pc-muted)">'+
-      '<span>'+esc(t('admin_fancy_preview'))+'</span><div class="fancy-chips">'+f.numbers.map(function(n){
+    fb.innerHTML='<div class="adm-field"><label>'+esc(t('admin_fancy_numbers'))+'</label>'+
+      '<textarea id="admin-fancy-numbers" rows="4"'+dis+' placeholder="'+esc(t('admin_fancy_ph'))+'">'+esc(f.numbers.join('\n'))+'</textarea></div>'+
+      '<div class="adm-field"><label>'+esc(t('admin_fancy_intro'))+'</label>'+
+      '<textarea id="admin-fancy-intro" rows="2"'+dis+'>'+esc(f.intro)+'</textarea></div>'+
+      '<div class="adm-field"><label>'+esc(t('admin_fancy_note'))+'</label>'+
+      '<textarea id="admin-fancy-note" rows="2"'+dis+'>'+esc(f.note)+'</textarea></div>'+
+      '<div class="adm-preview"><div class="adm-preview-label">'+esc(t('admin_fancy_preview'))+'</div><div class="fancy-chips">'+f.numbers.map(function(n){
         return '<span class="fancy-chip'+(n.length<6?' short':'')+'">'+esc(n)+'</span>';
       }).join('')+'</div></div>'+
-      (admin?'<button class="tw-btn tw-btn-primary" data-act="admin-fancy-save" style="margin-top:12px">'+esc(t('admin_fancy_save'))+'</button>':'');
+      (admin?'<button class="adm-btn primary" data-act="admin-fancy-save" style="margin-top:14px">'+esc(t('admin_fancy_save'))+'</button>':'');
   }
+}
+function renderAdminContent(){
+  var box=document.getElementById('admin-custom-manage');
+  if(!box)return;
+  var admin=isAdminMode();
+  var fv=document.getElementById('adm-filter-view'),fs=document.getElementById('adm-filter-state'),fq=document.getElementById('adm-filter-q');
+  var view=fv?fv.value:'',state=fs?fs.value:'',q=fq?fq.value.trim().toLowerCase():'';
+  var sections=adminSections().filter(function(x){return adminRaw(x.view)&&(!view||x.view===view);});
+  var rows=[];
+  sections.forEach(function(sec){
+    sec.getter().forEach(function(o){
+      var disabled=o.disabled===true||o.statusTag==='hidden';
+      if(state==='on'&&disabled)return;
+      if(state==='off'&&!disabled)return;
+      var nm=sec.name(o),u=String(o.url||o.repo||o.sourceUrl||'');
+      if(q&&(nm+' '+u+' '+(o.desc||o.notes||'')).toLowerCase().indexOf(q)<0)return;
+      rows.push({view:sec.view,label:sec.label,id:String(o.id||''),name:nm,url:u,disabled:disabled,item:o});
+    });
+  });
+  if(!rows.length){box.innerHTML='<tr><td colspan="6"><div class="adm-empty"><b>'+esc(t('adm_no_items'))+'</b>'+esc(t('admin_custom_empty'))+'</div></td></tr>';return;}
+  box.innerHTML=rows.map(function(r){
+    var link=r.url&&/^https?:\/\//.test(r.url)?'<a class="ag-link" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">↗</a>':'—';
+    return '<tr>'+
+      '<td class="adm-ck">'+(admin?'<input type="checkbox" class="adm-row-ck" data-view="'+r.view+'" data-id="'+esc(r.id)+'">':'')+'</td>'+
+      '<td><span class="adm-cell-name" title="'+esc(r.name)+'">'+esc(r.name)+'</span></td>'+
+      '<td><span class="adm-tag">'+esc(r.label)+'</span></td>'+
+      '<td><span class="adm-tag '+(r.disabled?'off':'on')+'">'+esc(t(r.disabled?'adm_state_off':'adm_state_on'))+'</span></td>'+
+      '<td>'+link+'</td>'+
+      '<td><div class="adm-ops">'+
+        '<button class="adm-btn sm" data-act="adm-locate" data-view="'+r.view+'" data-name="'+esc(r.name)+'">'+esc(t('admin_locate'))+'</button>'+
+        (admin?'<button class="adm-btn sm" data-act="adm-edit" data-view="'+r.view+'" data-id="'+esc(r.id)+'">'+esc(t('adm_edit'))+'</button>'+
+        '<button class="adm-btn sm" data-act="adm-toggle" data-view="'+r.view+'" data-id="'+esc(r.id)+'">'+esc(t(r.disabled?'adm_enable':'adm_disable'))+'</button>'+
+        '<button class="adm-btn sm danger" data-act="adm-del" data-view="'+r.view+'" data-id="'+esc(r.id)+'">'+esc(t('del'))+'</button>':'')+
+      '</div></td></tr>';
+  }).join('');
+}
+function openAdminEdit(view,id){
+  if(!isAdminMode()){toast(t('toast_admin_only'));return;}
+  var raw=adminRaw(view);
+  if(!raw)return;
+  var list=raw.getter(),item=list.filter(function(o){return String(o.id)===String(id);})[0];
+  if(!item){toast(t('toast_deleted'));return;}
+  var fields=Object.keys(item).filter(function(k){return typeof item[k]==='string'||typeof item[k]==='number'||Array.isArray(item[k]);});
+  var body='<div class="adm-edit-grid" data-view="'+view+'" data-id="'+esc(id)+'">'+fields.map(function(k){
+    var val=Array.isArray(item[k])?item[k].join('，'):String(item[k]==null?'':item[k]);
+    var wide=/desc|notes|steps|safety|url/i.test(k);
+    return '<div class="field'+(wide?' wide':'')+'"><label>'+esc(k)+'</label>'+
+      (wide?'<textarea data-k="'+esc(k)+'" rows="2">'+esc(val)+'</textarea>':'<input data-k="'+esc(k)+'" value="'+esc(val)+'">')+'</div>';
+  }).join('')+'</div>';
+  var foot='<button class="btn" data-act="close-modal">'+esc(t('modal_cancel'))+'</button><button class="btn primary" data-act="adm-save-edit">'+esc(t('adm_save'))+'</button>';
+  openModal(t('adm_edit')+' · '+(item.title||item.name||id),body,foot);
+}
+function saveAdminEdit(){
+  if(!isAdminMode()){toast(t('toast_admin_only'));return;}
+  var grid=document.querySelector('.adm-edit-grid');
+  if(!grid)return;
+  var view=grid.dataset.view,id=grid.dataset.id,raw=adminRaw(view);
+  if(!raw)return;
+  var list=raw.getter(),idx=-1;
+  list.forEach(function(o,i){if(String(o.id)===String(id))idx=i;});
+  if(idx<0)return;
+  Array.prototype.forEach.call(grid.querySelectorAll('[data-k]'),function(el){
+    var k=el.dataset.k,old=list[idx][k],v=el.value;
+    if(Array.isArray(old))list[idx][k]=v.split(/[，,\n]/).map(function(x){return x.trim();}).filter(Boolean);
+    else if(typeof old==='number')list[idx][k]=Number(v)||0;
+    else list[idx][k]=v;
+  });
+  list[idx].updatedAt=new Date().toISOString();
+  save(raw.key,list);closeModal();toast(t('adm_saved'));render();
 }
 function adminDelFor(view,id){
   if(!isAdminMode()){toast(t('toast_admin_only'));return;}
-  var arr,key,msg;
-  if(view==='offers'){arr=getCustom();key=K_CUSTOM;msg='confirm_del_custom';}
-  else if(view==='resources'){arr=getCustomRes();key=K_CUSTOM_RES;msg='confirm_del_custom';}
-  else if(view==='skills'){arr=getCustomSkills();key=K_CUSTOM_SK;msg='confirm_del_skill';}
-  else if(view==='tutorials'){arr=getCustomTutorials();key=K_CUSTOM_TU;msg='confirm_del_tutorial';}
-  else if(view==='projects'){arr=getCustomProjects();key=K_PROJECTS;msg='confirm_del_custom';}
-  else if(view==='airdrop'){arr=getCustomAirdrops();key=K_CUSTOM_AD;msg='confirm_del_airdrop';}
-  else{toast(t('toast_admin_only'));return;}
+  var raw=adminRaw(view);if(!raw){toast(t('toast_admin_only'));return;}
+  var arr=raw.getter();
   if(!arr.some(function(o){return String(o.id)===String(id);})){toast(t('toast_deleted'));return;}
-  if(!confirm(t(msg)))return;
-  save(key,arr.filter(function(o){return String(o.id)!==String(id);}));
+  if(!confirm(t('confirm_del_custom')))return;
+  save(raw.key,arr.filter(function(o){return String(o.id)!==String(id);}));
   toast(t('toast_deleted'));render();
+}
+function adminToggleItem(view,id){
+  if(!isAdminMode()){toast(t('toast_admin_only'));return;}
+  var raw=adminRaw(view);if(!raw)return;
+  var arr=raw.getter();
+  arr.forEach(function(o){if(String(o.id)===String(id))o.disabled=!o.disabled;});
+  save(raw.key,arr);toast(t('adm_toggled'));render();
+}
+function adminBatchDel(){
+  if(!isAdminMode()){toast(t('toast_admin_only'));return;}
+  var cks=document.querySelectorAll('.adm-row-ck:checked');
+  if(!cks.length){toast(t('adm_select_first'));return;}
+  if(!confirm(t('adm_confirm_batch').replace('{n}',String(cks.length))))return;
+  var byView={};
+  Array.prototype.forEach.call(cks,function(c){var v=c.dataset.view;if(!byView[v])byView[v]=[];byView[v].push(String(c.dataset.id));});
+  Object.keys(byView).forEach(function(v){
+    var raw=adminRaw(v);if(!raw)return;
+    save(raw.key,raw.getter().filter(function(o){return byView[v].indexOf(String(o.id))<0;}));
+  });
+  toast(t('toast_deleted'));render();
+}
+function adminAdd(){
+  if(!isAdminMode()){toast(t('toast_admin_only'));return;}
+  var sel=document.getElementById('adm-filter-view'),v=sel?sel.value:'';
+  var map={offers:'add-custom',resources:'add-custom',skills:'add-custom',tutorials:'add-custom',projects:'add-project',airdrop:'add-airdrop'};
+  if(v==='skills'){openSkillModal();return;}
+  if(v==='tutorials'){openTutorialModal();return;}
+  if(v==='projects'){openProjectModal();return;}
+  if(v==='airdrop'){openAirdropModal();return;}
+  if(v==='resources'){openCustomModal('resource');return;}
+  openCustomModal('token');
 }
 function renderAdminSearch(){
   var box=document.getElementById('admin-search-results');
@@ -17136,6 +17890,14 @@ document.addEventListener('click',function(e){
     toast(t('toast_deleted'));render();
   }
   else if(act==='admin-gate-submit'){submitAdminGate();return;}
+  else if(act==='adm-tab'){setAdminTab(b.dataset.tab);return;}
+  else if(act==='adm-jump'){var v=b.dataset.view;setAdminTab('content');var sel=document.getElementById('adm-filter-view');if(sel){sel.value=v;renderAdminContent();}return;}
+  else if(act==='adm-locate'){adminGoto(b.dataset.view,b.dataset.name||'');return;}
+  else if(act==='adm-edit'){openAdminEdit(b.dataset.view,b.dataset.id);return;}
+  else if(act==='adm-save-edit'){saveAdminEdit();return;}
+  else if(act==='adm-toggle'){adminToggleItem(b.dataset.view,b.dataset.id);return;}
+  else if(act==='adm-batch-del'){adminBatchDel();return;}
+  else if(act==='adm-add'){adminAdd();return;}
   else if(act==='admin-entry'){openAdminGate(function(){setView('admin');});return;}
   else if(act==='admin-toggle'){setAdminMode(!isAdminMode());return;}
   else if(act==='admin-goto'){adminGoto(b.dataset.view,b.dataset.name||'');return;}
@@ -17272,6 +18034,18 @@ document.getElementById('login-modal').addEventListener('click',function(e){if(e
     if(b){var i=parseInt(b.getAttribute('data-idx'),10);if(BUILTIN_AVATARS[i])setRegAvatar(BUILTIN_AVATARS[i].path);}
   });
   try{fillRegProfile();}catch(e){}
+})();
+/* 管理控制台：筛选器与全选框 */
+(function(){
+  ['adm-filter-view','adm-filter-state','adm-filter-q'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    el.addEventListener(el.tagName==='INPUT'?'input':'change',function(){renderAdminContent();});
+  });
+  var all=document.getElementById('adm-check-all');
+  if(all)all.addEventListener('change',function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.adm-row-ck'),function(c){c.checked=all.checked;});
+  });
 })();
 
 /* 多语言：初始化语言并绑定选择器 */
