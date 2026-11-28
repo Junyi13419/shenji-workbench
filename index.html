@@ -1282,7 +1282,7 @@ body.tw-modal-open{overflow:hidden}
         <input class="search" id="search" data-i18n-ph="search_offers" placeholder="搜索平台、活动、标签…">
         <select class="sel" id="f-region"><option value="" data-i18n="region_all">全部地区</option><option data-i18n="region_domestic">国内</option><option data-i18n="region_overseas">海外</option><option data-i18n="region_dom_int">国内/国际</option><option data-i18n="region_overseas_dom">海外/国内可用</option></select>
         <select class="sel" id="f-cadence"><option value="" data-i18n="cadence_all">全部频次</option><option data-i18n="cadence_daily">每日</option><option data-i18n="cadence_monthly">每月</option><option data-i18n="cadence_once">一次性</option><option data-i18n="cadence_forever">永久</option><option data-i18n="cadence_usage">按量</option></select>
-        <select class="sel" id="f-status"><option value="" data-i18n="status_all">全部状态</option><option value="ending" data-i18n="status_ending">即将过期</option><option value="active" data-i18n="status_active">正常</option><option value="registered" data-i18n="status_registered">已注册</option><option value="unregistered" data-i18n="status_unregistered">未注册</option></select>
+        <select class="sel" id="f-status"><option value="" data-i18n="status_all">全部状态</option><option value="ending" data-i18n="status_ending">即将过期</option><option value="active" data-i18n="status_active">正常</option><option value="registered" data-i18n="status_registered">已注册</option><option value="unregistered" data-i18n="status_unregistered">未注册</option><option value="expired" data-i18n="res_status_expired">已失效</option></select>
         <select class="sel" id="f-sort"><option value="tier" data-i18n="sort_quota">按额度排序</option><option value="deadline" data-i18n="sort_deadline">按截止时间</option><option value="name" data-i18n="sort_name">按平台名称</option></select>
       </div>
       <div class="grid" id="cards"></div>
@@ -16042,6 +16042,19 @@ function effectiveStatus(o){
   return o.statusTag||'active';
 }
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+/* 对外备注：剥离采集时的工作流前缀（日期+复核/收录/官网实测…：），
+   并剔除仅供内部协同的句子，保留面向用户的实质说明。数据层每晚会被自动更新覆盖，
+   因此在这里统一过滤，确保前台永不外泄内部笔记。 */
+function publicNotes(n){
+  var s=String(n==null?'':n).trim();
+  if(!s)return '';
+  /* 前缀两种写法：①"2026-11-25 复核：..." ②"官方定价页 2026-11-25 复核；..." 或"…官网实测可访问；..." */
+  s=s.replace(/^\s*(?:[^，。；;]{0,14}?[ \u200b])?\d{4}-\d{2}-\d{2}\s*(?:官网[^：:；;]{0,10})?(?:复核|收录|确认|实测|导航)(?:官方文档|官网|活动页)?\s*(?:[：:]|可访问\s*[；;])?\s*/,'');
+  var parts=s.match(/[^。；;]+[。；;]?/g)||[];
+  return parts.filter(function(part){
+    return !/应标记|见新条目|待办|TODO|待确认|内部评测/.test(part);
+  }).join('').trim();
+}
 
 /* ===== 统一图文卡片 · 代码生成封面（零外部依赖、永不死图） ===== */
 var MC_ICONS={
@@ -16394,11 +16407,12 @@ function renderStats(){
 }
 function statusFilterOK(o,st,recs){
   var isReg=!!(recs[o.id]&&recs[o.id].status==='registered');
-  if(st==='registered')return isReg;
-  if(st==='unregistered')return !isReg;
-  if(st==='expired')return isExpired(o);
-  if(st)return effectiveStatus(o)===st;
-  return true;
+  var exp=isExpired(o);
+  if(st==='expired')return exp;
+  if(st==='registered')return isReg&&!exp;
+  if(st==='unregistered')return !isReg&&!exp;
+  if(st)return effectiveStatus(o)===st&&!exp;
+  return !exp;
 }
 function sortList(list,sort){
   list.sort(function(a,b){
@@ -16430,7 +16444,7 @@ function cardHtml(o,recs){
     '<div class="meta"><span><b>'+(o.type?esc(t('meta_cycle')):esc(t('meta_cadence')))+'：</b>'+esc(trVal(o.cadence))+'</span><span><b>'+esc(t('meta_region'))+'：</b>'+esc(trVal(o.region))+'</span><span><b>'+esc(t('meta_deadline'))+'：</b>'+deadlineLabel(o)+'</span></div>'+
     '<div class="tags">'+(o.tags||[]).map(function(tag){return '<span class="tag">'+esc(tag)+'</span>';}).join('')+'</div>'+
     '<div class="method"><b>'+esc(t('meta_claim'))+'：</b>'+esc(o.claimMethod)+'</div>'+
-    (o.notes?'<div class="notes">'+esc(o.notes)+'</div>':'')+
+    (publicNotes(o.notes)?'<div class="notes">'+esc(publicNotes(o.notes))+'</div>':'')+
     '<div class="card-actions">'+
       (expired?'':'<button class="btn sm primary" data-act="open" data-id="'+esc(o.id)+'">'+esc(t('open_site'))+'</button>')+
       '<button class="btn sm" data-act="record" data-id="'+esc(o.id)+'">'+(done?esc(t('view_record')):esc(t('fill_record')))+'</button>'+
@@ -16443,7 +16457,7 @@ function renderCards(){
   var rg=document.getElementById('f-region').value, cd=document.getElementById('f-cadence').value, st=document.getElementById('f-status').value;
   var sort=document.getElementById('f-sort').value, recs=getRecords();
   var list=DATA.offers.concat(getCustom()).filter(function(o){
-    var hay=[o.provider,o.title,o.quota,o.claimMethod,(o.tags||[]).join(' '),o.notes].join(' ').toLowerCase();
+    var hay=[o.provider,o.title,o.quota,o.claimMethod,(o.tags||[]).join(' '),publicNotes(o.notes)].join(' ').toLowerCase();
     if(q&&hay.indexOf(q)<0)return false;
     if(rg&&o.region!==rg)return false;
     if(cd&&String(o.cadence||'').indexOf(cd)<0)return false;
@@ -16457,7 +16471,7 @@ function renderResources(){
   var ty=document.getElementById('res-type').value, rg=document.getElementById('res-region').value;
   var st=document.getElementById('res-status').value, sort=document.getElementById('res-sort').value, recs=getRecords();
   var list=(DATA.resources||[]).concat(getCustomRes()).filter(function(o){
-    var hay=[o.provider,o.title,o.quota,o.claimMethod,o.type,(o.tags||[]).join(' '),o.notes].join(' ').toLowerCase();
+    var hay=[o.provider,o.title,o.quota,o.claimMethod,o.type,(o.tags||[]).join(' '),publicNotes(o.notes)].join(' ').toLowerCase();
     if(q&&hay.indexOf(q)<0)return false;
     if(ty&&o.type!==ty)return false;
     if(rg&&o.region!==rg)return false;
@@ -16525,7 +16539,7 @@ function renderSkills(){
   var q=(document.getElementById('sk-search').value||'').trim().toLowerCase();
   var tier=document.getElementById('sk-tier').value, sort=document.getElementById('sk-sort').value;
   var list=allSkills().filter(function(s){
-    var hay=[s.name,s.repo,s.category,s.desc,s.install,(s.tags||[]).join(' '),s.notes].join(' ').toLowerCase();
+    var hay=[s.name,s.repo,s.category,s.desc,s.install,(s.tags||[]).join(' '),publicNotes(s.notes)].join(' ').toLowerCase();
     if(q&&hay.indexOf(q)<0)return false;
     if(skillCat&&s.category!==skillCat)return false;
     if(tier&&String(s.tier||'')!==tier)return false;
@@ -16546,7 +16560,7 @@ function renderSkills(){
       '<div class="meta"><span><b>'+esc(t('meta_installs'))+'</b>'+esc(s.installs||'—')+'</span><span><b>'+esc(t('meta_discovered'))+'</b>'+esc(s.discoveredAt||'—')+'</span></div>'+
       '<div class="sk-install" data-act="sk-install" data-id="'+id+'" title="'+esc(t('label_install_hint'))+'">'+esc(s.install||t('see_readme'))+'</div>'+
       '<div class="tags">'+(s.tags||[]).map(function(tag){return '<span class="tag">'+esc(tag)+'</span>';}).join('')+'</div>'+
-      (s.notes?'<div class="notes">'+esc(s.notes)+'</div>':'')+
+      (publicNotes(s.notes)?'<div class="notes">'+esc(publicNotes(s.notes))+'</div>':'')+
       '<div class="card-actions">'+
         '<button class="btn sm primary" data-act="sk-open" data-id="'+id+'">'+esc(t('sk_open'))+'</button>'+
         '<button class="btn sm" data-act="sk-install" data-id="'+id+'">'+esc(t('sk_install'))+'</button>'+
@@ -17017,8 +17031,8 @@ function adminSections(){
 }
 function adminData(){
   return [
-    {view:'offers',label:t('nav_offers'),rows:(DATA.offers||[]).concat(getCustom()),name:function(o){return o.title||o.provider||'';},desc:function(o){return o.notes||o.quota||'';}},
-    {view:'resources',label:t('nav_resources'),rows:(DATA.resources||[]).concat(getCustomRes()),name:function(o){return o.title||o.provider||'';},desc:function(o){return o.notes||o.quota||'';}},
+    {view:'offers',label:t('nav_offers'),rows:(DATA.offers||[]).concat(getCustom()),name:function(o){return o.title||o.provider||'';},desc:function(o){return publicNotes(o.notes)||o.quota||'';}},
+    {view:'resources',label:t('nav_resources'),rows:(DATA.resources||[]).concat(getCustomRes()),name:function(o){return o.title||o.provider||'';},desc:function(o){return publicNotes(o.notes)||o.quota||'';}},
     {view:'github',label:t('nav_github'),rows:(DATA.githubTrending||[]),name:function(o){return o.fullName||'';},desc:function(o){return o.description||'';}},
     {view:'skills',label:t('nav_skills'),rows:(DATA.skills||[]).concat(getCustomSkills()),name:function(o){return o.name||'';},desc:function(o){return o.desc||'';}},
     {view:'tutorials',label:t('nav_tutorials'),rows:(DATA.tutorials||[]).concat(getCustomTutorials()),name:function(o){return o.title||'';},desc:function(o){return o.desc||'';}},
@@ -17129,7 +17143,7 @@ function renderAdminContent(){
       if(state==='on'&&disabled)return;
       if(state==='off'&&!disabled)return;
       var nm=sec.name(o),u=String(o.url||o.repo||o.sourceUrl||'');
-      if(q&&(nm+' '+u+' '+(o.desc||o.notes||'')).toLowerCase().indexOf(q)<0)return;
+      if(q&&(nm+' '+u+' '+(o.desc||'')).toLowerCase().indexOf(q)<0)return;
       rows.push({view:sec.view,label:sec.label,id:String(o.id||''),name:nm,url:u,disabled:disabled,item:o});
     });
   });
