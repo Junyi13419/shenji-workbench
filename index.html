@@ -181,6 +181,13 @@ select.sel:focus{border-color:var(--accent)}
 .news-grid .news-title{font-size:13.5px;font-weight:700;color:#f0d68a;line-height:1.55;word-break:break-all}
 .news-grid .news-sum{font-size:12px;color:var(--muted);line-height:1.65}
 @media(max-width:640px){.news-grid{grid-template-columns:1fr}}
+/* 项目展示：固定四列图文卡片流（与大屏新闻页一致） */
+#projects-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start}
+#projects-grid .card{gap:9px;padding:13px}
+#projects-grid .mc-cover{height:104px;margin:-13px -13px 11px}
+#projects-grid .proj-desc{font-size:11.5px;line-height:1.6}
+@media(max-width:1200px){#projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){#projects-grid{grid-template-columns:1fr}}
 .card.ending{border-color:rgba(251,191,36,.32)}
 .card.registered{border-color:rgba(212,175,55,.3)}
 .card.expired{border-color:rgba(248,113,113,.25);opacity:.72}
@@ -4738,6 +4745,28 @@ window.TOKEN_WORKBENCH_DATA = {
     }
   ],
   "githubTrending": [
+    {
+      "id": "daily-shanliuling-dsh-image-gen",
+      "rank": 10,
+      "period": "today",
+      "fullName": "shanliuling/dsh-image-gen",
+      "language": "TypeScript",
+      "stars": 1839,
+      "forks": 152,
+      "gain": 0,
+      "description": "DeepSeek Harness 原生 AI 图像创作插件：对话批量生图、看懂草图的 AI 画布、圈选局部编辑、角色一致性、GIF 动图、多模型横向对比；内置 500+ Prompt 灵感库，支持 Gemini / OpenAI / Seedream / DashScope / Grok / GLM-Image 及本地 ComfyUI，订阅账号免 Key。GitHub Trending TypeScript 日榜第 8，Apache-2.0 开源。",
+      "url": "https://github.com/shanliuling/dsh-image-gen",
+      "discoveredAt": "2026-11-28",
+      "tags": [
+        "AI 生图",
+        "图像创作",
+        "DeepSeek Harness",
+        "TypeScript",
+        "Trending"
+      ],
+      "notes": "GitHub 官方数据：1839 stars / 152 forks / TypeScript / Apache-2.0；cover 取自项目 README 官方中文概览图。",
+      "image": "img__dsh-image-gen.webp"
+    },
     {
       "id": "daily-elementalsouls-claude-bughunter",
       "rank": 1,
@@ -13158,22 +13187,6 @@ window.TOKEN_WORKBENCH_DATA = {
     }
   ],
   "projects": [
-    {
-      "id": "dsh-image-gen",
-      "name": "鲸鱼娘 dsh-image-gen",
-      "desc": "DeepSeek Harness 原生 AI 图像创作插件：在对话里说话就能画图，支持对话批量生图、看得懂草图的 AI 画布、圈哪改哪的局部编辑、角色一致性、GIF 动图、多模型横向对比与图库管理；内置 500+ Prompt 灵感库，支持 Gemini / OpenAI / Seedream / DashScope / Grok Imagine / GLM-Image 及本地 ComfyUI，已有 ChatGPT、Grok 或 Google 订阅可直接登录生图、无需额外购买 API Key。GitHub Trending TypeScript 日榜第 8，Apache-2.0 开源。",
-      "url": "https://github.com/shanliuling/dsh-image-gen",
-      "tags": [
-        "AI 生图",
-        "DeepSeek Harness",
-        "多模型",
-        "ComfyUI",
-        "开源"
-      ],
-      "addedAt": "2026-11-28",
-      "custom": false,
-      "image": "img__dsh-image-gen.webp"
-    },
     {
       "id": "cyber-fortune",
       "name": "赛博命理",
